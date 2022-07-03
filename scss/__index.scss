@@ -13,18 +13,40 @@
     }
     // .top-line__city
     &__city {
-        font-family: "Roboto" sans-serif;
+        font-family: "Roboto";
         font-size: 20px;
         font-weight: 400;
         color:#fff;
+        padding: 0px 0px 0px 25px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: 0;
+            background: url(../img/header/map.png) 0 0 / cover no-repeat;
+            height: 23px;
+            width: 23px;
+        }
         
     }
     // .top-line__time-work
     &__time-work {
-        font-family: "Roboto" sans-serif;
+        font-family: "Roboto";
         font-size: 20px;
         font-weight: 400;
         color:#fff;
+        padding: 0px 0px 0px 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: 0;
+            background: url(../img/header/clock.png) 0 0 / cover no-repeat;
+            height: 23px;
+            width: 23px;
+        }
     }
 }
 
