@@ -373,11 +373,18 @@ $text: #5b4f3c;
         width: 30px;
         background-color: #fff;
         position: relative;
-        
+        &.active-burger {
+            height: 0;
+        }
+        &.active-burger::before{
+            transform: rotate(45deg);
+            top: 0px;
+        }
+        &.active-burger::after{
+            transform: rotate(-45deg);
+            top: 0px;
+        }
         &::before {
-            &.active-burger {
-                transform: rotate(45deg);
-            }
             content: "";
             position: absolute;
             top: -10px;
@@ -385,6 +392,7 @@ $text: #5b4f3c;
             height: 3px;
             width: 30px;
             background-color: #fff;
+            transition: all 0.3s ease;
         }
         &::after {
             content: "";
@@ -394,6 +402,7 @@ $text: #5b4f3c;
             height: 3px;
             width: 30px;
             background-color: #fff;
+            transition: all 0.3s ease;
         }
     }
     // .burger__text

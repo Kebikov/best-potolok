@@ -1,0 +1,123 @@
+$brown : #6d4d3a;
+$orange: #fe8d1b;
+$text: #5b4f3c;
+
+.monday {
+    margin: 10px 0px 0px 0px;
+    position: relative;
+    // .monday__fon
+    &__gerl {
+        position: absolute;
+        bottom: 0;
+        left: -103px;
+        display: flex;
+        
+    }
+    &__fon {
+        background:url(../img/index/grey_bg.png);
+    }
+    // .monday__body
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        min-height: 460px;
+        
+    }
+    // .monday__text
+    &__text {
+        flex: 0 1 40%;
+    }
+    // .monday__prace
+    &__prace {
+        flex: 0 1 60%;
+        display: flex;
+        flex-direction: column;
+        background: url(../img/index/bg.png);
+        max-width: 550px;
+        position: relative;
+    }
+}
+.text-monday {
+    // .text-monday__title
+    &__title {
+        font-family: "Roboto";
+        font-size: 24px;
+        font-weight: 700;
+        color:rgb(38, 33, 33);
+        margin:0px 0px 30px 0px;
+    }
+    // .text-monday__text
+    &__text {
+        font-family: "Roboto";
+        font-size: 17px;
+        font-weight: 400;
+        color: $text;
+    }
+}
+.prace-mondey {
+    // .prace-mondey__title
+    &__title {
+        font-family: "Roboto";
+        font-size: 30px;
+        font-weight: 700;
+        color:#fff;
+        text-align: center;
+        line-height: 130%;
+        letter-spacing: 1.2px;
+        margin: 15px 0px 0px 0px;
+        & span {
+            color: $orange;
+            text-decoration: underline;
+        }
+    }
+    // .prace-mondey__all-for
+    &__all-for {
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 400;
+        color:#fff;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        margin:10px 30px 0px 30px;
+        border: #fff 1px dashed;
+        & span {
+            color: $orange;
+            font-size: 23px;
+            font-weight: 500;
+        }
+    }
+    // .prace-mondey__input-block
+    &__input-block {
+        display: flex;
+    }
+    // .prace-mondey__text-m2
+    &__text-m2 {
+    }
+    // .prace-mondey__input
+    &__input {
+    }
+    // .prace-mondey__m2
+    &__m2 {
+    }
+    // .prace-mondey__today
+    &__today {
+    }
+    // .prace-mondey__today-text
+    &__today-text {
+    }
+    // .prace-mondey__byn
+    &__byn {
+    }
+    // .prace-mondey__call
+    &__call {
+    }
+    // .prace-mondey__tel
+    &__tel {
+    }
+    // .prace-mondey__button
+    &__button {
+    }
+    // .prace-mondey__info
+    &__info {
+    }
+}
