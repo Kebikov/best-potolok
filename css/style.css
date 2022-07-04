@@ -418,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 0px 0px;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: 1240px) {
   .menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -447,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 1240px) {
   .menu__line {
-    padding: 7px 0px 7px 0px;
+    padding: 12px 0px 12px 0px;
     left: -150%;
   }
 }
@@ -474,7 +474,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background-color: #fe8d1b;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1240px) {
   .menu__line::before {
     top: 0;
     height: 1px;
@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 1020px) {
   .menu__link {
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 50px;
   }
 }
 
@@ -529,6 +529,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background-color: #fe8d1b;
 }
+.burger__button {
+  margin: 4px 0px 0px 0px;
+}
 .burger__square {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,6 +563,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 30px;
   background-color: #fff;
 }
+.burger__span::before.active-burger {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 .burger__span::after {
   content: "";
   position: absolute;
@@ -575,6 +583,96 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: #fff;
   margin: 0px 20px 0px 0px;
+}
+
+@media (max-width: 1020px) {
+  .icon-procent {
+    position: relative;
+  }
+  .icon-procent::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    background: url(../img/header/procent.png) 0 0/cover no-repeat;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .icon-prace {
+    position: relative;
+  }
+  .icon-prace::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: url(../img/header/prace.png) 0 0/cover no-repeat;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .icon-catalog {
+    position: relative;
+  }
+  .icon-catalog::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: url(../img/header/catalog.png) 0 0/cover no-repeat;
+    height: 23px;
+    width: 23px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .icon-work {
+    position: relative;
+  }
+  .icon-work::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: url(../img/header/work.png) 0 0/cover no-repeat;
+    height: 23px;
+    width: 23px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .icon-compani {
+    position: relative;
+  }
+  .icon-compani::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: url(../img/header/compani.png) 0 0/cover no-repeat;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .icon-cntacts {
+    position: relative;
+  }
+  .icon-cntacts::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: url(../img/header/contacts.png) 0 0/cover no-repeat;
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .footer {

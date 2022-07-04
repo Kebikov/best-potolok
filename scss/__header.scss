@@ -266,7 +266,7 @@ $text: #5b4f3c;
             margin:0px 0px 0px 0px;
             }
         }
-        @media (max-width: 1020px){
+        @media (max-width: 1240px){
             flex-direction: column;
             position: absolute;
         }
@@ -284,7 +284,7 @@ $text: #5b4f3c;
             left: 0;
         }
         @media (max-width: 1240px){
-            padding: 7px 0px 7px 0px;
+            padding: 12px 0px 12px 0px;
             left: -150%;
         }
         @media (max-width: 1020px){
@@ -305,7 +305,7 @@ $text: #5b4f3c;
             height: 4px;
             width: 100%;
             background-color: $orange;
-            @media (max-width: 1020px){
+            @media (max-width: 1240px){
                 //none
                 top: 0;
                 height: 1px;
@@ -322,9 +322,7 @@ $text: #5b4f3c;
             font-size: 17px;
         }
         @media (max-width: 1020px){
-        padding: 0px 0px 0px 30px;
-        //none
-        //font-size: 0px;
+        padding: 0px 0px 0px 50px;
         }
     }
 }
@@ -356,6 +354,7 @@ $text: #5b4f3c;
     }
     // .burger__button
     &__button {
+        margin:4px 0px 0px 0px;
     }
     // .burger__square
     &__square {
@@ -374,7 +373,11 @@ $text: #5b4f3c;
         width: 30px;
         background-color: #fff;
         position: relative;
+        
         &::before {
+            &.active-burger {
+                transform: rotate(45deg);
+            }
             content: "";
             position: absolute;
             top: -10px;
@@ -403,5 +406,89 @@ $text: #5b4f3c;
     }
 }
 
+.icon-procent {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 16px;
+            left: 15px;
+            background: url(../img/header/procent.png) 0 0 / cover no-repeat;
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+.icon-prace {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: url(../img/header/prace.png) 0 0 / cover no-repeat;
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+.icon-catalog {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: url(../img/header/catalog.png) 0 0 / cover no-repeat;
+            height: 23px;
+            width: 23px;
+        }
+    }
+}
+.icon-work {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: url(../img/header/work.png) 0 0 / cover no-repeat;
+            height: 23px;
+            width: 23px;
+        }
+    }
+}
+.icon-compani {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: url(../img/header/compani.png) 0 0 / cover no-repeat;
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+.icon-cntacts {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: url(../img/header/contacts.png) 0 0 / cover no-repeat;
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
 
 
