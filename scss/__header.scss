@@ -279,6 +279,7 @@ $text: #5b4f3c;
         background-color: #6d4d3a;
         padding: 10px 0px 10px 0px;
         position: relative;
+        z-index: 2;
         transition: all 0.3s ease;
         &.active {
             left: 0;

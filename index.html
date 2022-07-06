@@ -1,9 +1,10 @@
-<!DOCTYPE htm>
+<!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Лучшие натяжные потолки в Гомеле.">
+        <link rel="icon" type="image/png" href="img/header/favicon.png">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Натяжные потолки в Гомеле</title>
@@ -94,19 +95,21 @@
                             <div class="monday__prace prace-mondey">
                                 <img class="monday__gerl" src="./img/index/gerl.png" alt="девушка">
                                 <div class="prace-mondey__title">ПО <span>ПОНЕДЕЛЬНИКАМ</span> У НАС<br>НАТЯЖНЫЕ ПОТОЛКИ</div>
-                                <div class="prace-mondey__all-for">ВСЕГО ЗА <span>15 РУБ./М²</span></div>
+                                <div class="prace-mondey__all-for">ВСЕГО ЗА <span>15 РУБ./М<sup>2</sup></span></div>
                                 <div class="prace-mondey__input-block">
-                                    <div class="prace-mondey__text-m2">Площадь Вашего потолка</div>
-                                    <input class="prace-mondey__input" type="number" placeholder="10">
+                                    <div class="prace-mondey__text-m2">Площадь Вашего потолка =</div>
+                                    <input class="prace-mondey__input" type="number" value="10">
                                     <div class="prace-mondey__m2">м<sup>2</sup></div>
                                 </div>
                                 <div class="prace-mondey__today">
-                                    <div class="prace-mondey__today-text">Ваша цена сегодня </div>
-                                    <div class="prace-mondey__byn">150 руб.</div>
+                                    <div class="prace-mondey__today-text">Ваша цена сегодня: </div>
+                                    <div class="prace-mondey__byn">150<span> РУБ.</span></div>
                                 </div>
                                 <div class="prace-mondey__call">
-                                    <input class="prace-mondey__tel" type="text" placeholder="Ваш номер телефона">
-                                    <div class="prace-mondey__button"></div>
+                                    <form class="prace-mondey__tel grey" action="tel.php" method="POST">
+                                        <input class="prace-mondey__tel-input" name="tel" type="tel" placeholder="Ваш номер телефона">
+                                    </form>
+                                    <button class="prace-mondey__button" type="submit">заказать по акции</button>
                                 </div>
                                 <div class="prace-mondey__info">* Профиль и его установка считается отдельно погонными метрами<br>** Минимальная стоимость договора под ключ 12 000 руб</div>
                             </div>

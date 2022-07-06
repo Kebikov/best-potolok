@@ -72,18 +72,36 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number],
+input[type=number]:hover,
+input[type=number]:focus {
+  -webkit-appearance: none;
+          appearance: none;
+  -moz-appearance: textfield;
+}
+
 /*--------------------*/
 .monday {
-  margin: 10px 0px 0px 0px;
   position: relative;
 }
 .monday__gerl {
   position: absolute;
+  z-index: 100;
   bottom: 0;
   left: -103px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 1200px) {
+  .monday__gerl {
+    display: none;
+  }
 }
 .monday__fon {
   background: url(../img/index/grey_bg.png);
@@ -95,12 +113,22 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 460px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 440px;
+  padding: 10px 0px 0px 0px;
 }
 .monday__text {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 40%;
           flex: 0 1 40%;
+  padding: 60px 0px 0px 0px;
+  line-height: 140%;
+}
+@media (max-width: 1000px) {
+  .monday__text {
+    padding: 0px 0px 5px 0px;
+  }
 }
 .monday__prace {
   -webkit-box-flex: 0;
@@ -117,13 +145,37 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 550px;
   position: relative;
 }
+@media (max-width: 1020px) {
+  .monday__prace {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    max-width: 100%;
+  }
+}
 
+@media (max-width: 1000px) {
+  .text-monday {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
 .text-monday__title {
-  font-family: "Roboto";
+  font-family: "Russo";
   font-size: 24px;
   font-weight: 700;
   color: rgb(38, 33, 33);
   margin: 0px 0px 30px 0px;
+  line-height: 120%;
+}
+@media (max-width: 1000px) {
+  .text-monday__title {
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    font-size: 18px;
+  }
 }
 .text-monday__text {
   font-family: "Roboto";
@@ -131,9 +183,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: #5b4f3c;
 }
+@media (max-width: 1000px) {
+  .text-monday__text {
+    display: none;
+  }
+}
 
 .prace-mondey__title {
-  font-family: "Roboto";
+  font-family: "Russo";
   font-size: 30px;
   font-weight: 700;
   color: #fff;
@@ -141,6 +198,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 130%;
   letter-spacing: 1.2px;
   margin: 15px 0px 0px 0px;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__title {
+    font-size: calc(18px + 12 * (100vw - 375px) / 825);
+  }
+}
+@media (max-width: 375px) {
+  .prace-mondey__title {
+    font-size: 18px;
+  }
 }
 .prace-mondey__title span {
   color: #fe8d1b;
@@ -165,7 +232,264 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin: 20px 30px 0px 30px;
 }
+@media (max-width: 1200px) {
+  .prace-mondey__input-block {
+    margin: 0 auto;
+    padding: 15px 0px 0px 0px;
+  }
+}
+.prace-mondey__text-m2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 10px 0px 0px;
+}
+.prace-mondey__input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-align: end;
+  padding: 0px 20px 0px 0px;
+  background-color: #442614;
+  height: 42px;
+  width: 98px;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
+}
+.prace-mondey__m2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  padding: 7px 0px 0px 10px;
+}
+.prace-mondey__today {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin: 0px 30px 0px 30px;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__today {
+    margin: 0 auto;
+  }
+}
+.prace-mondey__today-text {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: #fff;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 0px 30px 5px 0px;
+}
+@media (max-width: 1000px) {
+  .prace-mondey__today-text {
+    padding: 0px 10px 5px 0px;
+  }
+}
+.prace-mondey__byn {
+  font-family: "Russo";
+  font-size: 38px;
+  font-weight: 600;
+  color: #fe8d1b;
+  letter-spacing: 1.3px;
+  padding: 10px 0px 0px 0px;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__byn {
+    font-size: calc(28px + 10 * (100vw - 375px) / 825);
+  }
+}
+@media (max-width: 375px) {
+  .prace-mondey__byn {
+    font-size: 28px;
+  }
+}
+.prace-mondey__byn::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  z-index: 0;
+  height: 1;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.517);
+}
+.prace-mondey__byn span {
+  font-size: 26px;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__byn span {
+    font-size: calc(20px + 6 * (100vw - 375px) / 825);
+  }
+}
+@media (max-width: 375px) {
+  .prace-mondey__byn span {
+    font-size: 20px;
+  }
+}
+.prace-mondey__call {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin: 30px 30px 0px 0px;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__call {
+    margin: 0 auto;
+    padding: 30px 0px 0px 0px;
+  }
+}
+.prace-mondey__tel {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 15px;
+  color: #fe8d1b;
+  border-radius: 4px;
+  width: 215px;
+  height: 52px;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset;
+          box-shadow: 0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset;
+  text-align: end;
+  padding: 0px 20px 0px 40px;
+  background-color: #fff;
+  position: relative;
+}
+@media (max-width: 700px) {
+  .prace-mondey__tel {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+.prace-mondey__tel.grey::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  background: url(../img/index/grey-tell.png) 0 0/cover no-repeat;
+  height: 25px;
+  width: 25px;
+}
+.prace-mondey__tel.green::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  background: url(../img/index/green-tell.png) 0 0/cover no-repeat;
+  height: 25px;
+  width: 25px;
+}
+.prace-mondey__tel-input {
+  margin: 17px 0px 0px 10px;
+  width: 150px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 15px;
+  color: #237430;
+}
+@media (max-width: 700px) {
+  .prace-mondey__tel-input {
+    width: 220px;
+    text-align: center;
+    margin: 17px 0px 0px 10px;
+    font-size: 18px;
+  }
+}
+.prace-mondey__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px 0px 20px;
+  margin: 0px 0px 0px 20px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(242, 113, 3)), color-stop(25%, rgb(248, 135, 14)), color-stop(75%, rgb(253, 157, 25)));
+  background: -o-linear-gradient(bottom, rgb(242, 113, 3) 0%, rgb(248, 135, 14) 25%, rgb(253, 157, 25) 75%);
+  background: linear-gradient(0deg, rgb(242, 113, 3) 0%, rgb(248, 135, 14) 25%, rgb(253, 157, 25) 75%);
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+}
+.prace-mondey__button:hover {
+  -webkit-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(242, 121, 3)), color-stop(50%, rgb(247, 162, 13)), color-stop(80%, rgb(253, 208, 24)));
+  background: -o-linear-gradient(bottom, rgb(242, 121, 3) 0%, rgb(247, 162, 13) 50%, rgb(253, 208, 24) 80%);
+  background: linear-gradient(0deg, rgb(242, 121, 3) 0%, rgb(247, 162, 13) 50%, rgb(253, 208, 24) 80%);
+}
+@media (max-width: 700px) {
+  .prace-mondey__button {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin: 0 auto;
+    max-width: 300px;
+    margin: 15px auto 0px auto;
+    padding: 15px 0px 15px 0px;
+  }
+}
+.prace-mondey__info {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.59);
+  padding: 30px 0px 0px 30px;
+}
+@media (max-width: 1200px) {
+  .prace-mondey__info {
+    margin: 0px 20px 0px 20px;
+    padding: 25px 0px 25px 0px;
+  }
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("../font/Roboto-Light.woff2") format("woff2"), url("../font/Roboto-Light.woff") format("woff");
@@ -190,6 +514,13 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Roboto";
   src: url("../font/Roboto-Bold.woff2") format("woff2"), url("../font/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Russo";
+  src: url("../font/RussoOne-Regular.woff2") format("woff2"), url("../font/RussoOne-Regular.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -531,6 +862,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #6d4d3a;
   padding: 10px 0px 10px 0px;
   position: relative;
+  z-index: 2;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
