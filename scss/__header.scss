@@ -4,7 +4,7 @@ $text: #5b4f3c;
 //= верхняя линия шапки 
 ._top-line-text {
     font-family: "Roboto";
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     color:#fff;
     @media (max-width: 800px){
@@ -87,6 +87,7 @@ $text: #5b4f3c;
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    height: 100%;
     @media (max-width: 1240px){
         margin:0px 20px 0px 20px;
     }
