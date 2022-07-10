@@ -106,5 +106,21 @@ praceMondeyButton.addEventListener('click', (e) => {
     
 });
 
+//= загрузка фото потолков 
+const fotoWorksBody = document.querySelector('.foto-works__body');
+
+fetch('../ajax/foto_potolkov.json')
+.then(data => data.json())
+.then(json => {
+    json.forEach(item => {
+        fotoWorksBody.insertAdjacentHTML('beforeend',
+        `<div class="foto-works__img">
+            <img src="${item.img}" alt="натяжной потолок">
+        </div>`
+        );
+    });
+});
+
+
 //конец страницы
 });
