@@ -121,6 +121,12 @@ fetch('../ajax/foto_potolkov.json')
     });
 });
 
+const boxPicBody = document.querySelector('.foto-works__body');
+boxPicBody.addEventListener('click', (e) => {
+    console.log(e.target);
+    document.querySelector('.box-pic').style.display = 'block';
+});
+
 
 //конец страницы
 });
