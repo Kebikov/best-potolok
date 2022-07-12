@@ -6,7 +6,6 @@ const
     menuList = document.querySelector('.menu__list'),
     menuLine = menuList.querySelectorAll('.menu__line'),
     burgerSpan = document.querySelector('.burger__span');
-
 burgerSquare.addEventListener('click', () => {
     let time = 0.3;
     menuLine.forEach(item => {
@@ -16,11 +15,11 @@ burgerSquare.addEventListener('click', () => {
     });
     burgerSpan.classList.toggle('active-burger');
 });
+
 //=   счёт м2   
 const 
     praceMondeyInput = document.querySelector('.prace-mondey__input'),
     praceMondeyByn = document.querySelector('.prace-mondey__byn');
-
 praceMondeyInput.addEventListener('input', () => {
     let num = +praceMondeyInput.value;
     praceMondeyByn.innerHTML = `${num * 15}<span> РУБ.</span>`;
@@ -30,13 +29,11 @@ praceMondeyInput.addEventListener('input', () => {
 const 
     praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input'),
     praceMondeyTel = document.querySelector('.prace-mondey__tel');
-
 function symbolPlus (number, symbol) {
     if(praceMondeyTelInput.value.length === number) {
         praceMondeyTelInput.value = praceMondeyTelInput.value.slice(0,number - 1) + symbol + praceMondeyTelInput.value[number - 1];
     }
 }
-
 praceMondeyTelInput.addEventListener('click', () => {
     praceMondeyTelInput.value = '+375';
     praceMondeyTelInput.addEventListener('input', () => {
@@ -108,7 +105,6 @@ praceMondeyButton.addEventListener('click', (e) => {
 
 //= загрузка фото потолков 
 const fotoWorksBody = document.querySelector('.foto-works__body');
-
 fetch('../ajax/foto_potolkov.json')
 .then(data => data.json())
 .then(json => {
@@ -121,11 +117,22 @@ fetch('../ajax/foto_potolkov.json')
     });
 });
 
-const boxPicBody = document.querySelector('.foto-works__body');
-boxPicBody.addEventListener('click', (e) => {
-    console.log(e.target);
-    document.querySelector('.box-pic').style.display = 'block';
-});
+//= slider index   
+(function sliderIndex () {
+    const fotoWorksBody = document.querySelector('.foto-works__body');
+    const boxPic = document.querySelector('.box-pic');
+    const body = document.querySelector('body');
+    const boxPicPic = boxPic.querySelector('.box-pic__pic');
+
+    fotoWorksBody.addEventListener('click', (e) => {
+        let target = e.target;
+        let srcImg = target.querySelector('img').getAttribute('src');
+        boxPic.style.display = 'block';
+        body.style.overflow = 'hidden';
+        boxPicPic.setAttribute('src', `${srcImg}`);
+    });
+
+}());
 
 
 //конец страницы
