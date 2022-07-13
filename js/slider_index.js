@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function fnPoints () {
         pointsBody.innerHTML = '';
             for(let i = 1; i <= lengthImgFotoPotolkov; i++) {
-                console.log(srcData);
                 if(i === srcData) {
                     let element = document.createElement('div');
                     element.classList.add('points__white');

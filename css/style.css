@@ -605,6 +605,14 @@ input[type=number]:focus {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 800px) {
+  .foto-works__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 90%;
+            flex: 0 1 90%;
+    padding-bottom: 70%;
+  }
+}
 .foto-works__img:hover::before {
   content: "";
   top: 0;
@@ -807,6 +815,68 @@ input[type=number]:focus {
   }
 }
 
+.heartbeat {
+  -webkit-animation: heartbeat 7s ease-in-out infinite;
+          animation: heartbeat 7s ease-in-out infinite;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  2% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+  }
+  5% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  10% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  2% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+  }
+  5% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  10% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("../font/Roboto-Light.woff2") format("woff2"), url("../font/Roboto-Light.woff") format("woff");
@@ -1141,6 +1211,14 @@ input[type=number]:focus {
 .menu {
   margin: 5px 0px 0px 0px;
 }
+.menu__fix {
+  position: fixed;
+  z-index: 120;
+  top: 0;
+  left: 0;
+  margin: 0px 0px 0px 0px;
+  width: 100vw;
+}
 .menu__body {
   position: relative;
 }
@@ -1211,7 +1289,8 @@ input[type=number]:focus {
 .menu__line::before {
   content: "";
   position: absolute;
-  top: -4px;
+  z-index: 121;
+  top: 0;
   left: 0;
   height: 4px;
   width: 100%;

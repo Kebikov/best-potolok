@@ -1,6 +1,7 @@
 $brown : #6d4d3a;
 $orange: #fe8d1b;
 $text: #5b4f3c;
+
 //= верхняя линия шапки 
 ._top-line-text {
     font-family: "Roboto";
@@ -252,6 +253,14 @@ $text: #5b4f3c;
 //= menu 
 .menu {
     margin: 5px 0px 0px 0px;
+    &__fix {
+        position: fixed;
+        z-index: 120;
+        top: 0;
+        left: 0;
+        margin:0px 0px 0px 0px;
+        width: 100vw;
+    }
     // .menu__body
     &__body {
         position: relative;
@@ -302,7 +311,8 @@ $text: #5b4f3c;
         &::before {
             content: "";
             position: absolute;
-            top: -4px;
+            z-index: 121;
+            top: 0;
             left: 0;
             height: 4px;
             width: 100%;
@@ -333,7 +343,7 @@ $text: #5b4f3c;
 .burger {
     display: none;
     @media (max-width: 1240px){
-    display: block;
+        display: block;
     }
     // .burger__body
     &__body {
@@ -354,6 +364,7 @@ $text: #5b4f3c;
             background-color: $orange;
         }
     }
+    
     // .burger__button
     &__button {
         margin:4px 0px 0px 0px;

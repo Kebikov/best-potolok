@@ -408,6 +408,10 @@ $text: #5b4f3c;
         align-items: center;
         position: relative;
         overflow: hidden;
+        @media (max-width: 800px){
+            flex: 0 1 90%;
+            padding-bottom: 70%;
+        }
         &:hover::before {
             content: "";
             top: 0;
@@ -562,3 +566,29 @@ $text: #5b4f3c;
     }
 }
 
+.heartbeat {
+	animation: heartbeat 7s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+            transform: scale(1);
+            transform-origin: center center;
+    }
+    2% {
+              transform: scale(0.91);
+    }
+    5% {
+              transform: scale(0.98);
+    }
+    10% {
+              transform: scale(0.87);
+    }
+    15% {
+              transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
