@@ -1,29 +1,38 @@
 [
     {
-        "img": "/img/foto-potolkov/1.jpg"
+        "img": "/img/foto-potolkov/1.jpg",
+        "data":"1"
     },
     {
-        "img": "/img/foto-potolkov/2.jpg"
+        "img": "/img/foto-potolkov/2.jpg",
+        "data":"2"
     },
     {
-        "img": "/img/foto-potolkov/3.jpg"
+        "img": "/img/foto-potolkov/3.jpg",
+        "data":"3"
     },
     {
-        "img": "/img/foto-potolkov/4.jpg"
+        "img": "/img/foto-potolkov/4.jpg",
+        "data":"4"
     },
     {
-        "img": "/img/foto-potolkov/5.jpg"
+        "img": "/img/foto-potolkov/5.jpg",
+        "data":"5"
     },
     {
-        "img": "/img/foto-potolkov/6.jpg"
+        "img": "/img/foto-potolkov/6.jpg",
+        "data":"6"
     },
     {
-        "img": "/img/foto-potolkov/7.jpg"
+        "img": "/img/foto-potolkov/7.jpg",
+        "data":"7"
     },
     {
-        "img": "/img/foto-potolkov/8.jpg"
+        "img": "/img/foto-potolkov/8.jpg",
+        "data":"8"
     },
     {
-        "img": "/img/foto-potolkov/9.jpg"
+        "img": "/img/foto-potolkov/9.jpg",
+        "data":"9"
     }
 ]

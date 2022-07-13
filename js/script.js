@@ -111,29 +111,11 @@ fetch('../ajax/foto_potolkov.json')
     json.forEach(item => {
         fotoWorksBody.insertAdjacentHTML('beforeend',
         `<div class="foto-works__img">
-            <img src="${item.img}" alt="натяжной потолок">
+            <img src="${item.img}" data-img = "${item.data}" alt="натяжной потолок">
         </div>`
         );
     });
 });
-
-//= slider index   
-(function sliderIndex () {
-    const fotoWorksBody = document.querySelector('.foto-works__body');
-    const boxPic = document.querySelector('.box-pic');
-    const body = document.querySelector('body');
-    const boxPicPic = boxPic.querySelector('.box-pic__pic');
-
-    fotoWorksBody.addEventListener('click', (e) => {
-        let target = e.target;
-        let srcImg = target.querySelector('img').getAttribute('src');
-        boxPic.style.display = 'block';
-        body.style.overflow = 'hidden';
-        boxPicPic.setAttribute('src', `${srcImg}`);
-    });
-
-}());
-
 
 //конец страницы
 });

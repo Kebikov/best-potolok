@@ -754,11 +754,7 @@ input[type=number]:focus {
   height: 25px;
   background: url(../img/arrow-keys/x.png) 0 0/cover no-repeat;
 }
-.box-pic__points {
-  position: relative;
-}
-.box-pic__points::before {
-  content: "";
+.box-pic__points-slides {
   position: absolute;
   bottom: 2%;
   left: 50%;
@@ -769,6 +765,46 @@ input[type=number]:focus {
   height: 15px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.points {
+  position: relative;
+}
+.points__body {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.points__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@media (max-width: 1020px) {
+  .points__dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+.points__white {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+@media (max-width: 1020px) {
+  .points__white {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 @font-face {

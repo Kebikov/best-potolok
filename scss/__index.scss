@@ -518,18 +518,46 @@ $text: #5b4f3c;
         height: 25px;
         background: url(../img/arrow-keys/x.png) 0 0 / cover no-repeat;
     }
-    &__points {
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 2%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
+    &__points-slides {
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.points {
+    position: relative;
+    &__body {
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: flex;
+        gap: 10px;
+    }
+    &__dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.4);
+        @media (max-width: 1020px){
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &__white {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255);
+        @media (max-width: 1020px){
+            width: 10px;
+            height: 10px;
         }
     }
 }
