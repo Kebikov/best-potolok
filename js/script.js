@@ -134,5 +134,24 @@ fetch('../ajax/foto_potolkov.json')
     });
 });
 
+//= калькулятор index   
+(function calcIndex () {
+    const selectSoffitTypeSelect = document.querySelector('.select-soffit-type__select');
+    const selectSoffitTypeSelectText = document.querySelector('.select-soffit-type__select-text');
+    const selectSoffitTypeLine = document.querySelectorAll('.select-soffit-type__line');
+    selectSoffitTypeSelect.addEventListener('click', (e) => {
+        selectSoffitTypeLine.forEach(item => {
+            item.classList.remove('line-none');
+            item.addEventListener('click', (e) => {
+                let targetLine = e.target;
+                selectSoffitTypeSelectText.textContent = targetLine.textContent;
+                selectSoffitTypeLine.forEach(item => {
+                    item.classList.add('line-none');
+                });
+            });
+        });
+    });
+}());
+
 //конец страницы
 });

@@ -590,5 +590,191 @@ $text: #5b4f3c;
     100% {
         transform: scale(1);
     }
-  }
-  
+}
+
+.calculation-index {
+    padding: 40px 0px 0px 0px;
+    // .calculation-index__body
+    &__body {
+    }
+}
+
+.one-step {
+    // .one-step__header
+    &__header {
+        display: flex;
+        background: url(../img/index/bg.png);
+        padding: 0px 60px 0px 60px;
+        @media (max-width: 1020px){
+            padding: 0px 10px 0px 10px;
+        }
+    }
+    // .one-step__finger
+    &__finger {
+        flex: 0 1 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            animation: finger 8s infinite; 
+        }
+        @media (max-width: 1020px){
+            display: none;
+        }
+    }
+    // .one-step__range
+    &__range {
+        flex: 0 1 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__range-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: $orange;
+        margin: 10px 0px 10px 0px;
+        @media (max-width: 1020px){
+            height: 70px;
+            width: 70px;
+        } 
+    }
+    // .one-step__range-number
+    &__range-number {
+        font-family: "Roboto";
+        font-size: 45px;
+        font-weight: 700;
+        color:#fff;
+        margin: -10px 0px 0px 0px;
+        @media (max-width: 1020px){
+            font-size: 35px;
+        } 
+    }
+    // .one-step__range-info
+    &__range-info {
+        font-family: "Roboto";
+        font-size: 12px;
+        font-weight: 400;
+        color:#fff;
+        @media (max-width: 1020px){
+            font-size: 10px;
+        } 
+    }
+    // .one-step__title
+    &__title {
+        flex: 0 1 70%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: "Roboto";
+        font-size: 30px;
+        font-weight: 700;
+        color:#fff;
+        @media (max-width: 1020px){
+            flex: 0 1 80%;
+            margin:0px 0px 0px 20px;
+        }
+        @media (max-width: 1910px){
+            font-size: calc(20px + 10 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 20px;
+        }
+    }
+}
+
+.select-soffit-type {
+    background: url(../img/index/grey_bg.png);
+    padding: 0px 20px 0px 20px;
+    // .select-soffit-type__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        margin:0px 0px 20px 0px;
+    }
+    // .select-soffit-type__select
+    &__select {
+        background-color: #fff;
+        margin: 20px 0px 0px 0px;
+        padding: 15px 0px 15px 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 2px $brown solid;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            background: url(../img/arrow-keys/triangle.png) 0 0 / cover no-repeat;
+        }
+    }
+    // .select-soffit-type__select-text
+    &__select-text {
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 500;
+        color: $text;
+    }
+    // .select-soffit-type__list
+    &__list {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border: 2px $brown solid;
+    }
+    // .select-soffit-type__line
+    &__line {
+        padding: 15px 0px 15px 20px;
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 500;
+        color: $text;
+        border-bottom: 1px $brown solid;
+        transition: all 0.3s ease;
+        &.line-none {
+            padding: 0;
+            border-bottom: 0px $brown solid;
+            font-size: 0px;
+        }
+        &:hover {
+            background-color: #44261420;
+        }
+    }
+}
+
+@keyframes finger {
+    0% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+    10% {
+        transform: translate(50px, 0) rotate(0deg);
+    }
+    13% {
+        transform: translate(70px, 0) rotate(0deg);
+    }
+    16% {
+        transform: translate(50px, 0) rotate(0deg);
+    }
+    19% {
+        transform: translate(70px, 0) rotate(0deg);
+    }
+    22% {
+        transform: translate(50px, 0) rotate(0deg);
+    }
+    32% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(-20deg);
+    }
+}
+
