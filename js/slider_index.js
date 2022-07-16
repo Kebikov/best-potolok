@@ -2,7 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //= slider index   
 (function sliderIndex () {
-    const fotoWorksBody = document.querySelector('.foto-works__body');
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      } else {
+        const fotoWorksBody = document.querySelector('.foto-works__body');
     const boxPic = document.querySelector('.box-pic');
     const body = document.querySelector('body');
     const boxPicPic = boxPic.querySelector('.box-pic__pic');
@@ -58,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
         //points
         fnPoints();
     });
-
+    }
 }());
 
 //end

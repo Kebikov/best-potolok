@@ -2,22 +2,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //=   меню   
 (function menu () {
+
     //variables
     const menu = document.querySelector('.menu');
     const burgerSquare = document.querySelector('.burger__square');
     const  menuList = document.querySelector('.menu__list');
-    const  menuLine = menuList.querySelectorAll('.menu__line');
+    const  menuLineAll = menuList.querySelectorAll('.menu__line');
+    const  menuLine = menuList.querySelector('.menu__line');
     const  burgerSpan = document.querySelector('.burger__span');
+    
     //body-open menu
     burgerSquare.addEventListener('click', () => {
         let time = 0.3;
-        menuLine.forEach(item => {
+        menuLineAll.forEach(item => {
             item.style.transition = `all ${time}s ease`;
             item.classList.toggle('active');
             time += 0.1;
         });
         burgerSpan.classList.toggle('active-burger');
     });
+
     //body-fix menu
     let positionMenu = menu.getBoundingClientRect().top;
     window.addEventListener('scroll', (e) => {
@@ -29,8 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     
 }());
-
-
 
 
 //=   счёт м2   
@@ -74,7 +76,6 @@ praceMondeyTelInput.addEventListener('click', () => {
             }
         }
         // проверка телефона в конце
-        console.log(praceMondeyTelInput.value.length);
         if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {
             if(praceMondeyTel.classList.contains('grey')) {
                 praceMondeyTel.classList.remove('grey');
@@ -94,10 +95,7 @@ let form = document.forms[0];
 let praceMondeyButton = document.querySelector('.prace-mondey__button');
 praceMondeyButton.addEventListener('click', (e) => {
     e.preventDefault;
-    console.log('long:',praceMondeyTelInput.value.length);
-    console.log('test:',/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value));
     if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {
-        console.log('отправка сообшения');
         let formData = new FormData(form);
         fetch('tel.php', {
             method: 'POST',
@@ -106,12 +104,10 @@ praceMondeyButton.addEventListener('click', (e) => {
         .then(data => {
             if(data.status === 200) {
                 praceMondeyButton.textContent = 'заявка отправлена';
-                console.log('значение',praceMondeyTelInput.value);
                 praceMondeyTelInput.value = 'Cпасибо за заказ !';
             }
         });
     }else {
-        console.log('проверьте сообшение');
         praceMondeyButton.textContent = 'проверьте номер';
         setTimeout(()=>{
             praceMondeyButton.textContent = 'заказать по акции';
@@ -148,7 +144,6 @@ fetch('../ajax/foto_potolkov.json')
         let selectTarget = e.target.closest('.select-soffit-type__select').nextElementSibling;
         let typeSelect = e.target.closest('.select-soffit-type__select');
         selectText = typeSelect.querySelector('.select-soffit-type__select-text');
-        console.log(selectText);
         lineAll = selectTarget.querySelectorAll('.select-soffit-type__line');
         lineAll.forEach(line => {
             line.addEventListener('click', lineClick);
@@ -162,20 +157,9 @@ fetch('../ajax/foto_potolkov.json')
             line.removeEventListener('click', lineClick);
         });
     }
-
-    
-        // selectSoffitTypeLine.forEach(item => {
-        //     item.classList.remove('line-none');
-        //     item.addEventListener('click', (e) => {
-        //         let targetLine = e.target;
-        //         selectSoffitTypeSelectText.textContent = targetLine.textContent;
-        //         selectSoffitTypeLine.forEach(item => {
-        //             item.classList.add('line-none');
-        //         });
-        //     });
-        // });
-    
 }());
 
 //конец страницы
 });
+
+

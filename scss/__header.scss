@@ -279,6 +279,7 @@ $text: #5b4f3c;
         @media (max-width: 1240px){
             flex-direction: column;
             position: absolute;
+            left: -150%;
         }
     }
     // .menu__line
@@ -291,12 +292,12 @@ $text: #5b4f3c;
         position: relative;
         z-index: 2;
         transition: all 0.3s ease;
-        &.active {
-            left: 0;
-        }
         @media (max-width: 1240px){
-            padding: 12px 0px 12px 0px;
-            left: -150%;
+            left: 0;
+            font-size: 0;
+        }
+        &.active {
+            left: 150%;
         }
         @media (max-width: 1020px){
             justify-content: flex-start;
@@ -327,9 +328,10 @@ $text: #5b4f3c;
     // .menu__link
     &__link {
         font-family: "Roboto";
-        font-size: 19px;
+        font-size: inherit;
         font-weight: 400;
         color:#fff;
+        
         @media (max-width: 1240px){
             font-size: 17px;
         }
