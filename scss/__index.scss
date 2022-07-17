@@ -862,7 +862,7 @@ $text: #5b4f3c;
             border: 1px $brown solid;
             background-color: #fff;
         }
-        &:checked::after{
+        &:checked::after {
             position: absolute;
             z-index: 1;
             content: "";

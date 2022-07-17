@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //= загрузка фото потолков 
 const fotoWorksBody = document.querySelector('.foto-works__body');
-fetch('../ajax/foto_potolkov.json')
+fetch('./ajax/foto_potolkov.json')
 .then(data => data.json())
 .then(json => {
     json.forEach(item => {
