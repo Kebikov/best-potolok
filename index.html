@@ -85,13 +85,16 @@
             </heder>
             <!--= main -->
             <main class="main">
-
                 <!-- блок с калькулятором -->
                 <div class="monday">
                     <div class="monday__fon">
                         <div class="monday__body container">
                             <div class="monday__text text-monday">
-                                <div class="text-monday__title">НАТЯЖНЫЕ ПОТОЛКИ В ГОМЕЛЕ</div>
+                                <div class="text-monday__title"><span>НАТЯЖНЫЕ ПОТОЛКИ В ГОМЕЛЕ
+                                    <img src="img/arrow-keys/level.png" alt="ленейка" class="ruler">
+                                </span>
+                                    
+                                </div>
                                 <div class="text-monday__text">Натяжные потолки в Гомеле - это просто, быстро и доступно, если вы обратились в нашу компанию. Универсальный способ отделки интерьера дома, офиса или кафе давно завоевал популярность среди всех слоев населения. Мы работаем с потолками любой сложности, приезжаем бесплатно на замер, а потом быстро и качественно проводим установку конструкции.</div>
                             </div>
                             <div class="monday__prace prace-mondey">
@@ -186,6 +189,8 @@
                     <div class="calculation-index__body">
                         <!-- шапка выбора 1 -->
                         <div class="one-step">
+                            <img src="img/arrow-keys/rules-length.png" alt="" class="rules-length">
+                            <img src="img/arrow-keys/rules.png" alt="" class="rules-body">
                             <div class="one-step__header">
                                 <div class="one-step__finger">
                                     <img src="./img/index/hand.png" alt="рука">
@@ -242,15 +247,15 @@
                             <div class="select-parameters__body">
                                 <div class="select-parameters__size __margin-button-20">
                                     <div class="select-parameters__size-title">Площадь помещения (кв.м.):</div>
-                                    <input type="number" class="select-parameters__size-input" placeholder="10">
+                                    <input type="number" class="select-parameters__size-input" placeholder="ваши данные">
                                 </div>
                                 <div class="select-parameters__size __margin-button-20">
                                     <div class="select-parameters__size-title ">Количество труб в помещении (шт.):</div>
-                                    <input type="number" class="select-parameters__size-input" placeholder="1">
+                                    <input type="number" class="select-parameters__size-input" placeholder="ваши данные">
                                 </div>
                                 <div class="select-parameters__size">
                                     <div class="select-parameters__size-title">Количество осветительных приборов (шт.):</div>
-                                    <input type="number" class="select-parameters__size-input" placeholder="4">
+                                    <input type="number" class="select-parameters__size-input" placeholder="ваши данные">
                                 </div>
                             </div>
                         </div>
@@ -275,18 +280,33 @@
                         <div class="select-promotion">
                             <div class="select-promotion__body">
                                 <div class="select-promotion__site">
-                                    <input type="radio" name="site" id="site" value="site" checked="checked" class="select-promotion__radio">
+                                    <input type="radio" name="site" id="site" value="5" checked="checked" class="select-promotion__radio">
                                     <label for="site" class="select-promotion__label">Скидка с сайта<span> 5%</span></label>
                                 </div>
                                 <div class="select-promotion__site">
-                                    <input type="radio" name="site" id="pensioners" value="pensioners" class="select-promotion__radio">
+                                    <input type="radio" name="site" id="pensioners" value="10" class="select-promotion__radio">
                                     <label for="pensioners" class="select-promotion__label">Скидка с пенсионерам<span> 10%</span></label>
                                 </div>
+                                <div class="select-promotion__site">
+                                    <input type="radio" name="site" id="nov" value="10" class="select-promotion__radio">
+                                    <label for="nov" class="select-promotion__label">Скидка новоселам<span> 10%</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="money-calc">
+                            <div class="money-calc__body">
+                                <div class="money-calc__body-row">
+                                    <div class="money-calc__text">Стоимость потолока с учетом АКЦИИ:</div>
+                                    <div class="money-calc__dot"></div>
+                                    <div class="money-calc__cash">введите все данные</div>
+                                </div>
+                            </div>
+                            <div class="money-calc__button">
+                                <div class="money-calc__button-body">расчитать</div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </main>
             <!--= footer -->
             <footer class="footer">
@@ -294,6 +314,7 @@
         </div>
         <script src="js/menu_nav.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/ruler_movement.js"></script>
         <script src="js/phone_input.js"></script>
         <script src="js/email_index.js"></script>
         <script src="js/slider_index.js"></script>
