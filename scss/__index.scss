@@ -1033,24 +1033,24 @@ $text: #5b4f3c;
     justify-content: center;
     align-items: center;
     // .money-calc__body
-
     &__body {
-        padding: 20px 20px 20px 40px;
+        padding: 20px 20px 20px 20px;
         width: 100%;
         display: flex;
         justify-content: center;
     }
-
     &__body-row {
         max-width: 800px;
         flex: 1 1 100%;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        
+        @media (max-width: 1200px){
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     }
-
     // .money-calc__text
-
     &__text {
         font-family: "Roboto";
         font-size: 24px;
@@ -1071,7 +1071,6 @@ $text: #5b4f3c;
             font-size: 18px;
         }
     }
-
     // .money-calc__dot
 
     &__dot {
@@ -1091,7 +1090,6 @@ $text: #5b4f3c;
         font-size: 24px;
         font-weight: 500;
         color: rgb(202, 71, 54);
-        padding: 0px 0px 0px 10px;
         @media (max-width: 1020px){
             flex: 0 1 90%;
             display: flex;
@@ -1288,10 +1286,15 @@ $text: #5b4f3c;
         letter-spacing: 1.2px;
         border: rgba(255,135,23,1) 2px solid;
         border-radius: 7px;
+        cursor: pointer;
     }
 }
 
 .order-call {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
     position: fixed;
     z-index: 200;
     top: 0;
@@ -1299,9 +1302,6 @@ $text: #5b4f3c;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     // .order-call__body
     &__body {
         display: flex;
@@ -1309,9 +1309,13 @@ $text: #5b4f3c;
         justify-content: center;
         align-items: center;
         width: 500px;
-        height: 600px;
-        background-color: #fff;
+        height: 650px;
+        background: url(../img/arrow-keys/fon.jpg) 0 0 / cover no-repeat;
         position: relative;
+        @media (max-width: 760px){
+            width: 350px;
+            height: 620px;
+        }
     }
     &__x {
         position: absolute;
@@ -1319,6 +1323,10 @@ $text: #5b4f3c;
         right: -40px;
         height: 30px;
         width: 30px;
+        @media (max-width: 760px){
+            top: 10px;
+            right: 10px;
+        }
         & img {
             object-fit: cover;
             height: 30px;
@@ -1326,12 +1334,18 @@ $text: #5b4f3c;
         }
     }
     &__logo {
-        width: 50%;
+        width: 45%;
         height: 120px;
-        margin: 0px 0px 10px 0px;
+        position: relative;
         & img {
+            position: absolute;
+            top: -20px;
+            left: 0;
             object-fit: cover;
             width: 100%;
+            @media (max-width: 760px){
+                top: 20px;
+            }
         }
     }
     // .order-call__title
@@ -1366,24 +1380,30 @@ $text: #5b4f3c;
     // .order-call__name
     &__name {
         width: 60%;
-        border: #6d4d3a79 2px solid;
+        border: #fe8d1b 2px solid;
         padding: 10px 0px 10px 10px;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 500;
         color: #000;
         margin: 0px 0px 20px 0px;
+        @media (max-width: 760px){
+            width: 80%;
+        }
     }
     // .order-call__tel
     &__tel {
         width: 60%;
-        border: #6d4d3a79 2px solid;
+        border: #fe8d1b 2px solid;
         padding: 10px 0px 10px 10px;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 500;
         color: #000;
         margin: 0px 0px 40px 0px;
+        @media (max-width: 760px){
+            width: 80%;
+        }
     }
     // .order-call__button
     &__button {
@@ -1395,6 +1415,10 @@ $text: #5b4f3c;
         padding: 10px 40px 10px 40px;
         background: linear-gradient(312deg, rgba(227,47,47,1) 8%, rgba(247,162,13,1) 48%, rgba(227,66,45,1) 88%);
         margin: 0px 0px 20px 0px;
+        box-shadow: 0px 0px 7px 2px rgba(87, 87, 87, 0.609);
+        @media (max-width: 760px){
+            width: 80%;
+        }
     }
     &__email {
         width: 100%;

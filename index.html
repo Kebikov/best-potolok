@@ -85,6 +85,50 @@
             </heder>
             <!--= main -->
             <main class="main">
+                
+                <!--* лайт-бокс -->
+                <div class="box-pic">
+                    <div class="box-pic__body">
+                        <div class="box-pic__left">
+                            <img class="pic__left" src="./img/arrow-keys/left.png" alt="">
+                        </div>
+                        <div class="box-pic__img">
+                            <div class="points">
+                                <div class="box-pic__x"></div>
+                                <img class="box-pic__pic" src="./img/111.jpg" alt="">
+                                <div class="points__body">
+                                    <!-- coding -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-pic__right">
+                            <img class="pic__right" src="./img/arrow-keys/right.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!--* pop-up заказ звонка  -->
+                <div class="order-call">
+                    <div class="order-call__body">
+                        <div class="order-call__x">
+                            <img src="img/arrow-keys/x.png" alt="">
+                        </div>
+                        <div class="order-call__logo">
+                            <img src="img/arrow-keys/logo-white.png" alt="логотип">
+                        </div>
+                        <div class="order-call__title">Заказать расчёт</div>
+                        <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
+                        <form class="order-call__form" action="order_call.php" method="POST">
+                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name">
+                            <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel">
+                            <button class="order-call__button" type="submit">заказать</button>
+                        </form>
+                        <div class="order-call__email">
+                            <img src="img/index/email.png" alt="письмо">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- блок с калькулятором -->
                 <div class="monday">
                     <div class="monday__fon">
@@ -160,49 +204,6 @@
                     <div class="foto-works__title">Фото наших работ</div>
                     <div class="foto-works__body">
                         <!-- coding -->
-                    </div>
-                </div>
-
-                <!-- лайт-бокс -->
-                <div class="box-pic">
-                    <div class="box-pic__body">
-                        <div class="box-pic__left">
-                            <img class="pic__left" src="./img/arrow-keys/left.png" alt="">
-                        </div>
-                        <div class="box-pic__img">
-                            <div class="points">
-                                <div class="box-pic__x"></div>
-                                <img class="box-pic__pic" src="./img/111.jpg" alt="">
-                                <div class="points__body">
-                                    <!-- coding -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-pic__right">
-                            <img class="pic__right" src="./img/arrow-keys/right.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- заказ звонка pop-up -->
-                <div class="order-call">
-                    <div class="order-call__body">
-                        <div class="order-call__x">
-                            <img src="img/arrow-keys/x.png" alt="">
-                        </div>
-                        <div class="order-call__logo">
-                            <img src="img/header/logo.jpg" alt="логотип">
-                        </div>
-                        <div class="order-call__title">Заказать расчёт</div>
-                        <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
-                        <form class="order-call__form" action="order_call.php" method="POST">
-                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name">
-                            <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel">
-                            <button class="order-call__button" type="submit">заказать</button>
-                        </form>
-                        <div class="order-call__email">
-                            <img src="img/index/email.png" alt="письмо">
-                        </div>
                     </div>
                 </div>
 
@@ -349,7 +350,7 @@
                                     <div class="example-block__case"><span>Цена с установкой</span></div>
                                     <div class="example-block__case"><span>Бесплатный сервис</span></div>
                                     <div class="example-block__button">
-                                        <div class="example-block__button-body">заказать</div>
+                                        <div class="example-block__button-body" data-popup="open">заказать</div>
                                     </div>
                                 </div>
                             </div>
@@ -367,6 +368,7 @@
         <script src="js/phone_input.js"></script>
         <script src="js/email_index.js"></script>
         <script src="js/slider_index.js"></script>
+        <script src="js/popup.js"></script>
         <script src="js/calc_index.js"></script>
     </body>
 </html>

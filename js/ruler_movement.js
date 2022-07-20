@@ -1,3 +1,4 @@
+//= бегаюшая рулетка   
 window.addEventListener('DOMContentLoaded', () => {
 
 const wrapper = document.querySelector('.wrapper');
@@ -15,7 +16,6 @@ let oneStepWidth = oneStep.getBoundingClientRect().width - 80;
 time();
 rulesBody.style.animation = `draive infinite ${timeS}s`;
 
-console.log('',oneStepWidth);
 const elementStyle = document.createElement('style');
 elementStyle.innerHTML = `
 @keyframes draive {
