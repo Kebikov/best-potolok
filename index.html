@@ -118,9 +118,11 @@
                         </div>
                         <div class="order-call__title">Заказать расчёт</div>
                         <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
-                        <form class="order-call__form" action="order_call.php" method="POST">
-                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name">
-                            <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel">
+                        <form class="order-call__form" action="order_call.php" method="POST" name="popup">
+                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name" autocomplete="off">
+                            <div class="order-call__tel-div _grey">
+                                <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel" autocomplete="off">
+                            </div>
                             <button class="order-call__button" type="submit">заказать</button>
                         </form>
                         <div class="order-call__email">

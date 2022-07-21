@@ -1385,21 +1385,25 @@ $text: #5b4f3c;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 500;
-        color: #000;
+        color: $text;
         margin: 0px 0px 20px 0px;
         @media (max-width: 760px){
             width: 80%;
         }
     }
+    &__tel-div {
+        width: 60%;
+        position: relative;
+    }
     // .order-call__tel
     &__tel {
-        width: 60%;
+        width: 100%;
         border: #fe8d1b 2px solid;
         padding: 10px 0px 10px 10px;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 500;
-        color: #000;
+        color: $text;
         margin: 0px 0px 40px 0px;
         @media (max-width: 760px){
             width: 80%;
@@ -1432,5 +1436,23 @@ $text: #5b4f3c;
     }
 }
 
+.order-call__tel-div._grey::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/index/grey-tell.png) 0 0 / cover no-repeat;
+}
+.order-call__tel-div._green::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/index/green-tell.png) 0 0 / cover no-repeat;
+}
 
 
