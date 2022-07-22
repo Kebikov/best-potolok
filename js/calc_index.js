@@ -28,19 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 }());
 
-//= изминения при выборе
-const calculationIndex = document.querySelector('.calculation-index');
-calculationIndex.addEventListener('change', () => {
-    console.log('change',);
-});
-
-//= расчет при нажатии  
+//* расчет при нажатии  
 const moneyCalcButtonBody = document.querySelector('.money-calc__button-body');
 const selectPromotionBody = document.querySelector('.select-promotion__body');
 const selectPromotionRadioAll = selectPromotionBody.querySelectorAll('.select-promotion__radio');
 const selectSoffitTypeBody = document.querySelector('.select-soffit-type__body');
 const selectParametersBody = document.querySelector('.select-parameters__body');
 const moneyCalcCash = document.querySelector('.money-calc__cash');
+const moneyCalcBody = document.querySelector('.money-calc__body');
+const moneyCalcError = document.querySelector('.money-calc__error');
 
 moneyCalcButtonBody.addEventListener('click', () => {
     let arrSoffit = [];
@@ -69,14 +65,14 @@ moneyCalcButtonBody.addEventListener('click', () => {
         if(item.value) arrSize.push(item.value);
     });
 
-    console.log('',arrSoffit);
-    console.log('',arrSize);
-
     if(arrSoffit.length === 2 && arrSize.length === 3) {
         let result = Math.round((arrSoffit[0] * arrSoffit[1] * arrSize[0] + arrSize[1] * 10 + arrSize[2] * 5) * (100 - promotion) / 100);
         moneyCalcCash.textContent = result + ' руб.';
+        moneyCalcError.style.display = 'none';
+        moneyCalcBody.style.display = 'flex';
     }else{
-        moneyCalcCash.textContent = 'введите все данные';
+        moneyCalcError.style.display = 'block';
+        moneyCalcBody.style.display = 'none';
     }
 
 });

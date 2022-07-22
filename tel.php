@@ -1,10 +1,11 @@
 <?php
 
-$to = 'kebikovgen@gmail.com';
+$to = 'kebikovgen@yandex.ru, kebikovgen@mail.ru';
 $subject = 'Заказ по акции.';
-$headers = "From: best-potolok\r\n";
-$headers .= "Reply-to: куда отвечать\r\n";
-$headers .= "Content-type: text/html; charset=utf-8\r\n";
+$headers = 'From: kebikovgen@gmail.com' . "\r\n";
+$headers .= 'Return-Path: kebikovgen@gmail.com' . "\r\n";
+$headers .= 'Reply-to: kebikovgen@gmail.com' . "\r\n";
+$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 $tel = clear_data($_POST["tel"]);
 

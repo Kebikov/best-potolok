@@ -9,7 +9,8 @@ $text: #5b4f3c;
         position: absolute;
         z-index: 100;
         bottom: 0;
-        left: -103px;
+        left: -87px;
+        height: 420px;
         display: flex;
         @media (max-width: 1200px){
             display: none;
@@ -224,7 +225,7 @@ $text: #5b4f3c;
     // .prace-mondey__input-block
     &__input-block {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         margin: 20px 30px 0px 30px;
         @media (max-width: 1200px){
             margin: 0 auto;
@@ -233,7 +234,7 @@ $text: #5b4f3c;
     }
     // .prace-mondey__text-m2
     &__text-m2 {
-        flex: 0 1 80%;
+        flex: 0 1 60%;
         display: flex;
         justify-content: end;
         font-family: "Roboto";
@@ -241,10 +242,13 @@ $text: #5b4f3c;
         font-weight: 400;
         color:#fff;
         padding: 14px 10px 0px 0px;
+        @media (max-width: 1200px){
+            flex: 0 1 70%;
+        }
     }
     // .prace-mondey__input
     &__input {
-        flex: 0 1 10%;
+        flex: 0 1 20%;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 500;
@@ -255,20 +259,26 @@ $text: #5b4f3c;
         height: 42px;
         width: 98px;
         box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
+        @media (max-width: 1200px){
+            flex: 0 1 10%;
+        }
     }
     // .prace-mondey__m2
     &__m2 {
-        flex: 0 1 10%;
+        flex: 0 1 20%;
         font-family: "Roboto";
         font-size: 18px;
         font-weight: 600;
         color:#fff;
         padding: 7px 0px 0px 10px;
+        @media (max-width: 1200px){
+            flex: 0 1 10%;
+        }
     }
     // .prace-mondey__today
     &__today {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         margin:0px 30px 0px 30px;
         position: relative;
         @media (max-width: 1200px){
@@ -344,7 +354,7 @@ $text: #5b4f3c;
         height: 52px;
         box-shadow: 0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset;
         text-align: end;
-        padding: 0px 20px 0px 40px;
+        padding: 4px 10px 4px 40px;
         background-color: #fff;
         @media (max-width: 700px){
             flex: 0 1 100%;
@@ -373,8 +383,9 @@ $text: #5b4f3c;
     }
     //.prace-mondey__tel-input
     &__tel-input {
-        margin: 17px 0px 0px 10px;
-        width: 150px;
+        padding: 0px 0px 0px 10px;
+        width: 100%;
+        height: 100%;
         font-family: "Roboto";
         font-weight: 500;
         font-size: 15px;
@@ -402,6 +413,7 @@ $text: #5b4f3c;
         background: linear-gradient(0deg, rgba(242,113,3,1) 0%, rgba(248,135,14,1) 25%, rgba(253,157,25,1) 75%); 
         text-transform: uppercase;
         transition: all 0.5s ease-out 0s;
+        cursor: pointer;
         &:hover {
             transition: all 0.5s ease-out 0s;
             background: linear-gradient(0deg, rgba(242,121,3,1) 0%, rgba(247,162,13,1) 50%, rgba(253,208,24,1) 80%); 
@@ -422,6 +434,7 @@ $text: #5b4f3c;
         line-height: 140%;
         color: rgba(255, 255, 255, 0.59);
         padding: 30px 0px 0px 30px;
+        text-align: center;
         @media (max-width: 1200px){
             margin: 0px 20px 0px 20px;
             padding: 25px 0px 25px 0px;
@@ -1036,7 +1049,7 @@ $text: #5b4f3c;
     &__body {
         padding: 20px 20px 20px 20px;
         width: 100%;
-        display: flex;
+        display: none;
         justify-content: center;
     }
     &__body-row {
@@ -1096,6 +1109,13 @@ $text: #5b4f3c;
             justify-content: center;
             font-size: 25px;
         }
+    }
+    &__error {
+        display: none;
+        font-family: "Russo";
+        font-size: 22px;
+        color: rgb(202, 71, 54);
+        text-align: center;
     }
 
     // .money-calc__button
@@ -1394,6 +1414,9 @@ $text: #5b4f3c;
     &__tel-div {
         width: 60%;
         position: relative;
+        @media (max-width: 760px){
+            width: 80%;
+        }
     }
     // .order-call__tel
     &__tel {
@@ -1406,7 +1429,7 @@ $text: #5b4f3c;
         color: $text;
         margin: 0px 0px 40px 0px;
         @media (max-width: 760px){
-            width: 80%;
+            width: 100%;
         }
     }
     // .order-call__button
@@ -1416,10 +1439,12 @@ $text: #5b4f3c;
         font-size: 20px;
         font-weight: 500;
         color: #fff;
+        text-align: center;
         padding: 10px 40px 10px 40px;
         background: linear-gradient(312deg, rgba(227,47,47,1) 8%, rgba(247,162,13,1) 48%, rgba(227,66,45,1) 88%);
         margin: 0px 0px 20px 0px;
         box-shadow: 0px 0px 7px 2px rgba(87, 87, 87, 0.609);
+        cursor: pointer;
         @media (max-width: 760px){
             width: 80%;
         }

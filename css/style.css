@@ -93,7 +93,8 @@ input[type=number]:focus {
   position: absolute;
   z-index: 100;
   bottom: 0;
-  left: -103px;
+  left: -87px;
+  height: 420px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,9 +462,9 @@ input[type=number]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 20px 30px 0px 30px;
 }
 @media (max-width: 1200px) {
@@ -474,8 +475,8 @@ input[type=number]:focus {
 }
 .prace-mondey__text-m2 {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 80%;
-          flex: 0 1 80%;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,10 +489,17 @@ input[type=number]:focus {
   color: #fff;
   padding: 14px 10px 0px 0px;
 }
+@media (max-width: 1200px) {
+  .prace-mondey__text-m2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 70%;
+            flex: 0 1 70%;
+  }
+}
 .prace-mondey__input {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 10%;
-          flex: 0 1 10%;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
@@ -504,23 +512,37 @@ input[type=number]:focus {
   -webkit-box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
           box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
 }
+@media (max-width: 1200px) {
+  .prace-mondey__input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 10%;
+            flex: 0 1 10%;
+  }
+}
 .prace-mondey__m2 {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 10%;
-          flex: 0 1 10%;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 600;
   color: #fff;
   padding: 7px 0px 0px 10px;
 }
+@media (max-width: 1200px) {
+  .prace-mondey__m2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 10%;
+            flex: 0 1 10%;
+  }
+}
 .prace-mondey__today {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0px 30px 0px 30px;
   position: relative;
 }
@@ -613,7 +635,7 @@ input[type=number]:focus {
   -webkit-box-shadow: 0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset;
           box-shadow: 0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset;
   text-align: end;
-  padding: 0px 20px 0px 40px;
+  padding: 4px 10px 4px 40px;
   background-color: #fff;
   position: relative;
 }
@@ -645,8 +667,9 @@ input[type=number]:focus {
   width: 25px;
 }
 .prace-mondey__tel-input {
-  margin: 17px 0px 0px 10px;
-  width: 150px;
+  padding: 0px 0px 0px 10px;
+  width: 100%;
+  height: 100%;
   font-family: "Roboto";
   font-weight: 500;
   font-size: 15px;
@@ -685,6 +708,7 @@ input[type=number]:focus {
   -webkit-transition: all 0.5s ease-out 0s;
   -o-transition: all 0.5s ease-out 0s;
   transition: all 0.5s ease-out 0s;
+  cursor: pointer;
 }
 .prace-mondey__button:hover {
   -webkit-transition: all 0.5s ease-out 0s;
@@ -712,6 +736,7 @@ input[type=number]:focus {
   line-height: 140%;
   color: rgba(255, 255, 255, 0.59);
   padding: 30px 0px 0px 30px;
+  text-align: center;
 }
 @media (max-width: 1200px) {
   .prace-mondey__info {
@@ -1596,9 +1621,7 @@ input[type=number]:focus {
 .money-calc__body {
   padding: 20px 20px 20px 20px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1690,6 +1713,13 @@ input[type=number]:focus {
             justify-content: center;
     font-size: 25px;
   }
+}
+.money-calc__error {
+  display: none;
+  font-family: "Russo";
+  font-size: 22px;
+  color: rgb(202, 71, 54);
+  text-align: center;
 }
 .money-calc__button {
   margin: 20px 0px 20px 0px;
@@ -2057,6 +2087,11 @@ input[type=number]:focus {
   width: 60%;
   position: relative;
 }
+@media (max-width: 760px) {
+  .order-call__tel-div {
+    width: 80%;
+  }
+}
 .order-call__tel {
   width: 100%;
   border: #fe8d1b 2px solid;
@@ -2069,7 +2104,7 @@ input[type=number]:focus {
 }
 @media (max-width: 760px) {
   .order-call__tel {
-    width: 80%;
+    width: 100%;
   }
 }
 .order-call__button {
@@ -2078,12 +2113,14 @@ input[type=number]:focus {
   font-size: 20px;
   font-weight: 500;
   color: #fff;
+  text-align: center;
   padding: 10px 40px 10px 40px;
   background: -o-linear-gradient(138deg, rgb(227, 47, 47) 8%, rgb(247, 162, 13) 48%, rgb(227, 66, 45) 88%);
   background: linear-gradient(312deg, rgb(227, 47, 47) 8%, rgb(247, 162, 13) 48%, rgb(227, 66, 45) 88%);
   margin: 0px 0px 20px 0px;
   -webkit-box-shadow: 0px 0px 7px 2px rgba(87, 87, 87, 0.609);
           box-shadow: 0px 0px 7px 2px rgba(87, 87, 87, 0.609);
+  cursor: pointer;
 }
 @media (max-width: 760px) {
   .order-call__button {

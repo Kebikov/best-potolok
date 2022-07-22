@@ -1,8 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
     //= отправка на почту   
     (function emailIndex () {
-        let form = document.forms[0];
-        let praceMondeyButton = document.querySelector('.prace-mondey__button');
+        const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
+        const  form = document.forms.actionCall;
+        const  praceMondeyButton = document.querySelector('.prace-mondey__button');
         praceMondeyButton.addEventListener('click', (e) => {
             e.preventDefault;
             if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {

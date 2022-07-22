@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
             praceMondeyTelInput.value = praceMondeyTelInput.value.slice(0,number - 1) + symbol + praceMondeyTelInput.value[number - 1];
         }
     }
-    praceMondeyTelInput.addEventListener('click', () => {
+    praceMondeyTelInput.addEventListener('click', (e) => {
+        console.log('',e.target);
         praceMondeyTelInput.value = '+375';
         praceMondeyTelInput.addEventListener('input', () => {
             if(praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === '(' || praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === ')' || praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === '-') {
