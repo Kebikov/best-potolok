@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault;
             if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {
                 let formData = new FormData(form);
-                fetch('tel.php', {
+                fetch('mail.php', {
                     method: 'POST',
                     body: formData
                 })

@@ -6,8 +6,7 @@ require 'phpmailer/Exception.php';
 $c = true;
 
 //= Формирование самого письма  
-$title = "Заказ из PopUp";
-$name = $_POST["name"];
+$title = "Заказ по акции";
 $tel = $_POST["tel"];
 
 //форматируем с разметкой
@@ -19,9 +18,7 @@ $message = '
 <tr><td colspan="2" align="center" bgcolor="#fe8d1b"><b>Информация о заказе по акции:</b></td></tr>
 ';
 
-$message .= '<tr><td><b>Имя клиента:</b></td><td>'.$name.'</td></tr>';
 $message .= '<tr><td><b>Клиент оставил телефон:</b></td><td>'.$tel.'</td></tr>';
-
 
 //= Настройки PHPMailer   
 $mail = new PHPMailer\PHPMailer\PHPMailer();
