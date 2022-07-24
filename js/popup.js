@@ -87,7 +87,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     body: formData
                 })
                 .then(data => {
+                    body.style.overflow = 'hidden';
+                    animeMeil.style.display = 'block';
                     if(data.status === 200) {
+                        body.style.overflow = 'auto';
+                        animeMeil.style.display = 'none';
                         button.textContent = 'заявка отправлена';
                         orderCallName.value = '';
                         inputTel.value = 'Cпасибо за заказ !';
