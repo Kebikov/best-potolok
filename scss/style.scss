@@ -15,3 +15,12 @@ $text: #5b4f3c;
 .main {
     flex: 1 1 auto;
 }
+
+.unselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;   
+    -khtml-user-select: none;    
+    -moz-user-select: none;      
+    -ms-user-select: none;       
+    user-select: none;           
+}

@@ -3032,7 +3032,7 @@ input[type=number]:focus {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 70%;
           flex: 0 1 70%;
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 60px;
 }
 @media (max-width: 1020px) {
   .prace-header__text {
@@ -3178,6 +3178,110 @@ input[type=number]:focus {
   }
 }
 
+.cap-type {
+  background: rgb(70, 54, 54) url(../img/prace/fon.jpg);
+}
+.cap-type__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 80px 0px 80px 0px;
+  position: relative;
+}
+.cap-type__body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  right: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: #fe8c1b;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.cap-type__body::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: #fe8d1b;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.cap-type__pic {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+  padding: 40px 20px 40px 40px;
+}
+.cap-type__img {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60%;
+  overflow: hidden;
+}
+.cap-type__img img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.cap-type__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding: 0px 60px 0px 20px;
+}
+.cap-type__title {
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0px 0px 10px 0px;
+}
+.cap-type__title span {
+  color: #fe8d1b;
+}
+.cap-type__subtitle {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0px 0px 20px 0px;
+}
+.cap-type__info {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 140%;
+  color: #fff;
+  margin: 0px 0px 40px 0px;
+}
+.cap-type__prace {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+.cap-type__prace span {
+  border: 2px #fe8d1b solid;
+  padding: 10px 25px 10px 25px;
+  border-radius: 22px;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3195,4 +3299,12 @@ input[type=number]:focus {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.unselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
