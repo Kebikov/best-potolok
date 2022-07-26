@@ -73,24 +73,31 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     //* отправка на почту   
     (function emaiPopUp () {
+        const button = document.querySelector('.order-call__button');
         const inputTel = document.querySelector('.order-call__tel');
-        let button = document.querySelector('.order-call__button');
+        const bodyDis = document.body;
+        const animeMeil = document.querySelector('.anime-meil');
+        const orderTitle = document.querySelector('.order-call__title');
+        let title = orderTitle.textContent;
 
-        button.addEventListener('click', (e) => {
+        button.addEventListener('click', clickPopUp);
+
+        function clickPopUp (e) {
             e.preventDefault;
             nameTest();
             const  form = document.forms.popup;
             if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value) && orderCallName.value) {
                 let formData = new FormData(form);
+                formData.set('title', title);
+                bodyDis.style.overflow = 'hidden';
+                animeMeil.style.display = 'block';
                 fetch('popup.php', {
                     method: 'POST',
                     body: formData
                 })
                 .then(data => {
-                    body.style.overflow = 'hidden';
-                    animeMeil.style.display = 'block';
                     if(data.status === 200) {
-                        body.style.overflow = 'auto';
+                        bodyDis.style.overflow = 'auto';
                         animeMeil.style.display = 'none';
                         button.textContent = 'заявка отправлена';
                         orderCallName.value = '';
@@ -103,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     button.textContent = 'заказать по акции';
                 },2000);
             }
-        });
+        }
     }());
 //end
 });

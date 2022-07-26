@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     praceMondeyTelInput.addEventListener('click', (e) => {
-        console.log('',e.target);
         praceMondeyTelInput.value = '+375';
         praceMondeyTelInput.addEventListener('input', () => {
             if(praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === '(' || praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === ')' || praceMondeyTelInput.value[praceMondeyTelInput.value.length - 1] === '-') {

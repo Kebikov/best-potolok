@@ -90,7 +90,7 @@ $text: #5b4f3c;
     margin: 0 auto;
     height: 100%;
     @media (max-width: 1240px){
-        margin:0px 20px 0px 20px;
+        margin: 0px 20px 0px 20px;
     }
     @media (max-width: 1140px){
         margin: 0 auto;
@@ -253,6 +253,8 @@ $text: #5b4f3c;
 //= menu 
 .menu {
     margin: 5px 0px 0px 0px;
+    position: relative;
+    z-index: 120;
     &__fix {
         position: fixed;
         z-index: 120;
@@ -270,6 +272,8 @@ $text: #5b4f3c;
         display:flex;
         justify-content: space-around;
         width: 100%;
+        position: relative;
+        z-index: 100;
         & *:not(:last-child) {
             margin:0px 2px 0px 0px;
             @media (max-width: 1020px){
@@ -436,11 +440,11 @@ $text: #5b4f3c;
         &::after {
             content: "";
             position: absolute;
-            top: 16px;
+            top: 12px;
             left: 15px;
-            background: url(../img/header/procent.png) 0 0 / cover no-repeat;
-            height: 15px;
-            width: 15px;
+            background: url(../img/header/home.png) 0 0 / cover no-repeat;
+            height: 20px;
+            width: 20px;
         }
     }
 }

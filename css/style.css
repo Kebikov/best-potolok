@@ -157,7 +157,6 @@ input[type=number]:focus {
 
 .ruler {
   position: absolute;
-  z-index: 100;
   top: -28px;
   left: 0px;
   width: 180px;
@@ -399,6 +398,7 @@ input[type=number]:focus {
 }
 .text-monday__title span {
   position: relative;
+  z-index: 1;
 }
 @media (max-width: 1020px) {
   .text-monday__title {
@@ -492,8 +492,8 @@ input[type=number]:focus {
 @media (max-width: 1200px) {
   .prace-mondey__text-m2 {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 70%;
-            flex: 0 1 70%;
+        -ms-flex: 0 1 72%;
+            flex: 0 1 72%;
   }
 }
 .prace-mondey__input {
@@ -515,8 +515,9 @@ input[type=number]:focus {
 @media (max-width: 1200px) {
   .prace-mondey__input {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 10%;
-            flex: 0 1 10%;
+        -ms-flex: 0 1 8%;
+            flex: 0 1 8%;
+    width: 90px;
   }
 }
 .prace-mondey__m2 {
@@ -693,7 +694,7 @@ input[type=number]:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 20px 0px 20px;
+  padding: 15px 20px 15px 20px;
   margin: 0px 0px 0px 20px;
   font-family: "Roboto";
   font-weight: 500;
@@ -2656,6 +2657,8 @@ input[type=number]:focus {
 
 .menu {
   margin: 5px 0px 0px 0px;
+  position: relative;
+  z-index: 120;
 }
 .menu__fix {
   position: fixed;
@@ -2675,6 +2678,8 @@ input[type=number]:focus {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100%;
+  position: relative;
+  z-index: 100;
 }
 .menu__list *:not(:last-child) {
   margin: 0px 2px 0px 0px;
@@ -2877,11 +2882,11 @@ input[type=number]:focus {
   .icon-procent::after {
     content: "";
     position: absolute;
-    top: 16px;
+    top: 12px;
     left: 15px;
-    background: url(../img/header/procent.png) 0 0/cover no-repeat;
-    height: 15px;
-    width: 15px;
+    background: url(../img/header/home.png) 0 0/cover no-repeat;
+    height: 20px;
+    width: 20px;
   }
 }
 
@@ -2964,6 +2969,213 @@ input[type=number]:focus {
   height: 70px;
   width: 100%;
   background-color: #fe8d1b;
+}
+
+.prace-header {
+  position: relative;
+  top: 20px;
+  padding: 0px 0px 30% 0px;
+}
+@media (max-width: 1020px) {
+  .prace-header {
+    padding: 0px 0px 40% 0px;
+  }
+}
+@media (max-width: 760px) {
+  .prace-header {
+    padding: 0px 0px 60% 0px;
+  }
+}
+.prace-header img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.prace-header::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.51);
+}
+.prace-header__body {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 1020px) {
+  .prace-header__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.prace-header__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70%;
+          flex: 0 1 70%;
+  padding: 0px 0px 0px 20px;
+}
+@media (max-width: 1020px) {
+  .prace-header__text {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    padding: 20px 20px 20px 20px;
+  }
+}
+@media (max-width: 760px) {
+  .prace-header__text {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+.prace-header__button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (max-width: 1020px) {
+  .prace-header__button {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+}
+.prace-header__title {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 760px) {
+  .prace-header__title {
+    margin: 0px 0px 10px 0px;
+  }
+}
+@media (max-width: 1020px) {
+  .prace-header__title {
+    font-size: calc(16px + 8 * (100vw - 375px) / 645);
+  }
+}
+@media (max-width: 375px) {
+  .prace-header__title {
+    font-size: 16px;
+  }
+}
+.prace-header__subtitle {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  line-height: 170%;
+}
+.prace-header__subtitle span {
+  color: #fe8d1b;
+}
+@media (max-width: 760px) {
+  .prace-header__subtitle {
+    line-height: 130%;
+  }
+}
+@media (max-width: 1020px) {
+  .prace-header__subtitle {
+    font-size: calc(24px + 8 * (100vw - 375px) / 645);
+  }
+}
+@media (max-width: 375px) {
+  .prace-header__subtitle {
+    font-size: 24px;
+  }
+}
+.prace-header__city {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 760px) {
+  .prace-header__city {
+    margin: 10px 0px 20px 0px;
+  }
+}
+@media (max-width: 1020px) {
+  .prace-header__city {
+    font-size: calc(16px + 8 * (100vw - 375px) / 645);
+  }
+}
+@media (max-width: 375px) {
+  .prace-header__city {
+    font-size: 16px;
+  }
+}
+.prace-header__info {
+  padding: 20px 0px 0px 0px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  line-height: 120%;
+}
+@media (max-width: 760px) {
+  .prace-header__info {
+    display: none;
+  }
+}
+.prace-header__call-size {
+  position: relative;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(215, 34, 34);
+}
+
+._button-prace {
+  width: 70%;
+  font-size: 18px;
+  text-align: center;
+  line-height: 120%;
+  margin: 0;
+  padding: 15px 20px 15px 20px;
+}
+@media (max-width: 1020px) {
+  ._button-prace {
+    width: 300px;
+  }
+}
+@media (max-width: 760px) {
+  ._button-prace {
+    font-size: 16px;
+    width: 230px;
+  }
 }
 
 .wrapper {
