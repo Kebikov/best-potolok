@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if(window.scrollY  >= positionMenu) {
                 menu.classList.add('menu__fix');
             }else{
-                menu.classList.remove('menu__fix');``
+                menu.classList.remove('menu__fix');
             }
         });
         

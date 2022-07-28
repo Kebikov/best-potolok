@@ -42,31 +42,44 @@ moneyCalcButtonBody.addEventListener('click', () => {
     let arrSoffit = [];
     let arrSize = [];
     let promotion = 0;
+    let praceM2;
+    let cursUsd = 2.6;
+    let sizeInputAll = selectParametersBody.querySelectorAll('.select-parameters__size-input');
+    let selectTextAll = selectSoffitTypeBody.querySelectorAll('.select-soffit-type__select-text');
 
+    function fnPraceM2 () {
+        if(arrSize[0] > 3.5 && arrSize[1] > 3.5) {
+            if(arrSoffit[1] === 'Цветной') praceM2 = 4.1;
+            if(arrSoffit[1] === 'Белый') praceM2 = 3.1;
+        }else{
+            if(arrSoffit[1] === 'Цветной') praceM2 = 3.1;
+            if(arrSoffit[1] === 'Белый') praceM2 = 1.9;
+        }
+    }
+
+    // возврат скидки
     selectPromotionRadioAll.forEach(item => {
         if(item.checked) promotion = item.value;
     });
-
-    let selectTextAll = selectSoffitTypeBody.querySelectorAll('.select-soffit-type__select-text');
-    selectTextAll.forEach(item => {
-        let num;
-        if(item.textContent === 'Глянцевый') num = 10;
-        if(item.textContent === 'Матовый') num = 11;
-        if(item.textContent === 'Ситцевый') num = 12;
-
-        if(item.textContent === 'Белый') num = 1;
-        if(item.textContent === 'Цветной') num = 1.1;
-
-        if(num) arrSoffit.push(num);
-    });
-
-    let sizeInputAll = selectParametersBody.querySelectorAll('.select-parameters__size-input');
+    // возврат значений
     sizeInputAll.forEach(item => {
-        if(item.value) arrSize.push(item.value);
+        let num = `${item.value}`;
+        if(num.includes(',',0)) {
+            num = +num.replace(',','.');
+        }else{
+            num = +num;
+        }
+        if(num) arrSize.push(num);
     });
+    // возврат селектов
+    selectTextAll.forEach(item => {
+        arrSoffit.push(item.textContent);
+    });
+
+    fnPraceM2();
 
     if(arrSoffit.length === 2 && arrSize.length === 3) {
-        let result = Math.round((arrSoffit[0] * arrSoffit[1] * arrSize[0] + arrSize[1] * 10 + arrSize[2] * 5) * (100 - promotion) / 100);
+        let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * 1 + arrSize[2] * 1) * cursUsd * promotion);
         moneyCalcCash.textContent = result + ' руб.';
         moneyCalcError.style.display = 'none';
         moneyCalcBody.style.display = 'flex';
@@ -81,3 +94,6 @@ moneyCalcButtonBody.addEventListener('click', () => {
 
 //end
 });
+
+
+
