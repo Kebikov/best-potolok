@@ -3,7 +3,120 @@ $orange: #fe8d1b;
 $text: #5b4f3c;
 
 .footer {
-    height: 70px;
     width: 100%;
     background-color: $orange;
 }
+
+.footer {
+    // .footer__body
+    &__body {
+    }
+    &__items {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0px 20px 0px;
+        @media (max-width: 1020px){
+            flex-wrap: wrap;
+        }
+    }
+    // .footer__logo
+    &__logo {
+        flex: 0 1 20%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        @media (max-width: 760px){
+            flex: 0 1 80%;
+            margin: 0px 0px 30px 0px;
+        }
+        & img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    // .footer__info
+    &__info {
+        flex: 0 1 40%;
+        @media (max-width: 760px){
+            flex: 0 1 80%;
+            display: none;
+        }
+    }
+    // .footer__info-title
+    &__info-title {
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: underline;
+        margin: 0px 0px 10px 0px;
+    }
+    // .footer__info-text
+    &__info-text {
+        font-family: "Roboto";
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+    }
+    // .footer__call
+    &__call {
+        flex: 0 1 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 20px 0px 40px;
+        @media (max-width: 760px){
+            flex: 0 1 80%;
+            margin: 0px 0px 30px 0px;
+            padding: 0px 20px 0px 20px;
+            align-items: center;
+        }
+    }
+    // .footer__call-email
+    &__call-email {
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        padding: 0px 0px 0px 40px;
+        margin: 0px 0px 20px 0px;
+        position: relative;
+        @media (max-width: 760px){
+            margin: 0px 0px 30px 0px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            background: url(../img/footer/mail.png) 0 0 / cover no-repeat;
+        }
+    }
+    // .footer__call-tel
+    &__call-tel {
+        cursor: pointer;
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        padding: 0px 0px 0px 40px;
+        text-decoration: none;
+        position: relative;
+        & a {
+            text-decoration: none;
+            color: #fff;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            background: url(../img/footer/tel.png) 0 0 / cover no-repeat;
+        }
+    }
+}
+
