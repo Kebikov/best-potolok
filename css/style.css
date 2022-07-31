@@ -3991,7 +3991,6 @@ input[type=number]:focus {
   position: relative;
   width: 1200px;
   height: 800px;
-  overflow: hidden;
   background-color: rgb(221, 26, 26);
 }
 .gallery-pop__row {
