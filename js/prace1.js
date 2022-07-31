@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+    //= анимацыя падения элементов   
     (function animationIconPic () {
         const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
         let time = 0;
@@ -20,6 +21,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
         buildPracePicAll.forEach(item => {
             animPicObserver.observe(item);
+        });
+    }());
+
+    (function animationImg () {
+        const capTypeImgAll = document.querySelectorAll('.cap-type__img');
+        const imgObserver = new IntersectionObserver((itemAll, itemObserver) => {
+            itemAll.forEach(item => {
+                if(item.isIntersecting) {
+                    item.target.classList.add('scale-in-ver-center');
+                    itemObserver.unobserve(item.target);
+                }
+            });
+        },{
+            rootMargin: '0px 0px -15% 0px',
+            threshold: [1],
+        });
+
+        capTypeImgAll.forEach(item => {
+            imgObserver.observe(item);
         });
     }());
     

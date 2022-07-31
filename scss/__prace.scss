@@ -224,6 +224,7 @@ $text: #5b4f3c;
         position: relative;
         z-index: 1;
         padding-bottom: 60%;
+        transform: scaleY(0);
         overflow: hidden;
         & img {
             position: absolute;
@@ -560,6 +561,21 @@ $text: #5b4f3c;
     animation-timing-function: ease-out;
 }
 }
+
+.scale-in-ver-center {
+	animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-ver-center {
+0% {
+    transform: scaleY(0);
+    opacity: 1;
+}
+100% {
+    transform: scaleY(1);
+    opacity: 1;
+}
+}
+
 
 
 
