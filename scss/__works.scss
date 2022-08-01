@@ -45,12 +45,15 @@ $text: #5b4f3c;
     // .gallery-pop__body
     &__body {
         position: relative;
+        top: 0;
+        left: 0;
         width: 1200px;
-        height: 800px;
         //overflow: hidden;
         background-color: rgb(221, 26, 26);
     }
-
+    &__img-box {
+        padding-bottom: 66.666%;
+    }
     // .gallery-pop__img
     &__img {
         position: absolute;
@@ -58,8 +61,11 @@ $text: #5b4f3c;
         left: 0;
         height: 100%;
         object-fit: cover;
-        width: 1200px;
+        width: 100%;
         transition:all 0.7s ease;
+        //padding-left: 5px;
+        //padding-right: 5px;
+        background-color: #fff;
     }
 
     &__dots {
@@ -97,6 +103,7 @@ $text: #5b4f3c;
         width: 50px;
         height: 130px;
         padding: 40px 10px 40px 10px;
+        cursor: pointer;
         @media (max-width: 760px){
             width: 40px;
             height: 100px;
@@ -112,6 +119,7 @@ $text: #5b4f3c;
         width: 50px;
         height: 130px;
         padding: 40px 10px 40px 10px;
+        cursor: pointer;
         @media (max-width: 760px){
             width: 40px;
             height: 100px;
@@ -119,5 +127,7 @@ $text: #5b4f3c;
         }
     }
 }
+
+
 
 
