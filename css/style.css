@@ -4005,9 +4005,6 @@ input[type=number]:focus {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  -webkit-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  transition: all 0.7s ease;
   background-color: #fff;
 }
 .gallery-pop__dots {
@@ -4018,11 +4015,15 @@ input[type=number]:focus {
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 10px;
 }
 .gallery-pop__dot {
   width: 15px;
   height: 15px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
 }
 @media (max-width: 760px) {
@@ -4079,6 +4080,10 @@ input[type=number]:focus {
     height: 100px;
     padding: 30px 10px 30px 10px;
   }
+}
+
+.dot-white {
+  background-color: #fff;
 }
 
 .wrapper {

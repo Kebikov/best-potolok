@@ -7,14 +7,17 @@ window.addEventListener('DOMContentLoaded', () => {
         const buttonRight = document.querySelector('.gallery-pop__right');
         const buttonLeft = document.querySelector('.gallery-pop__left');
         const buttonClose = document.querySelector('.gallery-pop__x');
+        const dotsBox = document.querySelector('.gallery-pop__dots');
         const styleDiv = document.querySelector('style');
         const arrSrc = [];
+        const arrImg = galleryBody.querySelectorAll('img');
         const classAddImg = ['gallery-pop__img', '_gap-img'];
         let centerNumber;
+        const  gap = galleryPop.getAttribute('data-gap');
+        const transitionImg = galleryPop.getAttribute('data-transition');
 
         //* fn сбор src в массив 
         function allImgSrc () {
-            const arrImg = galleryBody.querySelectorAll('img');
             arrImg.forEach(item => {
                 arrSrc.push(item.getAttribute('src'));
             });
@@ -49,6 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgBox.append(imgLeft);
                 imgBox.append(img);
                 imgBox.append(imgRight);
+                dotsOpen();
             });
         }
         openPopUp();
@@ -60,6 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgAllClean.forEach(item => {
                     item.remove();
                 });
+                dotsClose();
             });
         }
         closePopUp();
@@ -79,7 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if(num < 0) centerNumber = arrSrc.length - 1;
             if(num > arrSrc.length - 1) centerNumber = 0;
         }
-        //* fn нажатие вправо
+        //* fn нажатие вправо >
         function rightButton () {
             buttonRight.addEventListener('click', () => {
                 centerNumber++;
@@ -96,17 +101,18 @@ window.addEventListener('DOMContentLoaded', () => {
                         item.style.left = i + '%';
                         i = i + 100;
                     });
+                    dotWhite();
                 });
-                
                 let divDel = imgBox.querySelector('.gallery-pop__img');
                 buttonRight.removeEventListener('click', this);
+                
                 setTimeout(function () {
                     divDel.remove();
-                }, 700);
+                }, transitionImg);
             });
         }
         rightButton();
-        //* fn нажатие влево
+        //* fn нажатие влево <
         function leftButton () {
             buttonLeft.addEventListener('click', () => {
                 centerNumber--;
@@ -123,33 +129,53 @@ window.addEventListener('DOMContentLoaded', () => {
                         item.style.left = i + '%';
                         i = i + 100;
                     });
-                });
+                },10);
                 let divDel = imgBox.lastElementChild;
-                console.log('',divDel);
                 buttonLeft.removeEventListener('click', this);
                 setTimeout(function () {
                     divDel.remove();
-                }, 700);
+                    dotWhite();
+                }, transitionImg);
             });
         }
         leftButton();
         //* пробел между слайдами
-        let gap = galleryPop.getAttribute('data-gap');
-        
         function gapOpenPopUp () {
+            let time = transitionImg / 1000;
             if(window.matchMedia('(min-width: 1021px)').matches){
-                styleDiv.innerHTML = `._gap-img {padding-left: ${gap}px; padding-right: ${gap}px;}`;
+                styleDiv.innerHTML = `._gap-img {padding-left: ${gap}px; padding-right: ${gap}px; transition:all ${time}s ease;}`;
+            }
+            if(window.matchMedia('(max-width: 1020px)').matches && window.matchMedia('(min-width: 768px)').matches){
+                let gap2 = gap * 0.8;
+                styleDiv.innerHTML = `._gap-img {padding-left: ${gap2}px; padding-right: ${gap2}px; transition:all ${time}s ease;}`;
+            }
+            if(window.matchMedia('(max-width: 767px)').matches){
+                let gap3 = gap * 0.7;
+                styleDiv.innerHTML = `._gap-img {padding-left: ${gap3}px; padding-right: ${gap3}px; transition:all ${time}s ease;}`;
             }
         }
+        //* точки навигации внизу
+        function dotsOpen () {
+            arrImg.forEach(item => {
+                let dotDiv = document.createElement('div');
+                dotDiv.classList.add('gallery-pop__dot');
+                dotsBox.append(dotDiv);
+            });
+            let allDots = dotsBox.querySelectorAll('.gallery-pop__dot');
+            allDots[centerNumber].classList.add('dot-white');
+        }
+        function dotsClose () {
+            dotsBox.innerHTML='';
+        }
+        function dotWhite () {
+            let allDots = dotsBox.querySelectorAll('.gallery-pop__dot');
+            allDots.forEach(item => {
+                if(item.matches('[class="gallery-pop__dot dot-white"]')) item.classList.remove('dot-white');
+            });
+            allDots[centerNumber].classList.add('dot-white');
+        }
         
-        window.addEventListener('resize', () => {
-            if(window.matchMedia('(max-width: 1020px)').matches && window.matchMedia('(min-width: 760px)').matches){
-                //console.log('max-1020px & min 760px');
-            }
-            if(window.matchMedia('(max-width: 768px)').matches){
-                //console.log('768px',);
-            }
-        });
+        
 
     }());
 //end
