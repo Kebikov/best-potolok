@@ -3993,25 +3993,21 @@ input[type=number]:focus {
   height: 800px;
   background-color: rgb(221, 26, 26);
 }
-.gallery-pop__row {
+.gallery-pop__img {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 1200px;
   -webkit-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
-.gallery-pop__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 1200px;
-}
 .gallery-pop__dots {
   position: absolute;
+  z-index: 1;
   bottom: 5px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -4032,6 +4028,7 @@ input[type=number]:focus {
 }
 .gallery-pop__x {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   width: 45px;
@@ -4040,6 +4037,7 @@ input[type=number]:focus {
 }
 .gallery-pop__left {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 0;
   -webkit-transform: translate(0, -50%);
@@ -4058,6 +4056,7 @@ input[type=number]:focus {
 }
 .gallery-pop__right {
   position: absolute;
+  z-index: 1;
   top: 50%;
   right: 0;
   -webkit-transform: translate(0, -50%);

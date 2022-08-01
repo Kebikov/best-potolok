@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (function galleryAdd () {
         const galleryPop = document.querySelector('.gallery-pop');
         const galleryBody = document.querySelector('.gallery__body');
-        const popUpRow = document.querySelector('.gallery-pop__row');
+        const popUpBody = document.querySelector('.gallery-pop__body');
         const buttonRight = document.querySelector('.gallery-pop__right');
         const buttonLeft = document.querySelector('.gallery-pop__left');
         const buttonClose = document.querySelector('.gallery-pop__x');
@@ -38,11 +38,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 img.setAttribute('src', arrSrc[centerNumber]);
                 imgRight.setAttribute('src', arrSrc[checkNumber(centerNumber, 1)]);
 
+                imgLeft.style.left = '-100%';
+                img.style.left = '0%';
+                imgRight.style.left = '100%';
+
                 galleryPop.style.display = 'flex';
                 // добавляем в PopUp
-                popUpRow.append(imgLeft);
-                popUpRow.append(img);
-                popUpRow.append(imgRight);
+                popUpBody.append(imgLeft);
+                popUpBody.append(img);
+                popUpBody.append(imgRight);
             });
         }
 
@@ -51,7 +55,10 @@ window.addEventListener('DOMContentLoaded', () => {
         function closePopUp () {
             buttonClose.addEventListener('click', () => {
                 galleryPop.style.display = 'none';
-                popUpRow.innerHTML = '';
+                let imgAllClean = popUpBody.querySelectorAll('.gallery-pop__img');
+                imgAllClean.forEach(item => {
+                    item.remove();
+                });
             });
         }
 
@@ -68,19 +75,30 @@ window.addEventListener('DOMContentLoaded', () => {
             return num;
         }
 
+        function checkCenterNumber (num) {
+            if(num < 0) centerNumber = arrSrc.length - 1;
+            if(num > arrSrc.length - 1) centerNumber = 0;
+        }
+
         function rightButton () {
             buttonRight.addEventListener('click', () => {
-                popUpRow.style.left ='-200%';
                 centerNumber++;
+                checkCenterNumber(centerNumber);
                 let img = document.createElement('img');
                 img.classList.add('gallery-pop__img');
                 img.setAttribute('src', arrSrc[checkNumber(centerNumber, 1)]);
-                popUpRow.append(img);
-                let divDel = popUpRow.firstElementChild;
-                console.log('',divDel);
+                img.style.left = '200%';
+                popUpBody.append(img);
+
+                let imgAllInPopUp = popUpBody.querySelectorAll('.gallery-pop__img');
+                let i = -200;
+                imgAllInPopUp.forEach(item => {
+                    item.style.left = i + '%';
+                    i = i + 100;
+                });
+                let divDel = popUpBody.querySelector('.gallery-pop__img');
+                buttonRight.removeEventListener('click', this);
                 setTimeout(function () {
-                    popUpRow.append(img);
-                    popUpRow.style.left ='-100%';
                     divDel.remove();
                 }, 700);
             });
