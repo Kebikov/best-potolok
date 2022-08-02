@@ -296,6 +296,7 @@ $text: #5b4f3c;
         position: relative;
         z-index: 2;
         transition: all 0.3s ease;
+
         @media (max-width: 1240px){
             left: 0;
             font-size: 0;
@@ -331,6 +332,8 @@ $text: #5b4f3c;
     }
     // .menu__link
     &__link {
+        flex: 0 1 100%;
+        text-align: center;
         font-family: "Roboto";
         font-size: inherit;
         font-weight: 400;
@@ -341,6 +344,7 @@ $text: #5b4f3c;
         }
         @media (max-width: 1020px){
         padding: 0px 0px 0px 50px;
+        text-align: start;
         }
     }
 }

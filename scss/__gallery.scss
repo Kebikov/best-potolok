@@ -21,6 +21,7 @@ $text: #5b4f3c;
     // .pic-item__body
     &__body {
         //padding-bottom: 60%;
+        cursor: pointer;
         position: relative;
         overflow: hidden;
         & img {
@@ -96,6 +97,7 @@ $text: #5b4f3c;
         width: 45px;
         height: 45px;
         padding: 10px;
+        cursor: pointer;
     }
     &__left {
         position: absolute;

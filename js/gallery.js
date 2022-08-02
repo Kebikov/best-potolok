@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     (function galleryAdd () {
+        const body = document.body;
         const gallery = document.querySelector('.gallery');
         const galleryPop = document.querySelector('.gallery-pop');
         const galleryBody = document.querySelector('.gallery__body');
@@ -55,6 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgBox.append(img);
                 imgBox.append(imgRight);
                 dotsOpen();
+                body.style.overflow = 'hidden';
             });
         }
         openPopUp();
@@ -67,6 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     item.remove();
                 });
                 dotsClose();
+                body.style.overflow = 'auto';
             });
         }
         closePopUp();

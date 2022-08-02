@@ -43,10 +43,14 @@ moneyCalcButtonBody.addEventListener('click', () => {
     let arrSize = [];
     let promotion = 0;
     let praceM2;
-    let cursUsd = 2.6;
     let sizeInputAll = selectParametersBody.querySelectorAll('.select-parameters__size-input');
     let selectTextAll = selectSoffitTypeBody.querySelectorAll('.select-soffit-type__select-text');
-
+    //* данные 
+        let cursUsd = 2.6;//курс доллара
+        let perimeterPrace = 1;//цена в usd за метр периметра
+        let lightPrace = 1;//цена в usd за одну световую точку
+        let workPrace = 15;//цена в byn за метр кв. работы
+    //*-------
     function fnPraceM2 () {
         if(arrSize[0] > 3.5 && arrSize[1] > 3.5) {
             if(arrSoffit[1] === 'Цветной') praceM2 = 4.1;
@@ -79,8 +83,8 @@ moneyCalcButtonBody.addEventListener('click', () => {
     fnPraceM2();
 
     if(arrSoffit.length === 2 && arrSize.length === 3) {
-        let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * 1 + arrSize[2] * 1) * cursUsd * promotion);
         console.log('',praceM2);
+        let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * perimeterPrace + arrSize[2] * lightPrace) * cursUsd + arrSize[0] * arrSize[1] * workPrace * promotion);
         moneyCalcCash.textContent = result + ' руб.';
         moneyCalcError.style.display = 'none';
         moneyCalcBody.style.display = 'flex';
