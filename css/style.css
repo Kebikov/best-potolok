@@ -1565,7 +1565,7 @@ input[type=number]:focus {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(8%, rgb(227, 47, 47)), color-stop(48%, rgb(247, 162, 13)), color-stop(88%, rgb(227, 66, 45)));
   background: -o-linear-gradient(bottom, rgb(227, 47, 47) 8%, rgb(247, 162, 13) 48%, rgb(227, 66, 45) 88%);
   background: linear-gradient(0deg, rgb(227, 47, 47) 8%, rgb(247, 162, 13) 48%, rgb(227, 66, 45) 88%);
-  border-radius: 7px;
+  border-radius: 3px;
   -webkit-box-shadow: rgb(172, 172, 172) 7px 8px 7px;
           box-shadow: rgb(172, 172, 172) 7px 8px 7px;
   cursor: pointer;
@@ -2005,6 +2005,8 @@ input[type=number]:focus {
   padding-bottom: 60%;
   width: 100%;
   position: relative;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.44) 0px 3px 8px;
 }
 @media (max-width: 1020px) {
   .example__hi {
@@ -2019,6 +2021,8 @@ input[type=number]:focus {
 @media (max-width: 768px) {
   .example__hi {
     padding-bottom: 65%;
+    top: -30px;
+    z-index: 2;
   }
 }
 .example__hi img {
@@ -2029,12 +2033,6 @@ input[type=number]:focus {
      object-fit: cover;
   width: 100%;
   height: 100%;
-}
-@media (max-width: 768px) {
-  .example__hi img {
-    top: -30px;
-    z-index: 2;
-  }
 }
 .example__tow-box {
   -webkit-box-flex: 0;
@@ -2054,7 +2052,7 @@ input[type=number]:focus {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
-    padding: 20px 20px 30px 20px;
+    padding: 10px 20px 30px 20px;
     margin: -40px 0px 0px 0px;
   }
 }
@@ -2142,12 +2140,93 @@ input[type=number]:focus {
   border: 2px #fff solid;
   -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
           box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  -webkit-animation: wobble-hor-bottom 6s infinite both;
+          animation: wobble-hor-bottom 6s infinite both;
 }
 
 ._color-example {
   background-color: #2a2b30;
 }
 
+.delay2 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.delay4 {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+@-webkit-keyframes wobble-hor-bottom {
+  0%, 100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  2% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  4% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  6% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  8% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  10% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+  12% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+}
+
+@keyframes wobble-hor-bottom {
+  0%, 100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  2% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  4% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  6% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  8% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  10% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+  12% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("../font/Roboto-Light.woff2") format("woff2"), url("../font/Roboto-Light.woff") format("woff");
