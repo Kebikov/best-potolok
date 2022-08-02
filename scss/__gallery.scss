@@ -15,9 +15,12 @@ $text: #5b4f3c;
 }
 .pic-item {
     flex: 0 1 32.8%;
+    @media (max-width: 768px){
+        flex: 0 1 100%;
+    }
     // .pic-item__body
     &__body {
-        padding-bottom: 60%;
+        //padding-bottom: 60%;
         position: relative;
         overflow: hidden;
         & img {

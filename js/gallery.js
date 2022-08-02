@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     (function galleryAdd () {
+        const gallery = document.querySelector('.gallery');
         const galleryPop = document.querySelector('.gallery-pop');
         const galleryBody = document.querySelector('.gallery__body');
         const popUpBody = document.querySelector('.gallery-pop__body');
@@ -8,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const buttonLeft = document.querySelector('.gallery-pop__left');
         const buttonClose = document.querySelector('.gallery-pop__x');
         const dotsBox = document.querySelector('.gallery-pop__dots');
+        const picItemBody = document.querySelectorAll('.pic-item__body');
         const styleDiv = document.querySelector('style');
         const arrSrc = [];
         const arrImg = galleryBody.querySelectorAll('img');
@@ -86,7 +88,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         //* fn нажатие вправо >
         function rightButton () {
-            buttonRight.addEventListener('click', () => {
+            buttonRight.addEventListener('click', clickRight);
+            function clickRight () {
                 centerNumber++;
                 checkCenterNumber(centerNumber);
                 let img = document.createElement('img');
@@ -101,20 +104,21 @@ window.addEventListener('DOMContentLoaded', () => {
                         item.style.left = i + '%';
                         i = i + 100;
                     });
-                    dotWhite();
                 });
+                dotWhite();
                 let divDel = imgBox.querySelector('.gallery-pop__img');
-                buttonRight.removeEventListener('click', this);
-                
+                buttonRight.removeEventListener('click', clickRight);
                 setTimeout(function () {
                     divDel.remove();
+                    buttonRight.addEventListener('click', clickRight);
                 }, transitionImg);
-            });
+            }
         }
         rightButton();
         //* fn нажатие влево <
         function leftButton () {
-            buttonLeft.addEventListener('click', () => {
+            buttonLeft.addEventListener('click', clickLeft);
+            function clickLeft () {
                 centerNumber--;
                 checkCenterNumber(centerNumber);
                 let img = document.createElement('img');
@@ -130,13 +134,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         i = i + 100;
                     });
                 },10);
+                dotWhite();
                 let divDel = imgBox.lastElementChild;
-                buttonLeft.removeEventListener('click', this);
+                buttonLeft.removeEventListener('click', clickLeft);
                 setTimeout(function () {
                     divDel.remove();
-                    dotWhite();
+                    buttonLeft.addEventListener('click', clickLeft);
                 }, transitionImg);
-            });
+            }
         }
         leftButton();
         //* пробел между слайдами
@@ -174,9 +179,14 @@ window.addEventListener('DOMContentLoaded', () => {
             });
             allDots[centerNumber].classList.add('dot-white');
         }
-        
-        
-
+        //* установка высоты img начальной галереи
+        function galleryHeight () {
+            let hi = gallery.getAttribute('data-height');
+            picItemBody.forEach(item => {
+                item.style.paddingBottom = hi;
+            });
+        }
+        galleryHeight();
     }());
 //end
 });
