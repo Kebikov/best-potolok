@@ -1479,5 +1479,22 @@ $text: #5b4f3c;
 
 }
 
+@keyframes Orbita2 {
+    from {
+        transform: rotate(0deg)
+                   translate(-3px) 
+                   rotate(0deg);
+}
+to {
+        transform: rotate(360deg)
+                   translate(-3px)
+                   rotate(-360deg);
+} 
+}
+
+.orbita {
+    animation: Orbita2 5s linear infinite;
+}
+
 
 
