@@ -2897,15 +2897,17 @@ input[type=number]:focus {
 }
 .footer__logo {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 20%;
-          flex: 0 1 20%;
-  height: 100px;
+      -ms-flex: 0 1 15%;
+          flex: 0 1 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (max-width: 760px) {
   .footer__logo {
@@ -2916,14 +2918,46 @@ input[type=number]:focus {
   }
 }
 .footer__logo img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100px;
+  width: 100%;
+}
+.footer__icons {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 10px;
+  padding: 5px;
+}
+.footer__icon {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.footer__icon:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.footer__icon img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 50px;
   height: 100%;
 }
 .footer__info {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 40%;
-          flex: 0 1 40%;
+      -ms-flex: 0 1 35%;
+          flex: 0 1 35%;
+  padding: 5px;
 }
 @media (max-width: 1020px) {
   .footer__info {
@@ -2949,8 +2983,8 @@ input[type=number]:focus {
 }
 .footer__call {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 40%;
-          flex: 0 1 40%;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4001,6 +4035,194 @@ input[type=number]:focus {
 
 .dot-white {
   background-color: #fff;
+}
+
+.div-padding {
+  width: 100%;
+  height: 20px;
+}
+
+.contacts-heder__body {
+  position: relative;
+  width: 100%;
+}
+.contacts-heder__body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.647);
+}
+.contacts-heder__hi {
+  padding-bottom: 35%;
+  position: relative;
+}
+@media (max-width: 1020px) {
+  .contacts-heder__hi {
+    padding-bottom: 45%;
+  }
+}
+@media (max-width: 800px) {
+  .contacts-heder__hi {
+    padding-bottom: 380px;
+  }
+}
+.contacts-heder__hi img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.contacts-heder__text-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 800px) {
+  .contacts-heder__text-box {
+    top: -20px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.contacts-heder__left-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 37%;
+          flex: 0 1 37%;
+  padding: 10px 20px 10px 40px;
+}
+@media (max-width: 800px) {
+  .contacts-heder__left-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+  }
+}
+.contacts-heder__title {
+  font-family: "Roboto";
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 120%;
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .contacts-heder__title {
+    font-size: calc(28px + 12 * (100vw - 375px) / 425);
+  }
+}
+@media (max-width: 375px) {
+  .contacts-heder__title {
+    font-size: 28px;
+  }
+}
+.contacts-heder__title span {
+  color: #fe8d1b;
+}
+.contacts-heder__right-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 63%;
+          flex: 0 1 63%;
+  padding: 10px 100px 10px 60px;
+}
+@media (max-width: 1200px) {
+  .contacts-heder__right-box {
+    padding: 10px 60px 10px 60px;
+  }
+}
+@media (max-width: 1020px) {
+  .contacts-heder__right-box {
+    padding: 10px 60px 10px 60px;
+  }
+}
+@media (max-width: 800px) {
+  .contacts-heder__right-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+  }
+}
+.contacts-heder__subtitle {
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 120%;
+  margin: 0px 0px 20px 0px;
+}
+@media (max-width: 800px) {
+  .contacts-heder__subtitle {
+    font-size: calc(18px + 8 * (100vw - 375px) / 425);
+  }
+}
+@media (max-width: 375px) {
+  .contacts-heder__subtitle {
+    font-size: 18px;
+  }
+}
+.contacts-heder__info {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 120%;
+  margin: 0px 0px 40px 0px;
+}
+@media (max-width: 800px) {
+  .contacts-heder__info {
+    margin: 0px 0px 20px 0px;
+  }
+}
+.contacts-heder__button {
+  padding: 15px 50px 15px 20px;
+  font-family: "Roboto";
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+  line-height: 110%;
+  letter-spacing: 1.1px;
+  background: -o-linear-gradient(255deg, rgb(255, 180, 112) 0%, rgb(255, 125, 9) 45%, rgb(255, 125, 9) 100%);
+  background: linear-gradient(195deg, rgb(255, 180, 112) 0%, rgb(255, 125, 9) 45%, rgb(255, 125, 9) 100%);
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.contacts-heder__button::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  height: 36px;
+  width: 36px;
+  background: url(../img/icon/str.png) 0 0/cover no-repeat;
 }
 
 .wrapper {

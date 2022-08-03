@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
     //* всплытие popup   
     (function popup () {
         const orderCall = document.querySelector('.order-call');
-        const orderCallXImg =orderCall.querySelector('.order-call__x img');
         const openAll = document.querySelectorAll('[data-popup="open"]');
         orderCall.addEventListener('click', (e) => {
             if(e.target.closest('.order-call__x')) {
@@ -71,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
             orderCallName.setAttribute('placeholder', 'Минимум 3 символа.');
         }
     }
-    //* отправка на почту   
+    //* отправка на почту с анимацией  
     (function emaiPopUp () {
         const button = document.querySelector('.order-call__button');
         const inputTel = document.querySelector('.order-call__tel');
