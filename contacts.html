@@ -94,14 +94,14 @@
                         <div class="order-call__logo">
                             <img src="img/arrow-keys/logo-white.png" alt="логотип">
                         </div>
-                        <div class="order-call__title">Заказать расчёт</div>
-                        <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
+                        <div class="order-call__title">Форма связи</div>
+                        <div class="order-call__text">Оставьте форму и мы свяжемся с Вами<br>в ближайшее время.</div>
                         <form class="order-call__form" action="order_call.php" method="POST" name="popup">
                             <input type="text" class="order-call__name" placeholder="Ваше имя" name="name" autocomplete="off">
                             <div class="order-call__tel-div _grey">
                                 <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel" autocomplete="off">
                             </div>
-                            <div class="order-call__button">заказать</div>
+                            <div class="order-call__button">отправить</div>
                         </form>
                         <div class="order-call__email">
                             <img src="img/index/email.png" alt="письмо">
@@ -133,7 +133,7 @@
                                 <div class="contacts-heder__right-box">
                                     <div class="contacts-heder__subtitle">Мы готовы ответить<br>на любой ваш вопрос</div>
                                     <div class="contacts-heder__info">Хотите посмотреть готовые работы, выбрать подходящий вариант натяжного потолка для своего интерьера или узнать, как будет выглядеть уже понравившийся, просто оставьте свои данные в формые связи.</div>
-                                    <button class="contacts-heder__button">форма связи</button>
+                                    <button class="contacts-heder__button" data-popup="open">форма связи</button>
                                 </div>
                             </div>
 
@@ -172,6 +172,7 @@
                 </div>
             </footer>
         </div>
-        <script src="js/menu_nav.js?v=3.0"></script>  
+        <script src="js/menu_nav.js?v=3.0"></script>
+        <script src="js/popup.js?v=3.0"></script> 
     </body>
 </html>
