@@ -1,0 +1,61 @@
+$brown: #6d4d3a;
+$orange: #fe8d1b;
+$text: #5b4f3c;
+$grey: #2a2b30;
+
+.company-taitle {
+    font-family: "Russo";
+    font-size: 24px;
+    color: $grey;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.company-text {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+    color: $grey;
+    line-height: 130%;
+}
+
+.company-about {
+    // .company-about__body
+    padding: 40px 0px 0px 0px;
+    &__body {
+        display: flex;
+        align-items: center;
+    }
+    // .company-about__pic
+    &__pic {
+        flex: 0 1 25%;
+        
+        & img {
+            border-radius: 50px 50px 0px 50px;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    // .company-about__text-box
+    &__text-box {
+        flex: 0 1 75%;
+        padding: 0px 40px 0px 40px;
+    }
+    // .company-about__title
+    &__title {
+        font-family: "Russo";
+        font-size: 22px;
+        color: $grey;
+        text-align: center;
+        padding: 0px 0px 10px 0px;
+    }
+    // .company-about__info
+    &__info {
+        font-family: "Roboto";
+        font-size: 16px;
+        font-weight: 400;
+        color: $grey;
+        line-height: 140%;
+    }
+}
+
