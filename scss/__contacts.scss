@@ -163,6 +163,9 @@ $grey: #2a2b30;
 
 .all-contacts {
     padding: 40px 0px 40px 0px;
+    @media (max-width: 768px){
+        padding: 40px 0px 20px 0px;
+    }
     // .all-contacts__boby
     &__boby {
         display: flex;
@@ -207,8 +210,7 @@ $grey: #2a2b30;
             background: linear-gradient(to top right, rgba(255,255,255) 50%, rgb(53, 77, 200,0) 51%);
             height: 50px;
             width: 51%;
-         }
-         
+        }
     }
     // .all-contacts__hi
     &__hi {
@@ -252,9 +254,8 @@ $grey: #2a2b30;
         text-decoration: none;
         @media (max-width: 768px){
             flex: 0 1 100%;
+            padding: 20px 10px 0px 10px;
             align-items: center;
-            //order: 1;
-            margin: 20px 0px 0px 0px;
         }
         @media (max-width: 1000px){
             font-size: calc(18px + 6 * (100vw - 375px) / 625);
@@ -327,6 +328,7 @@ $grey: #2a2b30;
             height: 50px;
             width: 50px;
             object-fit: contain;
+            opacity: 0;
         }
     }
 }
@@ -340,8 +342,22 @@ $grey: #2a2b30;
         }
     }
 }
-.container {
+
+.roll-in-right {
+	animation: roll-in-right 1.0s ease-out both;
 }
+
+ @keyframes roll-in-right {
+    0% {
+      transform: translateX(800px) rotate(720deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
 
 
 

@@ -156,7 +156,6 @@ $text: #5b4f3c;
         font-family: "Roboto";
         font-size: 23px;
         font-weight: 700;
-        color: $text;
         @media (max-width: 1240px){
             font-size: 20px;
         }
@@ -167,6 +166,8 @@ $text: #5b4f3c;
         & span{
             position: relative;
             padding: 0px 0px 0px 45px;
+            text-decoration: none;
+            color: $text;
             &::before {
                 content: "";
                 position: absolute;

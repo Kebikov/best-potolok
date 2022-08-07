@@ -1496,5 +1496,26 @@ to {
     animation: Orbita2 7s linear infinite;
 }
 
+.row {
+    // .row__body
+    &__body {
+        display: flex;
+        justify-content: center;
+        
+        & svg {
+            transform: rotate(-90deg) translate(74px, 0px);
+        }
+        & svg circle {
+            stroke:red;
+            stroke-width: 5px;
+            fill:transparent;
+            transform: translate(5px,5px);
+            stroke-dasharray: 428px;
+            
+        }
+    }
+}
+
+
 
 

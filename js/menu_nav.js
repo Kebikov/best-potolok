@@ -31,5 +31,27 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         
     }());
+
+    //= анимация иконок подвала
+    (function footerIcon () {
+        const iconObserver = new IntersectionObserver ((eAll, myObserver) => {
+            eAll.forEach(item => {
+                if(item.isIntersecting) {
+                    let target = item.target;
+                    target.classList.add('rotate-scale-up');
+                    myObserver.unobserve(target);
+                }
+            });
+        },{
+            threshold:[1],
+            rootMargin: '10px 0px 0px 0px'
+        });
+
+        const iconBox = document.querySelector('.footer__icons');
+        const iconAll = iconBox.querySelectorAll('img');
+        iconAll.forEach(item => {
+            iconObserver.observe(item);
+        });
+    }());
 //end
 });

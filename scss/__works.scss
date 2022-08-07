@@ -11,4 +11,10 @@ $grey: #2a2b30;
     text-decoration: underline;
     text-transform: uppercase;
     margin: 20px 0px 0px 0px;
+    @media (max-width: 1910px){
+        font-size: calc(18px + 6 * (100vw - 375px) / 1535);
+    }
+    @media (max-width: 375px){
+        font-size: 18px;
+    }
 }
