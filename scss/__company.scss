@@ -177,22 +177,41 @@ $grey: #2a2b30;
 }
 
 .company-youtube {
-    padding: 40px 0px 0px 0px;
+
     // .company-youtube__body
+
     &__body {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     // .company-youtube__video
     &__video {
-        flex: 0 1 48%;
-        display: flex;
-        justify-content: center;
+        padding-bottom: 56.25%;
+        //background-color: #000;
+        position: relative;
+        & img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
+
+.button-you {
+    & img {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 48px;
+        width: 68px;
+        object-fit: cover;
+    }
+}
+
 
 
 

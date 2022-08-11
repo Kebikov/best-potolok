@@ -2252,29 +2252,6 @@ input[type=number]:focus {
           animation: Orbita2 7s linear infinite;
 }
 
-.row__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.row__body svg {
-  -webkit-transform: rotate(-90deg) translate(74px, 0px);
-      -ms-transform: rotate(-90deg) translate(74px, 0px);
-          transform: rotate(-90deg) translate(74px, 0px);
-}
-.row__body svg circle {
-  stroke: red;
-  stroke-width: 5px;
-  fill: transparent;
-  -webkit-transform: translate(5px, 5px);
-      -ms-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
-  stroke-dasharray: 428px;
-}
-
 @font-face {
   font-family: "Roboto";
   src: url("../font/Roboto-Light.woff2") format("woff2"), url("../font/Roboto-Light.woff") format("woff");
@@ -4804,33 +4781,35 @@ input[type=number]:focus {
   text-align: center;
 }
 
-.company-youtube {
-  padding: 40px 0px 0px 0px;
-}
 .company-youtube__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 .company-youtube__video {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 48%;
-          flex: 0 1 48%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.company-youtube__video img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.button-you img {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 48px;
+  width: 68px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .wrapper {
