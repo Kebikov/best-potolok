@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         },{
             threshold:[1],
-            rootMargin: '10px 0px 0px 0px'
+            //rootMargin: '10px 0px 0px 0px'
         });
 
         const iconBox = document.querySelector('.footer__icons');

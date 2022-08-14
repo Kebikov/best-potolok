@@ -4688,21 +4688,22 @@ input[type=number]:focus {
   padding: 60px 0px 20px 0px;
 }
 .company-plus__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1200px) {
+  .company-plus__body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .company-plus__body {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .block-plus {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 32%;
-          flex: 0 1 32%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4782,41 +4783,77 @@ input[type=number]:focus {
 }
 
 .company-youtube__body {
+  padding: 40px 0px 0px 0px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-.company-youtube__video {
-  padding-bottom: 56.25%;
-  position: relative;
-}
-.company-youtube__video img {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.company-youtube__video iframe {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+@media (max-width: 678px) {
+  .company-youtube__body {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.button-you img {
+.video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.video__link {
   position: absolute;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.video__button {
+  position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
+  display: none;
+  padding: 0;
+  width: 68px;
+  height: 48px;
+  border: none;
+  background-color: transparent;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 48px;
-  width: 68px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  cursor: pointer;
+}
+.video__button:focus {
+  outline: none;
+}
+.video__button-shape {
+  fill: #212121;
+  fill-opacity: 0.8;
+}
+.video__button-icon {
+  fill: #ffffff;
+}
+
+.video:hover .video__button-shape,
+.video__button:focus .video__button-shape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+
+/* Enabled */
+.video--enabled {
+  cursor: pointer;
+}
+
+.video--enabled .video__button {
+  display: block;
 }
 
 .wrapper {

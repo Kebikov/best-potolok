@@ -1,13 +1,56 @@
 (function youtubeVideo () {
-    const videoAll = document.querySelectorAll('.company-youtube__video');
-    videoAll.forEach(item => {
-        item.addEventListener('click', () => {
-            let img = item.querySelector('img');
-            let url = img.getAttribute('src');
-            let codeUrl = url.match(/(?<=vi\/)(.+)(?=\/)/)[0];
-            item.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/Gxn_U1iA_BA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
+    
+    function findVideos() {
+        let videos = document.querySelectorAll('.video');
+    
+        for (let i = 0; i < videos.length; i++) {
+            setupVideo(videos[i]);
+        }
+    }
+    
+    function setupVideo(video) {
+        let link = video.querySelector('.video__link');
+        let media = video.querySelector('.video__media');
+        let button = video.querySelector('.video__button');
+        let id = parseMediaURL(media);
+    
+        video.addEventListener('click', () => {
+            let iframe = createIframe(id);
+    
+            link.remove();
+            button.remove();
+            video.appendChild(iframe);
         });
-    });
+    
+        link.removeAttribute('href');
+        video.classList.add('video--enabled');
+    }
+    
+    function parseMediaURL(media) {
+        let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+        let url = media.src;
+        let match = url.match(regexp);
+    
+        return match[1];
+    }
+    
+    function createIframe(id) {
+        let iframe = document.createElement('iframe');
+    
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'autoplay');
+        iframe.setAttribute('src', generateURL(id));
+        iframe.classList.add('video__media');
+    
+        return iframe;
+    }
+    
+    function generateURL(id) {
+        let query = '?rel=0&showinfo=0&autoplay=1';
+    
+        return 'https://www.youtube.com/embed/' + id + query;
+    }
+    
+    findVideos();
 
 }());
