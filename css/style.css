@@ -4797,6 +4797,13 @@ input[type=number]:focus {
   width: 100%;
   height: 100%;
 }
+.company-youtube__video iframe {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .button-you img {
   position: absolute;
