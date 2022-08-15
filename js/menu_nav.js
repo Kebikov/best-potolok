@@ -44,13 +44,30 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         },{
             threshold:[1],
-            //rootMargin: '10px 0px 0px 0px'
+            rootMargin: '10px 0px 0px 0px'
         });
 
         const iconBox = document.querySelector('.footer__icons');
         const iconAll = iconBox.querySelectorAll('img');
         iconAll.forEach(item => {
             iconObserver.observe(item);
+        });
+    }());
+
+    //= калькулятор 
+    (function calc () {
+        const select = document.querySelector('.popup-calc__type-select');
+        const span = select.querySelector('span');
+        const lineAll = select.querySelectorAll('.popup-calc__type-line');
+        select.addEventListener('click', (e) => {
+            select.classList.toggle('active-select');
+            lineAll.forEach(item => {
+                item.classList.toggle('active');
+            });
+            if(e.target.classList.contains('popup-calc__type-line')) {
+                span.textContent = e.target.innerHTML;
+            }
+            
         });
     }());
 //end

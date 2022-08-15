@@ -88,6 +88,54 @@
             </heder>
             <!--= main -->
             <main class="main">
+                <!--* pop-up calculator -->
+                <div class="popup-calc">
+                    <div class="popup-calc__body">
+                        <div class="popup-calc__pic">
+                            <div class="popup-calc__pic-title">Калькулятор<br>стоимости</div>
+                            <picture>
+                                <source srcset="img/popup/1.webp" type="image/webp">
+                                <img src="img/popup/1.jpg" alt="my_alt">
+                            </picture>
+                        </div>
+                        <div class="popup-calc__info">
+                            <div class="popup-calc__x"></div>
+
+                            <div class="popup-calc__type">
+                                <div class="popup-calc__title">Выберите цвет потолка.</div>
+                                <div class="popup-calc__type-select">
+                                    <span>Выбор цвета полотна:</span>
+                                    <ul class="popup-calc__type-list">
+                                        <li class="popup-calc__type-line">Белый</li>
+                                        <li class="popup-calc__type-line">Цветной</li>
+                                    </ul>
+                            </div>
+                            </div>
+                            <div class="popup-calc__title">Введите ваши данные.</div>
+                            <label for="width-popup" class="text-label">Ширина помещения(метров):</label>
+                            <input type="number" id="width-popup" placeholder="ваши данные" class="text-input">
+                            <label for="length-popup" class="text-label">Длинна помещения(метров):</label>
+                            <input type="number" id="length-popup" placeholder="ваши данные" class="text-input">
+                            <label for="count-popup" class="text-label">Количество осветительных приборов (шт.):</label>
+                            <input type="number" id="count-popup" placeholder="ваши данные" class="text-input">
+                            <div class="popup-calc__title">Выберите подходящую для Вас акцию!</div>
+                            <div class="popup-calc__sale">
+                                <input id="pensioners-popup" type="radio" class="popup-calc__sale-input" name="pensioners-popup" value="0.9">
+                                <label for="pensioners-popup" class="popup-calc__sale-label">Скидка с пенсионерам<span> 10%</span></label>
+                            </div>
+                            <div class="popup-calc__sale">
+                                <input id="site-popup" type="radio" class="popup-calc__sale-input" name="site-popup" value="0.95">
+                                <label for="site-popup" class="popup-calc__sale-label">Скидка с сайта<span> 5%</span></label>
+                            </div>
+                            <div class="popup-calc__sale">
+                                <input id="nav-popup" type="radio" class="popup-calc__sale-input" name="nav-popup" value="0.9">
+                                <label for="nav-popup" class="popup-calc__sale-label">Скидка новоселам<span> 10%</span></label>
+                            </div>
+                            <div class="popup-calc__button">расчитать</div>
+                        </div>
+                    </div>
+                </div>
+
                 <!--* pop-up заказ звонка  -->
                 <div class="order-call">
                     <div class="order-call__body">

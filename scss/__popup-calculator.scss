@@ -1,0 +1,186 @@
+$brown: #6d4d3a;
+$orange: #fe8d1b;
+$text: #5b4f3c;
+$grey: #2a2b30;
+
+.popup-calc {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.846);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // .popup-calc__body
+    &__body {
+        width: 800px;
+        height: 800px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        overflow: hidden;
+
+        display: flex;
+    }
+    &__pic {
+        flex: 0 1 40%;
+        padding-bottom: 50%;
+        position: relative;
+        & img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.604);
+        }
+    }
+    
+    &__pic-title {
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 20px;
+        width: 100%;
+
+        font-family: "Russo";
+        font-size: 28px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    &__info {
+        flex: 0 1 60%;
+        padding: 20px;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__x {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background: url(../img/gallery/x.png) 0 0 / cover no-repeat;
+    }
+    // .popup-calc__type
+    &__title {
+        text-align: center;
+        font-family: "Russo";
+        font-size: 20px;
+        font-weight: 500;
+        color: $orange;
+        margin: 0px 0px 10px 0px;
+    }
+    &__type {
+        margin: 0px 0px 20px 0px;
+    }
+    // .popup-calc__type-select
+    &__type-select {
+        padding: 15px 60px 15px 40px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: $grey;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: url(../img/popup/str.png) 0 0 / cover no-repeat;
+            transition: all 0.2s ease;
+        }
+
+    }
+    // .popup-calc__type-list
+    &__type-list {
+        position: absolute;
+        z-index: 1;
+        bottom: -100px;
+        left: 0;
+        width: 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        font-family: "Roboto";
+        font-weight: 500;
+        color: $grey;
+        background-color: #fff;
+    }
+    // .popup-calc__type-line
+    &__type-line {
+        padding: 0;
+        font-size: 0;
+        display: none;
+    }
+    // .popup-calc__sale-title
+    &__sale-title {
+    }
+    // .popup-calc__sale
+    &__sale {
+    }
+    // .popup-calc__sale-input
+    &__sale-input {
+    }
+    // .popup-calc__sale-label
+    &__sale-label {
+    }
+    // .popup-calc__button
+    &__button {
+
+    }
+}
+
+.active {
+    
+    display: block;
+    padding: 15px 10px 15px 10px;
+    font-size: 18px;
+}
+
+.active-select::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/popup/str.png) 0 0 / cover no-repeat;
+    transform: rotate(-45deg);
+}
+
+.text-label {
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+    color: $grey;
+    margin: 10px 0px 0px 0px;
+}
+
+.text-input {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 20px 0px;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}

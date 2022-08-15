@@ -24,56 +24,27 @@ $grey: #2a2b30;
 
 .company-about {
     // .company-about__body
-    padding: 40px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     &__body {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        background-color: #2a2b30;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 90px;
-            right: -90px;
-            width: 450px;
-            height: 450px;
-            background-color: #fe8c1bbb;
-            border-radius: 50%;
-            @media (max-width: 768px){
-                top: 390px;
-                right: -150px;
-            }
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: -150px;
-            left: -120px;
-            width: 450px;
-            height: 450px;
-            background-color: #fe8c1bca;
-            border-radius: 50%;
-            @media (max-width: 768px){
-                top: -300px;
-                right: -150px;
-            }
-        }
     }
     // .company-about__pic
     &__pic {
         flex: 0 1 25%;
-        padding: 10px;
-        position: relative;
-        z-index: 1;
+        padding: 20px;
+        @media (max-width: 1200px){
+            padding: 0;
+        }
         @media (max-width: 768px){
             flex: 0 1 50%;
             margin: 0px 0px 20px 0px;
         }
         & img {
             object-fit: cover;
+            object-position: center;
             width: 100%;
             border-radius: 7px;
         }
@@ -81,7 +52,10 @@ $grey: #2a2b30;
     // .company-about__text-box
     &__text-box {
         flex: 0 1 75%;
-        padding: 50px 40px 50px 40px;
+        padding: 40px;
+        @media (max-width: 1200px){
+            padding: 20px;
+        }
         @media (max-width: 768px){
             flex: 0 1 100%;
             padding: 0px 10px 20px 10px;
@@ -91,7 +65,7 @@ $grey: #2a2b30;
     &__title {
         font-family: "Russo";
         font-size: 22px;
-        color: #fff;
+        color: $orange;
         text-align: center;
         padding: 0px 0px 10px 0px;
         position: relative;
@@ -104,8 +78,12 @@ $grey: #2a2b30;
         font-family: "Roboto";
         font-size: 16px;
         font-weight: 400;
-        color: #fff;
+        color: $grey;
         line-height: 140%;
+        padding: 20px;
+        @media (max-width: 1200px){
+            padding: 5px;
+        }
     }
 }
 

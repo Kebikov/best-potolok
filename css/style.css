@@ -4579,7 +4579,7 @@ input[type=number]:focus {
 }
 
 .company-about {
-  padding: 40px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
 }
 .company-about__body {
   display: -webkit-box;
@@ -4593,49 +4593,17 @@ input[type=number]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
-  background-color: #2a2b30;
-  position: relative;
-}
-.company-about__body::before {
-  content: "";
-  position: absolute;
-  top: 90px;
-  right: -90px;
-  width: 450px;
-  height: 450px;
-  background-color: rgba(254, 140, 27, 0.7333333333);
-  border-radius: 50%;
-}
-@media (max-width: 768px) {
-  .company-about__body::before {
-    top: 390px;
-    right: -150px;
-  }
-}
-.company-about__body::after {
-  content: "";
-  position: absolute;
-  top: -150px;
-  left: -120px;
-  width: 450px;
-  height: 450px;
-  background-color: rgba(254, 140, 27, 0.7921568627);
-  border-radius: 50%;
-}
-@media (max-width: 768px) {
-  .company-about__body::after {
-    top: -300px;
-    right: -150px;
-  }
 }
 .company-about__pic {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 25%;
           flex: 0 1 25%;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
+  padding: 20px;
+}
+@media (max-width: 1200px) {
+  .company-about__pic {
+    padding: 0;
+  }
 }
 @media (max-width: 768px) {
   .company-about__pic {
@@ -4648,6 +4616,8 @@ input[type=number]:focus {
 .company-about__pic img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   width: 100%;
   border-radius: 7px;
 }
@@ -4655,7 +4625,12 @@ input[type=number]:focus {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 75%;
           flex: 0 1 75%;
-  padding: 50px 40px 50px 40px;
+  padding: 40px;
+}
+@media (max-width: 1200px) {
+  .company-about__text-box {
+    padding: 20px;
+  }
 }
 @media (max-width: 768px) {
   .company-about__text-box {
@@ -4668,7 +4643,7 @@ input[type=number]:focus {
 .company-about__title {
   font-family: "Russo";
   font-size: 22px;
-  color: #fff;
+  color: #fe8d1b;
   text-align: center;
   padding: 0px 0px 10px 0px;
   position: relative;
@@ -4680,8 +4655,14 @@ input[type=number]:focus {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: #2a2b30;
   line-height: 140%;
+  padding: 20px;
+}
+@media (max-width: 1200px) {
+  .company-about__info {
+    padding: 5px;
+  }
 }
 
 .company-plus {
@@ -4854,6 +4835,186 @@ input[type=number]:focus {
 
 .video--enabled .video__button {
   display: block;
+}
+
+.popup-calc {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.846);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.popup-calc__body {
+  width: 800px;
+  height: 800px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.popup-calc__pic {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+  padding-bottom: 50%;
+  position: relative;
+}
+.popup-calc__pic img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.popup-calc__pic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.604);
+}
+.popup-calc__pic-title {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 20px;
+  width: 100%;
+  font-family: "Russo";
+  font-size: 28px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fff;
+}
+.popup-calc__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.popup-calc__x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/gallery/x.png) 0 0/cover no-repeat;
+}
+.popup-calc__title {
+  text-align: center;
+  font-family: "Russo";
+  font-size: 20px;
+  font-weight: 500;
+  color: #fe8d1b;
+  margin: 0px 0px 10px 0px;
+}
+.popup-calc__type {
+  margin: 0px 0px 20px 0px;
+}
+.popup-calc__type-select {
+  padding: 15px 60px 15px 40px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #2a2b30;
+  position: relative;
+}
+.popup-calc__type-select::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/popup/str.png) 0 0/cover no-repeat;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.popup-calc__type-list {
+  position: absolute;
+  z-index: 1;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: "Roboto";
+  font-weight: 500;
+  color: #2a2b30;
+  background-color: #fff;
+}
+.popup-calc__type-line {
+  padding: 0;
+  font-size: 0;
+  display: none;
+}
+.active {
+  display: block;
+  padding: 15px 10px 15px 10px;
+  font-size: 18px;
+}
+
+.active-select::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: url(../img/popup/str.png) 0 0/cover no-repeat;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.text-label {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #2a2b30;
+  margin: 10px 0px 0px 0px;
+}
+
+.text-input {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding: 10px 0px 10px 0px;
+  margin: 10px 0px 20px 0px;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
 }
 
 .wrapper {
