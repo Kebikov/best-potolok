@@ -2295,7 +2295,7 @@ input[type=number]:focus {
 }
 @media (max-width: 800px) {
   ._top-line-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -2324,7 +2324,7 @@ input[type=number]:focus {
 .top-line__city::before {
   content: "";
   position: absolute;
-  top: -5px;
+  top: -4px;
   left: 0;
   background: url(../img/header/map.png) 0 0/cover no-repeat;
   height: 23px;
@@ -2363,6 +2363,11 @@ input[type=number]:focus {
   padding: 0px 0px 0px 30px;
   position: relative;
 }
+@media (max-width: 800px) {
+  .top-line__time-work {
+    display: none;
+  }
+}
 .top-line__time-work::before {
   content: "";
   position: absolute;
@@ -2376,6 +2381,25 @@ input[type=number]:focus {
   .top-line__time-work::before {
     height: 20px;
     width: 20px;
+  }
+}
+.top-line__calc {
+  display: none;
+  position: relative;
+  padding: 0px 0px 0px 30px;
+}
+.top-line__calc::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  background: url(../img/popup/calc.png) 0 0/cover no-repeat;
+  height: 23px;
+  width: 23px;
+}
+@media (max-width: 800px) {
+  .top-line__calc {
+    display: block;
   }
 }
 
@@ -2401,6 +2425,72 @@ input[type=number]:focus {
   }
 }
 
+.top-line__calc::before {
+  -webkit-animation: jello-horizontal 5s infinite both;
+          animation: jello-horizontal 5s infinite both;
+}
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  2% {
+    -webkit-transform: scale3d(1.25, 0.65, 1);
+            transform: scale3d(1.25, 0.65, 1);
+  }
+  4% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  6% {
+    -webkit-transform: scale3d(1.15, 0.75, 1);
+            transform: scale3d(1.15, 0.75, 1);
+  }
+  8% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  10% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  2% {
+    -webkit-transform: scale3d(1.25, 0.65, 1);
+            transform: scale3d(1.25, 0.65, 1);
+  }
+  4% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+            transform: scale3d(0.75, 1.25, 1);
+  }
+  6% {
+    -webkit-transform: scale3d(1.15, 0.75, 1);
+            transform: scale3d(1.15, 0.75, 1);
+  }
+  8% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+            transform: scale3d(0.95, 1.05, 1);
+  }
+  10% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+            transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
 .top-heder__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4845,15 +4935,14 @@ input[type=number]:focus {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.846);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 20px;
 }
 .popup-calc__body {
   width: 800px;
@@ -4865,12 +4954,28 @@ input[type=number]:focus {
   display: -ms-flexbox;
   display: flex;
 }
+@media (max-width: 800px) {
+  .popup-calc__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 700px;
+  }
+}
 .popup-calc__pic {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 40%;
           flex: 0 1 40%;
   padding-bottom: 50%;
   position: relative;
+}
+@media (max-width: 800px) {
+  .popup-calc__pic {
+    display: none;
+  }
 }
 .popup-calc__pic img {
   position: absolute;
@@ -4918,6 +5023,18 @@ input[type=number]:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (max-width: 800px) {
+  .popup-calc__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 95%;
+            flex: 0 1 95%;
+    overflow: auto;
+    max-height: 700px;
+  }
 }
 .popup-calc__x {
   position: absolute;
@@ -4927,13 +5044,25 @@ input[type=number]:focus {
   height: 30px;
   background: url(../img/gallery/x.png) 0 0/cover no-repeat;
 }
+@media (max-width: 800px) {
+  .popup-calc__x {
+    top: 0px;
+    right: 0px;
+  }
+}
 .popup-calc__title {
   text-align: center;
   font-family: "Russo";
   font-size: 20px;
   font-weight: 500;
   color: #fe8d1b;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 20px 0px;
+}
+@media (max-width: 800px) {
+  .popup-calc__title {
+    font-size: 18px;
+    margin: 0px 0px 10px 0px;
+  }
 }
 .popup-calc__type {
   margin: 0px 0px 20px 0px;
@@ -4947,6 +5076,11 @@ input[type=number]:focus {
   font-weight: 500;
   color: #2a2b30;
   position: relative;
+}
+@media (max-width: 800px) {
+  .popup-calc__type-select span {
+    font-size: 17px;
+  }
 }
 .popup-calc__type-select::after {
   content: "";
@@ -4978,6 +5112,64 @@ input[type=number]:focus {
   font-size: 0;
   display: none;
 }
+.popup-calc__sale {
+  margin: 0px 0px 20px 0px;
+  position: relative;
+}
+.popup-calc__sale-input {
+  display: none;
+}
+.popup-calc__sale-input:checked + .popup-calc__sale-label::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 25px;
+  height: 25px;
+  background: url(../img/index/check.png) 0 0/cover no-repeat;
+}
+.popup-calc__sale-label {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2b30;
+  padding: 0px 0px 0px 25px;
+  margin: 0px 0px 20px 0px;
+  position: relative;
+}
+@media (max-width: 800px) {
+  .popup-calc__sale-label {
+    font-size: 16px;
+  }
+}
+.popup-calc__sale-label::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border: 1px #2a2b30 solid;
+  border-radius: 50%;
+}
+.popup-calc__button {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px 30px 10px 30px;
+  background-color: #fe8d1b;
+}
+.popup-calc__cash {
+  display: none;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(22, 94, 49);
+  text-transform: uppercase;
+  margin: 0px 0px 20px 0px;
+}
+
 .active {
   display: block;
   padding: 15px 10px 15px 10px;
@@ -5002,7 +5194,12 @@ input[type=number]:focus {
   font-size: 20px;
   font-weight: 500;
   color: #2a2b30;
-  margin: 10px 0px 0px 0px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .text-label {
+    font-size: 16px;
+  }
 }
 
 .text-input {
@@ -5015,6 +5212,11 @@ input[type=number]:focus {
   font-size: 20px;
   font-weight: 500;
   color: #000;
+}
+@media (max-width: 800px) {
+  .text-input {
+    font-size: 16px;
+  }
 }
 
 .wrapper {

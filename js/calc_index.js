@@ -83,7 +83,6 @@ moneyCalcButtonBody.addEventListener('click', () => {
     fnPraceM2();
 
     if(arrSoffit.length === 2 && arrSize.length === 3) {
-        console.log('',praceM2);
         let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * perimeterPrace + arrSize[2] * lightPrace) * cursUsd + arrSize[0] * arrSize[1] * workPrace * promotion);
         moneyCalcCash.textContent = result + ' руб.';
         moneyCalcError.style.display = 'none';

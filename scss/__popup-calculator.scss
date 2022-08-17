@@ -12,9 +12,10 @@ $grey: #2a2b30;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.846);
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     // .popup-calc__body
     &__body {
         width: 800px;
@@ -22,13 +23,21 @@ $grey: #2a2b30;
         background-color: rgb(255, 255, 255);
         border-radius: 15px;
         overflow: hidden;
-
+        
         display: flex;
+        @media (max-width: 800px){
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+        }
     }
     &__pic {
         flex: 0 1 40%;
         padding-bottom: 50%;
         position: relative;
+        @media (max-width: 800px){
+            display: none;
+        }
         & img {
             position: absolute;
             top: 0;
@@ -69,6 +78,12 @@ $grey: #2a2b30;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        @media (max-width: 800px){
+            flex: 0 1 95%;
+            overflow: auto;
+            max-height: 700px;
+        }
     }
     &__x {
         position: absolute;
@@ -77,6 +92,10 @@ $grey: #2a2b30;
         width: 30px;
         height: 30px;
         background: url(../img/gallery/x.png) 0 0 / cover no-repeat;
+        @media (max-width: 800px){
+            top: 0px;
+            right: 0px;
+        }
     }
     // .popup-calc__type
     &__title {
@@ -85,7 +104,11 @@ $grey: #2a2b30;
         font-size: 20px;
         font-weight: 500;
         color: $orange;
-        margin: 0px 0px 10px 0px;
+        margin: 0px 0px 20px 0px;
+        @media (max-width: 800px){
+            font-size: 18px;
+            margin: 0px 0px 10px 0px;
+        }
     }
     &__type {
         margin: 0px 0px 20px 0px;
@@ -99,6 +122,11 @@ $grey: #2a2b30;
         font-weight: 500;
         color: $grey;
         position: relative;
+        & span {
+            @media (max-width: 800px){
+                font-size: 17px;
+            }
+        }
         &::after {
             content: "";
             position: absolute;
@@ -123,6 +151,7 @@ $grey: #2a2b30;
         font-weight: 500;
         color: $grey;
         background-color: #fff;
+        
     }
     // .popup-calc__type-line
     &__type-line {
@@ -135,16 +164,62 @@ $grey: #2a2b30;
     }
     // .popup-calc__sale
     &__sale {
+        margin: 0px 0px 20px 0px;
+        position: relative;
     }
     // .popup-calc__sale-input
     &__sale-input {
+        display: none;
+        &:checked + .popup-calc__sale-label::after {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 25px;
+            height: 25px;
+            background: url(../img/index/check.png) 0 0 / cover no-repeat;
+        }
     }
     // .popup-calc__sale-label
     &__sale-label {
+        font-family: "Roboto";
+        font-size: 18px;
+        font-weight: 500;
+        color: $grey;
+        padding: 0px 0px 0px 25px;
+        margin: 0px 0px 20px 0px;
+        position: relative;
+        @media (max-width: 800px){
+            font-size: 16px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            border: 1px $grey solid;
+            border-radius: 50%;
+        }
     }
     // .popup-calc__button
     &__button {
-
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        padding: 10px 30px 10px 30px;
+        background-color: $orange;
+    }
+    &__cash {
+        display: none;
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(22, 94, 49);
+        text-transform: uppercase;
+        margin: 0px 0px 20px 0px;
     }
 }
 
@@ -171,7 +246,10 @@ $grey: #2a2b30;
     font-size: 20px;
     font-weight: 500;
     color: $grey;
-    margin: 10px 0px 0px 0px;
+    text-align: center;
+    @media (max-width: 800px){
+        font-size: 16px;
+    }
 }
 
 .text-input {
@@ -183,4 +261,7 @@ $grey: #2a2b30;
     font-size: 20px;
     font-weight: 500;
     color: #000;
+    @media (max-width: 800px){
+        font-size: 16px;
+    }
 }

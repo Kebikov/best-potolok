@@ -9,7 +9,7 @@ $text: #5b4f3c;
     font-weight: 400;
     color:#fff;
     @media (max-width: 800px){
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 .top-line {
@@ -32,7 +32,7 @@ $text: #5b4f3c;
         &::before {
             content: "";
             position: absolute;
-            top: -5px;
+            top: -4px;
             left: 0;
             background: url(../img/header/map.png) 0 0 / cover no-repeat;
             height: 23px;
@@ -69,6 +69,9 @@ $text: #5b4f3c;
     &__time-work {
         padding: 0px 0px 0px 30px;
         position: relative;
+        @media (max-width: 800px){
+            display: none;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -81,6 +84,23 @@ $text: #5b4f3c;
                 height: 20px;
                 width: 20px;
             }
+        }
+    }
+    &__calc {
+        display: none;
+        position: relative;
+        padding: 0px 0px 0px 30px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: 0;
+            background: url(../img/popup/calc.png) 0 0 / cover no-repeat;
+            height: 23px;
+            width: 23px;
+        }
+        @media (max-width: 800px){
+            display: block;
         }
     }
 }
@@ -99,6 +119,32 @@ $text: #5b4f3c;
     @media (max-width: 1020px){
         margin:0px 10px 0px 10px;
     }
+}
+.top-line__calc::before {
+    animation: jello-horizontal 5s infinite both;
+}
+@keyframes jello-horizontal {
+0% {
+    transform: scale3d(1, 1, 1);
+}
+2% {
+    transform: scale3d(1.25, 0.65, 1);
+}
+4% {
+    transform: scale3d(0.75, 1.25, 1);
+}
+6% {
+    transform: scale3d(1.15, 0.75, 1);
+}
+8% {
+    transform: scale3d(0.95, 1.05, 1);
+}
+10% {
+    transform: scale3d(1.05, 0.95, 1);
+}
+100% {
+    transform: scale3d(1, 1, 1);
+}
 }
 //= блок с лого 
 .top-heder {
