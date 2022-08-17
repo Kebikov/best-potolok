@@ -23,12 +23,13 @@ $grey: #2a2b30;
         background-color: rgb(255, 255, 255);
         border-radius: 15px;
         overflow: hidden;
-        
+        position: relative;
         display: flex;
         @media (max-width: 800px){
             justify-content: center;
             align-items: center;
-            height: 700px;
+            height: 650px;
+            background: url(../img/popup/3.jpg) 0 0 / cover no-repeat;
         }
     }
     &__pic {
@@ -87,14 +88,15 @@ $grey: #2a2b30;
     }
     &__x {
         position: absolute;
+        z-index: 10;
         top: 10px;
         right: 10px;
         width: 30px;
         height: 30px;
         background: url(../img/gallery/x.png) 0 0 / cover no-repeat;
         @media (max-width: 800px){
-            top: 0px;
-            right: 0px;
+            top: 7px;
+            right: 7px;
         }
     }
     // .popup-calc__type
@@ -263,5 +265,6 @@ $grey: #2a2b30;
     color: #000;
     @media (max-width: 800px){
         font-size: 16px;
+        padding: 5px 0px 5px 0px;
     }
 }
