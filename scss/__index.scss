@@ -1394,6 +1394,9 @@ $text: #5b4f3c;
         line-height: 120%;
         //text-transform: uppercase;
         margin: 0px 0px 20px 0px;
+        @media (max-width: 768px){
+            font-size: 17px;
+        }
     }
     // .example__line
     &__line {

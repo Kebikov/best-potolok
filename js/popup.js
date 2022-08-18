@@ -4,16 +4,23 @@ window.addEventListener('DOMContentLoaded', () => {
     (function popup () {
         const orderCall = document.querySelector('.order-call');
         const openAll = document.querySelectorAll('[data-popup="open"]');
+        const title = orderCall.querySelector('.order-call__title');
+        //open
+        openAll.forEach(item => {
+            item.addEventListener('click', () => {
+                orderCall.style.display = 'flex';
+                if(item.hasAttribute('data-name-button')) {
+                    title.textContent = item.getAttribute('data-name-button');
+                }
+            });
+        });
+        //close
         orderCall.addEventListener('click', (e) => {
             if(e.target.closest('.order-call__x')) {
                 orderCall.style.display = 'none';
             }
         });
-        openAll.forEach(item => {
-            item.addEventListener('click', () => {
-                orderCall.style.display = 'flex';
-            });
-        });
+        
     }());
     //* проверка телефона и трубка зеленая/серая   
     (function phoneInput () {

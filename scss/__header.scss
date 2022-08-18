@@ -224,7 +224,7 @@ $text: #5b4f3c;
                 width: 32px;
             }
             &::after {
-                content: "ежедневно с 9:00 до 21:00";
+                content: "ежедневно с 8:00 до 22:00";
                 position: absolute;
                 top: -15px;
                 right: 0;
@@ -259,6 +259,7 @@ $text: #5b4f3c;
     &__call-tel {
         margin:0px 0px 0px 30px;
         position: relative;
+        cursor: pointer;
         &::before {
             content: "";
             position: absolute;
@@ -273,6 +274,7 @@ $text: #5b4f3c;
     &__call-calc {
         margin:0px 0px 0px 30px;
         position: relative;
+        cursor: pointer;
         &::before {
             content: "";
             position: absolute;

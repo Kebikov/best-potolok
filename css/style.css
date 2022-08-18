@@ -2094,6 +2094,11 @@ input[type=number]:focus {
   line-height: 120%;
   margin: 0px 0px 20px 0px;
 }
+@media (max-width: 768px) {
+  .example__list {
+    font-size: 17px;
+  }
+}
 .example__line {
   position: relative;
   padding: 10px 0px 10px 40px;
@@ -2600,7 +2605,7 @@ input[type=number]:focus {
   width: 32px;
 }
 .top-heder__tel span::after {
-  content: "ежедневно с 9:00 до 21:00";
+  content: "ежедневно с 8:00 до 22:00";
   position: absolute;
   top: -15px;
   right: 0;
@@ -2636,6 +2641,7 @@ input[type=number]:focus {
 .top-heder__call-tel {
   margin: 0px 0px 0px 30px;
   position: relative;
+  cursor: pointer;
 }
 .top-heder__call-tel::before {
   content: "";
@@ -2649,6 +2655,7 @@ input[type=number]:focus {
 .top-heder__call-calc {
   margin: 0px 0px 0px 30px;
   position: relative;
+  cursor: pointer;
 }
 .top-heder__call-calc::before {
   content: "";

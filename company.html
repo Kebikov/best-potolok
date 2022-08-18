@@ -8,7 +8,7 @@
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fe8d1b">
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#6d4d3a">
         <link rel="icon" type="image/png" href="img/header/favicon.png">
-        <link rel="stylesheet" href="css/style.css?v=3.3">
+        <link rel="stylesheet" href="css/style.css?v=3.4">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Натяжные потолки в Гомеле</title>
     </head>
@@ -22,7 +22,7 @@
                         <div class="top-line__body">
                             <div class="top-line__city _top-line-text">Гомель</div>
                             <div class="top-line__box">
-                                <div class="top-line__time-work _top-line-text">Работаем с 9:00 до 21:00</div>
+                                <div class="top-line__time-work _top-line-text">Работаем с 8:00 до 22:00</div>
                                 <div class="top-line__calc _top-line-text">калькулятор стоимости</div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                     <span>+ 375 (29) 522-22-82</span>
                                 </a>
                                 <div class="top-heder__buttons">
-                                    <div class="top-heder__call-tel call-text">ЗАКАЗАТЬ ЗВОНОК</div>
+                                    <div class="top-heder__call-tel call-text" data-popup="open" data-name-button="ЗАКАЗАТЬ ЗВОНОК">ЗАКАЗАТЬ ЗВОНОК</div>
                                     <div class="top-heder__call-calc call-text">КАЛЬКУЛЯТОР</div>
                                 </div>
                             </div>
@@ -136,10 +136,44 @@
                         </div>
                     </div>
                 </div>
+                <!--* pop-up заказ звонка  -->
+                <div class="order-call">
+                    <div class="order-call__body">
+                        <div class="order-call__x">
+                            <img src="img/arrow-keys/x.png" alt="натяжные потолки в гомеле">
+                        </div>
+                        <div class="order-call__logo">
+                            <img src="img/arrow-keys/logo-white.png" alt="логотип">
+                        </div>
+                        <div class="order-call__title">Заказать расчёт</div>
+                        <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
+                        <form class="order-call__form" action="order_call.php" method="POST" name="popup">
+                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name" autocomplete="off">
+                            <div class="order-call__tel-div _grey">
+                                <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel" autocomplete="off">
+                            </div>
+                            <div class="order-call__button">заказать</div>
+                        </form>
+                        <div class="order-call__email">
+                            <img src="img/index/email.png" alt="письмо">
+                        </div>
+                    </div>
+                </div>
+                <!--* анимация отправки письма -->
+                <div class="anime-meil">
+                    <div class="anime-meil__body">
+                        <div class="anime-meil__box">
+                            <div class="anime-meil__meil">
+                                <img src="img/index/email.png" alt="письмо">
+                            </div>
+                            <div class="anime-meil__text">отправка письма...</div>
+                        </div>
+                    </div>
+                </div>
                 <!--: company-taitle -->
                 <div class="company-taitle container">О компании</div>
                 <!--: company-text -->
-                <div class="company-text container">"BEST-POTOLOK" работает с 2018 г.<br>C 2019 года, пожалуй, являемся оптимальным выбором в установке многоуровневых конструкций и являемся эксклюзивным представителем технологии монтажа натяжных потолков, позволяющие нам предлагать САМЫЕ короткие сроки в установке сложных потолков в Гомеле.</div>
+                <div class="company-text container">"BEST-POTOLOK" это молодая компания, которая открылась в 2022 году.<br>Команда компании это монтажники натяжных потолков с большим стажем работы, которые объединились для общей цели - мы хотим быть лучшими в своём деле.</div>
                 <!--: youtube -->
                 <div class="company-youtube container">
                     <div class="company-youtube__body">
@@ -293,7 +327,7 @@
                             <a href="https://instagram.com/best.potolok.gomel?igshid=YmMyMTA2M2Y=" class="footer__icon">
                                 <img src="img/icon/insta.png" alt="icon insta">
                             </a>
-                            <a href="#" class="footer__icon">
+                            <a href="https://www.youtube.com/channel/UCBk6L5hzRg-Q8gGLEnxx_4Q" class="footer__icon">
                                 <img src="img/icon/youtube.png" alt="icon youtube">
                             </a>
                         </div>
@@ -305,7 +339,8 @@
                 </div>
             </footer>
         </div>
-        <script src="js/menu_nav.js?v=3.3"></script>
-        <script src="js/youtube.js?v=3.3"></script>
+        <script src="js/menu_nav.js?v=3.4"></script>
+        <script src="js/youtube.js?v=3.4"></script>
+        <script src="js/popup.js?v=3.4"></script>
     </body>
 </html>
