@@ -106,18 +106,16 @@ window.addEventListener('DOMContentLoaded', () => {
                     imgAllInPopUp.forEach(item => {
                         item.style.left = i + '%';
                         i = i + 100;
-                        console.log('',item);
                     });
-                });
-                dotWhite();
+                    dotWhite();
+                    buttonRight.removeEventListener('click', clickRight);
+                    setTimeout(function () {
+                        let divDel = imgBox.querySelector('.gallery-pop__img');
+                        divDel.remove();
+                        buttonRight.addEventListener('click', clickRight);
+                    }, transitionImg);
+                },10);
                 
-                buttonRight.removeEventListener('click', clickRight);
-
-                setTimeout(function () {
-                    let divDel = imgBox.querySelector('.gallery-pop__img');
-                    divDel.remove();
-                    buttonRight.addEventListener('click', clickRight);
-                }, transitionImg);
             }
         }
         rightButton();
@@ -140,14 +138,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         item.style.left = i + '%';
                         i = i + 100;
                     });
-                });
-                dotWhite();
-                let divDel = imgBox.lastElementChild;
-                buttonLeft.removeEventListener('click', clickLeft);
-                setTimeout(function () {
-                    divDel.remove();
-                    buttonLeft.addEventListener('click', clickLeft);
-                }, transitionImg);
+                    dotWhite();
+                    let divDel = imgBox.lastElementChild;
+                    buttonLeft.removeEventListener('click', clickLeft);
+                    setTimeout(function () {
+                        divDel.remove();
+                        buttonLeft.addEventListener('click', clickLeft);
+                    }, transitionImg);
+                },10);
             }
         }
         leftButton();
