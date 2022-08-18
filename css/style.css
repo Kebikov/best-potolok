@@ -142,6 +142,8 @@ input[type=number]:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background: url(../img/index/bg.png);
   max-width: 550px;
   position: relative;
@@ -614,15 +616,15 @@ input[type=number]:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  margin: 30px 30px 0px 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0px 30px 0px;
 }
 @media (max-width: 1200px) {
   .prace-mondey__call {
     margin: 0 auto;
-    padding: 30px 0px 0px 0px;
+    padding: 30px 0px 30px 0px;
   }
 }
 .prace-mondey__tel {

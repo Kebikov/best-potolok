@@ -106,12 +106,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     imgAllInPopUp.forEach(item => {
                         item.style.left = i + '%';
                         i = i + 100;
+                        console.log('',item);
                     });
                 });
                 dotWhite();
-                let divDel = imgBox.querySelector('.gallery-pop__img');
+                
                 buttonRight.removeEventListener('click', clickRight);
+
                 setTimeout(function () {
+                    let divDel = imgBox.querySelector('.gallery-pop__img');
                     divDel.remove();
                     buttonRight.addEventListener('click', clickRight);
                 }, transitionImg);
@@ -133,10 +136,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     let imgAllInPopUp = imgBox.querySelectorAll('.gallery-pop__img');
                     let i = -100;
                     imgAllInPopUp.forEach(item => {
+                        console.log('',item);
                         item.style.left = i + '%';
                         i = i + 100;
                     });
-                },10);
+                });
                 dotWhite();
                 let divDel = imgBox.lastElementChild;
                 buttonLeft.removeEventListener('click', clickLeft);
