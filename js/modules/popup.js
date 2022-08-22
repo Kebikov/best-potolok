@@ -1,3 +1,5 @@
+import checkNumberPhone from "./check_number_phone";
+
 export default function popUpFn () {
     //= popup блок  
     const orderCall = document.querySelector('.order-call');
@@ -7,10 +9,12 @@ export default function popUpFn () {
             const orderCall = document.querySelector('.order-call');
             const openAll = document.querySelectorAll('[data-popup="open"]');
             const title = orderCall.querySelector('.order-call__title');
+            const body = document.body;
             //open
             openAll.forEach(item => {
                 item.addEventListener('click', () => {
                     orderCall.style.display = 'flex';
+                    body.style.overflow = 'hidden';
                     if(item.hasAttribute('data-name-button')) {
                         title.textContent = item.getAttribute('data-name-button');
                     }
@@ -18,6 +22,7 @@ export default function popUpFn () {
             });
             //close
             orderCall.addEventListener('click', (e) => {
+                body.style.overflow = 'auto';
                 if(e.target.closest('.order-call__x')) {
                     orderCall.style.display = 'none';
                 }
@@ -28,47 +33,7 @@ export default function popUpFn () {
         (function phoneInput () {
             const inputTel = document.querySelector('.order-call__tel');
             const divInputTel = document.querySelector('.order-call__tel-div');
-            function symbolPlus (number, symbol) {
-                if(inputTel.value.length === number) {
-                    inputTel.value = inputTel.value.slice(0,number - 1) + symbol + inputTel.value[number - 1];
-                }
-            }
-            inputTel.addEventListener('click', () => {
-                inputTel.value = '+375';
-                inputTel.addEventListener('input', () => {
-                    if(inputTel.value[inputTel.value.length - 1] === '(' || inputTel.value[inputTel.value.length - 1] === ')' || inputTel.value[inputTel.value.length - 1] === '-') {
-                        inputTel.value = inputTel.value.slice(0, inputTel.value.length - 1);
-                    }else {
-                        if(inputTel.value.length < 4) {
-                            inputTel.value = '+375';
-                        }
-                        symbolPlus(5, '(');
-                        symbolPlus(8, ')');
-                        symbolPlus(12, '-');
-                        symbolPlus(15, '-');
-                        if(inputTel.value.length > 16) {
-                            inputTel.value = inputTel.value.slice(0,17);
-                        }
-                        if(/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)){
-                            inputTel.style.border = '#28b352 2px solid';
-                        }else {
-                            inputTel.style.border = '#ec3c3c 2px solid';
-                        }
-                    }
-                    // проверка телефона в конце
-                    if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)) {
-                        if(divInputTel.classList.contains('_grey')) {
-                            divInputTel.classList.remove('_grey');
-                            divInputTel.classList.add('_green');
-                        }
-                    }else {
-                        if(divInputTel.classList.contains('_green')) {
-                            divInputTel.classList.remove('_green');
-                            divInputTel.classList.add('_grey');
-                        }
-                    }
-                });
-            });
+            inputTel.addEventListener('click', () => checkNumberPhone(inputTel, divInputTel, 1, {classOne: '_grey', classTwo: '_green'}));
         }());
         //* проверка имени   
         const orderCallName = document.querySelector('.order-call__name');

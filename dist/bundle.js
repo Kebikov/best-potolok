@@ -1,2 +1,1144 @@
-(()=>{"use strict";window.addEventListener("DOMContentLoaded",(()=>{!function({cursUsd:e,workPrace:t,lightPrace:l,perimeterPrace:n}){!function(){const e=document.querySelector(".menu"),t=document.querySelector(".burger__square"),l=document.querySelector(".menu__list"),n=l.querySelectorAll(".menu__line"),o=(l.querySelector(".menu__line"),document.querySelector(".burger__span"));t.addEventListener("click",(()=>{let e=.3;n.forEach((t=>{t.style.transition=`all ${e}s ease`,t.classList.toggle("active"),e+=.1})),o.classList.toggle("active-burger")}));let c=e.getBoundingClientRect().top;window.addEventListener("scroll",(t=>{window.scrollY>=c?e.classList.add("menu__fix"):e.classList.remove("menu__fix")}))}(),function(){const e=new IntersectionObserver(((e,t)=>{e.forEach((e=>{if(e.isIntersecting){let l=e.target;l.classList.add("rotate-scale-up"),t.unobserve(l)}}))}),{threshold:[1],rootMargin:"10px 0px 0px 0px"});document.querySelector(".footer__icons").querySelectorAll("img").forEach((t=>{e.observe(t)}))}(),function(){const o=document.querySelector(".top-heder__call-calc"),c=document.querySelector(".popup-calc__type-select"),r=c.querySelector("span"),a=c.querySelectorAll(".popup-calc__type-line"),s=document.querySelector(".popup-calc__button"),i=document.querySelector(".popup-calc"),d=document.querySelector(".popup-calc__x"),u=document.querySelector(".top-line__calc");o.addEventListener("click",(()=>{i.style.display="flex"})),u.addEventListener("click",(()=>{i.style.display="flex"})),d.addEventListener("click",(()=>{i.style.display="none"})),c.addEventListener("click",(e=>{c.classList.toggle("active-select"),a.forEach((e=>{e.classList.toggle("active")})),e.target.classList.contains("popup-calc__type-line")&&(r.textContent=e.target.innerHTML)})),s.addEventListener("click",(()=>{let o,c,r=[],a=0,s=document.querySelectorAll(".text-input"),i=document.querySelector(".popup-calc__type-select span");document.querySelectorAll(".popup-calc__sale-input").forEach((e=>{e.checked&&(a=e.value)})),o=i.textContent,s.forEach((e=>{let t=`${e.value}`;t=t.includes(",",0)?+t.replace(",","."):+t,t&&r.push(t)})),r[0]>3.5&&r[1]>3.5?("Цветной"===o&&(c=4.1),"Белый"===o&&(c=3.1)):("Цветной"===o&&(c=3.1),"Белый"===o&&(c=1.9));let d=document.querySelector(".popup-calc__cash");if("Цветной"===o||"Белый"===o&&3===r.length){let o=Math.round((r[0]*r[1]*c+2*(r[0]+r[1])*n+r[2]*l)*e+r[0]*r[1]*t*a);d.textContent="стоимость: "+o+" руб.",d.style.display="block"}else d.textContent="введите все данные !",d.style.display="block"}))}()}({cursUsd:2.6,workPrace:15,lightPrace:1,perimeterPrace:1}),function(){const e=document.querySelector(".gallery");e&&function(){const t=document.body,l=document.querySelector(".gallery-pop"),n=document.querySelector(".gallery__body"),o=document.querySelector(".gallery-pop__body"),c=document.querySelector(".gallery-pop__img-box"),r=document.querySelector(".gallery-pop__right"),a=document.querySelector(".gallery-pop__left"),s=document.querySelector(".gallery-pop__x"),i=document.querySelector(".gallery-pop__dots"),d=document.querySelectorAll(".pic-item__body"),u=document.querySelector("style"),p=[],y=n.querySelectorAll("img"),m=["gallery-pop__img","_gap-img"];let _;const f=l.getAttribute("data-gap"),g=l.getAttribute("data-transition");function v(e,t){return(e+=t)<0&&(e=p.length-1),e>p.length-1&&(e=0),e}function h(e){e<0&&(_=p.length-1),e>p.length-1&&(_=0)}function S(){let e=i.querySelectorAll(".gallery-pop__dot");e.forEach((e=>{e.matches('[class="gallery-pop__dot dot-white"]')&&e.classList.remove("dot-white")})),e[_].classList.add("dot-white")}y.forEach((e=>{p.push(e.getAttribute("src"))})),n.addEventListener("click",(e=>{var n;!function(){let e=g/1e3;if(window.matchMedia("(min-width: 1021px)").matches&&(u.innerHTML=`._gap-img {padding-left: ${f}px; padding-right: ${f}px; transition:all ${e}s ease;}`),window.matchMedia("(max-width: 1020px)").matches&&window.matchMedia("(min-width: 768px)").matches){let t=.8*f;u.innerHTML=`._gap-img {padding-left: ${t}px; padding-right: ${t}px; transition:all ${e}s ease;}`}if(window.matchMedia("(max-width: 767px)").matches){let t=.7*f;u.innerHTML=`._gap-img {padding-left: ${t}px; padding-right: ${t}px; transition:all ${e}s ease;}`}}(),n=e.target.getAttribute("src"),_=p.indexOf(n,0);let o=document.createElement("img"),r=document.createElement("img"),a=document.createElement("img");o.classList.add(...m),r.classList.add(...m),a.classList.add(...m),o.setAttribute("src",p[v(_,-1)]),r.setAttribute("src",p[_]),a.setAttribute("src",p[v(_,1)]),o.style.left="-100%",r.style.left="0%",a.style.left="100%",l.style.display="flex",c.append(o),c.append(r),c.append(a),y.forEach((e=>{let t=document.createElement("div");t.classList.add("gallery-pop__dot"),i.append(t)})),i.querySelectorAll(".gallery-pop__dot")[_].classList.add("dot-white"),t.style.overflow="hidden"})),s.addEventListener("click",(()=>{l.style.display="none",o.querySelectorAll(".gallery-pop__img").forEach((e=>{e.remove()})),i.innerHTML="",t.style.overflow="auto"})),r.addEventListener("click",(function e(){_++,h(_);let t=document.createElement("img");t.classList.add(...m),t.setAttribute("src",p[v(_,1)]),t.style.left="200%",c.append(t),setTimeout((function(){let t=c.querySelectorAll(".gallery-pop__img"),l=-200;t.forEach((e=>{e.style.left=l+"%",l+=100})),S(),r.removeEventListener("click",e),setTimeout((function(){c.querySelector(".gallery-pop__img").remove(),r.addEventListener("click",e)}),g)}),10)})),a.addEventListener("click",(function e(){_--,h(_);let t=document.createElement("img");t.classList.add(...m),t.setAttribute("src",p[v(_,-1)]),t.style.left="-200%",c.prepend(t),setTimeout((function(){let t=c.querySelectorAll(".gallery-pop__img"),l=-100;t.forEach((e=>{console.log("",e),e.style.left=l+"%",l+=100})),S();let n=c.lastElementChild;a.removeEventListener("click",e),setTimeout((function(){n.remove(),a.addEventListener("click",e)}),g)}),10)})),function(){let t=e.getAttribute("data-height");d.forEach((e=>{e.style.paddingBottom=t}))}()}()}(),function(){if(document.querySelector(".order-call")){!function(){const e=document.querySelector(".order-call"),t=document.querySelectorAll('[data-popup="open"]'),l=e.querySelector(".order-call__title");t.forEach((t=>{t.addEventListener("click",(()=>{e.style.display="flex",t.hasAttribute("data-name-button")&&(l.textContent=t.getAttribute("data-name-button"))}))})),e.addEventListener("click",(t=>{t.target.closest(".order-call__x")&&(e.style.display="none")}))}(),function(){const e=document.querySelector(".order-call__tel"),t=document.querySelector(".order-call__tel-div");function l(t,l){e.value.length===t&&(e.value=e.value.slice(0,t-1)+l+e.value[t-1])}e.addEventListener("click",(()=>{e.value="+375",e.addEventListener("input",(()=>{"("===e.value[e.value.length-1]||")"===e.value[e.value.length-1]||"-"===e.value[e.value.length-1]?e.value=e.value.slice(0,e.value.length-1):(e.value.length<4&&(e.value="+375"),l(5,"("),l(8,")"),l(12,"-"),l(15,"-"),e.value.length>16&&(e.value=e.value.slice(0,17)),/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(e.value)?e.style.border="#28b352 2px solid":e.style.border="#ec3c3c 2px solid"),17===e.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(e.value)?t.classList.contains("_grey")&&(t.classList.remove("_grey"),t.classList.add("_green")):t.classList.contains("_green")&&(t.classList.remove("_green"),t.classList.add("_grey"))}))}))}();const e=document.querySelector(".order-call__name");!function(){const t=document.querySelector(".order-call__button"),l=document.querySelector(".order-call__tel"),n=document.body,o=document.querySelector(".anime-meil");let c=document.querySelector(".order-call__title").textContent;t.addEventListener("click",(function(r){r.preventDefault,e.value.length<3&&(e.value="",e.setAttribute("placeholder","Минимум 3 символа."));const a=document.forms.popup;if(17===l.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(l.value)&&e.value){let r=new FormData(a);r.set("title",c),n.style.overflow="hidden",o.style.display="block",fetch("popup.php",{method:"POST",body:r}).then((c=>{200===c.status&&(n.style.overflow="auto",o.style.display="none",t.textContent="заявка отправлена",e.value="",l.value="Cпасибо за заказ !")}))}else t.textContent="проверьте данные",setTimeout((()=>{t.textContent="заказать по акции"}),2e3)}))}()}}(),function({cursUsd:e,workPrace:t,lightPrace:l,perimeterPrace:n}){if(document.querySelector(".calculation-index")){!function(){let e,t;function l(l){let o=l.target.closest(".select-soffit-type__select").nextElementSibling,c=l.target.closest(".select-soffit-type__select");t=c.querySelector(".select-soffit-type__select-text"),e=o.querySelectorAll(".select-soffit-type__line"),e.forEach((e=>{e.addEventListener("click",n),e.classList.remove("line-none")}))}function n(l){t.textContent=l.target.textContent,e.forEach((e=>{e.classList.add("line-none"),e.removeEventListener("click",n)}))}document.querySelectorAll(".select-soffit-type__select").forEach((e=>{e.addEventListener("click",l)}))}();const o=document.querySelector(".money-calc__button-body"),c=document.querySelector(".select-promotion__body").querySelectorAll(".select-promotion__radio"),r=document.querySelector(".select-soffit-type__body"),a=document.querySelector(".select-parameters__body"),s=document.querySelector(".money-calc__cash"),i=document.querySelector(".money-calc__body"),d=document.querySelector(".money-calc__error");o.addEventListener("click",(()=>{let o,u=[],p=[],y=0,m=a.querySelectorAll(".select-parameters__size-input"),_=r.querySelectorAll(".select-soffit-type__select-text");if(c.forEach((e=>{e.checked&&(y=e.value)})),m.forEach((e=>{let t=`${e.value}`;t=t.includes(",",0)?+t.replace(",","."):+t,t&&p.push(t)})),_.forEach((e=>{u.push(e.textContent)})),p[0]>3.5&&p[1]>3.5?("Цветной"===u[1]&&(o=4.1),"Белый"===u[1]&&(o=3.1)):("Цветной"===u[1]&&(o=3.1),"Белый"===u[1]&&(o=1.9)),2===u.length&&3===p.length){let c=Math.round((p[0]*p[1]*o+2*(p[0]+p[1])*n+p[2]*l)*e+p[0]*p[1]*t*y);s.textContent=c+" руб.",d.style.display="none",i.style.display="flex"}else d.style.display="block",i.style.display="none"}))}}({cursUsd:2.6,workPrace:15,lightPrace:1,perimeterPrace:1}),function({cursUsd:e,works:t,pracePerimetr:l}){const n=document.querySelector(".prace-mondey__input");n&&function(){const o=document.querySelector(".prace-mondey__byn");let c,r;function a(){r=n.value,r.length>3&&(n.value=r.slice(0,3)),c=r<18?1.9:3.1,o.innerHTML=`${Math.floor(r*c*e+l*e*r*.8+r*t)}<span> РУБ.</span>`}a(),n.addEventListener("input",(()=>{a()}))}()}({cursUsd:2.6,works:15,pracePerimetr:1}),function(){const e=document.querySelector(".rules-body");if(e){const t=document.querySelector(".wrapper");let l;function n(){o>1100&&(l=20),o<1100&&o>900&&(l=17),o<900&&o>600&&(l=14),o<600&&(l=10)}let o=document.querySelector(".one-step").getBoundingClientRect().width-80;n(),e.style.animation=`draive infinite ${l}s`;const c=document.createElement("style");c.innerHTML=`\n        @keyframes draive {\n            0% {\n                transform: translate(0, 0);\n            }\n            15% {\n                transform: translate( ${o}px, 0);\n            }\n            30% {\n                transform: translate( ${o}px, 0);\n            }\n            40% {\n                transform: translate(0, 0);\n            }\n        }`,t.append(c)}}(),function(){const e=document.querySelector(".prace-mondey__tel");e&&function(){const t=document.querySelector(".prace-mondey__tel-input");function l(e,l){t.value.length===e&&(t.value=t.value.slice(0,e-1)+l+t.value[e-1])}t.addEventListener("click",(n=>{t.value="+375",t.addEventListener("input",(()=>{"("===t.value[t.value.length-1]||")"===t.value[t.value.length-1]||"-"===t.value[t.value.length-1]?t.value=t.value.slice(0,t.value.length-1):(t.value.length<4&&(t.value="+375"),l(5,"("),l(8,")"),l(12,"-"),l(15,"-"),t.value.length>16&&(t.value=t.value.slice(0,17)),/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(t.value)?e.style.boxShadow="0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset":e.style.boxShadow="0px 0px 3px 3px rgba(255, 22, 22, 0.9) inset"),17===t.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(t.value)?e.classList.contains("grey")&&(e.classList.remove("grey"),e.classList.add("green")):e.classList.contains("green")&&(e.classList.remove("green"),e.classList.add("grey"))}))}))}()}(),function(){const e=document.querySelector(".prace-mondey__tel-input");e&&function(){const t=document.forms.actionCall,l=document.querySelector(".prace-mondey__button"),n=document.querySelector(".anime-meil"),o=document.body;l.addEventListener("click",(c=>{if(c.preventDefault,17===e.value.length&&/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(e.value)){let c=new FormData(t);o.style.overflow="hidden",n.style.display="block",fetch("mail.php",{method:"POST",body:c}).then((t=>{200===t.status&&(o.style.overflow="auto",n.style.display="none",l.textContent="заявка отправлена",e.value="Cпасибо за заказ !")}))}else l.textContent="проверьте номер",setTimeout((()=>{l.textContent="заказать по акции"}),2e3)}))}()}(),function(){let e=document.querySelectorAll(".video");if(e){function t(){for(let t=0;t<e.length;t++)l(e[t])}function l(e){let t=e.querySelector(".video__link"),l=e.querySelector(".video__media"),c=e.querySelector(".video__button"),r=n(l);e.addEventListener("click",(()=>{let l=o(r);t.remove(),c.remove(),e.appendChild(l)})),t.removeAttribute("href"),e.classList.add("video--enabled")}function n(e){return e.src.match(/https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i)[1]}function o(e){let t=document.createElement("iframe");return t.setAttribute("allowfullscreen",""),t.setAttribute("allow","autoplay"),t.setAttribute("src",c(e)),t.classList.add("video__media"),t}function c(e){return"https://www.youtube.com/embed/"+e+"?rel=0&showinfo=0&autoplay=1"}t()}}(),function(){const e=document.querySelector(".all-contacts__icons");if(e){let t=0;const l=new IntersectionObserver(((e,l)=>{e.forEach((e=>{if(e.isIntersecting){let n=e.target;t+=350,setTimeout((function(){n.classList.add("roll-in-right"),l.unobserve(n)}),t)}}))}),{threshold:[1],rootMargin:"-40px 0px -10% 0px"});e.querySelectorAll("img").forEach((e=>l.observe(e)))}}(),function(){const e=document.querySelectorAll(".build-prace__pic");e&&(function(){let t=0;const l=new IntersectionObserver(((e,l)=>{e.forEach((e=>{if(e.isIntersecting){let n=e.target;t+=100,setTimeout((function(){n.classList.add("anime-pic")}),t),l.unobserve(n)}}))}),{rootMargin:"-40px 0px -10% 0px",threshold:[1]});e.forEach((e=>{l.observe(e)}))}(),function(){const e=document.querySelectorAll(".cap-type__img"),t=new IntersectionObserver(((e,t)=>{e.forEach((e=>{e.isIntersecting&&(e.target.classList.add("scale-in-ver-center"),t.unobserve(e.target))}))}),{rootMargin:"0px 0px -15% 0px",threshold:[1]});e.forEach((e=>{t.observe(e)}))}())}()}))})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./js/modules/animation_praise.js":
+/*!****************************************!*\
+  !*** ./js/modules/animation_praise.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ animationPraise)
+/* harmony export */ });
+//= анимацыя элементов на странице цены  
+function animationPraise () {
+    const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
+    if(buildPracePicAll) {
+        (function animationIconPic () {
+            let time = 0;
+            const animPicObserver = new IntersectionObserver((entryAll, observer) => {
+                entryAll.forEach(e => {
+                    if(e.isIntersecting) {
+                        let eTarget = e.target;
+                        time += 100; 
+                        setTimeout(function () {
+                            eTarget.classList.add('anime-pic');
+                        }, time);
+                        observer.unobserve(eTarget);
+                    }
+                });
+            },{
+                rootMargin: '-40px 0px -10% 0px',
+                threshold:[1],
+            });
+
+            buildPracePicAll.forEach(item => {
+                animPicObserver.observe(item);
+            });
+        }());
+
+        (function animationImg () {
+            const capTypeImgAll = document.querySelectorAll('.cap-type__img');
+            const imgObserver = new IntersectionObserver((itemAll, itemObserver) => {
+                itemAll.forEach(item => {
+                    if(item.isIntersecting) {
+                        item.target.classList.add('scale-in-ver-center');
+                        itemObserver.unobserve(item.target);
+                    }
+                });
+            },{
+                rootMargin: '0px 0px -15% 0px',
+                threshold: [1],
+            });
+
+            capTypeImgAll.forEach(item => {
+                imgObserver.observe(item);
+            });
+        }());
+    }
+}
+
+    
+
+/***/ }),
+
+/***/ "./js/modules/calc_index.js":
+/*!**********************************!*\
+  !*** ./js/modules/calc_index.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ calcIndex)
+/* harmony export */ });
+//= калькулятор index(калькулятор только на главной странице)
+function calcIndex ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
+    const calculationIndex = document.querySelector('.calculation-index');
+    if(calculationIndex) {
+        (function calcIndex () {
+            const selectSoffitTypeSelectAll = document.querySelectorAll('.select-soffit-type__select');
+
+            selectSoffitTypeSelectAll.forEach(select => {
+                select.addEventListener('click', selectClick);
+            });
+
+            let lineAll;
+            let selectText;
+            function selectClick (e) {
+                let selectTarget = e.target.closest('.select-soffit-type__select').nextElementSibling;
+                let typeSelect = e.target.closest('.select-soffit-type__select');
+                selectText = typeSelect.querySelector('.select-soffit-type__select-text');
+                lineAll = selectTarget.querySelectorAll('.select-soffit-type__line');
+                lineAll.forEach(line => {
+                    line.addEventListener('click', lineClick);
+                    line.classList.remove('line-none');
+                });
+            }
+            function lineClick (e) {
+                selectText.textContent = e.target.textContent;
+                lineAll.forEach(line => {
+                    line.classList.add('line-none');
+                    line.removeEventListener('click', lineClick);
+                });
+            }
+        }());
+
+        //* расчет при нажатии  
+        const moneyCalcButtonBody = document.querySelector('.money-calc__button-body');
+        const selectPromotionBody = document.querySelector('.select-promotion__body');
+        const selectPromotionRadioAll = selectPromotionBody.querySelectorAll('.select-promotion__radio');
+        const selectSoffitTypeBody = document.querySelector('.select-soffit-type__body');
+        const selectParametersBody = document.querySelector('.select-parameters__body');
+        const moneyCalcCash = document.querySelector('.money-calc__cash');
+        const moneyCalcBody = document.querySelector('.money-calc__body');
+        const moneyCalcError = document.querySelector('.money-calc__error');
+
+        moneyCalcButtonBody.addEventListener('click', () => {
+            let arrSoffit = [];
+            let arrSize = [];
+            let promotion = 0;
+            let praceM2;
+            let sizeInputAll = selectParametersBody.querySelectorAll('.select-parameters__size-input');
+            let selectTextAll = selectSoffitTypeBody.querySelectorAll('.select-soffit-type__select-text');
+            function fnPraceM2 () {
+                if(arrSize[0] > 3.5 && arrSize[1] > 3.5) {
+                    if(arrSoffit[1] === 'Цветной') praceM2 = 4.1;
+                    if(arrSoffit[1] === 'Белый') praceM2 = 3.1;
+                }else{
+                    if(arrSoffit[1] === 'Цветной') praceM2 = 3.1;
+                    if(arrSoffit[1] === 'Белый') praceM2 = 1.9;
+                }
+            }
+
+            // возврат скидки
+            selectPromotionRadioAll.forEach(item => {
+                if(item.checked) promotion = item.value;
+            });
+            // возврат значений
+            sizeInputAll.forEach(item => {
+                let num = `${item.value}`;
+                if(num.includes(',',0)) {
+                    num = +num.replace(',','.');
+                }else{
+                    num = +num;
+                }
+                if(num) arrSize.push(num);
+            });
+            // возврат селектов
+            selectTextAll.forEach(item => {
+                arrSoffit.push(item.textContent);
+            });
+
+            fnPraceM2();
+
+            if(arrSoffit.length === 2 && arrSize.length === 3) {
+                let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * perimeterPrace + arrSize[2] * lightPrace) * cursUsd + arrSize[0] * arrSize[1] * workPrace * promotion);
+                moneyCalcCash.textContent = result + ' руб.';
+                moneyCalcError.style.display = 'none';
+                moneyCalcBody.style.display = 'flex';
+            }else{
+                moneyCalcError.style.display = 'block';
+                moneyCalcBody.style.display = 'none';
+            }
+
+        });
+    }
+}
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/calc_m2.js":
+/*!*******************************!*\
+  !*** ./js/modules/calc_m2.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ calcM2Fn)
+/* harmony export */ });
+//=   счёт м2(расчет цены в квадратном блоке на главной странице, в зависимости только от м2)   
+function calcM2Fn ({cursUsd, works, pracePerimetr}) {
+    const praceMondeyInput = document.querySelector('.prace-mondey__input');
+    if(praceMondeyInput) {
+        (function calcM2 () {
+            const  praceMondeyByn = document.querySelector('.prace-mondey__byn');
+            let praceM2;
+            let square;
+            inputSum();
+            praceMondeyInput.addEventListener('input', () => {
+                inputSum();
+            });
+            function inputSum () {
+                square = praceMondeyInput.value;
+                if(square.length > 3) praceMondeyInput.value = square.slice(0,3);
+                if(square < 18) {
+                    praceM2 = 1.9;
+                }else{
+                    praceM2 = 3.1;
+                }
+                praceMondeyByn.innerHTML = `${Math.floor(square * praceM2 * cursUsd + pracePerimetr * cursUsd * square * 0.8 + square * works)}<span> РУБ.</span>`;
+            }
+        }());
+    }
+}
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/calculator_header.js":
+/*!*****************************************!*\
+  !*** ./js/modules/calculator_header.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ calculatorHeader)
+/* harmony export */ });
+function calculatorHeader () {
+    //= калькулятор 
+    (function calc () {
+        const body = document.body;
+        const calcButton = document.querySelector('.top-heder__call-calc');
+        const select = document.querySelector('.popup-calc__type-select');
+        const span = select.querySelector('span');
+        const lineAll = select.querySelectorAll('.popup-calc__type-line');
+        const button = document.querySelector('.popup-calc__button');
+        const popupCalc = document.querySelector('.popup-calc');
+        const popupX = document.querySelector('.popup-calc__x');
+        const topLineCalc = document.querySelector('.top-line__calc');
+        //открытие калькулятора
+        calcButton.addEventListener('click', () => {
+            popupCalc.style.display = 'flex';
+            body.style.overflow = 'hidden';
+        });
+        //открытие калькулятора
+        topLineCalc.addEventListener('click', () => {
+            popupCalc.style.display = 'flex';
+            body.style.overflow = 'hidden';
+        });
+        //закрытие калькулятора
+        popupX.addEventListener('click', () => {
+            popupCalc.style.display = 'none';
+            body.style.overflow = 'auto';
+        });
+        select.addEventListener('click', (e) => {
+            select.classList.toggle('active-select');
+            lineAll.forEach(item => {
+                item.classList.toggle('active');
+            });
+            if(e.target.classList.contains('popup-calc__type-line')) {
+                span.textContent = e.target.innerHTML;
+            }
+        });
+        button.addEventListener('click', () => {
+            let soffit;
+            let arrSize = [];
+            let promotion = 0;
+            let praceM2;
+            let sizeInputAll = document.querySelectorAll('.text-input');
+            let selectText = document.querySelector('.popup-calc__type-select span');
+            let radioAll = document.querySelectorAll('.popup-calc__sale-input');
+            function fnPraceM2 () {
+                if(arrSize[0] > 3.5 && arrSize[1] > 3.5) {
+                    if(soffit === 'Цветной') praceM2 = 4.1;
+                    if(soffit === 'Белый') praceM2 = 3.1;
+                }else{
+                    if(soffit === 'Цветной') praceM2 = 3.1;
+                    if(soffit === 'Белый') praceM2 = 1.9;
+                }
+            }
+
+            // возврат скидки
+            radioAll.forEach(item => {
+                if(item.checked) promotion = item.value;
+            });
+            // возврат селектов
+            soffit = selectText.textContent;
+            // возврат значений
+            sizeInputAll.forEach(item => {
+                let num = `${item.value}`;
+                if(num.includes(',',0)) {
+                    num = +num.replace(',','.');
+                }else{
+                    num = +num;
+                }
+                if(num) arrSize.push(num);
+            });
+            
+            fnPraceM2();
+
+            let cash = document.querySelector('.popup-calc__cash');
+
+            if(soffit === 'Цветной' || soffit === 'Белый' && arrSize.length === 3) {
+                let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * perimeterPrace + arrSize[2] * lightPrace) * cursUsd + arrSize[0] * arrSize[1] * workPrace * promotion);
+                cash.textContent ='стоимость: ' + result + ' руб.';
+                cash.style.display = 'block';
+            }else{
+                cash.textContent ='введите все данные !';
+                cash.style.display = 'block';
+            }
+            });
+    }());
+}
+
+
+/***/ }),
+
+/***/ "./js/modules/check_number_phone.js":
+/*!******************************************!*\
+  !*** ./js/modules/check_number_phone.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ checkNumberPhone)
+/* harmony export */ });
+function checkNumberPhone (inputTel, boxInput, styleBox, {classOne, classTwo}) {
+
+    function symbolPlus (number, symbol) {
+        if(inputTel.value.length === number) {
+            inputTel.value = inputTel.value.slice(0,number - 1) + symbol + inputTel.value[number - 1];
+        }
+    }
+
+    inputTel.value = '+375';
+    inputTel.addEventListener('input', () => {
+        if(inputTel.value[inputTel.value.length - 1] === '(' || inputTel.value[inputTel.value.length - 1] === ')' || inputTel.value[inputTel.value.length - 1] === '-') {
+            inputTel.value = inputTel.value.slice(0, inputTel.value.length - 1);
+        }else {
+            if(inputTel.value.length < 4) {
+                inputTel.value = '+375';
+            }
+            symbolPlus(5, '(');
+            symbolPlus(8, ')');
+            symbolPlus(12, '-');
+            symbolPlus(15, '-');
+            if(inputTel.value.length > 16) {
+                inputTel.value = inputTel.value.slice(0,17);
+            }
+            if(/^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)){
+                if(styleBox === 0) boxInput.style.boxShadow = '0px 0px 2px 2px rgba(22, 255, 138, 0.663) inset';
+                if(styleBox === 1) inputTel.style.border = '#28b352 2px solid';
+                
+            }else {
+                if(styleBox === 0) boxInput.style.boxShadow = '0px 0px 3px 3px rgba(255, 22, 22, 0.9) inset';
+                if(styleBox === 1) inputTel.style.border = '#ec3c3c 2px solid';
+                
+            }
+        }
+        // проверка телефона в конце
+        if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value)) {
+            if(boxInput.classList.contains(classOne)) {
+                boxInput.classList.remove(classOne);
+                boxInput.classList.add(classTwo);
+            }
+        }else {
+            if(boxInput.classList.contains(classTwo)) {
+                boxInput.classList.remove(classTwo);
+                boxInput.classList.add(classOne);
+            }
+        }
+    });
+}
+
+/***/ }),
+
+/***/ "./js/modules/email_index.js":
+/*!***********************************!*\
+  !*** ./js/modules/email_index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ emailIndexMain)
+/* harmony export */ });
+//= отправка на почту на главной странице 
+function emailIndexMain () {
+    const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
+    if(praceMondeyTelInput) {
+        (function emailIndex () {
+            const  form = document.forms.actionCall;
+            const  praceMondeyButton = document.querySelector('.prace-mondey__button');
+            const animeMeil = document.querySelector('.anime-meil');
+            const bodyDis = document.body;
+            praceMondeyButton.addEventListener('click', (e) => {
+                e.preventDefault;
+                if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {
+                    let formData = new FormData(form);
+                    bodyDis.style.overflow = 'hidden';
+                    animeMeil.style.display = 'block';
+                    fetch('mail.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(data => {
+                        if(data.status === 200) {
+                            bodyDis.style.overflow = 'auto';
+                            animeMeil.style.display = 'none';
+                            praceMondeyButton.textContent = 'заявка отправлена';
+                            praceMondeyTelInput.value = 'Cпасибо за заказ !';
+                        }
+                    });
+                }else {
+                    praceMondeyButton.textContent = 'проверьте номер';
+                    setTimeout(()=>{
+                        praceMondeyButton.textContent = 'заказать по акции';
+                    },2000);
+                }
+            });
+        }());
+    }
+}
+
+    
+
+
+/***/ }),
+
+/***/ "./js/modules/gallery.js":
+/*!*******************************!*\
+  !*** ./js/modules/gallery.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ galleryFn)
+/* harmony export */ });
+function galleryFn () {
+    const gallery = document.querySelector('.gallery');
+    if(gallery) {
+        (function galleryAdd () {
+            const body = document.body;
+            const galleryPop = document.querySelector('.gallery-pop');
+            const galleryBody = document.querySelector('.gallery__body');
+            const popUpBody = document.querySelector('.gallery-pop__body');
+            const imgBox = document.querySelector('.gallery-pop__img-box');
+            const buttonRight = document.querySelector('.gallery-pop__right');
+            const buttonLeft = document.querySelector('.gallery-pop__left');
+            const buttonClose = document.querySelector('.gallery-pop__x');
+            const dotsBox = document.querySelector('.gallery-pop__dots');
+            const picItemBody = document.querySelectorAll('.pic-item__body');
+            const styleDiv = document.querySelector('style');
+            const arrSrc = [];
+            const arrImg = galleryBody.querySelectorAll('img');
+            const classAddImg = ['gallery-pop__img', '_gap-img'];
+            let centerNumber;
+            const  gap = galleryPop.getAttribute('data-gap');
+            const transitionImg = galleryPop.getAttribute('data-transition');
+    
+            //* fn сбор src в массив 
+            function allImgSrc () {
+                arrImg.forEach(item => {
+                    arrSrc.push(item.getAttribute('src'));
+                });
+            }
+            allImgSrc();
+            //* fn открытие popUp
+            function openPopUp () {
+                galleryBody.addEventListener('click', (e) => {
+                    gapOpenPopUp();
+                    let target = e.target;
+                    let src = target.getAttribute('src');
+                    centerNumber = searchInArrSrc(src);
+                    // создаем
+                    let imgLeft = document.createElement('img');
+                    let img = document.createElement('img');
+                    let imgRight = document.createElement('img');
+                    // добавляем класс
+                    imgLeft.classList.add(...classAddImg);
+                    img.classList.add(...classAddImg);
+                    imgRight.classList.add(...classAddImg);
+                    // добавляем src
+                    imgLeft.setAttribute('src', arrSrc[checkNumber(centerNumber, -1)]);
+                    img.setAttribute('src', arrSrc[centerNumber]);
+                    imgRight.setAttribute('src', arrSrc[checkNumber(centerNumber, 1)]);
+    
+                    imgLeft.style.left = '-100%';
+                    img.style.left = '0%';
+                    imgRight.style.left = '100%';
+    
+                    galleryPop.style.display = 'flex';
+                    // добавляем в PopUp
+                    imgBox.append(imgLeft);
+                    imgBox.append(img);
+                    imgBox.append(imgRight);
+                    dotsOpen();
+                    body.style.overflow = 'hidden';
+                });
+            }
+            openPopUp();
+            //* fn закрытие popUp
+            function closePopUp () {
+                buttonClose.addEventListener('click', () => {
+                    galleryPop.style.display = 'none';
+                    let imgAllClean = popUpBody.querySelectorAll('.gallery-pop__img');
+                    imgAllClean.forEach(item => {
+                        item.remove();
+                    });
+                    dotsClose();
+                    body.style.overflow = 'auto';
+                });
+            }
+            closePopUp();
+            //* fn поиск src в массиве
+            function searchInArrSrc (find) {
+                return arrSrc.indexOf(find, 0);
+            }
+            //* fn проверка числа на случай выхода за пределы массива
+            function checkNumber (num, number) {
+                num = num + number;
+                if(num < 0) num = arrSrc.length - 1;
+                if(num > arrSrc.length - 1) num = 0;
+                return num;
+            }
+            //* fn определение в зависимости от центрального кадра крайних кадров
+            function checkCenterNumber (num) {
+                if(num < 0) centerNumber = arrSrc.length - 1;
+                if(num > arrSrc.length - 1) centerNumber = 0;
+            }
+            //* fn нажатие вправо >
+            function rightButton () {
+                buttonRight.addEventListener('click', clickRight);
+                function clickRight () {
+                    centerNumber++;
+                    checkCenterNumber(centerNumber);
+                    let img = document.createElement('img');
+                    img.classList.add(...classAddImg);
+                    img.setAttribute('src', arrSrc[checkNumber(centerNumber, 1)]);
+                    img.style.left = '200%';
+                    imgBox.append(img);
+                    setTimeout(function () {
+                        let imgAllInPopUp = imgBox.querySelectorAll('.gallery-pop__img');
+                        let i = -200;
+                        imgAllInPopUp.forEach(item => {
+                            item.style.left = i + '%';
+                            i = i + 100;
+                        });
+                        dotWhite();
+                        buttonRight.removeEventListener('click', clickRight);
+                        setTimeout(function () {
+                            let divDel = imgBox.querySelector('.gallery-pop__img');
+                            divDel.remove();
+                            buttonRight.addEventListener('click', clickRight);
+                        }, transitionImg);
+                    },10);
+                    
+                }
+            }
+            rightButton();
+            //* fn нажатие влево <
+            function leftButton () {
+                buttonLeft.addEventListener('click', clickLeft);
+                function clickLeft () {
+                    centerNumber--;
+                    checkCenterNumber(centerNumber);
+                    let img = document.createElement('img');
+                    img.classList.add(...classAddImg);
+                    img.setAttribute('src', arrSrc[checkNumber(centerNumber, -1)]);
+                    img.style.left = '-200%';
+                    imgBox.prepend(img);
+                    setTimeout(function () {
+                        let imgAllInPopUp = imgBox.querySelectorAll('.gallery-pop__img');
+                        let i = -100;
+                        imgAllInPopUp.forEach(item => {
+                            console.log('',item);
+                            item.style.left = i + '%';
+                            i = i + 100;
+                        });
+                        dotWhite();
+                        let divDel = imgBox.lastElementChild;
+                        buttonLeft.removeEventListener('click', clickLeft);
+                        setTimeout(function () {
+                            divDel.remove();
+                            buttonLeft.addEventListener('click', clickLeft);
+                        }, transitionImg);
+                    },10);
+                }
+            }
+            leftButton();
+            //* пробел между слайдами
+            function gapOpenPopUp () {
+                let time = transitionImg / 1000;
+                if(window.matchMedia('(min-width: 1021px)').matches){
+                    styleDiv.innerHTML = `._gap-img {padding-left: ${gap}px; padding-right: ${gap}px; transition:all ${time}s ease;}`;
+                }
+                if(window.matchMedia('(max-width: 1020px)').matches && window.matchMedia('(min-width: 768px)').matches){
+                    let gap2 = gap * 0.8;
+                    styleDiv.innerHTML = `._gap-img {padding-left: ${gap2}px; padding-right: ${gap2}px; transition:all ${time}s ease;}`;
+                }
+                if(window.matchMedia('(max-width: 767px)').matches){
+                    let gap3 = gap * 0.7;
+                    styleDiv.innerHTML = `._gap-img {padding-left: ${gap3}px; padding-right: ${gap3}px; transition:all ${time}s ease;}`;
+                }
+            }
+            //* точки навигации внизу
+            function dotsOpen () {
+                arrImg.forEach(item => {
+                    let dotDiv = document.createElement('div');
+                    dotDiv.classList.add('gallery-pop__dot');
+                    dotsBox.append(dotDiv);
+                });
+                let allDots = dotsBox.querySelectorAll('.gallery-pop__dot');
+                allDots[centerNumber].classList.add('dot-white');
+            }
+            function dotsClose () {
+                dotsBox.innerHTML='';
+            }
+            function dotWhite () {
+                let allDots = dotsBox.querySelectorAll('.gallery-pop__dot');
+                allDots.forEach(item => {
+                    if(item.matches('[class="gallery-pop__dot dot-white"]')) item.classList.remove('dot-white');
+                });
+                allDots[centerNumber].classList.add('dot-white');
+            }
+            //* установка высоты img начальной галереи
+            function galleryHeight () {
+                let hi = gallery.getAttribute('data-height');
+                picItemBody.forEach(item => {
+                    item.style.paddingBottom = hi;
+                });
+            }
+            galleryHeight();
+        }());
+    }
+}
+    
+
+/***/ }),
+
+/***/ "./js/modules/icon_observer.js":
+/*!*************************************!*\
+  !*** ./js/modules/icon_observer.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ iconGo)
+/* harmony export */ });
+//= движение иконок соц.сетей при появлении 
+function iconGo () {
+    const iconsBox = document.querySelector('.all-contacts__icons');
+    if(iconsBox) {
+        let time = 0;
+        const iconObserver = new IntersectionObserver((elAll, observMy) => {
+            elAll.forEach(item => {
+                if(item.isIntersecting) {
+                    let target = item.target;
+                    time = time + 350;
+                    setTimeout(function (){
+                        target.classList.add('roll-in-right');
+                        observMy.unobserve(target);
+                    }, time);
+                }
+            });
+        },{
+            threshold:[1],
+            rootMargin: '-40px 0px -10% 0px',
+        });
+
+        const allIcons = iconsBox.querySelectorAll('img');
+        allIcons.forEach(item => iconObserver.observe(item));
+    }
+}
+
+
+
+/***/ }),
+
+/***/ "./js/modules/menu_nav.js":
+/*!********************************!*\
+  !*** ./js/modules/menu_nav.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ menuNav)
+/* harmony export */ });
+/* harmony import */ var _calculator_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./calculator_header */ "./js/modules/calculator_header.js");
+
+
+function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
+    //=   меню   
+    (function menu () {
+        //variables
+        const menu = document.querySelector('.menu');
+        const burgerSquare = document.querySelector('.burger__square');
+        const  menuList = document.querySelector('.menu__list');
+        const  menuLineAll = menuList.querySelectorAll('.menu__line');
+        const  menuLine = menuList.querySelector('.menu__line');
+        const  burgerSpan = document.querySelector('.burger__span');
+        
+        //body-open menu
+        burgerSquare.addEventListener('click', () => {
+            let time = 0.3;
+            menuLineAll.forEach(item => {
+                item.style.transition = `all ${time}s ease`;
+                item.classList.toggle('active');
+                time += 0.1;
+            });
+            burgerSpan.classList.toggle('active-burger');
+        });
+
+        //body-fix menu
+        let positionMenu = menu.getBoundingClientRect().top;
+        window.addEventListener('scroll', (e) => {
+            if(window.scrollY  >= positionMenu) {
+                menu.classList.add('menu__fix');
+            }else{
+                menu.classList.remove('menu__fix');
+            }
+        });
+        
+    }());
+
+    //= анимация иконок подвала
+    (function footerIcon () {
+        const iconObserver = new IntersectionObserver ((eAll, myObserver) => {
+            eAll.forEach(item => {
+                if(item.isIntersecting) {
+                    let target = item.target;
+                    target.classList.add('rotate-scale-up');
+                    myObserver.unobserve(target);
+                }
+            });
+        },{
+            threshold:[1],
+            rootMargin: '10px 0px 0px 0px'
+        });
+
+        const iconBox = document.querySelector('.footer__icons');
+        const iconAll = iconBox.querySelectorAll('img');
+        iconAll.forEach(item => {
+            iconObserver.observe(item);
+        });
+    }());
+
+    //= калькулятор fn 
+    (0,_calculator_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
+}
+    
+
+/***/ }),
+
+/***/ "./js/modules/phone_input_index.js":
+/*!*****************************************!*\
+  !*** ./js/modules/phone_input_index.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ phoneInputIndex)
+/* harmony export */ });
+/* harmony import */ var _check_number_phone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check_number_phone */ "./js/modules/check_number_phone.js");
+//= ввод телефона и его проверка на главной 
+
+
+function phoneInputIndex () {
+    const praceMondeyTel = document.querySelector('.prace-mondey__tel');
+    if(praceMondeyTel) {
+        (function phoneInput () {
+            const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
+            //* проверка введенного телефона 
+            praceMondeyTelInput.addEventListener('click',  () => (0,_check_number_phone__WEBPACK_IMPORTED_MODULE_0__["default"])(praceMondeyTelInput, praceMondeyTel, 0, {classOne: 'grey', classTwo: 'green'}));
+        }());
+    }
+}
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/popup.js":
+/*!*****************************!*\
+  !*** ./js/modules/popup.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ popUpFn)
+/* harmony export */ });
+/* harmony import */ var _check_number_phone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./check_number_phone */ "./js/modules/check_number_phone.js");
+
+
+function popUpFn () {
+    //= popup блок  
+    const orderCall = document.querySelector('.order-call');
+    if(orderCall){
+        //* всплытие popup   
+        (function popup () {
+            const orderCall = document.querySelector('.order-call');
+            const openAll = document.querySelectorAll('[data-popup="open"]');
+            const title = orderCall.querySelector('.order-call__title');
+            const body = document.body;
+            //open
+            openAll.forEach(item => {
+                item.addEventListener('click', () => {
+                    orderCall.style.display = 'flex';
+                    body.style.overflow = 'hidden';
+                    if(item.hasAttribute('data-name-button')) {
+                        title.textContent = item.getAttribute('data-name-button');
+                    }
+                });
+            });
+            //close
+            orderCall.addEventListener('click', (e) => {
+                body.style.overflow = 'auto';
+                if(e.target.closest('.order-call__x')) {
+                    orderCall.style.display = 'none';
+                }
+            });
+            
+        }());
+        //* проверка телефона и трубка зеленая/серая   
+        (function phoneInput () {
+            const inputTel = document.querySelector('.order-call__tel');
+            const divInputTel = document.querySelector('.order-call__tel-div');
+            inputTel.addEventListener('click', () => (0,_check_number_phone__WEBPACK_IMPORTED_MODULE_0__["default"])(inputTel, divInputTel, 1, {classOne: '_grey', classTwo: '_green'}));
+        }());
+        //* проверка имени   
+        const orderCallName = document.querySelector('.order-call__name');
+        function nameTest () {
+            let name = orderCallName.value;
+            if(name.length < 3) {
+                orderCallName.value = '';
+                orderCallName.setAttribute('placeholder', 'Минимум 3 символа.');
+            }
+        }
+        //* отправка на почту с анимацией  
+        (function emaiPopUp () {
+            const button = document.querySelector('.order-call__button');
+            const inputTel = document.querySelector('.order-call__tel');
+            const bodyDis = document.body;
+            const animeMeil = document.querySelector('.anime-meil');
+            const orderTitle = document.querySelector('.order-call__title');
+            let title = orderTitle.textContent;
+
+            button.addEventListener('click', clickPopUp);
+
+            function clickPopUp (e) {
+                e.preventDefault;
+                nameTest();
+                const  form = document.forms.popup;
+                if(inputTel.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(inputTel.value) && orderCallName.value) {
+                    let formData = new FormData(form);
+                    formData.set('title', title);
+                    bodyDis.style.overflow = 'hidden';
+                    animeMeil.style.display = 'block';
+                    fetch('popup.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(data => {
+                        if(data.status === 200) {
+                            bodyDis.style.overflow = 'auto';
+                            animeMeil.style.display = 'none';
+                            button.textContent = 'заявка отправлена';
+                            orderCallName.value = '';
+                            inputTel.value = 'Cпасибо за заказ !';
+                        }
+                    });
+                }else {
+                    button.textContent = 'проверьте данные';
+                    setTimeout(()=>{
+                        button.textContent = 'заказать по акции';
+                    },2000);
+                }
+            }
+        }());
+    }
+}
+
+
+/***/ }),
+
+/***/ "./js/modules/ruler_movement.js":
+/*!**************************************!*\
+  !*** ./js/modules/ruler_movement.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ rulerMovement)
+/* harmony export */ });
+//= бегаюшая рулетка на главной странице
+function rulerMovement () {
+    const rulesBody = document.querySelector('.rules-body');
+    if(rulesBody) {
+        const wrapper = document.querySelector('.wrapper');
+        const oneStep = document.querySelector('.one-step');
+        let timeS;
+        function time () {
+            if(oneStepWidth > 1100) timeS = 20;
+            if(oneStepWidth < 1100 && oneStepWidth > 900) timeS = 17;
+            if(oneStepWidth < 900 && oneStepWidth > 600) timeS = 14;
+            if(oneStepWidth < 600) timeS = 10;
+        }
+        let oneStepWidth = oneStep.getBoundingClientRect().width - 80;
+        time();
+        rulesBody.style.animation = `draive infinite ${timeS}s`;
+
+        const elementStyle = document.createElement('style');
+        elementStyle.innerHTML = `
+        @keyframes draive {
+            0% {
+                transform: translate(0, 0);
+            }
+            15% {
+                transform: translate( ${oneStepWidth}px, 0);
+            }
+            30% {
+                transform: translate( ${oneStepWidth}px, 0);
+            }
+            40% {
+                transform: translate(0, 0);
+            }
+        }`;
+        wrapper.append(elementStyle);
+    }
+}
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./js/modules/youtube.js":
+/*!*******************************!*\
+  !*** ./js/modules/youtube.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ youtubeVideo)
+/* harmony export */ });
+function youtubeVideo () {
+    let videos = document.querySelectorAll('.video');
+    if(videos) {
+        function findVideos() {
+            for (let i = 0; i < videos.length; i++) {
+                setupVideo(videos[i]);
+            }
+        }
+        
+        function setupVideo(video) {
+            let link = video.querySelector('.video__link');
+            let media = video.querySelector('.video__media');
+            let button = video.querySelector('.video__button');
+            let id = parseMediaURL(media);
+        
+            video.addEventListener('click', () => {
+                let iframe = createIframe(id);
+        
+                link.remove();
+                button.remove();
+                video.appendChild(iframe);
+            });
+        
+            link.removeAttribute('href');
+            video.classList.add('video--enabled');
+        }
+        
+        function parseMediaURL(media) {
+            let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+            let url = media.src;
+            let match = url.match(regexp);
+        
+            return match[1];
+        }
+        
+        function createIframe(id) {
+            let iframe = document.createElement('iframe');
+        
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.setAttribute('allow', 'autoplay');
+            iframe.setAttribute('src', generateURL(id));
+            iframe.classList.add('video__media');
+        
+            return iframe;
+        }
+        
+        function generateURL(id) {
+            let query = '?rel=0&showinfo=0&autoplay=1';
+        
+            return 'https://www.youtube.com/embed/' + id + query;
+        }
+        
+        findVideos();
+    }
+}
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!**********************!*\
+  !*** ./js/script.js ***!
+  \**********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_menu_nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu_nav */ "./js/modules/menu_nav.js");
+/* harmony import */ var _modules_gallery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/gallery */ "./js/modules/gallery.js");
+/* harmony import */ var _modules_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/popup */ "./js/modules/popup.js");
+/* harmony import */ var _modules_calc_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/calc_index */ "./js/modules/calc_index.js");
+/* harmony import */ var _modules_calc_m2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/calc_m2 */ "./js/modules/calc_m2.js");
+/* harmony import */ var _modules_ruler_movement__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/ruler_movement */ "./js/modules/ruler_movement.js");
+/* harmony import */ var _modules_phone_input_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/phone_input_index */ "./js/modules/phone_input_index.js");
+/* harmony import */ var _modules_email_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/email_index */ "./js/modules/email_index.js");
+/* harmony import */ var _modules_youtube__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/youtube */ "./js/modules/youtube.js");
+/* harmony import */ var _modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/icon_observer */ "./js/modules/icon_observer.js");
+/* harmony import */ var _modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/animation_praise */ "./js/modules/animation_praise.js");
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    let cursUsd = 2.6; //курс доллара
+    let perimeterPrace = 1; //цена в usd за метр периметра
+    let lightPrace = 1; //цена в usd за одну световую точку
+    let workPrace = 15; //цена в byn за метр кв. работы
+
+    (0,_modules_menu_nav__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        cursUsd: cursUsd, 
+        workPrace: workPrace,
+        lightPrace: lightPrace,
+        perimeterPrace: perimeterPrace,
+    });
+    (0,_modules_gallery__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    (0,_modules_popup__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_modules_calc_index__WEBPACK_IMPORTED_MODULE_3__["default"])({
+        cursUsd: cursUsd,
+        workPrace: workPrace,
+        lightPrace: lightPrace,
+        perimeterPrace: perimeterPrace,
+    });
+    (0,_modules_calc_m2__WEBPACK_IMPORTED_MODULE_4__["default"])({
+        cursUsd: cursUsd, 
+        works: workPrace, 
+        pracePerimetr: perimeterPrace,
+    });
+    (0,_modules_ruler_movement__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    (0,_modules_phone_input_index__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    (0,_modules_email_index__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    (0,_modules_youtube__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    (0,_modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    (0,_modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__["default"])();
+});
+})();
+
+/******/ })()
+;
 //# sourceMappingURL=bundle.js.map
