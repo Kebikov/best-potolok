@@ -5055,6 +5055,7 @@ input[type=number]:focus {
   width: 30px;
   height: 30px;
   background: url(../img/gallery/x.png) 0 0/cover no-repeat;
+  cursor: pointer;
 }
 @media (max-width: 800px) {
   .popup-calc__x {
