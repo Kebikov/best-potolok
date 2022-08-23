@@ -231,7 +231,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ calculatorHeader)
 /* harmony export */ });
-function calculatorHeader () {
+function calculatorHeader (cursUsd, workPrace, lightPrace, perimeterPrace) {
     //= калькулятор 
     (function calc () {
         const body = document.body;
@@ -244,7 +244,7 @@ function calculatorHeader () {
         const popupX = document.querySelector('.popup-calc__x');
         const topLineCalc = document.querySelector('.top-line__calc');
         //открытие калькулятора
-        calcButton.addEventListener('click', () => {
+            calcButton.addEventListener('click', () => {
             popupCalc.style.display = 'flex';
             body.style.overflow = 'hidden';
         });
@@ -756,7 +756,7 @@ function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
     }());
 
     //= калькулятор fn 
-    (0,_calculator_header__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    (0,_calculator_header__WEBPACK_IMPORTED_MODULE_0__["default"])(cursUsd, workPrace, lightPrace, perimeterPrace);
 }
     
 
@@ -894,6 +894,68 @@ function popUpFn () {
     }
 }
 
+
+/***/ }),
+
+/***/ "./js/modules/questions.js":
+/*!*********************************!*\
+  !*** ./js/modules/questions.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ questions)
+/* harmony export */ });
+function questions () {
+    (function questionsBox () {
+        const boxQuestions = document.querySelector('.box-questions');
+        if(boxQuestions) {
+            const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
+            function allClose () {
+                const bodyAll = document.querySelectorAll('.questions__body');
+                bodyAll.forEach(item => {
+                    const info = item.querySelector('.questions__info');
+                    const text = item.querySelector('.questions__text');
+                    const title = item.querySelector('.questions__title');
+
+                    info.style.height = '0px';
+                    text.style.opacity = 0;
+                    item.classList.remove('_questions-white');
+                    title.classList.remove('_questions-text');
+                });
+            }
+
+            questionsTitleAll.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    allClose();
+                    const parent = e.target.closest('.questions__body');
+                    const title = parent.querySelector('.questions__title');
+                    const info = parent.querySelector('.questions__info');
+                    const text = parent.querySelector('.questions__text');
+                    function close () {
+                        info.style.height = '0px';
+                        text.style.opacity = 0; 
+                    }
+
+                    if(getComputedStyle(info).height === '0px') {
+                        let hi = text.offsetHeight;
+                        info.style.height = hi + 'px';
+                        setTimeout(() => {
+                            text.style.opacity = 1;
+                        }, 100);
+                        parent.classList.add('_questions-white');
+                        title.classList.add('_questions-text');
+                    }else {
+                        close();
+                        parent.classList.remove('_questions-white');
+                        title.classList.remove('_questions-text');
+                    }
+                });
+            });
+        }
+    }());
+}
 
 /***/ }),
 
@@ -1093,6 +1155,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_youtube__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/youtube */ "./js/modules/youtube.js");
 /* harmony import */ var _modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/icon_observer */ "./js/modules/icon_observer.js");
 /* harmony import */ var _modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/animation_praise */ "./js/modules/animation_praise.js");
+/* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/questions */ "./js/modules/questions.js");
+
 
 
 
@@ -1136,6 +1200,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_youtube__WEBPACK_IMPORTED_MODULE_8__["default"])();
     (0,_modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    (0,_modules_questions__WEBPACK_IMPORTED_MODULE_11__["default"])();
 });
 })();
 

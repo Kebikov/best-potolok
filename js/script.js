@@ -9,6 +9,7 @@ import emailIndexMain from './modules/email_index';
 import youtubeVideo from './modules/youtube';
 import iconGo from './modules/icon_observer';
 import animationPraise from './modules/animation_praise';
+import questions from './modules/questions';
 
 window.addEventListener('DOMContentLoaded', () => {
     let cursUsd = 2.6; //курс доллара
@@ -41,4 +42,5 @@ window.addEventListener('DOMContentLoaded', () => {
     youtubeVideo();
     iconGo();
     animationPraise();
+    questions();
 });

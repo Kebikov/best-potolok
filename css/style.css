@@ -2939,15 +2939,15 @@ input[type=number]:focus {
 }
 
 @media (max-width: 1020px) {
-  .icon-catalog {
+  .icon-questions {
     position: relative;
   }
-  .icon-catalog::after {
+  .icon-questions::after {
     content: "";
     position: absolute;
     top: 12px;
     left: 15px;
-    background: url(../img/header/catalog.png) 0 0/cover no-repeat;
+    background: url(../img/header/questions.png) 0 0/cover no-repeat;
     height: 23px;
     width: 23px;
   }
@@ -5231,6 +5231,107 @@ input[type=number]:focus {
     font-size: 16px;
     padding: 5px 0px 5px 0px;
   }
+}
+
+._padding40 {
+  padding: 0px 0px 20px 0px;
+}
+
+.box-questions {
+  border: 2px #A55809 solid;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #A55809;
+}
+
+.questions__body {
+  background-color: #A55809;
+}
+.questions__title {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+}
+@media (max-width: 1910px) {
+  .questions__title {
+    font-size: calc(16px + 4 * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .questions__title {
+    font-size: 16px;
+  }
+}
+.questions__title span {
+  display: block;
+  padding: 0px 40px 0px 0px;
+  line-height: 120%;
+}
+.questions__title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  background: url(../img/arrow-keys/plus.png) 0 0/cover no-repeat;
+}
+@media (max-width: 768px) {
+  .questions__title::before {
+    height: 23px;
+    width: 23px;
+  }
+}
+.questions__title::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+}
+.questions__info {
+  height: 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.questions__text {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 400;
+  color: #2a2b30;
+  padding: 0px 20px 20px 20px;
+  line-height: 120%;
+}
+@media (max-width: 768px) {
+  .questions__text {
+    font-size: 16px;
+  }
+}
+
+._questions-white {
+  background-color: #fff;
+}
+
+._questions-text {
+  color: #2a2b30;
+}
+
+._after-not::after {
+  height: 0;
 }
 
 .wrapper {

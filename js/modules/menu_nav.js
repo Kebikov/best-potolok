@@ -57,6 +57,6 @@ export default function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace
     }());
 
     //= калькулятор fn 
-    calculatorHeader();
+    calculatorHeader(cursUsd, workPrace, lightPrace, perimeterPrace);
 }
     

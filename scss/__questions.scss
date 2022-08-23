@@ -1,0 +1,101 @@
+$brown: #6d4d3a;
+$orange: #fe8d1b;
+$text: #5b4f3c;
+$grey: #2a2b30;
+$questions-color: #A55809;
+
+._padding40 {
+    //margin: 0px 0px 40px 0px;
+    padding: 0px 0px 20px 0px;
+}
+
+.box-questions {
+    border: 2px $questions-color solid;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: $questions-color;
+}
+
+.questions {
+    // .questions__body
+    &__body {
+        background-color: $questions-color;
+    }
+    // .questions__title
+    &__title {
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+        padding: 20px 20px 20px 20px;
+        position: relative;
+        @media (max-width: 1910px){
+            font-size: calc(16px + 4 * (100vw - 375px) / 1535);
+        }
+        @media (max-width: 375px){
+            font-size: 16px;
+        }
+        & span {
+            display: block;
+            padding: 0px 40px 0px 0px;
+            line-height: 120%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 20px;
+            height: 30px;
+            width: 30px;
+            background: url(../img/arrow-keys/plus.png) 0 0 / cover no-repeat;
+            @media (max-width: 768px){
+                height: 23px;
+                width: 23px;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #fff;
+        }
+    }
+    // .questions__info
+    &__info {
+        height: 0px;
+        transition:all 0.3s ease;
+    }
+    // .questions__text
+    &__text {
+        opacity: 0;
+        transition:all 0.3s ease;
+        font-family: "Roboto";
+        font-size: 17px;
+        font-weight: 400;
+        color: $grey;
+        padding: 0px 20px 20px 20px;
+        line-height: 120%;
+        @media (max-width: 768px){
+            font-size: 16px;
+        }
+    }
+}
+
+._questions-white {
+    background-color: #fff;
+}
+._questions-text {
+    color: $grey;
+}
+
+._after-not::after {
+    height: 0;
+}
+
+
+

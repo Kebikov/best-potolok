@@ -1,4 +1,4 @@
-export default function calculatorHeader () {
+export default function calculatorHeader (cursUsd, workPrace, lightPrace, perimeterPrace) {
     //= калькулятор 
     (function calc () {
         const body = document.body;
@@ -11,7 +11,7 @@ export default function calculatorHeader () {
         const popupX = document.querySelector('.popup-calc__x');
         const topLineCalc = document.querySelector('.top-line__calc');
         //открытие калькулятора
-        calcButton.addEventListener('click', () => {
+            calcButton.addEventListener('click', () => {
             popupCalc.style.display = 'flex';
             body.style.overflow = 'hidden';
         });

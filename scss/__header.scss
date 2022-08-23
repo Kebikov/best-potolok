@@ -515,7 +515,7 @@ $text: #5b4f3c;
         }
     }
 }
-.icon-catalog {
+.icon-questions {
     @media (max-width: 1020px){
         position: relative;
         &::after {
@@ -523,7 +523,7 @@ $text: #5b4f3c;
             position: absolute;
             top: 12px;
             left: 15px;
-            background: url(../img/header/catalog.png) 0 0 / cover no-repeat;
+            background: url(../img/header/questions.png) 0 0 / cover no-repeat;
             height: 23px;
             width: 23px;
         }
