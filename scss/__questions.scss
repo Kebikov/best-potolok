@@ -29,6 +29,7 @@ $questions-color: #A55809;
         color: #fff;
         padding: 20px 20px 20px 20px;
         position: relative;
+        cursor: pointer;
         @media (max-width: 1910px){
             font-size: calc(16px + 4 * (100vw - 375px) / 1535);
         }
@@ -90,12 +91,13 @@ $questions-color: #A55809;
     background-color: #fff;
 }
 ._questions-text {
-    color: $grey;
+    color: $questions-color;
 }
 
 ._after-not::after {
     height: 0;
 }
+
 
 
 

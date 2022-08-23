@@ -5254,6 +5254,7 @@ input[type=number]:focus {
   color: #fff;
   padding: 20px 20px 20px 20px;
   position: relative;
+  cursor: pointer;
 }
 @media (max-width: 1910px) {
   .questions__title {
@@ -5327,7 +5328,7 @@ input[type=number]:focus {
 }
 
 ._questions-text {
-  color: #2a2b30;
+  color: #A55809;
 }
 
 ._after-not::after {

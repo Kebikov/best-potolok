@@ -946,6 +946,7 @@ function questions () {
                         }, 100);
                         parent.classList.add('_questions-white');
                         title.classList.add('_questions-text');
+                        
                     }else {
                         close();
                         parent.classList.remove('_questions-white');
