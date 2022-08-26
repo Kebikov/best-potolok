@@ -39,6 +39,7 @@ try {
 
     //= Получатель письма   
     $mail->addAddress('kebikovgen@gmail.com');
+    $mail->addAddress('etishev@yandex.ru');
 
     //=Отправка сообщения   
     $mail->isHTML(true);
