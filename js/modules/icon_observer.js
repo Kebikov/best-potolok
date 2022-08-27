@@ -1,7 +1,7 @@
 //= движение иконок соц.сетей при появлении 
 export default function iconGo () {
-    const iconsBox = document.querySelector('.all-contacts__icons');
-    if(iconsBox) {
+    try {
+        const iconsBox = document.querySelector('.all-contacts__icons');
         let time = 0;
         const iconObserver = new IntersectionObserver((elAll, observMy) => {
             elAll.forEach(item => {
@@ -21,6 +21,8 @@ export default function iconGo () {
 
         const allIcons = iconsBox.querySelectorAll('img');
         allIcons.forEach(item => iconObserver.observe(item));
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
 

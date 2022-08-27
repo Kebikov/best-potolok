@@ -1,7 +1,7 @@
 //= бегаюшая рулетка на главной странице
 export default function rulerMovement () {
-    const rulesBody = document.querySelector('.rules-body');
-    if(rulesBody) {
+    try {
+        const rulesBody = document.querySelector('.rules-body');
         const wrapper = document.querySelector('.wrapper');
         const oneStep = document.querySelector('.one-step');
         let timeS;
@@ -32,7 +32,9 @@ export default function rulerMovement () {
             }
         }`;
         wrapper.append(elementStyle);
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
 
 

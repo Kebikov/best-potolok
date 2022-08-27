@@ -1,5 +1,6 @@
 export default function calculatorHeader (cursUsd, workPrace, lightPrace, perimeterPrace) {
-    //= калькулятор 
+    try {
+        //= калькулятор 
     (function calc () {
         const body = document.body;
         const calcButton = document.querySelector('.top-heder__call-calc');
@@ -83,4 +84,7 @@ export default function calculatorHeader (cursUsd, workPrace, lightPrace, perime
             }
             });
     }());
+        } catch (error) {
+            console.log('',error);
+        }
 }

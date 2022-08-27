@@ -1,8 +1,8 @@
 //= калькулятор index(калькулятор только на главной странице)
 export default function calcIndex ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
-    const calculationIndex = document.querySelector('.calculation-index');
-    if(calculationIndex) {
+    try {
         (function calcIndex () {
+            const calculationIndex = document.querySelector('.calculation-index');
             const selectSoffitTypeSelectAll = document.querySelectorAll('.select-soffit-type__select');
 
             selectSoffitTypeSelectAll.forEach(select => {
@@ -89,7 +89,9 @@ export default function calcIndex ({cursUsd, workPrace, lightPrace, perimeterPra
             }
 
         });
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
 
 

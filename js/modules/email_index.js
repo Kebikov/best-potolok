@@ -1,7 +1,7 @@
 //= отправка на почту на главной странице 
 export default function emailIndexMain () {
-    const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
-    if(praceMondeyTelInput) {
+    try {
+        const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
         (function emailIndex () {
             const  form = document.forms.actionCall;
             const  praceMondeyButton = document.querySelector('.prace-mondey__button');
@@ -33,7 +33,9 @@ export default function emailIndexMain () {
                 }
             });
         }());
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
 
     

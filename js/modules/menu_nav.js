@@ -1,7 +1,8 @@
 import calculatorHeader from "./calculator_header";
 
 export default function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
-    //=   меню   
+    try {
+        //=   меню   
     (function menu () {
         //variables
         const menu = document.querySelector('.menu');
@@ -58,5 +59,8 @@ export default function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace
 
     //= калькулятор fn 
     calculatorHeader(cursUsd, workPrace, lightPrace, perimeterPrace);
+        } catch (error) {
+            console.log('',error);
+        }
 }
     

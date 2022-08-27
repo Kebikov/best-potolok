@@ -1,8 +1,8 @@
 //= анимацыя элементов на странице цены  
 export default function animationPraise () {
-    const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
-    if(buildPracePicAll) {
+    try {
         (function animationIconPic () {
+            const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
             let time = 0;
             const animPicObserver = new IntersectionObserver((entryAll, observer) => {
                 entryAll.forEach(e => {
@@ -43,7 +43,9 @@ export default function animationPraise () {
                 imgObserver.observe(item);
             });
         }());
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
 
     

@@ -1,6 +1,6 @@
 export default function galleryFn () {
-    const gallery = document.querySelector('.gallery');
-    if(gallery) {
+    try {
+        const gallery = document.querySelector('.gallery');
         (function galleryAdd () {
             const body = document.body;
             const galleryPop = document.querySelector('.gallery-pop');
@@ -194,6 +194,8 @@ export default function galleryFn () {
             }
             galleryHeight();
         }());
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
     

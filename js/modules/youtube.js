@@ -1,6 +1,6 @@
 export default function youtubeVideo () {
-    let videos = document.querySelectorAll('.video');
-    if(videos) {
+    try {
+        let videos = document.querySelectorAll('.video');
         function findVideos() {
             for (let i = 0; i < videos.length; i++) {
                 setupVideo(videos[i]);
@@ -51,5 +51,7 @@ export default function youtubeVideo () {
         }
         
         findVideos();
-    }
+        } catch (error) {
+            console.log('',error);
+        }
 }
