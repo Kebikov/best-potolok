@@ -21,8 +21,10 @@ export default function questions () {
                 {question:'Может ли появляться конденсат между натяжным и обычным потолком?',answer:'Все это исключено, так как температура полотна точно такая же, как и в комнате. Нет резких перепадов, поэтому конденсат отсутствует.'},
                 {question:'Как необходимо подготовить помещение перед приездом монтажников?',answer:'Комнату, где будет производиться монтаж натяжного потолка, рекомендуется максимально освободить от мебели, полы желательно закрыть картоном. Если такой возможности нет, то как минимум изолировать (накрыть) предметы, у которых существует вероятность повреждения высокой температурой, и создать доступ к стенам помещения.'}
             ];
+
             //* fn вставки кода с вопросами
             function insertQuestionHtml () {
+                console.log('3',);
                 arrQuestions.forEach(item => {
                     boxQuestions.insertAdjacentHTML('beforeend',`
                     <div class="questions">
@@ -39,51 +41,53 @@ export default function questions () {
                 const lostTitle = last.querySelector('.questions__title');
                 lostTitle.classList.add('_after-not');
             }
+
             const boxQuestions = document.querySelector('.box-questions');
-                insertQuestionHtml();
-                const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
-                function allClose () {
-                    const bodyAll = document.querySelectorAll('.questions__body');
-                    bodyAll.forEach(item => {
-                        const info = item.querySelector('.questions__info');
-                        const text = item.querySelector('.questions__text');
-                        const title = item.querySelector('.questions__title');
-    
-                        info.style.height = '0px';
-                        text.style.opacity = 0;
-                        item.classList.remove('_questions-white');
-                        title.classList.remove('_questions-text');
-                    });
-                }
-    
-                questionsTitleAll.forEach(item => {
-                    item.addEventListener('click', (e) => {
-                        allClose();
-                        const parent = e.target.closest('.questions__body');
-                        const title = parent.querySelector('.questions__title');
-                        const info = parent.querySelector('.questions__info');
-                        const text = parent.querySelector('.questions__text');
-                        function close () {
-                            info.style.height = '0px';
-                            text.style.opacity = 0; 
-                        }
-    
-                        if(getComputedStyle(info).height === '0px') {
-                            let hi = text.offsetHeight;
-                            info.style.height = hi + 'px';
-                            setTimeout(() => {
-                                text.style.opacity = 1;
-                            }, 100);
-                            parent.classList.add('_questions-white');
-                            title.classList.add('_questions-text');
-                            
-                        }else {
-                            close();
-                            parent.classList.remove('_questions-white');
-                            title.classList.remove('_questions-text');
-                        }
-                    });
+            insertQuestionHtml();
+            const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
+
+            function allClose () {
+                const bodyAll = document.querySelectorAll('.questions__body');
+                bodyAll.forEach(item => {
+                    const info = item.querySelector('.questions__info');
+                    const text = item.querySelector('.questions__text');
+                    const title = item.querySelector('.questions__title');
+
+                    info.style.height = '0px';
+                    text.style.opacity = 0;
+                    item.classList.remove('_questions-white');
+                    title.classList.remove('_questions-text');
                 });
+            }
+    
+            questionsTitleAll.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    allClose();
+                    const parent = e.target.closest('.questions__body');
+                    const title = parent.querySelector('.questions__title');
+                    const info = parent.querySelector('.questions__info');
+                    const text = parent.querySelector('.questions__text');
+                    function close () {
+                        info.style.height = '0px';
+                        text.style.opacity = 0; 
+                    }
+
+                    if(getComputedStyle(info).height === '0px') {
+                        let hi = text.offsetHeight;
+                        info.style.height = hi + 'px';
+                        setTimeout(() => {
+                            text.style.opacity = 1;
+                        }, 100);
+                        parent.classList.add('_questions-white');
+                        title.classList.add('_questions-text');
+                        
+                    }else {
+                        close();
+                        parent.classList.remove('_questions-white');
+                        title.classList.remove('_questions-text');
+                    }
+                });
+            });
             
         }());
         } catch (error) {
