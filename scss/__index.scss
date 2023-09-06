@@ -1,6 +1,26 @@
 $brown : #6d4d3a;
 $orange: #fe8d1b;
 $text: #5b4f3c;
+$line: #FFC181;
+
+.title-youtube-new {
+    display: flex;
+    justify-content: center;
+    font-family: "Russo";
+    font-size: 25px;
+    font-weight: 700;
+    color:rgb(38, 33, 33);
+    background-color: $line;
+    line-height: 120%;
+
+    padding: 10px 0px 10px 0px;
+
+    @media (max-width: 1020px){
+        text-align: center;
+        font-size: 20px;
+    }
+    
+}
 
 .monday {
     position: relative;
@@ -149,7 +169,6 @@ $text: #5b4f3c;
         }
     }
 }
-
 
 .text-monday {
     @media (max-width: 1020px){
