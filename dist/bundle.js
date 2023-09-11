@@ -1248,7 +1248,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    let cursUsd = 2.6; //курс доллара
+    let cursUsd = 3.2; //курс доллара
     let perimeterPrace = 1; //цена в usd за метр периметра
     let lightPrace = 1; //цена в usd за одну световую точку
     let workPrace = 15; //цена в byn за метр кв. работы
