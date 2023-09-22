@@ -1,3 +1,4 @@
+
 export default function youtubeVideo () {
     try {
         let videos = document.querySelectorAll('.video');
@@ -21,7 +22,7 @@ export default function youtubeVideo () {
                 video.appendChild(iframe);
             });
         
-            link.removeAttribute('href');
+            link.removeAttribute('href'); 
             video.classList.add('video--enabled');
         }
         

@@ -10,6 +10,8 @@ import youtubeVideo from './modules/youtube';
 import iconGo from './modules/icon_observer';
 import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
+import lamps from './modules/lamps';
+
 
 window.addEventListener('DOMContentLoaded', () => {
     let cursUsd = 3.2; //курс доллара
@@ -43,4 +45,5 @@ window.addEventListener('DOMContentLoaded', () => {
     iconGo();
     animationPraise();
     questions();
+    lamps();
 });

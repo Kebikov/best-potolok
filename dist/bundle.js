@@ -2,70 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/modules/animation_praise.js":
-/*!****************************************!*\
-  !*** ./js/modules/animation_praise.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ animationPraise)
-/* harmony export */ });
-//= анимацыя элементов на странице цены  
-function animationPraise () {
-    try {
-        (function animationIconPic () {
-            const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
-            let time = 0;
-            const animPicObserver = new IntersectionObserver((entryAll, observer) => {
-                entryAll.forEach(e => {
-                    if(e.isIntersecting) {
-                        let eTarget = e.target;
-                        time += 100; 
-                        setTimeout(function () {
-                            eTarget.classList.add('anime-pic');
-                        }, time);
-                        observer.unobserve(eTarget);
-                    }
-                });
-            },{
-                rootMargin: '-40px 0px -10% 0px',
-                threshold:[1],
-            });
-
-            buildPracePicAll.forEach(item => {
-                animPicObserver.observe(item);
-            });
-        }());
-
-        (function animationImg () {
-            const capTypeImgAll = document.querySelectorAll('.cap-type__img');
-            const imgObserver = new IntersectionObserver((itemAll, itemObserver) => {
-                itemAll.forEach(item => {
-                    if(item.isIntersecting) {
-                        item.target.classList.add('scale-in-ver-center');
-                        itemObserver.unobserve(item.target);
-                    }
-                });
-            },{
-                rootMargin: '0px 0px -15% 0px',
-                threshold: [1],
-            });
-
-            capTypeImgAll.forEach(item => {
-                imgObserver.observe(item);
-            });
-        }());
-        } catch (error) {
-            console.log('',error);
-        }
-}
-
-    
-
-/***/ }),
-
 /***/ "./js/modules/calc_index.js":
 /*!**********************************!*\
   !*** ./js/modules/calc_index.js ***!
@@ -924,115 +860,6 @@ function popUpFn () {
 
 /***/ }),
 
-/***/ "./js/modules/questions.js":
-/*!*********************************!*\
-  !*** ./js/modules/questions.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ questions)
-/* harmony export */ });
-function questions () {
-    try {
-        (function questionsBox () {
-            const arrQuestions = [
-                {question:'Как заказать натяжной потолок?',answer:'Оставить заявку на сайте или позвонить по номеру +375 (29) 522-22-82.'},
-                {question:'Что необходимо для расчета стоимости монтажа натяжного потолка?',answer:'Необходимо знать площадь помещения,  его длину и ширину (хотя бы примерно), а так же количество светильников.'},
-                {question:'Как осуществляется расчет за выполненную работу по монтажу натяжного потолка?',answer:'Расчет осуществляется после монтажа натяжного потолка и полной приемки заказчиком.'},
-                {question:'На какую высоту опустится натяжной потолок?',answer:'Минимальный отпуск натяжного потолка относительно чернового составляет 5 см. Также следует учитывать высоту конструкций для монтажа люстры и светильников, а также тип и состояние стен. Окончательный вердикт сможет дать мастер, выполняющий замер.'},
-                {question:'Как ухаживать за натяжным потолком?',answer:'Для ухода за натяжным потолком подходят жидкие моющие средства без красителей на спиртовой основе, например средства для мытья окон. Протирать рекомендуется мягкой салфеткой из микрофибры.'},
-                {question:'Что устанавливать раньше: шкаф-купе или натяжной потолок?',answer:'Технологически желательно сразу установить шкаф-купе, предусмотрев в нем сверху фальш-панель, к которой впоследствии будет прикреплен профиль натяжного потолка.<br>Однако возможна установка шкафа-купе и после монтажа натяжного потолка. В данном случае необходимо сообщить мастеру о планируемом месте будущего шкафа-купе и тогда над натяжным потолком будет установлена закладная к которой и будет произведен монтаж шкафа.'},
-                {question:'На каком этапе ремонта установить натяжной потолок?',answer:'В идеале натяжной потолок следует устанавливать, когда закончены все работы, связанные с пылью, и стены подготовлены под покраску или оклейку обоями.'},
-                {question:'Имеет ли потолок запах и как долго он выветривается?',answer:'Как любой новый предмет, находящийся в помещении, натяжной потолок непосредственно после монтажа может иметь запах, который, как правило, выветривается в течение нескольких дней.'},
-                {question:'Будут ли на натяжном потолке швы?',answer:'На сегодняшний день без швов возможно установить натяжной потолок шириной до шести метров. Отличным выходом в случае ширины помещения более 6 метров станет двухуровневый потолок.'},
-                {question:'Что делать, если затопили сверху?',answer:'В критических случаях основной объем воды можно удалить самостоятельно. Но лучше сразу обратиться к специалистам, в любом случае после удаления воды потолок рекомендуется просушить тепловой пушкой.'},
-                {question:'Какие светильники подойдут для натяжного потолка?',answer:'Для установки с натяжным потолком не существует каких-либо ограничений для встраиваемых светильников - подойдет большинство.'},
-                {question:'В какие сроки может быть установлен натяжной потолок и сколько времени займет его монтаж?',answer:'По желанию заказчика потолок может быть установлен на следующий после замера день. Время монтажа зависит от специфических особенностей заказа: количества светильников, труб, углов, материала стен, наличия в помещении мебели. Как правило, монтаж натяжного потолка в комнате 10 м.кв. с одной люстрой (светильником) занимает порядка четырех часов.'},
-                {question:'Чего боятся натяжные потолки?',answer:'Не следует касаться полотна натяжного потолка острыми предметами, существует опасность его проколоть. В случае воздействия высоких температур(от +70 <sup>о</sup>С) потолок может расплавиться (даже от неправильно подобранной лампочки накаливания). В случае отрицательных температур(ниже -10 <sup>о</sup>С) полотно натяжного потолка становится хрупким и подверженным растрескиванию при механическом воздействии.'},
-                {question:'Какой срок эксплуатации натяжного потолка?',answer:'Гарантия на монтажные работы составляет один год, на применяемые полотна производитель дает гарантию 25 лет. На практике большую роль играет именно профессионализм монтажа и качество комплектующих, что соответственно влияет и на цену работ.'},
-                {question:'Может ли осесть пыль на потолке?',answer:'Натяжной потолок обладает антистатичным покрытием, поэтому пыль на нем не оседает.'},
-                {question:'Можно ли установить на потолок какие-либо навесные спортивные снаряды?',answer:'В натяжной потолок можно монтировать любые тяжёлые конструкции, путем предварительного монтажа соответствующих закладных.'},
-                {question:'Может ли появляться конденсат между натяжным и обычным потолком?',answer:'Все это исключено, так как температура полотна точно такая же, как и в комнате. Нет резких перепадов, поэтому конденсат отсутствует.'},
-                {question:'Как необходимо подготовить помещение перед приездом монтажников?',answer:'Комнату, где будет производиться монтаж натяжного потолка, рекомендуется максимально освободить от мебели, полы желательно закрыть картоном. Если такой возможности нет, то как минимум изолировать (накрыть) предметы, у которых существует вероятность повреждения высокой температурой, и создать доступ к стенам помещения.'}
-            ];
-
-            //* fn вставки кода с вопросами
-            function insertQuestionHtml () {
-                console.log('3',);
-                arrQuestions.forEach(item => {
-                    boxQuestions.insertAdjacentHTML('beforeend',`
-                    <div class="questions">
-                        <div class="questions__body">
-                            <div class="questions__title"><span>${item.question}</span></div>
-                            <div class="questions__info">
-                                <div class="questions__text">${item.answer}</div>
-                            </div>
-                        </div>
-                    </div>
-                    `);
-                });
-                const last = boxQuestions.lastElementChild;
-                const lostTitle = last.querySelector('.questions__title');
-                lostTitle.classList.add('_after-not');
-            }
-
-            const boxQuestions = document.querySelector('.box-questions');
-            insertQuestionHtml();
-            const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
-
-            function allClose () {
-                const bodyAll = document.querySelectorAll('.questions__body');
-                bodyAll.forEach(item => {
-                    const info = item.querySelector('.questions__info');
-                    const text = item.querySelector('.questions__text');
-                    const title = item.querySelector('.questions__title');
-
-                    info.style.height = '0px';
-                    text.style.opacity = 0;
-                    item.classList.remove('_questions-white');
-                    title.classList.remove('_questions-text');
-                });
-            }
-    
-            questionsTitleAll.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    allClose();
-                    const parent = e.target.closest('.questions__body');
-                    const title = parent.querySelector('.questions__title');
-                    const info = parent.querySelector('.questions__info');
-                    const text = parent.querySelector('.questions__text');
-                    function close () {
-                        info.style.height = '0px';
-                        text.style.opacity = 0; 
-                    }
-
-                    if(getComputedStyle(info).height === '0px') {
-                        let hi = text.offsetHeight;
-                        info.style.height = hi + 'px';
-                        setTimeout(() => {
-                            text.style.opacity = 1;
-                        }, 100);
-                        parent.classList.add('_questions-white');
-                        title.classList.add('_questions-text');
-                        
-                    }else {
-                        close();
-                        parent.classList.remove('_questions-white');
-                        title.classList.remove('_questions-text');
-                    }
-                });
-            });
-            
-        }());
-        } catch (error) {
-            console.log('',error);
-        }
-}
-
-/***/ }),
-
 /***/ "./js/modules/ruler_movement.js":
 /*!**************************************!*\
   !*** ./js/modules/ruler_movement.js ***!
@@ -1099,6 +926,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ youtubeVideo)
 /* harmony export */ });
+
 function youtubeVideo () {
     try {
         let videos = document.querySelectorAll('.video');
@@ -1122,7 +950,7 @@ function youtubeVideo () {
                 video.appendChild(iframe);
             });
         
-            link.removeAttribute('href');
+            link.removeAttribute('href'); 
             video.classList.add('video--enabled');
         }
         
@@ -1157,6 +985,551 @@ function youtubeVideo () {
         }
 }
 
+/***/ }),
+
+/***/ "./ajax/panels.ts":
+/*!************************!*\
+  !*** ./ajax/panels.ts ***!
+  \************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.panels = void 0;
+exports.panels = [
+    {
+        title: 'SAPRA LP110',
+        wats: '6',
+        color: 'white',
+        article: '2200001',
+        diameter: '120',
+        diameterCut: '95',
+        lightStream: '480',
+        colorLightK: '4000',
+        img: '/img/lamps/all-lamp/2200001.jpg',
+        price: '1.9'
+    },
+    {
+        title: 'SAPRA LP110',
+        wats: '9',
+        color: 'white',
+        article: '2200002',
+        diameter: '143',
+        diameterCut: '120',
+        lightStream: '720',
+        colorLightK: '4000',
+        img: '/img/lamps/all-lamp/2200001.jpg',
+        price: '2.52'
+    },
+    {
+        title: 'SAPRA LP110',
+        wats: '12',
+        color: 'white',
+        article: '2200003',
+        diameter: '170',
+        diameterCut: '120',
+        lightStream: '720',
+        colorLightK: '4000',
+        img: '/img/lamps/all-lamp/2200001.jpg',
+        price: '2.52'
+    },
+    {
+        wats: '15',
+        title: 'SAPRA LP110',
+        color: 'белая',
+        article: '2200004',
+        diameter: '192',
+        diameterCut: '160',
+        colorLightK: '4000',
+        lightStream: '1200',
+        img: '/img/lamps/all-lamp/2200001.jpg',
+        price: '3.84'
+    },
+    {
+        wats: '18',
+        title: 'SAPRA LP110',
+        color: 'белая',
+        article: '2200005',
+        diameter: '223',
+        diameterCut: '190',
+        colorLightK: '4000',
+        lightStream: '1440',
+        img: '/img/lamps/all-lamp/2200001.jpg',
+        price: '4.99'
+    },
+    {
+        wats: '6',
+        title: 'SAPRA LP200 со стеклом',
+        color: 'белая',
+        article: '2200006',
+        diameter: '100',
+        diameterCut: '70',
+        colorLightK: '4000',
+        lightStream: '480',
+        img: '/img/lamps/all-lamp/2200006.jpg',
+        price: '1.9'
+    },
+    {
+        wats: '9',
+        title: 'SAPRA LP200 со стеклом',
+        color: 'белая',
+        article: '2200007',
+        diameter: '120',
+        diameterCut: '95',
+        colorLightK: '4000',
+        lightStream: '720',
+        img: '/img/lamps/all-lamp/2200006.jpg',
+        price: '3.39'
+    },
+    {
+        wats: '12',
+        title: 'SAPRA LP200 со стеклом',
+        color: 'белая',
+        article: '2200008',
+        diameter: '160',
+        diameterCut: '125',
+        colorLightK: '4000',
+        lightStream: '960',
+        img: '/img/lamps/all-lamp/2200006.jpg',
+        price: '3.99'
+    },
+    {
+        wats: '7',
+        title: 'SAPRA LP300',
+        color: 'белая',
+        article: '2200009',
+        diameter: '103',
+        diameterCut: '75',
+        colorLightK: '4000',
+        lightStream: '560',
+        img: '/img/lamps/all-lamp/2200009.jpg',
+        price: '2.49'
+    },
+    {
+        wats: '9',
+        title: 'SAPRA LP300',
+        color: 'белая',
+        article: '2200010',
+        diameter: '112',
+        diameterCut: '85',
+        colorLightK: '4000',
+        lightStream: '720',
+        img: '/img/lamps/all-lamp/2200009.jpg',
+        price: '1.99'
+    },
+    {
+        wats: '12',
+        title: 'SAPRA LP300',
+        color: 'белая',
+        article: '2200011',
+        diameter: '136',
+        diameterCut: '110',
+        colorLightK: '4000',
+        lightStream: '960',
+        img: '/img/lamps/all-lamp/2200009.jpg',
+        price: '3.99'
+    },
+    {
+        wats: '3+2',
+        title: 'SAPRA LP400',
+        color: 'белая',
+        article: '2200012',
+        diameter: '100',
+        diameterCut: '70',
+        colorLightK: '4000+6500',
+        lightStream: '400',
+        img: '/img/lamps/all-lamp/2200012.jpg',
+        price: '2.7'
+    },
+    {
+        wats: '6+3',
+        title: 'SAPRA LP400',
+        color: 'белая',
+        article: '2200013',
+        diameter: '145',
+        diameterCut: '107',
+        colorLightK: '4000+6500',
+        lightStream: '720',
+        img: '/img/lamps/all-lamp/2200012.jpg',
+        price: '4.1'
+    },
+    {
+        wats: '12+4',
+        title: 'SAPRA LP400',
+        color: 'белая',
+        article: '2200014',
+        diameter: '195',
+        diameterCut: '155',
+        colorLightK: '4000+6500',
+        lightStream: '1280',
+        img: '/img/lamps/all-lamp/2200012.jpg',
+        price: '4.3'
+    },
+    {
+        wats: '6',
+        title: 'SAPRA LP500',
+        color: 'белая',
+        article: '2200015',
+        diameter: '100',
+        diameterCut: '50-85',
+        colorLightK: '4000',
+        lightStream: '480',
+        img: '/img/lamps/all-lamp/2200015.jpg',
+        price: '2.12'
+    },
+    {
+        wats: '8',
+        title: 'SAPRA LP500',
+        color: 'белая',
+        article: '2200016',
+        diameter: '118',
+        diameterCut: '50-95',
+        colorLightK: '4000',
+        lightStream: '640',
+        img: '/img/lamps/all-lamp/2200015.jpg',
+        price: '2.6'
+    },
+    {
+        wats: '15',
+        title: 'SAPRA LP500',
+        color: 'белая',
+        article: '2200017',
+        diameter: '173',
+        diameterCut: '50-150',
+        colorLightK: '4000',
+        lightStream: '1200',
+        img: '/img/lamps/all-lamp/2200015.jpg',
+        price: '4.13'
+    },
+    {
+        wats: '20',
+        title: 'SAPRA LP500',
+        color: 'белая',
+        article: '2200018',
+        diameter: '230',
+        diameterCut: '50210',
+        colorLightK: '4000',
+        lightStream: '1600',
+        img: '/img/lamps/all-lamp/2200015.jpg',
+        price: '5.16'
+    },
+    {
+        wats: '7',
+        title: 'SAPRA LP600',
+        color: 'белая',
+        article: '2200019',
+        diameter: '80',
+        diameterCut: '55',
+        colorLightK: '4000',
+        lightStream: '560',
+        img: '/img/lamps/all-lamp/2200019.jpg',
+        price: '3.95'
+    },
+    {
+        wats: '7',
+        title: 'SAPRA LP610',
+        color: 'чёрная',
+        article: '2200020',
+        diameter: '80',
+        diameterCut: '55',
+        colorLightK: '4000',
+        lightStream: '560',
+        img: '/img/lamps/all-lamp/2200020.jpg',
+        price: '3.42'
+    },
+    {
+        wats: '7',
+        title: 'SAPRA LP601',
+        color: 'белая',
+        article: '2200021',
+        diameter: '82 * 82',
+        diameterCut: '55',
+        colorLightK: '4000',
+        lightStream: '560',
+        img: '/img/lamps/all-lamp/2200021.jpg',
+        price: '3.95'
+    },
+    {
+        wats: '7',
+        title: 'SAPRA LP611',
+        color: 'чёрная',
+        article: '2200022',
+        diameter: '8282',
+        diameterCut: '55',
+        colorLightK: '4000',
+        lightStream: '560',
+        img: '/img/lamps/all-lamp/2200022.jpg',
+        price: '3.42'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./js/helps/createLampElement.ts":
+/*!***************************************!*\
+  !*** ./js/helps/createLampElement.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const createLampElement = (currentArrLamps, startNumberElement, finishNumberElement) => {
+    const priceUP = 1.1;
+    const lampsBlock = document.querySelector('.lamps-block__body');
+    const addButton = document.querySelector('.number-lamps__add');
+    for (let i = startNumberElement; i < finishNumberElement; i++) {
+        let obj = currentArrLamps[i];
+        if (obj) {
+            lampsBlock.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp" >
+                    <div class="cart-lamp__body">
+                        <div class="cart-lamp__img">
+                            <img src="${obj.img}" alt="lamps">
+                        </div>
+                        <div class="cart-lamp__info">
+                            <div class="cart-lamp__title">${obj.title}</div>
+                            <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                            <div class="cart-lamp__wat text-lamp">Мощность: ${obj.wats}W</div>
+                            <div class="cart-lamp__diameter text-lamp">Размер: ${obj.diameter}mm</div>
+                            <div class="cart-lamp__diameterCut text-lamp">Врезное отверстие: ${obj.diameterCut}mm</div>
+                            <div class="cart-lamp__colorLightK text-lamp">Цвет свечения: ${obj.colorLightK}K</div>
+                            <div class="cart-lamp__lightStream text-lamp">Световой поток: ${obj.lightStream}Lm</div>
+                            <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+        else {
+            addButton.classList.add('remove');
+            break;
+        }
+    }
+};
+exports["default"] = createLampElement;
+
+
+/***/ }),
+
+/***/ "./js/modules/animation_praise.ts":
+/*!****************************************!*\
+  !*** ./js/modules/animation_praise.ts ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+//= анимацыя элементов на странице цены  
+function animationPraise() {
+    try {
+        animationIconPic();
+        animationImg();
+    }
+    catch (error) {
+        console.log('', error);
+    }
+}
+exports["default"] = animationPraise;
+function animationIconPic() {
+    const buildPracePicAll = document.querySelectorAll('.build-prace__pic');
+    let time = 0;
+    const animPicObserver = new IntersectionObserver((entryAll, observer) => {
+        entryAll.forEach(e => {
+            if (e.isIntersecting) {
+                let eTarget = e.target;
+                time += 100;
+                setTimeout(function () {
+                    eTarget.classList.add('anime-pic');
+                }, time);
+                observer.unobserve(eTarget);
+            }
+        });
+    }, {
+        rootMargin: '-40px 0px -10% 0px',
+        threshold: [1],
+    });
+    buildPracePicAll.forEach(item => {
+        animPicObserver.observe(item);
+    });
+}
+;
+function animationImg() {
+    const capTypeImgAll = document.querySelectorAll('.cap-type__img');
+    const imgObserver = new IntersectionObserver((itemAll, itemObserver) => {
+        itemAll.forEach(item => {
+            if (item.isIntersecting) {
+                item.target.classList.add('scale-in-ver-center');
+                itemObserver.unobserve(item.target);
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -15% 0px',
+        threshold: [1],
+    });
+    capTypeImgAll.forEach(item => {
+        imgObserver.observe(item);
+    });
+}
+;
+
+
+/***/ }),
+
+/***/ "./js/modules/lamps.ts":
+/*!*****************************!*\
+  !*** ./js/modules/lamps.ts ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const panels_1 = __webpack_require__(/*! ../../ajax/panels */ "./ajax/panels.ts");
+const createLampElement_1 = __importDefault(__webpack_require__(/*! ../helps/createLampElement */ "./js/helps/createLampElement.ts"));
+const lamps = () => {
+    try {
+        const elementsOnPage = 12;
+        const lampsBlock = document.querySelector('.lamps-block__body');
+        const addButton = document.querySelector('.number-lamps__add');
+        const typeLamps = lampsBlock.dataset.lamp;
+        let currentArrLamps = [];
+        switch (typeLamps) {
+            case 'panels':
+                currentArrLamps = panels_1.panels;
+                break;
+            default:
+                currentArrLamps = [];
+                break;
+        }
+        (0, createLampElement_1.default)(currentArrLamps, 0, elementsOnPage);
+        addButton.addEventListener('click', () => addLamps(currentArrLamps, elementsOnPage));
+    }
+    catch (error) {
+        console.log('Error in function lamps >>> ', error);
+    }
+};
+function counter() {
+    let total = 0;
+    return () => {
+        total++;
+        return total;
+    };
+}
+const sum = counter();
+function addLamps(currentArrLamps, elementsOnPage) {
+    let start = sum() * elementsOnPage;
+    let finish = start + elementsOnPage;
+    (0, createLampElement_1.default)(currentArrLamps, start, finish);
+}
+exports["default"] = lamps;
+
+
+/***/ }),
+
+/***/ "./js/modules/questions.ts":
+/*!*********************************!*\
+  !*** ./js/modules/questions.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+function questions() {
+    try {
+        const arrQuestions = [
+            { question: 'Как заказать натяжной потолок?', answer: 'Оставить заявку на сайте или позвонить по номеру +375 (29) 522-22-82.' },
+            { question: 'Что необходимо для расчета стоимости монтажа натяжного потолка?', answer: 'Необходимо знать площадь помещения,  его длину и ширину (хотя бы примерно), а так же количество светильников.' },
+            { question: 'Как осуществляется расчет за выполненную работу по монтажу натяжного потолка?', answer: 'Расчет осуществляется после монтажа натяжного потолка и полной приемки заказчиком.' },
+            { question: 'На какую высоту опустится натяжной потолок?', answer: 'Минимальный отпуск натяжного потолка относительно чернового составляет 5 см. Также следует учитывать высоту конструкций для монтажа люстры и светильников, а также тип и состояние стен. Окончательный вердикт сможет дать мастер, выполняющий замер.' },
+            { question: 'Как ухаживать за натяжным потолком?', answer: 'Для ухода за натяжным потолком подходят жидкие моющие средства без красителей на спиртовой основе, например средства для мытья окон. Протирать рекомендуется мягкой салфеткой из микрофибры.' },
+            { question: 'Что устанавливать раньше: шкаф-купе или натяжной потолок?', answer: 'Технологически желательно сразу установить шкаф-купе, предусмотрев в нем сверху фальш-панель, к которой впоследствии будет прикреплен профиль натяжного потолка.<br>Однако возможна установка шкафа-купе и после монтажа натяжного потолка. В данном случае необходимо сообщить мастеру о планируемом месте будущего шкафа-купе и тогда над натяжным потолком будет установлена закладная к которой и будет произведен монтаж шкафа.' },
+            { question: 'На каком этапе ремонта установить натяжной потолок?', answer: 'В идеале натяжной потолок следует устанавливать, когда закончены все работы, связанные с пылью, и стены подготовлены под покраску или оклейку обоями.' },
+            { question: 'Имеет ли потолок запах и как долго он выветривается?', answer: 'Как любой новый предмет, находящийся в помещении, натяжной потолок непосредственно после монтажа может иметь запах, который, как правило, выветривается в течение нескольких дней.' },
+            { question: 'Будут ли на натяжном потолке швы?', answer: 'На сегодняшний день без швов возможно установить натяжной потолок шириной до шести метров. Отличным выходом в случае ширины помещения более 6 метров станет двухуровневый потолок.' },
+            { question: 'Что делать, если затопили сверху?', answer: 'В критических случаях основной объем воды можно удалить самостоятельно. Но лучше сразу обратиться к специалистам, в любом случае после удаления воды потолок рекомендуется просушить тепловой пушкой.' },
+            { question: 'Какие светильники подойдут для натяжного потолка?', answer: 'Для установки с натяжным потолком не существует каких-либо ограничений для встраиваемых светильников - подойдет большинство.' },
+            { question: 'В какие сроки может быть установлен натяжной потолок и сколько времени займет его монтаж?', answer: 'По желанию заказчика потолок может быть установлен на следующий после замера день. Время монтажа зависит от специфических особенностей заказа: количества светильников, труб, углов, материала стен, наличия в помещении мебели. Как правило, монтаж натяжного потолка в комнате 10 м.кв. с одной люстрой (светильником) занимает порядка четырех часов.' },
+            { question: 'Чего боятся натяжные потолки?', answer: 'Не следует касаться полотна натяжного потолка острыми предметами, существует опасность его проколоть. В случае воздействия высоких температур(от +70 <sup>о</sup>С) потолок может расплавиться (даже от неправильно подобранной лампочки накаливания). В случае отрицательных температур(ниже -10 <sup>о</sup>С) полотно натяжного потолка становится хрупким и подверженным растрескиванию при механическом воздействии.' },
+            { question: 'Какой срок эксплуатации натяжного потолка?', answer: 'Гарантия на монтажные работы составляет один год, на применяемые полотна производитель дает гарантию 25 лет. На практике большую роль играет именно профессионализм монтажа и качество комплектующих, что соответственно влияет и на цену работ.' },
+            { question: 'Может ли осесть пыль на потолке?', answer: 'Натяжной потолок обладает антистатичным покрытием, поэтому пыль на нем не оседает.' },
+            { question: 'Можно ли установить на потолок какие-либо навесные спортивные снаряды?', answer: 'В натяжной потолок можно монтировать любые тяжёлые конструкции, путем предварительного монтажа соответствующих закладных.' },
+            { question: 'Может ли появляться конденсат между натяжным и обычным потолком?', answer: 'Все это исключено, так как температура полотна точно такая же, как и в комнате. Нет резких перепадов, поэтому конденсат отсутствует.' },
+            { question: 'Как необходимо подготовить помещение перед приездом монтажников?', answer: 'Комнату, где будет производиться монтаж натяжного потолка, рекомендуется максимально освободить от мебели, полы желательно закрыть картоном. Если такой возможности нет, то как минимум изолировать (накрыть) предметы, у которых существует вероятность повреждения высокой температурой, и создать доступ к стенам помещения.' }
+        ];
+        //* fn вставки кода с вопросами
+        function insertQuestionHtml() {
+            arrQuestions.forEach(item => {
+                boxQuestions.insertAdjacentHTML('beforeend', `
+                <div class="questions">
+                    <div class="questions__body">
+                        <div class="questions__title"><span>${item.question}</span></div>
+                        <div class="questions__info">
+                            <div class="questions__text">${item.answer}</div>
+                        </div>
+                    </div>
+                </div>
+                `);
+            });
+            const last = boxQuestions.lastElementChild;
+            const lostTitle = last.querySelector('.questions__title');
+            lostTitle.classList.add('_after-not');
+        }
+        const boxQuestions = document.querySelector('.box-questions');
+        insertQuestionHtml();
+        const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
+        function allClose() {
+            const bodyAll = document.querySelectorAll('.questions__body');
+            bodyAll.forEach(item => {
+                const info = item.querySelector('.questions__info');
+                const text = item.querySelector('.questions__text');
+                const title = item.querySelector('.questions__title');
+                info.style.height = '0px';
+                text.style.opacity = '0%';
+                item.classList.remove('_questions-white');
+                title.classList.remove('_questions-text');
+            });
+        }
+        questionsTitleAll.forEach(item => {
+            item.addEventListener('click', (event) => {
+                console.log(event.target);
+                if (event.target instanceof HTMLDivElement || event.target instanceof HTMLSpanElement) {
+                    allClose();
+                    const parent = event.target.closest('.questions__body');
+                    const title = parent.querySelector('.questions__title');
+                    const info = parent.querySelector('.questions__info');
+                    const text = parent.querySelector('.questions__text');
+                    function close() {
+                        info.style.height = '0px';
+                        text.style.opacity = '0%';
+                    }
+                    if (getComputedStyle(info).height === '0px') {
+                        let hi = text.offsetHeight;
+                        info.style.height = hi + 'px';
+                        setTimeout(() => {
+                            text.style.opacity = '100%';
+                        }, 100);
+                        parent.classList.add('_questions-white');
+                        title.classList.add('_questions-text');
+                    }
+                    else {
+                        close();
+                        parent.classList.remove('_questions-white');
+                        title.classList.remove('_questions-text');
+                    }
+                }
+            });
+        });
+    }
+    catch (error) {
+        console.log('', error);
+    }
+}
+exports["default"] = questions;
+
+
 /***/ })
 
 /******/ 	});
@@ -1179,13 +1552,25 @@ function youtubeVideo () {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1232,8 +1617,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_email_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/email_index */ "./js/modules/email_index.js");
 /* harmony import */ var _modules_youtube__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/youtube */ "./js/modules/youtube.js");
 /* harmony import */ var _modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/icon_observer */ "./js/modules/icon_observer.js");
-/* harmony import */ var _modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/animation_praise */ "./js/modules/animation_praise.js");
-/* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/questions */ "./js/modules/questions.js");
+/* harmony import */ var _modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/animation_praise */ "./js/modules/animation_praise.ts");
+/* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/questions */ "./js/modules/questions.ts");
+/* harmony import */ var _modules_lamps__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/lamps */ "./js/modules/lamps.ts");
+/* harmony import */ var _modules_lamps__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_lamps__WEBPACK_IMPORTED_MODULE_12__);
+
+
 
 
 
@@ -1279,6 +1668,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_questions__WEBPACK_IMPORTED_MODULE_11__["default"])();
+    _modules_lamps__WEBPACK_IMPORTED_MODULE_12___default()();
 });
 })();
 

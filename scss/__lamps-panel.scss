@@ -1,0 +1,140 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+//= .lamps-block
+.lamps-block {
+    // .lamps-block__body
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+
+        @media (max-width: 1200px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 600px){
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+//= .cart-lamp
+.cart-lamp {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    // .cart-lamp__body
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    // .cart-lamp__img
+    &__img {
+        width: 100%;
+        & img {
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+
+            aspect-ratio: 1 / 1;
+        }
+
+        flex: 1 0 40%;
+        @media (max-width: 1200px){
+            // img
+            flex: 1 0 50%;
+        }
+        @media (max-width: 800px){
+            // img
+            flex: 1 0 40%;
+        }
+        @media (max-width: 600px){
+            // img
+            flex: 1 0 50%;
+        }
+        @media (max-width: 450px){
+            // text
+            flex: 1 0 40%;
+        }
+    }
+    // .cart-lamp__info
+    &__info {
+
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex: 1 0 60%;
+        @media (max-width: 1200px){
+            // text
+            flex: 1 0 50%;
+        }
+        @media (max-width: 800px){
+            // text
+            flex: 1 0 60%;
+        }
+        @media (max-width: 600px){
+            // text
+            flex: 1 0 50%;
+        }
+        @media (max-width: 450px){
+            // text
+            flex: 1 0 60%;
+        }
+    }
+    // .cart-lamp__title
+    &__title {
+        @include text_streach(18, 15, $grey, 500, "Russo");
+    }
+    // .cart-lamp__article
+    &__article {
+        @include text_streach(14, 12, $grey, 500);
+    }
+    // .cart-lamp__diameter
+    &__wat {
+        margin: 10px 0px 0px 0px; 
+    }
+    // .cart-lamp__price
+    &__price {
+        margin: 20px 0px 0px 0px;
+        & span {
+            background-color: $orange;
+            @include text_streach(17, 15, #fff, 500, "Russo");
+            padding: 3px 10px 3px 10px;
+        }
+    }
+}
+
+//= .text-lamp
+.text-lamp {
+    @include text_streach(15, 13, #676767, 400);
+}
+
+.number-lamps {
+    margin: 20px 0px 0px 0px;
+    // .number-lamps__body
+    &__body {
+        display: flex;
+        justify-content: center;
+    }
+    // .number-lamps__num
+    &__add {
+        @include text_streach(20, 17, #fff, 400);
+        letter-spacing: 1.5px;
+
+        padding: 10px 20px;
+
+        background-color: $brown;
+        &.remove {
+            display: none;
+        }
+    }
+}
+
+
+
+

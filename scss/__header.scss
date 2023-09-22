@@ -1,6 +1,6 @@
-$brown : #6d4d3a;
-$orange: #fe8d1b;
-$text: #5b4f3c;
+@import './variables.scss';
+@import './mixin.scss';
+
 
 //= верхняя линия шапки 
 ._top-line-text {
@@ -12,6 +12,7 @@ $text: #5b4f3c;
         font-size: 15px;
     }
 }
+
 .top-line {
     display: block;
     background-color: $orange;
@@ -120,9 +121,11 @@ $text: #5b4f3c;
         margin:0px 10px 0px 10px;
     }
 }
+
 .top-line__calc::before {
     animation: jello-horizontal 5s infinite both;
 }
+
 @keyframes jello-horizontal {
 0% {
     transform: scale3d(1, 1, 1);
@@ -146,11 +149,13 @@ $text: #5b4f3c;
     transform: scale3d(1, 1, 1);
 }
 }
-//= блок с лого 
+
+//= .top-heder 
 .top-heder {
     // .top-heder__body
     &__body {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
     }
@@ -163,10 +168,7 @@ $text: #5b4f3c;
             object-fit: cover;
             padding: 5px 0px 0px 0px;
             @media (max-width: 800px){
-                height: calc(70px + 30 * (100vw - 375px) / 425);
-            }
-            @media (max-width: 375px){
-                height: 70px;
+                height: calc(60px + 40 * (100vw - 480px) / 320);
             }
         }
     }
@@ -199,16 +201,8 @@ $text: #5b4f3c;
         display: flex;
         justify-content: end;
         padding: 10px 0px 10px 0px;
-        font-family: "Roboto";
-        font-size: 23px;
-        font-weight: 700;
-        @media (max-width: 1240px){
-            font-size: 20px;
-        }
-        @media (max-width: 800px){
-            padding: 20px 0px 10px 0px;
-            font-size: 18px;
-        }
+        @include text_streach(24, 17, $grey, 700);
+        
         & span{
             position: relative;
             padding: 0px 0px 0px 45px;
@@ -498,6 +492,20 @@ $text: #5b4f3c;
             background: url(../img/header/home.png) 0 0 / cover no-repeat;
             height: 20px;
             width: 20px;
+        }
+    }
+}
+.icon-lamps {
+    @media (max-width: 1020px){
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            background: url(../img/header/lamps.png) 0 0 / cover no-repeat;
+            height: 22px;
+            width: 22px;
         }
     }
 }
