@@ -26,12 +26,12 @@ const lamps = ():void => {
         }
 
         createLampElement(currentArrLamps, 0, elementsOnPage);
-
+        
         addButton.addEventListener('click', () => addLamps(currentArrLamps, elementsOnPage));
         //* добавляем элементы фильтрации
         addFilterLamps();
         //* метод фильтрации
-        filterLamps(currentArrLamps, lampsBlock);
+        filterLamps(currentArrLamps);
 
     } catch (error) {
         console.log('Error in function lamps >>> ', error);

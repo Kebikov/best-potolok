@@ -36,32 +36,29 @@ function search(str, arr) {
 }
 
 cut(str);
+//-----------------------------------------------------
 
 
-const arr = [{dom: 109}, {kv: 126}];
 
-arr.forEach(item => {
-    if(item.dom) {
-        delete item;
-    }
-})
-
-console.log(arr);
-
-// const newArr = arr.slice();
-
-// delete newArr[0].dom;
-
-// console.log(arr, newArr);
-
-// const ggg = {
-//     dom: '',
-//     port: '8080',
-//     god: ''
+// const mainObjectLamps = {
+//     lamps: [],
 // }
 
-// for(let key in ggg) {
-//     console.log(ggg[key]);
-// }
+// const proxy = new Proxy(mainObjectLamps, {
 
-console.log(50 < Infinity);
+//     set: (target, prop, value) => {
+//         if(prop === 'lamps' && Array.isArray(value)) {
+//             console.log('Объект изменился...');
+//             target[prop] = value;
+//             return true;
+//         }
+//         return false;
+//     }
+// });
+
+// proxy.lamps = [1,2,3];
+// console.log(mainObjectLamps.lamps);
+
+
+
+

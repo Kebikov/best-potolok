@@ -2,14 +2,37 @@
 import { type } from "os";
 import { Led, LedKey } from "../../ajax/panels";
 import { strict } from "assert";
+import createLampElement from "../helps/createLampElement";
+import deleteLamps from "./deleteLamps";
 
-const filterLamps = (currentArrLamps: Array<Led>, lampsBlock: HTMLDivElement) => {
+const filterLamps = (currentArrLamps: Array<Led>) => {
 
     type ObjectFilter = {
         [key in LedKey]: Array<string>
     }
 
     try {
+
+        const mainObjectLamps: {lamps: Array<Led>} = {
+            lamps: []
+        }
+
+        const proxy = new Proxy(mainObjectLamps, {
+
+            set: (target, prop, value) => {
+                if(prop === 'lamps' && Array.isArray(value)) {
+                    console.log('Объект изменился...');
+                    deleteLamps();
+                    console.log('TARGET >>> ',value);
+                    createLampElement(value, 0, 12);
+                    target[prop] = value;
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
         const button = document.querySelector('.filter-lamps__button') as HTMLDivElement;
         button.addEventListener('click', () => {
             const checkboxAll = document.querySelectorAll('.filter-checkbox__input') as NodeListOf<HTMLInputElement>;
@@ -61,10 +84,9 @@ const filterLamps = (currentArrLamps: Array<Led>, lampsBlock: HTMLDivElement) =>
                     return lamp;
                 }
             });
-
             console.log(resaltPrice);
-            
-
+            proxy.lamps = resaltPrice;
+            return resaltPrice;
         });
     } catch (error) {
         console.log(error);

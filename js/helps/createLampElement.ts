@@ -1,14 +1,16 @@
 import { Led } from "../../ajax/panels";
 
 const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: number, finishNumberElement: number) => {
+    
     const priceUP = 1.1;
+    console.log('run', currentArrLamps);
     const lampsBlock = document.querySelector('.lamps-block__body') as HTMLDivElement;
     const addButton = document.querySelector('.number-lamps__add') as HTMLDListElement;
 
     for(let i = startNumberElement; i < finishNumberElement; i++) {
 
         let obj = currentArrLamps[i];
-
+        console.log(obj);
         if(obj) {
             lampsBlock.insertAdjacentHTML('beforeend',`
                 <div class="cart-lamp" >
