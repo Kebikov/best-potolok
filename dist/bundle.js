@@ -1266,6 +1266,37 @@ exports.panels = [
 
 /***/ }),
 
+/***/ "./js/helps/addBlockFilter.ts":
+/*!************************************!*\
+  !*** ./js/helps/addBlockFilter.ts ***!
+  \************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const addBlockFilter = (body, arrValues, title, unit, key) => {
+    //: add filters
+    const filterBlockElement = document.createElement('div');
+    filterBlockElement.classList.add('filter-block');
+    const filterTitleElement = document.createElement('div');
+    filterTitleElement.classList.add('filter-title');
+    filterTitleElement.innerHTML = title;
+    filterBlockElement.append(filterTitleElement);
+    for (let item of arrValues) {
+        filterBlockElement.insertAdjacentHTML('beforeend', `
+        <div class="filter-checkbox">
+            <input class="filter-checkbox__input" type="checkbox" name="${key}" value="${item}" id="${item}">
+            <label class="filter-checkbox__lable" for="${item}" >${item} ${unit}</label>
+        </div>
+        `);
+    }
+    body.prepend(filterBlockElement);
+};
+exports["default"] = addBlockFilter;
+
+
+/***/ }),
+
 /***/ "./js/helps/createLampElement.ts":
 /*!***************************************!*\
   !*** ./js/helps/createLampElement.ts ***!
@@ -1308,6 +1339,61 @@ const createLampElement = (currentArrLamps, startNumberElement, finishNumberElem
     }
 };
 exports["default"] = createLampElement;
+
+
+/***/ }),
+
+/***/ "./js/modules/addFilterLamps.ts":
+/*!**************************************!*\
+  !*** ./js/modules/addFilterLamps.ts ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+// добавление элементов фильтрации на сайт
+const panels_1 = __webpack_require__(/*! ../../ajax/panels */ "./ajax/panels.ts");
+const addBlockFilter_1 = __importDefault(__webpack_require__(/*! ../helps/addBlockFilter */ "./js/helps/addBlockFilter.ts"));
+//= const addFilterLamps
+const addFilterLamps = () => {
+    try {
+        const codeElement = document.querySelector('[data-code]');
+        const typeLamp = codeElement.dataset.code;
+        let arrForFilters = [];
+        switch (typeLamp) {
+            case 'panels':
+                arrForFilters = panels_1.panels;
+                break;
+            default:
+                arrForFilters = [];
+        }
+        const arrColorLightK = searchFilters(arrForFilters, 'colorLightK');
+        const arrWats = searchFilters(arrForFilters, 'wats');
+        (0, addBlockFilter_1.default)(codeElement, arrColorLightK, 'Цвет свечения', 'K', 'colorLightK');
+        (0, addBlockFilter_1.default)(codeElement, arrWats, 'Мощность', 'W', 'wats');
+    }
+    catch (error) {
+    }
+};
+//= function searchFilters
+// поиск в массиве обьектов со светильниками по значению и формирование и сортировка массива строк
+function searchFilters(arrForFilters, key) {
+    const arrValue = [];
+    arrForFilters.forEach(lamp => {
+        const isMatch = arrValue.includes(lamp[key]);
+        if (!isMatch) {
+            arrValue.push(lamp[key]);
+        }
+    });
+    const sortArr = arrValue.sort((x, y) => {
+        return parseInt(x) - parseInt(y);
+    });
+    return sortArr;
+}
+exports["default"] = addFilterLamps;
 
 
 /***/ }),
@@ -1376,6 +1462,79 @@ function animationImg() {
 
 /***/ }),
 
+/***/ "./js/modules/filterLamps.ts":
+/*!***********************************!*\
+  !*** ./js/modules/filterLamps.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const filterLamps = (currentArrLamps, lampsBlock) => {
+    try {
+        const button = document.querySelector('.filter-lamps__button');
+        button.addEventListener('click', () => {
+            const checkboxAll = document.querySelectorAll('.filter-checkbox__input');
+            //* массив уникальных ключей по которым фильтруем светильники
+            let arrKey = [];
+            //* получение всех уникальных ключей
+            checkboxAll.forEach(item => {
+                const name = item.name;
+                const isMatchKey = arrKey.includes(name);
+                if (item.checked && !isMatchKey) {
+                    arrKey.push(name);
+                }
+            });
+            //* обьект для дальнейшей фильтрации типа {key: [value], key: [value]}
+            let objectFilter = {};
+            //* создание обьекта с ключами в которыз значения пустые массивы для дальнейшего заполнения значениями
+            arrKey.forEach(key => {
+                objectFilter[key] = [];
+            });
+            //* заполнение ключей значениями
+            checkboxAll.forEach(item => {
+                if (item.checked) {
+                    const name = item.name;
+                    objectFilter[name].push(item.value);
+                }
+            });
+            //* фильтрация по всем checkbox
+            const resalt = currentArrLamps.filter(lamp => {
+                const length = Object.keys(objectFilter).length;
+                let totalMatch = 0;
+                for (let key in objectFilter) {
+                    const isMatch = objectFilter[key].includes(lamp[key]);
+                    if (isMatch) {
+                        totalMatch++;
+                    }
+                }
+                if (totalMatch === length) {
+                    return lamp;
+                }
+            });
+            //* фильтрация по цене
+            const form = document.querySelector('.filter-price__form');
+            const from = +form.from.value;
+            const until = +form.until.value === 0 ? Infinity : +form.until.value;
+            // from / until числа от и до 
+            //* resaltPrice - массив с отфильтрованными обьектами по цене и по checkbox
+            const resaltPrice = resalt.filter(lamp => {
+                if (from <= +lamp.price && +lamp.price <= until) {
+                    return lamp;
+                }
+            });
+            console.log(resaltPrice);
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+exports["default"] = filterLamps;
+
+
+/***/ }),
+
 /***/ "./js/modules/lamps.ts":
 /*!*****************************!*\
   !*** ./js/modules/lamps.ts ***!
@@ -1387,8 +1546,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+// добавление светильников на сайт
 const panels_1 = __webpack_require__(/*! ../../ajax/panels */ "./ajax/panels.ts");
 const createLampElement_1 = __importDefault(__webpack_require__(/*! ../helps/createLampElement */ "./js/helps/createLampElement.ts"));
+const addFilterLamps_1 = __importDefault(__webpack_require__(/*! ./addFilterLamps */ "./js/modules/addFilterLamps.ts"));
+const filterLamps_1 = __importDefault(__webpack_require__(/*! ./filterLamps */ "./js/modules/filterLamps.ts"));
 const lamps = () => {
     try {
         const elementsOnPage = 12;
@@ -1406,6 +1568,10 @@ const lamps = () => {
         }
         (0, createLampElement_1.default)(currentArrLamps, 0, elementsOnPage);
         addButton.addEventListener('click', () => addLamps(currentArrLamps, elementsOnPage));
+        //* добавляем элементы фильтрации
+        (0, addFilterLamps_1.default)();
+        //* метод фильтрации
+        (0, filterLamps_1.default)(currentArrLamps, lampsBlock);
     }
     catch (error) {
         console.log('Error in function lamps >>> ', error);

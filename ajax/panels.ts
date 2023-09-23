@@ -13,6 +13,8 @@ export type Led = {
     price: string
 }
 
+export type LedKey = keyof Led;
+
 export const panels: Array<Led> = [
     {
         title: 'SAPRA LP110',

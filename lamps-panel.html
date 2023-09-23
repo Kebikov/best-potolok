@@ -106,7 +106,7 @@
                 </nav>
             </heder>
             <!--= main -->
-            <main class="main">
+            <main class="main relative">
                 <div class="company-taitle container">светодиодные панели</div>
                 <div class="lamps-block" >
                     <div class="lamps-block__body container" data-lamp="panels" >
@@ -132,16 +132,40 @@
                     </div>
                 </div>
 
+                <!--: number-lamps -->
                 <div class="number-lamps">
                     <div class="number-lamps__body container">
                         <div class="number-lamps__add">показать еще</div>
                     </div>
                 </div>
 
+                <!--: filter-lamps -->
+                <div class="filter-lamps" >
+                    <div class="filter-lamps__body">
+                        <div class="filter-lamps__close">
+                            <div class="filter-lamps__close-boby">
+                                <img src="/img/icon/close.png" alt="close icon">
+                            </div>
+                        </div>
+                        <!-- filter-price -->
+                        <div class="filter-price">
+                            <form name="filter" class="filter-price__form">
+                                <div class="filter-price__title">Цена</div>
+                                <div class="filter-price__block-input">
+                                    <input name="from" class="filter-price__input" type="number" placeholder="от">
+                                    <input name="until" class="filter-price__input line-left" type="number" placeholder="до">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="filter-lamps-code-ts" data-code="panels" ></div>
+                        <!-- add code ts-->
+                        <div class="filter-lamps__button"><span>приминить</span></div>
+                    </div>
+                </div>
 
             </main>
             <!--= footer -->
-            <footer class="footer">
+            <footer class="footer margin-0">
                 <div class="footer__body container">
                     <div class="footer__items">
                         <div class="footer__logo">

@@ -5466,6 +5466,9 @@ input[type=number]:focus {
   }
 }
 
+.lamps-block {
+  margin: 0px 0px 20px 0px;
+}
 .lamps-block__body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5663,7 +5666,7 @@ input[type=number]:focus {
 }
 
 .number-lamps {
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 20px 0px;
 }
 .number-lamps__body {
   display: -webkit-box;
@@ -5697,6 +5700,194 @@ input[type=number]:focus {
   display: none;
 }
 
+.filter-lamps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+.filter-lamps__body {
+  position: relative;
+  padding: 20px;
+}
+.filter-lamps__close {
+  position: absolute;
+  top: -1px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  background-color: #fe8d1b;
+}
+.filter-lamps__close-boby {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.filter-lamps__close-boby img {
+  width: 27px;
+  height: 27px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.filter-lamps__button {
+  margin: 40px 0px 0px 0px;
+}
+.filter-lamps__button span {
+  background-color: #6d4d3a;
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 120%;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+@media (max-width: 1910px) {
+  .filter-lamps__button span {
+    font-size: calc(15px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-lamps__button span {
+    font-size: 15px;
+  }
+}
+
+.filter-price__title {
+  font-family: "Russo";
+  font-size: 15px;
+  font-weight: 400;
+  color: #2a2b30;
+  line-height: 120%;
+  margin: 0px 0px 10px 0px;
+}
+@media (max-width: 1910px) {
+  .filter-price__title {
+    font-size: calc(13px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-price__title {
+    font-size: 13px;
+  }
+}
+.filter-price__block-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+.filter-price__input {
+  display: inline;
+  width: 100px;
+  height: 30px;
+  padding: 5px 10px;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  color: #2a2b30;
+  line-height: 120%;
+}
+@media (max-width: 1910px) {
+  .filter-price__input {
+    font-size: calc(13px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-price__input {
+    font-size: 13px;
+  }
+}
+
+.line-left {
+  border-left: 1px solid #ccc;
+}
+
+.filter-block {
+  margin: 20px 0px 0px 0px;
+}
+
+.filter-title {
+  font-family: "Russo";
+  font-size: 16px;
+  font-weight: 400;
+  color: #2a2b30;
+  line-height: 120%;
+  margin: 20px 0px 10px 0px;
+}
+@media (max-width: 1910px) {
+  .filter-title {
+    font-size: calc(14px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-title {
+    font-size: 14px;
+  }
+}
+
+.filter-checkbox {
+  margin: 5px 0px 0px 0px;
+}
+.filter-checkbox__lable {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #2a2b30;
+  line-height: 120%;
+  text-transform: lowercase;
+  padding: 0px 0px 0px 20px;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 1910px) {
+  .filter-checkbox__lable {
+    font-size: calc(14px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-checkbox__lable {
+    font-size: 14px;
+  }
+}
+.filter-checkbox__lable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #2a2b30;
+  border-radius: 4px;
+}
+.filter-checkbox__input {
+  display: none;
+}
+.filter-checkbox__input:checked + .filter-checkbox__lable::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -4px;
+  width: 27px;
+  height: 27px;
+  background: url("/img/icon/check.png") 0 0/cover no-repeat;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5714,6 +5905,10 @@ input[type=number]:focus {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.relative {
+  position: relative;
 }
 
 .unselect {

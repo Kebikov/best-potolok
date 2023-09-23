@@ -1,0 +1,147 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+//= .filter-lamps
+.filter-lamps {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #ccc;
+
+    // .filter-lamps__body
+    &__body {
+        position: relative;
+
+        padding: 20px;
+    }
+    &__close {
+        position: absolute;
+        top: -1px;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+
+        background-color: $orange;
+
+    }
+    &__close-boby {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 27px;
+            height: 27px;
+
+            object-fit: cover;
+        }
+    }
+    &__button {
+        margin: 40px 0px 0px 0px;
+        & span {
+            background-color: $brown;
+
+            @include text_streach(17, 15, #fff, 400);
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+        }
+    }
+}
+
+//= .filter-price
+.filter-price {
+    // .filter-price__title
+    &__title {
+        @include text_streach(15, 13, $grey, 400, "Russo");
+
+        margin: 0px 0px 10px 0px;
+    }
+    // .filter-price__block-input
+    &__block-input {
+        display: flex;
+        width: 100%;
+
+        border: 1px solid #ccc;
+    }
+    // .filter-price__from
+    &__input {
+        display: inline;
+        width: 100px;
+        height: 30px;
+
+        padding: 5px 10px;
+
+        @include text_streach(15, 13, $grey, 400);
+    }
+}
+
+.line-left {
+    border-left: 1px solid #ccc;
+}
+
+//= .filter-color
+.filter-block {
+    margin: 20px 0px 0px 0px;
+}
+
+//= .filter-title
+.filter-title {
+    @include text_streach(16, 14, $grey, 400, "Russo");
+
+    margin: 20px 0px 10px 0px;
+}
+
+//= .filter-checkbox
+.filter-checkbox {
+    margin: 5px 0px 0px 0px;
+    //.filter-checkbox__lable
+    &__lable {
+        @include text_streach(16, 14, $grey, 400);
+        text-transform: lowercase;
+        padding: 0px 0px 0px 20px;
+
+        cursor: pointer;
+
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $grey;
+            border-radius: 4px;
+        }
+    }
+    //.filter-checkbox__input
+    &__input {
+        display: none;
+        &:checked + .filter-checkbox__lable::after {
+            content: '';
+
+            position: absolute;
+            top: -9px;
+            left: -4px;
+            width: 27px;
+            height: 27px;
+            background: url('/img/icon/check.png') 0 0 / cover no-repeat;
+        }
+    }
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+

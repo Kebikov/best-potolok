@@ -36,3 +36,32 @@ function search(str, arr) {
 }
 
 cut(str);
+
+
+const arr = [{dom: 109}, {kv: 126}];
+
+arr.forEach(item => {
+    if(item.dom) {
+        delete item;
+    }
+})
+
+console.log(arr);
+
+// const newArr = arr.slice();
+
+// delete newArr[0].dom;
+
+// console.log(arr, newArr);
+
+// const ggg = {
+//     dom: '',
+//     port: '8080',
+//     god: ''
+// }
+
+// for(let key in ggg) {
+//     console.log(ggg[key]);
+// }
+
+console.log(50 < Infinity);

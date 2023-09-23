@@ -4,6 +4,7 @@
 
 //= .lamps-block
 .lamps-block {
+    margin: 0px 0px 20px 0px;
     // .lamps-block__body
     &__body {
         display: grid;
@@ -115,7 +116,7 @@
 }
 
 .number-lamps {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 20px 0px;
     // .number-lamps__body
     &__body {
         display: flex;

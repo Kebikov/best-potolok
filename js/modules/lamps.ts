@@ -1,5 +1,8 @@
+// добавление светильников на сайт
 import { panels, Led } from "../../ajax/panels";
 import createLampElement from "../helps/createLampElement";
+import addFilterLamps from "./addFilterLamps";
+import filterLamps from "./filterLamps";
 
 const lamps = ():void => {
 
@@ -25,6 +28,10 @@ const lamps = ():void => {
         createLampElement(currentArrLamps, 0, elementsOnPage);
 
         addButton.addEventListener('click', () => addLamps(currentArrLamps, elementsOnPage));
+        //* добавляем элементы фильтрации
+        addFilterLamps();
+        //* метод фильтрации
+        filterLamps(currentArrLamps, lampsBlock);
 
     } catch (error) {
         console.log('Error in function lamps >>> ', error);
@@ -45,7 +52,6 @@ function addLamps(currentArrLamps: Array<Led>, elementsOnPage: number) {
     let start: number = sum() * elementsOnPage;
     let finish: number = start + elementsOnPage;
     createLampElement(currentArrLamps, start, finish);
-    
 }
 
 export default lamps;
