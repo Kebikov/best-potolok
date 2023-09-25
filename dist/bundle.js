@@ -1266,16 +1266,31 @@ exports.panels = [
 
 /***/ }),
 
-/***/ "./js/helps/addBlockFilter.ts":
-/*!************************************!*\
-  !*** ./js/helps/addBlockFilter.ts ***!
-  \************************************/
+/***/ "./js/lamps/data/data.ts":
+/*!*******************************!*\
+  !*** ./js/lamps/data/data.ts ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.elementsOnPage = void 0;
+exports.elementsOnPage = 12;
+// количество ламп на странице при первом показа
+
+
+/***/ }),
+
+/***/ "./js/lamps/helps/addBlockFilter.ts":
+/*!******************************************!*\
+  !*** ./js/lamps/helps/addBlockFilter.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+//: add filters
+Object.defineProperty(exports, "__esModule", ({ value: true }));
 const addBlockFilter = (body, arrValues, title, unit, key) => {
-    //: add filters
     const filterBlockElement = document.createElement('div');
     filterBlockElement.classList.add('filter-block');
     const filterTitleElement = document.createElement('div');
@@ -1297,22 +1312,76 @@ exports["default"] = addBlockFilter;
 
 /***/ }),
 
-/***/ "./js/helps/createLampElement.ts":
-/*!***************************************!*\
-  !*** ./js/helps/createLampElement.ts ***!
-  \***************************************/
+/***/ "./js/lamps/helps/addLamps.ts":
+/*!************************************!*\
+  !*** ./js/lamps/helps/addLamps.ts ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const createLampElement_1 = __importDefault(__webpack_require__(/*! ./createLampElement */ "./js/lamps/helps/createLampElement.ts"));
+const caunter_1 = __importDefault(__webpack_require__(/*! ./caunter */ "./js/lamps/helps/caunter.ts"));
+//= addLamps 
+const addLamps = (currentArrLamps, elementsOnPage) => {
+    let start = (0, caunter_1.default)('plus-one') * elementsOnPage;
+    let finish = start + elementsOnPage;
+    (0, createLampElement_1.default)(currentArrLamps, start, finish);
+};
+exports["default"] = addLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/helps/caunter.ts":
+/*!***********************************!*\
+  !*** ./js/lamps/helps/caunter.ts ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+let total = 0;
+const caunter = (comand) => {
+    if (comand === 'zero') {
+        total = 0;
+        console.log('total >>> ', total);
+        return total;
+    }
+    total++;
+    console.log('total >>> ', total);
+    return total;
+};
+exports["default"] = caunter;
+
+
+/***/ }),
+
+/***/ "./js/lamps/helps/createLampElement.ts":
+/*!*********************************************!*\
+  !*** ./js/lamps/helps/createLampElement.ts ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const caunter_1 = __importDefault(__webpack_require__(/*! ./caunter */ "./js/lamps/helps/caunter.ts"));
+const deleteButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ../lampModules/deleteButtonStillLamps */ "./js/lamps/lampModules/deleteButtonStillLamps.ts"));
 const createLampElement = (currentArrLamps, startNumberElement, finishNumberElement) => {
     const priceUP = 1.1;
-    console.log('run', currentArrLamps);
-    const lampsBlock = document.querySelector('.lamps-block__body');
-    const addButton = document.querySelector('.number-lamps__add');
+    const lampsBlock = document.querySelector('#box-for-lamp');
+    const addButton = document.querySelector('#button-add-lamps');
+    if (currentArrLamps.length < 13) {
+        (0, deleteButtonStillLamps_1.default)();
+    }
     for (let i = startNumberElement; i < finishNumberElement; i++) {
         let obj = currentArrLamps[i];
-        console.log(obj);
         if (obj) {
             lampsBlock.insertAdjacentHTML('beforeend', `
                 <div class="cart-lamp" >
@@ -1335,7 +1404,8 @@ const createLampElement = (currentArrLamps, startNumberElement, finishNumberElem
             `);
         }
         else {
-            addButton.classList.add('remove');
+            (0, deleteButtonStillLamps_1.default)();
+            (0, caunter_1.default)('zero');
             break;
         }
     }
@@ -1345,10 +1415,49 @@ exports["default"] = createLampElement;
 
 /***/ }),
 
-/***/ "./js/modules/addFilterLamps.ts":
-/*!**************************************!*\
-  !*** ./js/modules/addFilterLamps.ts ***!
-  \**************************************/
+/***/ "./js/lamps/helps/proxy.ts":
+/*!*********************************!*\
+  !*** ./js/lamps/helps/proxy.ts ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.proxy = void 0;
+const deleteLamps_1 = __importDefault(__webpack_require__(/*! ../lampModules/deleteLamps */ "./js/lamps/lampModules/deleteLamps.ts"));
+const deleteButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ../lampModules/deleteButtonStillLamps */ "./js/lamps/lampModules/deleteButtonStillLamps.ts"));
+const create_1 = __importDefault(__webpack_require__(/*! ../lampModules/create */ "./js/lamps/lampModules/create.ts"));
+const mainObjectLamps = {
+    lamps: []
+};
+exports.proxy = new Proxy(mainObjectLamps, {
+    set: (target, prop, value) => {
+        if (prop === 'lamps' && Array.isArray(value)) {
+            console.log('Объект изменился...');
+            (0, deleteLamps_1.default)();
+            console.log('%c proxy >>>', 'color: white; background: green', value.length);
+            if (value.length < 13) {
+                console.log('delete button');
+                (0, deleteButtonStillLamps_1.default)();
+            }
+            (0, create_1.default)(value);
+            target[prop] = value;
+            return true;
+        }
+        return false;
+    }
+});
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/addFilterLamps.ts":
+/*!************************************************!*\
+  !*** ./js/lamps/lampModules/addFilterLamps.ts ***!
+  \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
@@ -1357,8 +1466,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 // добавление элементов фильтрации на сайт
-const panels_1 = __webpack_require__(/*! ../../ajax/panels */ "./ajax/panels.ts");
-const addBlockFilter_1 = __importDefault(__webpack_require__(/*! ../helps/addBlockFilter */ "./js/helps/addBlockFilter.ts"));
+const panels_1 = __webpack_require__(/*! ../../../ajax/panels */ "./ajax/panels.ts");
+const addBlockFilter_1 = __importDefault(__webpack_require__(/*! ../helps/addBlockFilter */ "./js/lamps/helps/addBlockFilter.ts"));
 //= const addFilterLamps
 const addFilterLamps = () => {
     try {
@@ -1372,6 +1481,7 @@ const addFilterLamps = () => {
             default:
                 arrForFilters = [];
         }
+        //добавление новой сортировки по выбранному полю
         const arrColorLightK = searchFilters(arrForFilters, 'colorLightK');
         const arrWats = searchFilters(arrForFilters, 'wats');
         (0, addBlockFilter_1.default)(codeElement, arrColorLightK, 'Цвет свечения', 'K', 'colorLightK');
@@ -1396,6 +1506,243 @@ function searchFilters(arrForFilters, key) {
     return sortArr;
 }
 exports["default"] = addFilterLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/create.ts":
+/*!****************************************!*\
+  !*** ./js/lamps/lampModules/create.ts ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const createLampElement_1 = __importDefault(__webpack_require__(/*! ../helps/createLampElement */ "./js/lamps/helps/createLampElement.ts"));
+const data_1 = __webpack_require__(/*! ../data/data */ "./js/lamps/data/data.ts");
+const addLamps_1 = __importDefault(__webpack_require__(/*! ../helps/addLamps */ "./js/lamps/helps/addLamps.ts"));
+const deleteLamps_1 = __importDefault(__webpack_require__(/*! ./deleteLamps */ "./js/lamps/lampModules/deleteLamps.ts"));
+const createButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ./createButtonStillLamps */ "./js/lamps/lampModules/createButtonStillLamps.ts"));
+//= create
+const create = (arrLamps) => {
+    try {
+        console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        (0, deleteLamps_1.default)();
+        (0, createLampElement_1.default)(arrLamps, 0, data_1.elementsOnPage);
+        if (arrLamps.length > 12) {
+            console.log('create Buttoms');
+            (0, createButtonStillLamps_1.default)();
+            const addButton = document.querySelector('#button-add-lamps');
+            addButton.addEventListener('click', listener);
+        }
+        function listener() {
+            console.log('listen');
+            (0, addLamps_1.default)(arrLamps, data_1.elementsOnPage);
+        }
+    }
+    catch (error) {
+        console.log('Error in function create >>> ', error);
+    }
+};
+exports["default"] = create;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/createButtonStillLamps.ts":
+/*!********************************************************!*\
+  !*** ./js/lamps/lampModules/createButtonStillLamps.ts ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const createButtonStillLamps = () => {
+    const numberLampsBody = document.querySelector('#body-for-button-still-lamps');
+    numberLampsBody === null || numberLampsBody === void 0 ? void 0 : numberLampsBody.insertAdjacentHTML('beforeend', `
+        <div id="button-add-lamps" class="number-lamps__add">показать еще</div>
+    `);
+};
+exports["default"] = createButtonStillLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/deleteButtonStillLamps.ts":
+/*!********************************************************!*\
+  !*** ./js/lamps/lampModules/deleteButtonStillLamps.ts ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const deleteButtonStillLamps = () => {
+    try {
+        const addButton = document.querySelector('#button-add-lamps');
+        addButton === null || addButton === void 0 ? void 0 : addButton.remove();
+    }
+    catch (error) {
+        console.log('Error in deleteButtonStillLamps >>> ', error);
+    }
+};
+exports["default"] = deleteButtonStillLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/deleteLamps.ts":
+/*!*********************************************!*\
+  !*** ./js/lamps/lampModules/deleteLamps.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+//: удаление ламп со страницы 
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const deleteLamps = () => {
+    try {
+        const lampsBlock = document.querySelector('#box-for-lamp');
+        lampsBlock.innerHTML = '';
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+exports["default"] = deleteLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/filterLamps.ts":
+/*!*********************************************!*\
+  !*** ./js/lamps/lampModules/filterLamps.ts ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+//: фильтрация светильников на сайте
+const proxy_1 = __webpack_require__(/*! ../helps/proxy */ "./js/lamps/helps/proxy.ts");
+const create_1 = __importDefault(__webpack_require__(/*! ./create */ "./js/lamps/lampModules/create.ts"));
+//= filterLamps
+const filterLamps = (currentArrLamps) => {
+    try {
+        const formFilter = document.querySelector('#form-filter');
+        const buttonResetFilter = document.querySelector('#button-reset-filter');
+        buttonResetFilter.addEventListener('click', () => {
+            formFilter.reset();
+            (0, create_1.default)(currentArrLamps);
+        });
+        formFilter.addEventListener('input', () => {
+            const checkboxAll = document.querySelectorAll('.filter-checkbox__input');
+            //* массив уникальных ключей по которым фильтруем светильники
+            let arrKey = [];
+            //* получение всех уникальных ключей
+            checkboxAll.forEach(item => {
+                const name = item.name;
+                const isMatchKey = arrKey.includes(name);
+                if (item.checked && !isMatchKey) {
+                    arrKey.push(name);
+                }
+            });
+            //* обьект для дальнейшей фильтрации типа {key: [value], key: [value]}
+            let objectFilter = {};
+            //* создание обьекта с ключами в которыз значения пустые массивы для дальнейшего заполнения значениями
+            arrKey.forEach(key => {
+                objectFilter[key] = [];
+            });
+            //* заполнение ключей значениями
+            checkboxAll.forEach(item => {
+                if (item.checked) {
+                    const name = item.name;
+                    objectFilter[name].push(item.value);
+                }
+            });
+            //* фильтрация по всем checkbox
+            const resalt = currentArrLamps.filter(lamp => {
+                const length = Object.keys(objectFilter).length;
+                let totalMatch = 0;
+                for (let key in objectFilter) {
+                    const isMatch = objectFilter[key].includes(lamp[key]);
+                    if (isMatch) {
+                        totalMatch++;
+                    }
+                }
+                if (totalMatch === length) {
+                    return lamp;
+                }
+            });
+            //* фильтрация по цене
+            const form = document.querySelector('.filter-price__form');
+            const from = +form.from.value;
+            const until = +form.until.value === 0 ? Infinity : +form.until.value;
+            // from / until числа от и до 
+            //* resaltPrice - массив с отфильтрованными обьектами по цене и по checkbox
+            const resaltPrice = resalt.filter(lamp => {
+                if (from <= +lamp.price && +lamp.price <= until) {
+                    return lamp;
+                }
+            });
+            proxy_1.proxy.lamps = resaltPrice;
+            return resaltPrice;
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+exports["default"] = filterLamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/startLamps.ts":
+/*!********************************************!*\
+  !*** ./js/lamps/lampModules/startLamps.ts ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+//: начало - добавление светильников на сайт
+const panels_1 = __webpack_require__(/*! ../../../ajax/panels */ "./ajax/panels.ts");
+const addFilterLamps_1 = __importDefault(__webpack_require__(/*! ./addFilterLamps */ "./js/lamps/lampModules/addFilterLamps.ts"));
+const filterLamps_1 = __importDefault(__webpack_require__(/*! ./filterLamps */ "./js/lamps/lampModules/filterLamps.ts"));
+const create_1 = __importDefault(__webpack_require__(/*! ./create */ "./js/lamps/lampModules/create.ts"));
+//= lamps 
+const lamps = () => {
+    try {
+        const lampsBlock = document.querySelector('#box-for-lamp');
+        const typeLamps = lampsBlock.dataset.lamp;
+        let currentArrLamps = [];
+        switch (typeLamps) {
+            case 'panels':
+                currentArrLamps = panels_1.panels;
+                break;
+            default:
+                currentArrLamps = [];
+                break;
+        }
+        (0, create_1.default)(currentArrLamps);
+        //* добавляем элементы фильтрации
+        (0, addFilterLamps_1.default)();
+        //* метод фильтрации
+        (0, filterLamps_1.default)(currentArrLamps);
+    }
+    catch (error) {
+        console.log('Error in function lamps >>> ', error);
+    }
+};
+exports["default"] = lamps;
 
 
 /***/ }),
@@ -1460,184 +1807,6 @@ function animationImg() {
     });
 }
 ;
-
-
-/***/ }),
-
-/***/ "./js/modules/deleteLamps.ts":
-/*!***********************************!*\
-  !*** ./js/modules/deleteLamps.ts ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const deleteLamps = () => {
-    try {
-        const lampsBlock = document.querySelector('.lamps-block__body');
-        lampsBlock.innerHTML = '';
-    }
-    catch (error) {
-        console.log(error);
-    }
-};
-exports["default"] = deleteLamps;
-
-
-/***/ }),
-
-/***/ "./js/modules/filterLamps.ts":
-/*!***********************************!*\
-  !*** ./js/modules/filterLamps.ts ***!
-  \***********************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const createLampElement_1 = __importDefault(__webpack_require__(/*! ../helps/createLampElement */ "./js/helps/createLampElement.ts"));
-const deleteLamps_1 = __importDefault(__webpack_require__(/*! ./deleteLamps */ "./js/modules/deleteLamps.ts"));
-const filterLamps = (currentArrLamps) => {
-    try {
-        const mainObjectLamps = {
-            lamps: []
-        };
-        const proxy = new Proxy(mainObjectLamps, {
-            set: (target, prop, value) => {
-                if (prop === 'lamps' && Array.isArray(value)) {
-                    console.log('Объект изменился...');
-                    (0, deleteLamps_1.default)();
-                    console.log('TARGET >>> ', value);
-                    (0, createLampElement_1.default)(value, 0, 12);
-                    target[prop] = value;
-                    return true;
-                }
-                return false;
-            }
-        });
-        const button = document.querySelector('.filter-lamps__button');
-        button.addEventListener('click', () => {
-            const checkboxAll = document.querySelectorAll('.filter-checkbox__input');
-            //* массив уникальных ключей по которым фильтруем светильники
-            let arrKey = [];
-            //* получение всех уникальных ключей
-            checkboxAll.forEach(item => {
-                const name = item.name;
-                const isMatchKey = arrKey.includes(name);
-                if (item.checked && !isMatchKey) {
-                    arrKey.push(name);
-                }
-            });
-            //* обьект для дальнейшей фильтрации типа {key: [value], key: [value]}
-            let objectFilter = {};
-            //* создание обьекта с ключами в которыз значения пустые массивы для дальнейшего заполнения значениями
-            arrKey.forEach(key => {
-                objectFilter[key] = [];
-            });
-            //* заполнение ключей значениями
-            checkboxAll.forEach(item => {
-                if (item.checked) {
-                    const name = item.name;
-                    objectFilter[name].push(item.value);
-                }
-            });
-            //* фильтрация по всем checkbox
-            const resalt = currentArrLamps.filter(lamp => {
-                const length = Object.keys(objectFilter).length;
-                let totalMatch = 0;
-                for (let key in objectFilter) {
-                    const isMatch = objectFilter[key].includes(lamp[key]);
-                    if (isMatch) {
-                        totalMatch++;
-                    }
-                }
-                if (totalMatch === length) {
-                    return lamp;
-                }
-            });
-            //* фильтрация по цене
-            const form = document.querySelector('.filter-price__form');
-            const from = +form.from.value;
-            const until = +form.until.value === 0 ? Infinity : +form.until.value;
-            // from / until числа от и до 
-            //* resaltPrice - массив с отфильтрованными обьектами по цене и по checkbox
-            const resaltPrice = resalt.filter(lamp => {
-                if (from <= +lamp.price && +lamp.price <= until) {
-                    return lamp;
-                }
-            });
-            console.log(resaltPrice);
-            proxy.lamps = resaltPrice;
-            return resaltPrice;
-        });
-    }
-    catch (error) {
-        console.log(error);
-    }
-};
-exports["default"] = filterLamps;
-
-
-/***/ }),
-
-/***/ "./js/modules/lamps.ts":
-/*!*****************************!*\
-  !*** ./js/modules/lamps.ts ***!
-  \*****************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-// добавление светильников на сайт
-const panels_1 = __webpack_require__(/*! ../../ajax/panels */ "./ajax/panels.ts");
-const createLampElement_1 = __importDefault(__webpack_require__(/*! ../helps/createLampElement */ "./js/helps/createLampElement.ts"));
-const addFilterLamps_1 = __importDefault(__webpack_require__(/*! ./addFilterLamps */ "./js/modules/addFilterLamps.ts"));
-const filterLamps_1 = __importDefault(__webpack_require__(/*! ./filterLamps */ "./js/modules/filterLamps.ts"));
-const lamps = () => {
-    try {
-        const elementsOnPage = 12;
-        const lampsBlock = document.querySelector('.lamps-block__body');
-        const addButton = document.querySelector('.number-lamps__add');
-        const typeLamps = lampsBlock.dataset.lamp;
-        let currentArrLamps = [];
-        switch (typeLamps) {
-            case 'panels':
-                currentArrLamps = panels_1.panels;
-                break;
-            default:
-                currentArrLamps = [];
-                break;
-        }
-        (0, createLampElement_1.default)(currentArrLamps, 0, elementsOnPage);
-        addButton.addEventListener('click', () => addLamps(currentArrLamps, elementsOnPage));
-        //* добавляем элементы фильтрации
-        (0, addFilterLamps_1.default)();
-        //* метод фильтрации
-        (0, filterLamps_1.default)(currentArrLamps);
-    }
-    catch (error) {
-        console.log('Error in function lamps >>> ', error);
-    }
-};
-function counter() {
-    let total = 0;
-    return () => {
-        total++;
-        return total;
-    };
-}
-const sum = counter();
-function addLamps(currentArrLamps, elementsOnPage) {
-    let start = sum() * elementsOnPage;
-    let finish = start + elementsOnPage;
-    (0, createLampElement_1.default)(currentArrLamps, start, finish);
-}
-exports["default"] = lamps;
 
 
 /***/ }),
@@ -1832,8 +2001,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/icon_observer */ "./js/modules/icon_observer.js");
 /* harmony import */ var _modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/animation_praise */ "./js/modules/animation_praise.ts");
 /* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/questions */ "./js/modules/questions.ts");
-/* harmony import */ var _modules_lamps__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/lamps */ "./js/modules/lamps.ts");
-/* harmony import */ var _modules_lamps__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_modules_lamps__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lamps/lampModules/startLamps */ "./js/lamps/lampModules/startLamps.ts");
+/* harmony import */ var _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -1881,7 +2050,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_icon_observer__WEBPACK_IMPORTED_MODULE_9__["default"])();
     (0,_modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_questions__WEBPACK_IMPORTED_MODULE_11__["default"])();
-    _modules_lamps__WEBPACK_IMPORTED_MODULE_12___default()();
+    _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12___default()();
 });
 })();
 

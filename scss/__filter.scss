@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 250px;
-    height: 100%;
+    //height: 100%;
 
     background-color: #ffffff;
 
@@ -54,6 +54,17 @@
             padding: 7px 15px;
 
             cursor: pointer;
+        }
+    }
+    &__caunter {
+        background-color: $grey;
+        padding: 10px 0px 10px 0px;
+        margin: 20px 0px 0px 0px;
+
+        display: flex;
+        justify-content: center;
+        & span {
+            @include text_streach(15, 13, #fff, 400);
         }
     }
 }

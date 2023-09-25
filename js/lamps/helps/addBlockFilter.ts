@@ -1,5 +1,7 @@
+//: add filters
+
 const addBlockFilter = (body: HTMLDivElement ,arrValues: Array<string>, title: string, unit: string, key: string) => {
-    //: add filters
+    
     const filterBlockElement: HTMLDivElement = document.createElement('div');
     filterBlockElement.classList.add('filter-block');
 

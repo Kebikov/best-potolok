@@ -5468,6 +5468,7 @@ input[type=number]:focus {
 
 .lamps-block {
   margin: 0px 0px 20px 0px;
+  position: relative;
 }
 .lamps-block__body {
   display: grid;
@@ -5697,7 +5698,7 @@ input[type=number]:focus {
   }
 }
 .number-lamps__add.remove {
-  display: none;
+  visibility: hidden;
 }
 
 .filter-lamps {
@@ -5705,7 +5706,6 @@ input[type=number]:focus {
   top: 0;
   left: 0;
   width: 250px;
-  height: 100%;
   background-color: #ffffff;
   border: 1px solid #ccc;
 }
@@ -5760,6 +5760,34 @@ input[type=number]:focus {
 @media (max-width: 375px) {
   .filter-lamps__button span {
     font-size: 15px;
+  }
+}
+.filter-lamps__caunter {
+  background-color: #2a2b30;
+  padding: 10px 0px 10px 0px;
+  margin: 20px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.filter-lamps__caunter span {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 120%;
+}
+@media (max-width: 1910px) {
+  .filter-lamps__caunter span {
+    font-size: calc(13px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .filter-lamps__caunter span {
+    font-size: 13px;
   }
 }
 

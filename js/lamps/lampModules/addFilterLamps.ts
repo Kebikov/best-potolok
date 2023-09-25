@@ -1,5 +1,5 @@
 // добавление элементов фильтрации на сайт
-import { panels, Led, LedKey } from "../../ajax/panels";
+import { panels, Led, LedKey } from "../../../ajax/panels";
 import addBlockFilter from "../helps/addBlockFilter";
 
 //= const addFilterLamps
@@ -17,6 +17,7 @@ const addFilterLamps = () => {
                 arrForFilters = [];
         }
 
+        //добавление новой сортировки по выбранному полю
         const arrColorLightK = searchFilters(arrForFilters, 'colorLightK');
         const arrWats = searchFilters(arrForFilters, 'wats');
 

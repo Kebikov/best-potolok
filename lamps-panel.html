@@ -79,7 +79,7 @@
                                 <div class="burger__text">меню</div>
                             </div>
                         </div>
-                         <ul class="menu__list">
+                        <ul class="menu__list">
                             <a href="index.html" class="menu__line icon-procent">
                                 <div class="menu__link">главная</div>
                             </a>
@@ -109,33 +109,15 @@
             <main class="main relative">
                 <div class="company-taitle container">светодиодные панели</div>
                 <div class="lamps-block" >
-                    <div class="lamps-block__body container" data-lamp="panels" >
-
-                        <!-- <div class="cart-lamp" >
-                            <div class="cart-lamp__body">
-                                <div class="cart-lamp__img">
-                                    <img src="/img/lamps/all-lamp/2200001.jpg" alt="lamps">
-                                </div>
-                                <div class="cart-lamp__info">
-                                    <div class="cart-lamp__title">SAPRA LP110</div>
-                                    <div class="cart-lamp__article">Артикул: 2200004</div>
-                                    <div class="cart-lamp__wat text-lamp">Мощность: 6W</div>
-                                    <div class="cart-lamp__diameter text-lamp">Размер: 192mm</div>
-                                    <div class="cart-lamp__diameterCut text-lamp">Врезное отверстие: 160mm</div>
-                                    <div class="cart-lamp__colorLightK text-lamp">Цвет свечения: 4000K</div>
-                                    <div class="cart-lamp__lightStream text-lamp">Световой поток: 1200Lm</div>
-                                    <div class="cart-lamp__price"><span>4.99 BYN</span></div>
-                                </div>
-                            </div>
-                        </div> -->
-
+                    <div class="lamps-block__body container" id="box-for-lamp" data-lamp="panels" >
+                        <!-- code -->
                     </div>
                 </div>
 
                 <!--: number-lamps -->
                 <div class="number-lamps">
-                    <div class="number-lamps__body container">
-                        <div class="number-lamps__add">показать еще</div>
+                    <div id="body-for-button-still-lamps" class="number-lamps__body container">
+                        <!-- code -->
                     </div>
                 </div>
 
@@ -149,17 +131,21 @@
                         </div>
                         <!-- filter-price -->
                         <div class="filter-price">
-                            <form name="filter" class="filter-price__form">
+                            <form id="form-filter" name="filter" class="filter-price__form">
                                 <div class="filter-price__title">Цена</div>
                                 <div class="filter-price__block-input">
                                     <input name="from" class="filter-price__input" type="number" placeholder="от">
                                     <input name="until" class="filter-price__input line-left" type="number" placeholder="до">
                                 </div>
+                                <div class="filter-lamps-code-ts" data-code="panels" >
+                                    <!-- code ts-->
+                                </div>
                             </form>
                         </div>
-                        <div class="filter-lamps-code-ts" data-code="panels" ></div>
-                        <!-- add code ts-->
-                        <div class="filter-lamps__button"><span>приминить</span></div>
+                        <div id="button-reset-filter" class="filter-lamps__button"><span>сбросить</span></div>
+                    </div>
+                    <div class="filter-lamps__caunter">
+                        <span>Найдено 22 товара</span>
                     </div>
                 </div>
 
@@ -197,3 +183,9 @@
         <script src="dist/bundle.js?v=4.2"></script>
     </body>
 </html>
+
+
+
+
+
+

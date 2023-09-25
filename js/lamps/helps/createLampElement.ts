@@ -1,16 +1,23 @@
-import { Led } from "../../ajax/panels";
+//: создание элементов ламп на странице 
+import { Led } from "../../../ajax/panels";
+import caunter from "./caunter";
+import deleteButtonStillLamps from "../lampModules/deleteButtonStillLamps";
 
 const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: number, finishNumberElement: number) => {
     
     const priceUP = 1.1;
-    console.log('run', currentArrLamps);
-    const lampsBlock = document.querySelector('.lamps-block__body') as HTMLDivElement;
-    const addButton = document.querySelector('.number-lamps__add') as HTMLDListElement;
 
+    const lampsBlock = document.querySelector('#box-for-lamp') as HTMLDivElement;
+    const addButton = document.querySelector('#button-add-lamps') as HTMLDListElement;
+
+    if(currentArrLamps.length < 13) {
+        deleteButtonStillLamps();
+    }
+    
     for(let i = startNumberElement; i < finishNumberElement; i++) {
 
         let obj = currentArrLamps[i];
-        console.log(obj);
+
         if(obj) {
             lampsBlock.insertAdjacentHTML('beforeend',`
                 <div class="cart-lamp" >
@@ -32,7 +39,8 @@ const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: numb
                 </div>
             `);
         }else{
-            addButton.classList.add('remove')
+            deleteButtonStillLamps();
+            caunter('zero');
             break;
         }
 

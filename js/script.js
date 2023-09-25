@@ -10,7 +10,7 @@ import youtubeVideo from './modules/youtube';
 import iconGo from './modules/icon_observer';
 import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
-import lamps from './modules/lamps';
+import startLamps from './lamps/lampModules/startLamps'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -45,5 +45,5 @@ window.addEventListener('DOMContentLoaded', () => {
     iconGo();
     animationPraise();
     questions();
-    lamps();
+    startLamps();
 });

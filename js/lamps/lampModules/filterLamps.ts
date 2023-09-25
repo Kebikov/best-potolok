@@ -1,10 +1,11 @@
-// фильтрация светильников на сайте
+//: фильтрация светильников на сайте
+import { proxy } from '../helps/proxy';
 import { type } from "os";
-import { Led, LedKey } from "../../ajax/panels";
-import { strict } from "assert";
-import createLampElement from "../helps/createLampElement";
-import deleteLamps from "./deleteLamps";
+import { Led, LedKey } from "../../../ajax/panels";
+import create from './create';
 
+
+//= filterLamps
 const filterLamps = (currentArrLamps: Array<Led>) => {
 
     type ObjectFilter = {
@@ -13,28 +14,15 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
 
     try {
 
-        const mainObjectLamps: {lamps: Array<Led>} = {
-            lamps: []
-        }
+        const formFilter = document.querySelector('#form-filter') as HTMLFormElement;
+        const buttonResetFilter = document.querySelector('#button-reset-filter') as HTMLDivElement;
 
-        const proxy = new Proxy(mainObjectLamps, {
-
-            set: (target, prop, value) => {
-                if(prop === 'lamps' && Array.isArray(value)) {
-                    console.log('Объект изменился...');
-                    deleteLamps();
-                    console.log('TARGET >>> ',value);
-                    createLampElement(value, 0, 12);
-                    target[prop] = value;
-                    return true;
-                }
-                return false;
-            }
+        buttonResetFilter.addEventListener('click', () => {
+            formFilter.reset();
+            create(currentArrLamps);
         });
 
-
-        const button = document.querySelector('.filter-lamps__button') as HTMLDivElement;
-        button.addEventListener('click', () => {
+        formFilter.addEventListener('input', () => {
             const checkboxAll = document.querySelectorAll('.filter-checkbox__input') as NodeListOf<HTMLInputElement>;
             //* массив уникальных ключей по которым фильтруем светильники
             let arrKey: Array<LedKey> = [];
@@ -84,13 +72,20 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
                     return lamp;
                 }
             });
-            console.log(resaltPrice);
             proxy.lamps = resaltPrice;
             return resaltPrice;
         });
+
     } catch (error) {
         console.log(error);
     }
 }
 
 export default filterLamps;
+
+
+
+
+
+
+
