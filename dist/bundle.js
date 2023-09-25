@@ -659,11 +659,9 @@ function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
         //=   меню   
     (function menu () {
         //variables
-        const menu = document.querySelector('.menu');
         const burgerSquare = document.querySelector('.burger__square');
         const  menuList = document.querySelector('.menu__list');
         const  menuLineAll = menuList.querySelectorAll('.menu__line');
-        const  menuLine = menuList.querySelector('.menu__line');
         const  burgerSpan = document.querySelector('.burger__span');
         
         //body-open menu
@@ -676,17 +674,6 @@ function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
             });
             burgerSpan.classList.toggle('active-burger');
         });
-
-        //body-fix menu
-        let positionMenu = menu.getBoundingClientRect().top;
-        window.addEventListener('scroll', (e) => {
-            if(window.scrollY  >= positionMenu) {
-                menu.classList.add('menu__fix');
-            }else{
-                menu.classList.remove('menu__fix');
-            }
-        });
-        
     }());
 
     //= анимация иконок подвала
@@ -1529,17 +1516,15 @@ const createButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ./creat
 //= create
 const create = (arrLamps) => {
     try {
-        console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        //console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
         (0, deleteLamps_1.default)();
         (0, createLampElement_1.default)(arrLamps, 0, data_1.elementsOnPage);
         if (arrLamps.length > 12) {
-            console.log('create Buttoms');
             (0, createButtonStillLamps_1.default)();
             const addButton = document.querySelector('#button-add-lamps');
             addButton.addEventListener('click', listener);
         }
         function listener() {
-            console.log('listen');
             (0, addLamps_1.default)(arrLamps, data_1.elementsOnPage);
         }
     }
@@ -1718,6 +1703,7 @@ const panels_1 = __webpack_require__(/*! ../../../ajax/panels */ "./ajax/panels.
 const addFilterLamps_1 = __importDefault(__webpack_require__(/*! ./addFilterLamps */ "./js/lamps/lampModules/addFilterLamps.ts"));
 const filterLamps_1 = __importDefault(__webpack_require__(/*! ./filterLamps */ "./js/lamps/lampModules/filterLamps.ts"));
 const create_1 = __importDefault(__webpack_require__(/*! ./create */ "./js/lamps/lampModules/create.ts"));
+const toggleActivityFitter_1 = __importDefault(__webpack_require__(/*! ./toggleActivityFitter */ "./js/lamps/lampModules/toggleActivityFitter.ts"));
 //= lamps 
 const lamps = () => {
     try {
@@ -1733,6 +1719,8 @@ const lamps = () => {
                 break;
         }
         (0, create_1.default)(currentArrLamps);
+        //* обработчик кнопкок активности фильтра
+        (0, toggleActivityFitter_1.default)();
         //* добавляем элементы фильтрации
         (0, addFilterLamps_1.default)();
         //* метод фильтрации
@@ -1743,6 +1731,38 @@ const lamps = () => {
     }
 };
 exports["default"] = lamps;
+
+
+/***/ }),
+
+/***/ "./js/lamps/lampModules/toggleActivityFitter.ts":
+/*!******************************************************!*\
+  !*** ./js/lamps/lampModules/toggleActivityFitter.ts ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const toggleActivityFitter = () => {
+    try {
+        const filterToggle = document.querySelector('#filter-toggle');
+        const filterLampsElement = document.querySelector('#filter-lamps-element');
+        const filterCloseElement = document.querySelector('.filter-lamps__close-boby');
+        const body = document.body;
+        filterToggle === null || filterToggle === void 0 ? void 0 : filterToggle.addEventListener('click', () => {
+            filterLampsElement === null || filterLampsElement === void 0 ? void 0 : filterLampsElement.classList.add('active-filter');
+            body.style.overflow = 'hidden';
+        });
+        filterCloseElement === null || filterCloseElement === void 0 ? void 0 : filterCloseElement.addEventListener('click', () => {
+            filterLampsElement === null || filterLampsElement === void 0 ? void 0 : filterLampsElement.classList.remove('active-filter');
+            body.style.overflow = 'auto';
+        });
+    }
+    catch (error) {
+        console.log('Error in function toggleActivityFitter >>> ', error);
+    }
+};
+exports["default"] = toggleActivityFitter;
 
 
 /***/ }),

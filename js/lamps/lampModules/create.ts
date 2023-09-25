@@ -9,13 +9,12 @@ import createButtonStillLamps from "./createButtonStillLamps";
 //= create
 const create = (arrLamps: Array<Led>) => {
     try {
-        console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        //console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
         deleteLamps();
         
         createLampElement(arrLamps, 0, elementsOnPage);
 
         if(arrLamps.length  > 12) {
-            console.log('create Buttoms');
             createButtonStillLamps();
 
             const addButton = document.querySelector('#button-add-lamps') as HTMLDListElement;
@@ -24,7 +23,6 @@ const create = (arrLamps: Array<Led>) => {
         }
         
         function listener() {
-            console.log('listen');
             addLamps(arrLamps, elementsOnPage);
         }
 

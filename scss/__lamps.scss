@@ -1,6 +1,43 @@
 @import './variables.scss';
 @import './mixin.scss';
 
+
+//= .header-page-lamps
+.header-page-lamps {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    &__title {
+    }
+    &__filter {
+        display: flex;
+        align-items: center;
+
+        & span {
+            @include text_streach(17, 15, $grey, 400);
+
+            box-shadow: $shadow;
+
+            padding: 5px 15px 5px 30px;
+
+            position: relative;
+            &::before {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                width: 17px;
+                height: 17px;
+
+                background: url('/img/icon/filter.png') 0 0 / cover no-repeat;
+            }
+        }
+    }
+}
+
+//= .lamps-section
 .lamps-section {
     margin: 20px 0px 0px 0px;
     // .lamps-section__body

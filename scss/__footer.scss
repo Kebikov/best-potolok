@@ -15,7 +15,7 @@ $text: #5b4f3c;
     &__items {
         display: flex;
         justify-content: space-around;
-        padding: 30px 0px 30px 0px;
+        padding: 10px 0px 10px 0px;
         @media (max-width: 1020px){
             flex-wrap: wrap;
         }
@@ -28,8 +28,8 @@ $text: #5b4f3c;
         justify-content: center;
         align-items: center;
         @media (max-width: 760px){
-            flex: 0 1 80%;
-            margin: 0px 0px 30px 0px;
+            flex: 0 1 40%;
+            margin: 0px 0px 10px 0px;
         }
         & img {
             object-fit: contain;

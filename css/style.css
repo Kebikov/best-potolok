@@ -24,7 +24,7 @@ nav, footer, header, aside {
 }
 
 html, body {
-  height: 100%;
+  height: auto;
   width: 100%;
   font-size: 100%;
   line-height: 1;
@@ -2696,7 +2696,8 @@ input[type=number]:focus {
 
 .menu {
   margin: 5px 0px 0px 0px;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 120;
 }
 .menu__fix {
@@ -3034,7 +3035,7 @@ input[type=number]:focus {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 30px 0px 30px 0px;
+  padding: 10px 0px 10px 0px;
 }
 @media (max-width: 1020px) {
   .footer__items {
@@ -3059,8 +3060,8 @@ input[type=number]:focus {
 @media (max-width: 760px) {
   .footer__logo {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 80%;
-            flex: 0 1 80%;
+        -ms-flex: 0 1 40%;
+            flex: 0 1 40%;
     margin: 0px 0px 30px 0px;
   }
 }
@@ -5350,6 +5351,53 @@ input[type=number]:focus {
   height: 0;
 }
 
+.header-page-lamps {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+}
+.header-page-lamps__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-page-lamps__filter span {
+  font-family: "Roboto";
+  font-size: 17px;
+  font-weight: 400;
+  color: #2a2b30;
+  line-height: 120%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding: 5px 15px 5px 30px;
+  position: relative;
+}
+@media (max-width: 1910px) {
+  .header-page-lamps__filter span {
+    font-size: calc(15px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .header-page-lamps__filter span {
+    font-size: 15px;
+  }
+}
+.header-page-lamps__filter span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  background: url("/img/icon/filter.png") 0 0/cover no-repeat;
+}
+
 .lamps-section {
   margin: 20px 0px 0px 0px;
 }
@@ -5704,10 +5752,20 @@ input[type=number]:focus {
 .filter-lamps {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 250px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+@media (max-width: 1020px) {
+  .filter-lamps {
+    position: fixed;
+    z-index: 1000;
+  }
+}
+.filter-lamps.active-filter {
+  left: 0%;
 }
 .filter-lamps__body {
   position: relative;
@@ -5716,10 +5774,10 @@ input[type=number]:focus {
 .filter-lamps__close {
   position: absolute;
   top: -1px;
-  right: -40px;
-  width: 40px;
-  height: 40px;
-  background-color: #fe8d1b;
+  right: 0px;
+  width: 35px;
+  height: 35px;
+  background-color: #2a2b30;
 }
 .filter-lamps__close-boby {
   height: 100%;
@@ -5813,12 +5871,11 @@ input[type=number]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   border: 1px solid #ccc;
 }
 .filter-price__input {
   display: inline;
-  width: 100px;
+  width: 100%;
   height: 30px;
   padding: 5px 10px;
   font-family: "Roboto";
@@ -5826,6 +5883,7 @@ input[type=number]:focus {
   font-weight: 400;
   color: #2a2b30;
   line-height: 120%;
+  background: #fff;
 }
 @media (max-width: 1910px) {
   .filter-price__input {
