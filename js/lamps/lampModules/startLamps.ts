@@ -1,5 +1,5 @@
 //: начало - добавление светильников на сайт
-import { panels, Led } from "../../../ajax/panels";
+import { panels, Led, trek } from "../../../ajax/panels";
 import addFilterLamps from "./addFilterLamps";
 import filterLamps from "./filterLamps";
 import create from "./create";
@@ -21,6 +21,9 @@ const lamps = ():void => {
             case 'panels':
                 currentArrLamps = panels;
                 break;
+            case 'trek':
+                currentArrLamps = trek;
+                break;
             default:
                 currentArrLamps = [];
                 break;
@@ -31,7 +34,7 @@ const lamps = ():void => {
         //* обработчик кнопкок активности фильтра
         toggleActivityFitter();
         //* добавляем элементы фильтрации
-        addFilterLamps();
+        addFilterLamps(currentArrLamps, typeLamps);
         //* метод фильтрации
         filterLamps(currentArrLamps);
 

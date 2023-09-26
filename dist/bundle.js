@@ -982,7 +982,7 @@ function youtubeVideo () {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.panels = void 0;
+exports.trek = exports.panels = void 0;
 exports.panels = [
     {
         title: 'SAPRA LP110',
@@ -1247,6 +1247,200 @@ exports.panels = [
         lightStream: '560',
         img: '/img/lamps/all-lamp/2200022.jpg',
         price: '3.42'
+    },
+    {
+        wats: '10',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200023',
+        diameter: '85',
+        diameterCut: '50-70',
+        colorLightK: '4000',
+        lightStream: '1000',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '2.18'
+    },
+    {
+        wats: '10',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2300403',
+        diameter: '85',
+        diameterCut: '50-70',
+        colorLightK: '6400',
+        lightStream: '1000',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '2.18'
+    },
+    {
+        wats: '16',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200024',
+        diameter: '120',
+        diameterCut: '50-105',
+        colorLightK: '4000',
+        lightStream: '1600',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '3.28'
+    },
+    {
+        wats: '16',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2300404',
+        diameter: '120',
+        diameterCut: '50-105',
+        colorLightK: '6400',
+        lightStream: '1600',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '3.28'
+    },
+    {
+        wats: '24',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200025',
+        diameter: '170',
+        diameterCut: '50-155',
+        colorLightK: '4000',
+        lightStream: '2400',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '4.55'
+    }
+];
+exports.trek = [
+    {
+        title: 'SAPRA SP010 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200093',
+        diameter: 'Ø85×130 мм',
+        rotation: '→ 315⁰ / ↑ 90⁰',
+        patron: 'GX53',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/1.jpg',
+        price: '9.88'
+    },
+    {
+        title: 'SAPRA SP010 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200094',
+        diameter: 'Ø85×130 мм',
+        rotation: '→ 315⁰ / ↑ 90⁰',
+        patron: 'GX53',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/2.jpg',
+        price: '7.55'
+    },
+    {
+        title: 'SAPRA SP011 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200095',
+        diameter: 'Ø55×170 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/3.jpg',
+        price: '9.4'
+    },
+    {
+        title: 'SAPRA SP011 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200096',
+        diameter: 'Ø55×170 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/4.jpg',
+        price: '9.4'
+    },
+    {
+        title: 'SAPRA SP012 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200097',
+        diameter: 'Ø60×125 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/5.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP012 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200098',
+        diameter: 'Ø60×125 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/6.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP013 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200099',
+        diameter: '60×60×120 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/7.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP013 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200100',
+        diameter: '60×60×120 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/8.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP014 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200101',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/9.jpg',
+        price: '7.89'
+    },
+    {
+        title: 'SAPRA SP015 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200102',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/10.jpg',
+        price: '7.07'
+    },
+    {
+        title: 'SAPRA SP015 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200103',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/11.jpg',
+        price: '7.07'
     }
 ];
 
@@ -1323,6 +1517,37 @@ exports["default"] = addLamps;
 
 /***/ }),
 
+/***/ "./js/lamps/helps/addTotalFindLampOnPage.ts":
+/*!**************************************************!*\
+  !*** ./js/lamps/helps/addTotalFindLampOnPage.ts ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+//* добавление количества найденых товаров в результате фильтрации в блок визу фильтра 
+const changeTextProduct_1 = __importDefault(__webpack_require__(/*! ./changeTextProduct */ "./js/lamps/helps/changeTextProduct.ts"));
+//= addTotalFindLampOnPage 
+const addTotalFindLampOnPage = (total) => {
+    try {
+        const productsElement = document.querySelector('#products');
+        if (productsElement && total) {
+            const word = (0, changeTextProduct_1.default)(total);
+            productsElement.textContent = `Найдено ${total} ${word}`;
+        }
+    }
+    catch (error) {
+        console.log('Error in fnc addTotalFindLampOnPage >>> ', error);
+    }
+};
+exports["default"] = addTotalFindLampOnPage;
+
+
+/***/ }),
+
 /***/ "./js/lamps/helps/caunter.ts":
 /*!***********************************!*\
   !*** ./js/lamps/helps/caunter.ts ***!
@@ -1347,6 +1572,66 @@ exports["default"] = caunter;
 
 /***/ }),
 
+/***/ "./js/lamps/helps/changeTextProduct.ts":
+/*!*********************************************!*\
+  !*** ./js/lamps/helps/changeTextProduct.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+//* в зависимосити от числа вернет товар/товара/товаров
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+//= changeTextProduct 
+const changeTextProduct = (num) => {
+    try {
+        const letter = lastLetter(num, -1);
+        if (num !== 11 && letter === '1') {
+            return 'товар';
+        }
+        else if (letter && ['2', '3', '4'].includes(letter) && checkNumber(num)) { //hhh
+            return 'товара';
+        }
+        else {
+            return 'товаров';
+        }
+    }
+    catch (error) {
+        console.log('Error in Function changeTextProduct >>> ', error);
+    }
+};
+exports["default"] = changeTextProduct;
+function checkNumber(num) {
+    if (typeof num === 'number' && num > 11) {
+        const preNumber = lastLetter(num, -2);
+        const lastNumber = lastLetter(num, -1);
+        const whole = preNumber && lastNumber ? preNumber + lastNumber : '';
+        if (!['12', '13', '14'].includes(whole)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return true;
+    }
+}
+//= lastLetter 
+// возврат последний цыфры в виде строки
+function lastLetter(num, pref) {
+    if (typeof num === 'number') {
+        const numToString = '' + num;
+        const lastLetter = numToString.at(pref);
+        return lastLetter;
+    }
+    else {
+        return undefined;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./js/lamps/helps/createLampElement.ts":
 /*!*********************************************!*\
   !*** ./js/lamps/helps/createLampElement.ts ***!
@@ -1363,32 +1648,14 @@ const deleteButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ../lamp
 const createLampElement = (currentArrLamps, startNumberElement, finishNumberElement) => {
     const priceUP = 1.1;
     const lampsBlock = document.querySelector('#box-for-lamp');
-    const addButton = document.querySelector('#button-add-lamps');
+    const path = window.location.pathname;
     if (currentArrLamps.length < 13) {
         (0, deleteButtonStillLamps_1.default)();
     }
     for (let i = startNumberElement; i < finishNumberElement; i++) {
         let obj = currentArrLamps[i];
         if (obj) {
-            lampsBlock.insertAdjacentHTML('beforeend', `
-                <div class="cart-lamp" >
-                    <div class="cart-lamp__body">
-                        <div class="cart-lamp__img">
-                            <img src="${obj.img}" alt="lamps">
-                        </div>
-                        <div class="cart-lamp__info">
-                            <div class="cart-lamp__title">${obj.title}</div>
-                            <div class="cart-lamp__article">Артикул: ${obj.article}</div>
-                            <div class="cart-lamp__wat text-lamp">Мощность: ${obj.wats}W</div>
-                            <div class="cart-lamp__diameter text-lamp">Размер: ${obj.diameter}mm</div>
-                            <div class="cart-lamp__diameterCut text-lamp">Врезное отверстие: ${obj.diameterCut}mm</div>
-                            <div class="cart-lamp__colorLightK text-lamp">Цвет свечения: ${obj.colorLightK}K</div>
-                            <div class="cart-lamp__lightStream text-lamp">Световой поток: ${obj.lightStream}Lm</div>
-                            <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
-                        </div>
-                    </div>
-                </div>
-            `);
+            pathLamps(path, lampsBlock, priceUP, obj);
         }
         else {
             (0, deleteButtonStillLamps_1.default)();
@@ -1398,6 +1665,57 @@ const createLampElement = (currentArrLamps, startNumberElement, finishNumberElem
     }
 };
 exports["default"] = createLampElement;
+//: добавление карточки товара в зависимости от страницы на которой находится клиент 
+function pathLamps(path, body, priceUP, obj) {
+    //* /lamps-panel.html
+    if (path === '/lamps-panel.html') {
+        body.insertAdjacentHTML('beforeend', `
+            <div class="cart-lamp" >
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+
+                        <div class="text-lamp">Мощность: ${obj.wats}W</div>
+                        <div class="text-lamp">Размер: ${obj.diameter}mm</div>
+                        <div class="text-lamp">Врезное отверстие: ${obj.diameterCut}mm</div>
+                        <div class="text-lamp">Цвет свечения: ${obj.colorLightK}K</div>
+                        <div class="text-lamp">Световой поток: ${obj.lightStream}Lm</div>
+
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
+                </div>
+            </div>
+        `);
+    }
+    //* /lamps-panel.html
+    if (path === '/lamps-trek.html') {
+        body.insertAdjacentHTML('beforeend', `
+            <div class="cart-lamp" >
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+
+                        <div class="text-lamp">Мощность: ${obj.wats}</div>
+                        <div class="text-lamp">Размер: ${obj.diameter}</div>
+                        <div class="text-lamp">Вращение: ${obj.rotation}</div>
+                        <div class="text-lamp">Патрон: ${obj.patron}</div>
+                        <div class="text-lamp">Материал: ${obj.material}</div>
+
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
+                </div>
+            </div>
+        `);
+    }
+}
 
 
 /***/ }),
@@ -1452,39 +1770,51 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-// добавление элементов фильтрации на сайт
-const panels_1 = __webpack_require__(/*! ../../../ajax/panels */ "./ajax/panels.ts");
 const addBlockFilter_1 = __importDefault(__webpack_require__(/*! ../helps/addBlockFilter */ "./js/lamps/helps/addBlockFilter.ts"));
 //= const addFilterLamps
-const addFilterLamps = () => {
+const addFilterLamps = (currentArrLamps, typeLamps) => {
     try {
-        const codeElement = document.querySelector('[data-code]');
-        const typeLamp = codeElement.dataset.code;
-        let arrForFilters = [];
-        switch (typeLamp) {
+        // блок в который будут добавлены фильтры 
+        const blockForFilters = document.querySelector('#block-for-filters');
+        switch (typeLamps) {
             case 'panels':
-                arrForFilters = panels_1.panels;
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения', 'K');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'wats', 'Мощность', 'W');
+                break;
+            case 'trek':
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет', '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон', '');
                 break;
             default:
-                arrForFilters = [];
+                break;
         }
-        //добавление новой сортировки по выбранному полю
-        const arrColorLightK = searchFilters(arrForFilters, 'colorLightK');
-        const arrWats = searchFilters(arrForFilters, 'wats');
-        (0, addBlockFilter_1.default)(codeElement, arrColorLightK, 'Цвет свечения', 'K', 'colorLightK');
-        (0, addBlockFilter_1.default)(codeElement, arrWats, 'Мощность', 'W', 'wats');
     }
     catch (error) {
+        console.log('Error in functions addFilterLamps >>> ', error);
     }
 };
+// добавление новой сортировки по выбранному полю
+// body - куда вставим фильтры
+// arrayObjectLamps - массив с обьектами светильников для сортировки
+// keySort - ключ по которому будет сортировка
+// title - заголовок для блока с фильтрами
+// unit - единицы измирения, например 80 W
+function addNewSortForLamps(body, arrayObjectLamps, keySort, title, unit) {
+    const arrValues = searchFilters(arrayObjectLamps, keySort);
+    (0, addBlockFilter_1.default)(body, arrValues, title, unit, keySort);
+}
 //= function searchFilters
 // поиск в массиве обьектов со светильниками по значению и формирование и сортировка массива строк
 function searchFilters(arrForFilters, key) {
     const arrValue = [];
     arrForFilters.forEach(lamp => {
-        const isMatch = arrValue.includes(lamp[key]);
-        if (!isMatch) {
-            arrValue.push(lamp[key]);
+        if (key && typeof lamp[key] !== 'undefined') {
+            const isMatch = arrValue.includes(lamp[key]);
+            if (!isMatch) {
+                arrValue.push(lamp[key]);
+            }
         }
     });
     const sortArr = arrValue.sort((x, y) => {
@@ -1513,11 +1843,13 @@ const data_1 = __webpack_require__(/*! ../data/data */ "./js/lamps/data/data.ts"
 const addLamps_1 = __importDefault(__webpack_require__(/*! ../helps/addLamps */ "./js/lamps/helps/addLamps.ts"));
 const deleteLamps_1 = __importDefault(__webpack_require__(/*! ./deleteLamps */ "./js/lamps/lampModules/deleteLamps.ts"));
 const createButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ./createButtonStillLamps */ "./js/lamps/lampModules/createButtonStillLamps.ts"));
+const addTotalFindLampOnPage_1 = __importDefault(__webpack_require__(/*! ../helps/addTotalFindLampOnPage */ "./js/lamps/helps/addTotalFindLampOnPage.ts"));
 //= create
 const create = (arrLamps) => {
     try {
         //console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
         (0, deleteLamps_1.default)();
+        (0, addTotalFindLampOnPage_1.default)(arrLamps.length);
         (0, createLampElement_1.default)(arrLamps, 0, data_1.elementsOnPage);
         if (arrLamps.length > 12) {
             (0, createButtonStillLamps_1.default)();
@@ -1544,6 +1876,7 @@ exports["default"] = create;
 /***/ ((__unused_webpack_module, exports) => {
 
 
+//* создание кнопки показать еще 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const createButtonStillLamps = () => {
     const numberLampsBody = document.querySelector('#body-for-button-still-lamps');
@@ -1714,6 +2047,9 @@ const lamps = () => {
             case 'panels':
                 currentArrLamps = panels_1.panels;
                 break;
+            case 'trek':
+                currentArrLamps = panels_1.trek;
+                break;
             default:
                 currentArrLamps = [];
                 break;
@@ -1722,7 +2058,7 @@ const lamps = () => {
         //* обработчик кнопкок активности фильтра
         (0, toggleActivityFitter_1.default)();
         //* добавляем элементы фильтрации
-        (0, addFilterLamps_1.default)();
+        (0, addFilterLamps_1.default)(currentArrLamps, typeLamps);
         //* метод фильтрации
         (0, filterLamps_1.default)(currentArrLamps);
     }

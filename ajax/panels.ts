@@ -2,15 +2,20 @@ import { type } from "os"
 
 export type Led = {
     title: string,
-    wats: string,
-    color: string,
     article: string,
-    diameter: string,
-    diameterCut: string,
-    colorLightK: string,
-    lightStream: string,
     img: string,
-    price: string
+    price: string,
+
+    wats?: string,
+    color?: string,
+    diameter?: string,
+    diameterCut?: string,
+    colorLightK?: string,
+    lightStream?: string,
+
+    rotation?: string,
+    patron?: string,
+    material?: string
 }
 
 export type LedKey = keyof Led;
@@ -280,7 +285,201 @@ export const panels: Array<Led> = [
         lightStream: '560',
         img: '/img/lamps/all-lamp/2200022.jpg',
         price: '3.42'
+    },
+    {
+        wats: '10',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200023',
+        diameter: '85',
+        diameterCut: '50-70',
+        colorLightK: '4000',
+        lightStream: '1000',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '2.18'
+    },
+    {
+        wats: '10',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2300403',
+        diameter: '85',
+        diameterCut: '50-70',
+        colorLightK: '6400',
+        lightStream: '1000',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '2.18'
+    },
+    {
+        wats: '16',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200024',
+        diameter: '120',
+        diameterCut: '50-105',
+        colorLightK: '4000',
+        lightStream: '1600',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '3.28'
+    },
+    {
+        wats: '16',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2300404',
+        diameter: '120',
+        diameterCut: '50-105',
+        colorLightK: '6400',
+        lightStream: '1600',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '3.28'
+    },
+    {
+        wats: '24',
+        title: 'SAPRA LP701 круг',
+        color: 'белая',
+        article: '2200025',
+        diameter: '170',
+        diameterCut: '50-155',
+        colorLightK: '4000',
+        lightStream: '2400',
+        img: '/img/lamps/all-lamp/2200023.jpg',
+        price: '4.55'
     }
 
 ]
 
+export const trek: Array<Led> = [
+    {
+        title: 'SAPRA SP010 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200093',
+        diameter: 'Ø85×130 мм',
+        rotation: '→ 315⁰ / ↑ 90⁰',
+        patron: 'GX53',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/1.jpg',
+        price: '9.88'
+    },
+    {
+        title: 'SAPRA SP010 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200094',
+        diameter: 'Ø85×130 мм',
+        rotation: '→ 315⁰ / ↑ 90⁰',
+        patron: 'GX53',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/2.jpg',
+        price: '7.55'
+    },
+    {
+        title: 'SAPRA SP011 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200095',
+        diameter: 'Ø55×170 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/3.jpg',
+        price: '9.4'
+    },
+    {
+        title: 'SAPRA SP011 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200096',
+        diameter: 'Ø55×170 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/4.jpg',
+        price: '9.4'
+    },
+    {
+        title: 'SAPRA SP012 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200097',
+        diameter: 'Ø60×125 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/5.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP012 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200098',
+        diameter: 'Ø60×125 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/6.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP013 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200099',
+        diameter: '60×60×120 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/7.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP013 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200100',
+        diameter: '60×60×120 мм',
+        rotation: '→ 360⁰ / ↑ 270⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/8.jpg',
+        price: '3.75'
+    },
+    {
+        title: 'SAPRA SP014 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200101',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/9.jpg',
+        price: '7.89'
+    },
+    {
+        title: 'SAPRA SP015 TR',
+        wats: 'max. 13 W',
+        color: 'белый',
+        article: '2200102',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/10.jpg',
+        price: '7.07'
+    },
+    {
+        title: 'SAPRA SP015 TR',
+        wats: 'max. 13 W',
+        color: 'чёрный',
+        article: '2200103',
+        diameter: 'Ø54×160 мм',
+        rotation: '→ 315⁰ / ↑ 180⁰',
+        patron: 'GU10',
+        material: 'металл + пластик',
+        img: '/img/lamps/trek/11.jpg',
+        price: '7.07'
+    }
+]

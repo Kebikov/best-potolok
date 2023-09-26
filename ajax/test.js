@@ -1,4 +1,4 @@
-const str = 'SAPRA LP611 7W, чёрная Артикул: 2200022 Размер: 82×82 мм Врезное отверстие: Ø55 мм Световой поток: 560 Lm Цвет свечения: 4000K нейтральный свет';
+const str = 'SAPRA LP701 круг 24W, белая Артикул: 2200025 Размер: Ø170 мм Врезное отверстие: Ø50-155 мм Световой поток: 2400 Lm Цвет свечения: 4000K нейтральный свет';
 
 
 
@@ -20,7 +20,7 @@ function cut(str) {
     obj.diameterCut = search('отверстие:', splitTree);
     obj.colorLightK = search('свечения:', splitTree);
     obj.lightStream = search('поток:', splitTree);
-    obj.img = '';
+    obj.img = '/img/lamps/all-lamp/2200023.jpg';
     obj.price = '';
 
     console.log(obj);
@@ -40,24 +40,6 @@ cut(str);
 
 
 
-// const mainObjectLamps = {
-//     lamps: [],
-// }
-
-// const proxy = new Proxy(mainObjectLamps, {
-
-//     set: (target, prop, value) => {
-//         if(prop === 'lamps' && Array.isArray(value)) {
-//             console.log('Объект изменился...');
-//             target[prop] = value;
-//             return true;
-//         }
-//         return false;
-//     }
-// });
-
-// proxy.lamps = [1,2,3];
-// console.log(mainObjectLamps.lamps);
 
 
 

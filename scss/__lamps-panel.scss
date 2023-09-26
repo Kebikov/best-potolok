@@ -95,10 +95,7 @@
     // .cart-lamp__article
     &__article {
         @include text_streach(14, 12, $grey, 500);
-    }
-    // .cart-lamp__diameter
-    &__wat {
-        margin: 10px 0px 0px 0px; 
+        margin: 0px 0px 10px 0px; 
     }
     // .cart-lamp__price
     &__price {

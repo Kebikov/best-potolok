@@ -1,6 +1,14 @@
 @import './variables.scss';
 @import './mixin.scss';
 
+.filter-lamps-code-ts {
+    //max-height: 330px;
+    height: 50%;
+    overflow-y: scroll;
+
+    scrollbar-width: thin;
+    scrollbar-color: darkgray lightgray;
+}
 
 //= .filter-lamps
 .filter-lamps {
@@ -9,10 +17,17 @@
     left: -100%;
     width: 250px;
 
+    border: 2px solid red;
+    
+    max-height: 100svh;
+
+    overflow: hidden;
+
     background-color: #f5f5f5;
 
-
     transition:all 0.4s ease;
+
+
     @media (max-width: 1020px){
         position: fixed;
         z-index: 1000;
@@ -65,7 +80,7 @@
     &__caunter {
         background-color: $grey;
         padding: 10px 0px 10px 0px;
-        margin: 20px 0px 0px 0px;
+        margin: 10px 0px 0px 0px;
 
         display: flex;
         justify-content: center;
@@ -77,6 +92,11 @@
 
 //= .filter-price
 .filter-price {
+    height: 100%;
+
+    &__form{
+        height: 100%;
+    }
     // .filter-price__title
     &__title {
         @include text_streach(15, 13, $grey, 400, "Russo");
@@ -87,7 +107,8 @@
     &__block-input {
         display: flex;
 
-        border: 1px solid #ccc;
+        padding: 0px 0px 10px 0px;
+
     }
     // .filter-price__from
     &__input {
@@ -100,23 +121,27 @@
         @include text_streach(15, 13, $grey, 400);
 
         background: #fff;
+
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
     }
 }
 
 .line-left {
-    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 //= .filter-color
 .filter-block {
-    margin: 20px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
 }
 
 //= .filter-title
 .filter-title {
     @include text_streach(16, 14, $grey, 400, "Russo");
 
-    margin: 20px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
 }
 
 //= .filter-checkbox

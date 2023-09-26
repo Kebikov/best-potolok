@@ -4,6 +4,7 @@ import { Led } from "../../../ajax/panels";
 import addLamps from "../helps/addLamps";
 import deleteLamps from "./deleteLamps";
 import createButtonStillLamps from "./createButtonStillLamps";
+import addTotalFindLampOnPage from "../helps/addTotalFindLampOnPage";
 
 
 //= create
@@ -11,7 +12,7 @@ const create = (arrLamps: Array<Led>) => {
     try {
         //console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
         deleteLamps();
-        
+        addTotalFindLampOnPage(arrLamps.length);
         createLampElement(arrLamps, 0, elementsOnPage);
 
         if(arrLamps.length  > 12) {

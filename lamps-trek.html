@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Натяжные потолки недорого в Гомеле с установкой.</title>
         <!-- Yandex.Metrika counter -->
-            <script type="text/javascript" >
+            <!-- <script type="text/javascript" >
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
             m[i].l=1*new Date();
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -26,7 +26,7 @@
                 webvisor:true
             });
             </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/91960103" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            <noscript><div><img src="https://mc.yandex.ru/watch/91960103" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
         <!-- /Yandex.Metrika counter -->
     </head>
     <body>
@@ -105,52 +105,60 @@
             </nav>
         </heder>
         <div class="wrapper unselect">
-            <!--= main -->
-            <main class="main">
 
-                <!--: lamps-section 1 -->
-                <div class="lamps-section">
-                    <div class="lamps-section__body container">
-                        <div class="lamps-section__text">
-                            <div class="lamps-section__title">точечные светильники</div>
-                            <div class="lamps-section__button"><a href="lamps-panel.html" >смотреть</a></div>
-                        </div>
-                        <picture>
-                            <source srcset="./img/lamps/1.webp" type="image/webp">
-                            <img class="lamps-section__img" src="/img/lamps/1.jpg" alt="my_alt">
-                        </picture>
+            <!--= main -->
+            <main class="main relative">
+                <div class="header-page-lamps container">
+                    <div class="header-page-lamps__filter">
+                        <span id="filter-toggle">фильтр</span>
+                    </div>
+                    <div class="header-page-lamps__title company-taitle">трековые светильники</div>
+                </div>
+                
+                <div class="lamps-block" >
+                    <div class="lamps-block__body container" id="box-for-lamp" data-lamp="trek" >
+                        <!-- code -->
                     </div>
                 </div>
-                <!--: lamps-section 2 -->
-                <div class="lamps-section">
-                    <div class="lamps-section__body container">
-                        <div class="lamps-section__text">
-                            <div class="lamps-section__title">трековые светильники</div>
-                            <div class="lamps-section__button"><a href="lamps-trek.html" >смотреть</a></div>
-                        </div>
-                        <picture>
-                            <source srcset="./img/lamps/2.webp" type="image/webp">
-                            <img class="lamps-section__img" src="/img/lamps/2.jpg" alt="my_alt">
-                        </picture>
+
+                <!--: number-lamps -->
+                <div class="number-lamps">
+                    <div id="body-for-button-still-lamps" class="number-lamps__body container">
+                        <!-- code -->
                     </div>
                 </div>
-                <!--: lamps-section 3 -->
-                <div class="lamps-section">
-                    <div class="lamps-section__body container">
-                        <div class="lamps-section__text">
-                            <div class="lamps-section__title">подвесные светильники</div>
-                            <div class="lamps-section__button"><a href="lamps-panel.html" >смотреть</a></div>
+
+                <!--: filter-lamps -->
+                <div id="filter-lamps-element" class="filter-lamps" >
+                    <div class="filter-lamps__body">
+                        <div class="filter-lamps__close">
+                            <div class="filter-lamps__close-boby">
+                                <img src="/img/icon/close.png" alt="close icon">
+                            </div>
                         </div>
-                        <picture>
-                            <source srcset="./img/lamps/3.webp" type="image/webp">
-                            <img class="lamps-section__img" src="/img/lamps/3.jpg" alt="my_alt">
-                        </picture>
+                        <!-- filter-price -->
+                        <div class="filter-price">
+                            <form id="form-filter" name="filter" class="filter-price__form">
+                                <div class="filter-price__title">Цена</div>
+                                <div class="filter-price__block-input">
+                                    <input name="from" class="filter-price__input" type="number" placeholder="от">
+                                    <input name="until" class="filter-price__input line-left" type="number" placeholder="до">
+                                </div>
+                                <div id="block-for-filters" class="filter-lamps-code-ts" >
+                                    <!-- code -->
+                                </div>
+                            </form>
+                        </div>
+                        <div id="button-reset-filter" class="filter-lamps__button"><span>сбросить</span></div>
+                    </div>
+                    <div class="filter-lamps__caunter">
+                        <span id="products" >Найдено 22 товара</span>
                     </div>
                 </div>
 
             </main>
             <!--= footer -->
-            <footer class="footer">
+            <footer class="footer margin-0">
                 <div class="footer__body container">
                     <div class="footer__items">
                         <div class="footer__logo">
@@ -182,3 +190,9 @@
         <script src="dist/bundle.js?v=4.2"></script>
     </body>
 </html>
+
+
+
+
+
+

@@ -72,6 +72,7 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
                     return lamp;
                 }
             });
+            
             proxy.lamps = resaltPrice;
             return resaltPrice;
         });
@@ -82,6 +83,8 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
 }
 
 export default filterLamps;
+
+
 
 
 

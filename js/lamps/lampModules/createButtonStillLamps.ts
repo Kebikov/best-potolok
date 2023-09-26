@@ -1,3 +1,5 @@
+//* создание кнопки показать еще 
+
 const createButtonStillLamps = () => {
     const numberLampsBody = document.querySelector('#body-for-button-still-lamps') as HTMLDivElement;
     numberLampsBody?.insertAdjacentHTML('beforeend',`

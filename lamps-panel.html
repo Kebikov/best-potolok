@@ -129,13 +129,14 @@
                 </div>
 
                 <!--: filter-lamps -->
-                <div id="filter-lamps-element" class="filter-lamps" >
+                <div class="filter-lamps" id="filter-lamps-element" >
                     <div class="filter-lamps__body">
-                        <div class="filter-lamps__close">
-                            <div class="filter-lamps__close-boby">
-                                <img src="/img/icon/close.png" alt="close icon">
+                            <!-- position: absolute -->
+                            <div class="filter-lamps__close">
+                                <div class="filter-lamps__close-boby">
+                                    <img src="/img/icon/close.png" alt="close icon">
+                                </div>
                             </div>
-                        </div>
                         <!-- filter-price -->
                         <div class="filter-price">
                             <form id="form-filter" name="filter" class="filter-price__form">
@@ -144,15 +145,19 @@
                                     <input name="from" class="filter-price__input" type="number" placeholder="от">
                                     <input name="until" class="filter-price__input line-left" type="number" placeholder="до">
                                 </div>
-                                <div class="filter-lamps-code-ts" data-code="panels" >
-                                    <!-- code ts-->
+                                <div class="filter-lamps-code-ts" id="block-for-filters" >
+                                    <!-- code -->
+                                </div>
+                                <div id="button-reset-filter" class="filter-lamps__button">
+                                    <span>сбросить</span>
                                 </div>
                             </form>
                         </div>
-                        <div id="button-reset-filter" class="filter-lamps__button"><span>сбросить</span></div>
                     </div>
                     <div class="filter-lamps__caunter">
-                        <span>Найдено 22 товара</span>
+                        <span id="products" >
+                            <!-- code -->
+                        </span>
                     </div>
                 </div>
 
