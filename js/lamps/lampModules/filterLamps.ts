@@ -3,6 +3,7 @@ import { proxy } from '../helps/proxy';
 import { type } from "os";
 import { Led, LedKey } from "../../../ajax/panels";
 import create from './create';
+import { priceUP } from '../data/data';
 
 
 //= filterLamps
@@ -52,7 +53,7 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
                 const length = Object.keys(objectFilter).length;
                 let totalMatch = 0;
                 for(let key in objectFilter) {
-                    const isMatch = objectFilter[key as LedKey].includes(lamp[key as LedKey]);
+                    const isMatch = objectFilter[key as LedKey].includes(lamp[key as LedKey] as string);
                     if(isMatch) {
                         totalMatch++;
                     }
@@ -62,13 +63,13 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
                 }
             });
             //* фильтрация по цене
-            const form = document.querySelector('.filter-price__form') as HTMLFormElement;
+            const form = document.querySelector('#form-filter') as HTMLFormElement;
             const from: number = +form.from.value;
             const until: number = +form.until.value === 0 ? Infinity : +form.until.value;
             // from / until числа от и до 
             //* resaltPrice - массив с отфильтрованными обьектами по цене и по checkbox
             const resaltPrice = resalt.filter(lamp => {
-                if(from <= +lamp.price  && +lamp.price <= until) {
+                if(from <= +lamp.price * priceUP  && +lamp.price * priceUP <= until) {
                     return lamp;
                 }
             });

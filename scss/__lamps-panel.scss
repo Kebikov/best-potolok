@@ -64,7 +64,7 @@
     // .cart-lamp__info
     &__info {
 
-        padding: 10px;
+        padding: 10px 10px 10px 10px;
 
         display: flex;
         flex-direction: column;
@@ -110,7 +110,10 @@
 
 //= .text-lamp
 .text-lamp {
-    @include text_streach(15, 13, #676767, 400);
+    @include text_streach(14, 13, #676767, 400);
+    & span {
+        text-decoration: underline;
+    }
 }
 
 .number-lamps {
@@ -135,6 +138,40 @@
     }
 }
 
+//= .pic-not-product
+.pic-not-product {
+    margin: 40px 0px 0px 0px;
+    display: none;
+    &.show {
+        display: block;
+    }
+    // .pic-not-product__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    // .pic-not-product__text
+    &__text {
+        @include text_streach(16, 14, #fff, 400, "Russo");
+        background-color: #2c393f;
+        padding: 10px 20px 10px 20px;
+        letter-spacing: 1px;
+    }
+    // .pic-not-product__img
+    &__img {
+        width: 400px;
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        @media (max-width: 500px){
+            width: 80vw;
+        }
+    }
+}
 
 
 

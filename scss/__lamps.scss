@@ -121,3 +121,20 @@
         }
     }
 }
+
+//= .not-shop-info
+.not-shop-info {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid $orange;
+    // .not-shop-info__body
+
+    &__body {
+        @include text_streach(16, 14, $grey, 400);
+        line-height: 130%;
+        & span {
+            color: $orange;
+            font-weight: 500;
+        }
+    }
+}

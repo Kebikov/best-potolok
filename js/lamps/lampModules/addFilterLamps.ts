@@ -14,13 +14,28 @@ const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: string | undefin
                     // добавление новой сортировки по выбранному полю
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения',  'K');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'wats', 'Мощность',  'W');
-                break;
+            break;
 
             case 'trek':
                     // добавление новой сортировки по выбранному полю
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
-                break;
+            break;
+
+                
+            case 'lustre':
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Материал',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
+            break;
+
+            case 'dot':
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Цоколь',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Подсветка Led',  '');
+            break;
                 
             default:
                 break;

@@ -8,7 +8,7 @@
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fe8d1b">
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#6d4d3a">
         <link rel="icon" type="image/png" href="img/header/favicon.png">
-        <link rel="stylesheet" href="css/style.css?v=4.1">
+        <link rel="stylesheet" href="css/style.css?v=4.2">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Натяжные потолки недорого в Гомеле с установкой.</title>
         <!-- Yandex.Metrika counter -->
@@ -108,6 +108,107 @@
 
             <!--= main -->
             <main class="main relative">
+                <!--* pop-up calculator -->
+                <div class="popup-calc">
+                    <div class="popup-calc__body">
+                        <div class="popup-calc__x"></div>
+                        <div class="popup-calc__pic">
+                            <div class="popup-calc__pic-title">Калькулятор<br>стоимости</div>
+                            <picture>
+                                <source srcset="img/popup/1.webp" type="image/webp">
+                                <img src="img/popup/1.jpg" alt="my_alt">
+                            </picture>
+                        </div>
+                        <div class="popup-calc__info">
+                            <div class="popup-calc__type">
+                                <div class="popup-calc__title">Выберите цвет потолка.</div>
+                                <div class="popup-calc__type-select">
+                                    <span>Выбор цвета полотна:</span>
+                                    <ul class="popup-calc__type-list">
+                                        <li class="popup-calc__type-line">Белый</li>
+                                        <li class="popup-calc__type-line">Цветной</li>
+                                    </ul>
+                            </div>
+                            </div>
+                            <div class="popup-calc__title">Введите ваши данные.</div>
+                            <label for="width-popup" class="text-label">Ширина помещения(метров):</label>
+                            <input type="number" id="width-popup" placeholder="ваши данные" class="text-input">
+                            <label for="length-popup" class="text-label">Длинна помещения(метров):</label>
+                            <input type="number" id="length-popup" placeholder="ваши данные" class="text-input">
+                            <label for="count-popup" class="text-label">Осветительных приборов (шт.):</label>
+                            <input type="number" id="count-popup" placeholder="ваши данные" class="text-input">
+                            <div class="popup-calc__title">Выберите подходящую для Вас акцию!</div>
+                            <div class="popup-calc__box-sale">
+                                <div class="popup-calc__sale">
+                                    <input checked="checked" id="site-popup" type="radio" class="popup-calc__sale-input" name="one-name" value="0.97">
+                                    <label for="site-popup" class="popup-calc__sale-label">Скидка с сайта<span> 3%</span></label>
+                                </div>
+                                <div class="popup-calc__sale">
+                                    <input id="pensioners-popup" type="radio" class="popup-calc__sale-input" name="one-name" value="0.95">
+                                    <label for="pensioners-popup" class="popup-calc__sale-label">Скидка пенсионерам<span> 5%</span></label>
+                                </div>
+                                <div class="popup-calc__sale">
+                                    <input id="nav-popup" type="radio" class="popup-calc__sale-input" name="one-name" value="0.93">
+                                    <label for="nav-popup" class="popup-calc__sale-label">Скидка новоселам<span> 7%</span></label>
+                                </div>
+                            </div>
+                            <div class="popup-calc__cash">Стоимость</div>
+                            <div class="popup-calc__button">рассчитать</div>
+                        </div>
+                    </div>
+                </div>
+                <!--* pop-up заказ звонка  -->
+                <div class="order-call">
+                    <div class="order-call__body">
+                        <div class="order-call__x">
+                            <img src="img/arrow-keys/x.png" alt="натяжные потолки в гомеле">
+                        </div>
+                        <div class="order-call__logo">
+                            <img src="img/arrow-keys/logo-white.png" alt="логотип">
+                        </div>
+                        <div class="order-call__title">Заказать расчёт</div>
+                        <div class="order-call__text">Оставьте заявку и мы свяжемся с Вами<br>в ближайшее время.</div>
+                        <form class="order-call__form" action="order_call.php" method="POST" name="popup">
+                            <input type="text" class="order-call__name" placeholder="Ваше имя" name="name" autocomplete="off">
+                            <div class="order-call__tel-div _grey">
+                                <input type="tel" class="order-call__tel" placeholder="Ваш телефон" name="tel" autocomplete="off">
+                            </div>
+                            <div class="order-call__button">заказать</div>
+                        </form>
+                        <div class="order-call__email">
+                            <img src="img/index/email.png" alt="письмо">
+                        </div>
+                    </div>
+                </div>
+                <!--* анимация отправки письма -->
+                <div class="anime-meil">
+                    <div class="anime-meil__body">
+                        <div class="anime-meil__box">
+                            <div class="anime-meil__meil">
+                                <img src="img/index/email.png" alt="письмо">
+                            </div>
+                            <div class="anime-meil__text">отправка письма...</div>
+                        </div>
+                    </div>
+                </div>
+                <!--* pop-up показ ламы во весь экран -->
+                <div class="show-lamps-lightbox">
+                    <div class="show-lamps-lightbox__body">
+                        <div class="show-lamps-lightbox__img">
+                            <img id="lightbox__img" src="/img/lamps/dot/2200033.jpg" alt="image a lamps">
+                        </div>
+                        <div class="show-lamps-lightbox__close">
+                            <img src="/img/icon/close-black.png" alt="icon close the lightbox">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="not-shop-info container">
+                    <div class="not-shop-info__body">
+                        <span>Уникальное предложение для наших клиентов!</span> При заказе потолка у нас, вы получаете возможность приобрести осветительное оборудование от наших надежных поставщиков по специальным закупочным ценам. Полный перечень товаров и актуальные цены доступны на нашем официальном сайте.
+                    </div>
+                </div>
+
                 <div class="header-page-lamps container">
                     <div class="header-page-lamps__filter">
                         <span id="filter-toggle">фильтр</span>
@@ -119,6 +220,15 @@
                     <div class="lamps-block__body container" id="box-for-lamp" data-lamp="trek" >
                         <!-- code -->
                     </div>
+                    <!-- if not product -->
+                    <div class="pic-not-product" id="not-product-block" >
+                        <div class="pic-not-product__body">
+                            <div class="pic-not-product__text">нет подходящих товаров</div>
+                            <div class="pic-not-product__img">
+                                <img src="/img/lamps/not.jpg" alt="img not product">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!--: number-lamps -->
@@ -129,30 +239,35 @@
                 </div>
 
                 <!--: filter-lamps -->
-                <div id="filter-lamps-element" class="filter-lamps" >
-                    <div class="filter-lamps__body">
-                        <div class="filter-lamps__close">
-                            <div class="filter-lamps__close-boby">
-                                <img src="/img/icon/close.png" alt="close icon">
-                            </div>
+                <div class="filter-lamps" id="filter-lamps-element" >
+                    <!-- position: absolute -->
+                    <div class="filter-lamps__close">
+                        <div class="filter-lamps__close-boby">
+                            <img src="/img/icon/close.png" alt="close icon">
                         </div>
+                    </div>
+                    <div class="filter-lamps__body">
                         <!-- filter-price -->
-                        <div class="filter-price">
-                            <form id="form-filter" name="filter" class="filter-price__form">
+                        <form class="filter-price" id="form-filter" name="filter" >
+                            <div class="filter-price__price-block">
                                 <div class="filter-price__title">Цена</div>
                                 <div class="filter-price__block-input">
                                     <input name="from" class="filter-price__input" type="number" placeholder="от">
                                     <input name="until" class="filter-price__input line-left" type="number" placeholder="до">
                                 </div>
-                                <div id="block-for-filters" class="filter-lamps-code-ts" >
-                                    <!-- code -->
-                                </div>
-                            </form>
-                        </div>
-                        <div id="button-reset-filter" class="filter-lamps__button"><span>сбросить</span></div>
+                            </div>
+                            <div class="filter-lamps-code-ts" id="block-for-filters" >
+                                <!-- code -->
+                            </div>
+                            <div class="filter-lamps__button" id="button-reset-filter" >
+                                <span>сбросить</span>
+                            </div>
+                        </form>
                     </div>
                     <div class="filter-lamps__caunter">
-                        <span id="products" >Найдено 22 товара</span>
+                        <span id="products" >
+                            <!-- code -->
+                        </span>
                     </div>
                 </div>
 

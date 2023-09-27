@@ -1,4 +1,4 @@
-const str = 'SAPRA LP701 круг 24W, белая Артикул: 2200025 Размер: Ø170 мм Врезное отверстие: Ø50-155 мм Световой поток: 2400 Lm Цвет свечения: 4000K нейтральный свет';
+const str = 'SAPRA LP1000 28W, чёрная накладная Артикул: 2200380 Размер: 215×42 мм Световой поток: 1960 Lm Цвет свечения: 4000K нейтральный свет Класс защиты: I Материал изделия: метал';
 
 
 
@@ -16,15 +16,39 @@ function cut(str) {
 
     obj.color = splitTree[1].trim();
     obj.article = search('Артикул:', splitTree);
-    obj.diameter = search('Размер:', splitTree);
-    obj.diameterCut = search('отверстие:', splitTree);
+    obj.diameter = cutWord('Размер:', 'мм');
+    obj.diameterCut = 'нет ';
     obj.colorLightK = search('свечения:', splitTree);
     obj.lightStream = search('поток:', splitTree);
-    obj.img = '/img/lamps/all-lamp/2200023.jpg';
-    obj.price = '';
+    obj.img = '/img/lamps/all-lamp/2200375.jpg';
+
+    obj.price = '18.7';
 
     console.log(obj);
 
+}
+
+function cutWord(word1, word2) {
+
+    if(word1 && word2) {
+        const  regStr = new RegExp(word1 + '(.*?)' + word2);
+        const resaltCut = str.match(regStr);
+        if(resaltCut) {
+            return resaltCut[1].trim();
+        }else{
+            return '';
+        }
+
+    }else{
+        const  res = str.split(word1);
+        if(res) {
+            return res[1].trim();
+        }else{
+            return '';
+        }
+
+    }
+    
 }
 
 function search(str, arr) {

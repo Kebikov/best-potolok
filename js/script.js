@@ -12,13 +12,11 @@ import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
 import startLamps from './lamps/lampModules/startLamps'
 
+import { cursUsd, perimeterPrace, lightPrace, workPrace } from './data-start';
+
 
 window.addEventListener('DOMContentLoaded', () => {
-    let cursUsd = 3.2; //курс доллара
-    let perimeterPrace = 1; //цена в usd за метр периметра
-    let lightPrace = 1; //цена в usd за одну световую точку
-    let workPrace = 15; //цена в byn за метр кв. работы
-
+    
     menuNav({
         cursUsd: cursUsd, 
         workPrace: workPrace,

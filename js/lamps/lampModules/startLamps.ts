@@ -1,5 +1,6 @@
 //: начало - добавление светильников на сайт
-import { panels, Led, trek } from "../../../ajax/panels";
+import { panels, Led, trek, lustre } from "../../../ajax/panels";
+import { lustreDot } from "../../../ajax/lustre-dot";
 import addFilterLamps from "./addFilterLamps";
 import filterLamps from "./filterLamps";
 import create from "./create";
@@ -13,35 +14,45 @@ const lamps = ():void => {
 
         const lampsBlock = document.querySelector('#box-for-lamp') as HTMLDivElement;
 
-        const typeLamps: string | undefined = lampsBlock.dataset.lamp;
+        if(lampsBlock) {
+            const typeLamps: string | undefined = lampsBlock.dataset.lamp;
+            // значение приходящее из [ data-lamp=" тут получаемое значение " ]
 
-        let currentArrLamps: Array<Led> = [];
+            let currentArrLamps: Array<Led> = [];
 
-        switch(typeLamps) {
-            case 'panels':
-                currentArrLamps = panels;
-                break;
-            case 'trek':
-                currentArrLamps = trek;
-                break;
-            default:
-                currentArrLamps = [];
-                break;
+            // установка текушего массива для страницы
+            switch(typeLamps) {
+                case 'panels':
+                    currentArrLamps = panels;
+                    break;
+                case 'trek':
+                    currentArrLamps = trek;
+                    break;
+                case 'lustre':
+                    currentArrLamps = lustre;
+                    break;
+                case 'dot':
+                    currentArrLamps = lustreDot;
+                    break;
+                default:
+                    currentArrLamps = [];
+                    break;
+            }
+
+            create(currentArrLamps);
+
+            //* обработчик кнопкок активности фильтра
+            toggleActivityFitter();
+            //* добавляем элементы фильтрации
+            addFilterLamps(currentArrLamps, typeLamps);
+            //* метод фильтрации
+            filterLamps(currentArrLamps);
         }
-
-        create(currentArrLamps);
-
-        //* обработчик кнопкок активности фильтра
-        toggleActivityFitter();
-        //* добавляем элементы фильтрации
-        addFilterLamps(currentArrLamps, typeLamps);
-        //* метод фильтрации
-        filterLamps(currentArrLamps);
-
     } catch (error) {
         console.log('Error in function lamps >>> ', error);
     }
 }
+
 
 
 export default lamps;

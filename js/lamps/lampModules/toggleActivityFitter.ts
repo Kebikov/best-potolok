@@ -7,12 +7,10 @@ const toggleActivityFitter = () => {
 
         filterToggle?.addEventListener('click', () => {
             filterLampsElement?.classList.add('active-filter');
-            body.style.overflow = 'hidden';
         });
 
         filterCloseElement?.addEventListener('click', () => {
             filterLampsElement?.classList.remove('active-filter');
-            body.style.overflow = 'auto';
         });
 
     } catch (error) {
