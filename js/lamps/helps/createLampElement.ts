@@ -2,7 +2,7 @@
 import { Led } from "../../../ajax/panels";
 import caunter from "./caunter";
 import createButtonStillLamps from "../lampModules/createButtonStillLamps";
-import { priceUP } from "../data/data";
+import { priceUP } from "../../data-start";
 import showElementNotProduct from "../lampModules/showElementNotProduct";
 import { addEventListenerForElement } from "../lampModules/showImg";
 
@@ -153,6 +153,34 @@ function pathLamps(path: string, body: HTMLDivElement, priceUP: number,obj: Led)
 
         addEventListenerForElement(element);
         
+        body.append(element);
+    }
+
+    //* /lamps-light.html
+    if(path === '/lamps-light.html') {
+        const element = document.createElement('div') as HTMLDivElement;
+        element.classList.add('cart-lamp');
+
+        element.insertAdjacentHTML('beforeend',`
+            <div class="cart-lamp__body">
+                <div class="cart-lamp__img">
+                    <img src="${obj.img}" alt="lamps">
+                </div>
+                <div class="cart-lamp__info">
+                    <div class="cart-lamp__title">${obj.title}</div>
+                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                    <div class="text-lamp"><span>Мощность</span>: ${obj.wats}</div>
+                    <div class="text-lamp"><span>Световой поток</span>: ${obj.lightStream}</div>
+                    <div class="text-lamp"><span>Цвет свечения</span>: ${obj.colorLightK}</div>
+                    <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
+                    <div class="text-lamp"><span>Пульт</span>: ${obj.patron}</div>
+
+                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                </div>
+            </div>
+        `);
+
+        addEventListenerForElement(element);
         body.append(element);
     }
 

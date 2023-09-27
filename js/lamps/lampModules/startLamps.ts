@@ -1,5 +1,6 @@
 //: начало - добавление светильников на сайт
 import { panels, Led, trek, lustre } from "../../../ajax/panels";
+import { light } from "../../../ajax/lustre-light";
 import { lustreDot } from "../../../ajax/lustre-dot";
 import addFilterLamps from "./addFilterLamps";
 import filterLamps from "./filterLamps";
@@ -33,6 +34,9 @@ const lamps = ():void => {
                     break;
                 case 'dot':
                     currentArrLamps = lustreDot;
+                    break;
+                case 'light':
+                    currentArrLamps = light;
                     break;
                 default:
                     currentArrLamps = [];

@@ -1,5 +1,5 @@
 import createLampElement from "../helps/createLampElement";
-import { elementsOnPage } from "../data/data";
+import { elementsOnPage } from "../../data-start";
 import { Led } from "../../../ajax/panels";
 import addLamps from "../helps/addLamps";
 import deleteLamps from "./deleteLamps";
@@ -11,7 +11,7 @@ import showImg from "./showImg";
 //= create
 const create = (arrLamps: Array<Led>) => {
     try {
-        //console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
         deleteLamps();
         addTotalFindLampOnPage(arrLamps.length);
         createLampElement(arrLamps, 0, elementsOnPage);

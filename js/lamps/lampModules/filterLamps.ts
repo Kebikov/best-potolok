@@ -3,7 +3,7 @@ import { proxy } from '../helps/proxy';
 import { type } from "os";
 import { Led, LedKey } from "../../../ajax/panels";
 import create from './create';
-import { priceUP } from '../data/data';
+import { priceUP } from '../../data-start';
 
 
 //= filterLamps

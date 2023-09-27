@@ -1,6 +1,6 @@
 // добавление ламп на страницу по количеству равному elementsOnPage
 import { Led } from "../../../ajax/panels";
-import { elementsOnPage } from "../data/data";
+import { elementsOnPage } from "../../data-start";
 import createLampElement from "./createLampElement";
 import caunter from "./caunter";
 
