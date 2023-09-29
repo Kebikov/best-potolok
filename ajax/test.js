@@ -1,70 +1,75 @@
-const str = 'SAPRA LP1000 28W, чёрная накладная Артикул: 2200380 Размер: 215×42 мм Световой поток: 1960 Lm Цвет свечения: 4000K нейтральный свет Класс защиты: I Материал изделия: метал';
+const fs = require('fs');
+const path = require('path');
 
+const filePath = path.resolve(__dirname, 'text.txt');
 
-
-function cut(str) {
-    let obj = {};
-
-    const splitOne = str.split(',');
-    const splitTwo = splitOne[0].split(' ');
-
-    obj.wats = '' + parseInt( splitTwo.at(-1) );
-    splitTwo.pop();
-    obj.title = splitTwo.join(' ');
-
-    const splitTree = splitOne[1].split(' ');
-
-    obj.color = splitTree[1].trim();
-    obj.article = search('Артикул:', splitTree);
-    obj.diameter = cutWord('Размер:', 'мм');
-    obj.diameterCut = 'нет ';
-    obj.colorLightK = search('свечения:', splitTree);
-    obj.lightStream = search('поток:', splitTree);
-    obj.img = '/img/lamps/all-lamp/2200375.jpg';
-
-    obj.price = '18.7';
+fs.readFile(filePath, ((error, data) => {
+    const str = data.toString();
+    const obj = cut(str);
 
     console.log(obj);
 
-}
+    function cut(str) {
+        let obj = {};
 
-function cutWord(word1, word2) {
+        const splitOne = str.split(' ');
+        const splitTwo = str.split(' ');
+        //const price = splitTwo.at(-1).replace(/,/gi, '.');
 
-    if(word1 && word2) {
-        const  regStr = new RegExp(word1 + '(.*?)' + word2);
-        const resaltCut = str.match(regStr);
-        if(resaltCut) {
-            return resaltCut[1].trim();
-        }else{
-            return '';
+        let price = '';
+
+        for(let x = splitTwo.length; x != 0;x--) {
+            if(splitTwo[x] && splitTwo[x] !== '\r' && splitTwo[x] !== '\n') {
+                let value = splitTwo[x].replace(/\r\n/gi, '');
+                price = value.replace(/,/gi, '.');
+                break;
+            }
         }
 
-    }else{
-        const  res = str.split(word1);
-        if(res) {
-            return res[1].trim();
-        }else{
-            return '';
-        }
+        obj.title = splitOne[0] + ' ' + splitOne[1];
+        obj.article = cutWord('Артикул: ', '\r');
+        obj.wats = cutWord('SAPRA', ',').split(' ').at(-1);
+        obj.color = cutWord(', ', ' ');
+        obj.diameter = cutWord('Размер:', 'Световой поток:');
+        obj.colorLightK = cutWord('Цвет свечения:', 'K').replace(/ /gi, '') + 'K';
+        obj.patron = 'есть';
+        obj.lightStream = cutWord('Световой поток:', 'Lm') + 'Lm';
 
+
+        obj.img = `/img/lamps/lights/${obj.article}.jpg`;
+        obj.price = price;
+
+        return obj;
     }
-    
-}
 
-function search(str, arr) {
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] === str) {
-            return arr[i + 1].match(/\d/gi).join('') ;
+    function cutWord(word1, word2) {
+
+        if(word1 && word2) {
+            const  regStr = new RegExp(word1 + '(.*?)' + word2);
+            const resaltCut = str.match(regStr);
+            if(resaltCut) {
+                return resaltCut[1].trim();
+            }else{
+                return '';
+            }
+
+        }else{
+            const  res = str.split(word1);
+            if(res) {
+                return res[1].trim();
+            }else{
+                return '';
+            }
+
+        }
+        
+    }
+
+    function search(str, arr) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] === str) {
+                return arr[i + 1].match(/\d/gi).join('') ;
+            }
         }
     }
-}
-
-cut(str);
-//-----------------------------------------------------
-
-
-
-
-
-
-
+}));
