@@ -1,4 +1,4 @@
-const str = "SAPRA DL361 N 36W, белая без пульта Размер: Ø455×70 мм Световой поток: 2900 Lm Ra≥80 Цвет свечения: 4000K нейтральный свет Класс защиты: I Материал изделия: металл+пластик 10 Много 24,90";
+
 
 
 function cut(str) {
@@ -12,9 +12,9 @@ function cut(str) {
     obj.title = splitOne[0] + ' ' + splitOne[1];
     obj.article = '2200129';
     obj.wats = cutWord('SAPRA', ',').split(' ').at(-1);
-    obj.color = cutWord(',', 'с пультом');
+    obj.color = cutWord(', ', ' ');
     obj.diameter = cutWord('Размер:', 'Световой поток:');
-    obj.colorLightK = cutWord('Температура свечения:', 'K') + 'K';
+    obj.colorLightK = cutWord('Цвет свечения:', 'K').replace(/ /gi, '') + 'K';
     obj.patron = 'есть';
     obj.lightStream = cutWord('Световой поток: max.', 'Lm') + 'Lm';
 
@@ -22,8 +22,7 @@ function cut(str) {
     obj.img = `/img/lamps/lights/${obj.article}.jpg`;
     obj.price = price;
 
-
-    console.log(obj);
+    return obj;
 }
 
 function cutWord(word1, word2) {

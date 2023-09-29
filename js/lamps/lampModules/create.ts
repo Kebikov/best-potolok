@@ -12,6 +12,7 @@ import showImg from "./showImg";
 const create = (arrLamps: Array<Led>) => {
     try {
         console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        console.log('',arrLamps);
         deleteLamps();
         addTotalFindLampOnPage(arrLamps.length);
         createLampElement(arrLamps, 0, elementsOnPage);

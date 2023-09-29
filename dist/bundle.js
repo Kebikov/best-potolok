@@ -1575,6 +1575,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.light = void 0;
 exports.light = [
     {
+        material: 'ART',
         title: 'SAPRA LD202/1 ',
         article: '2200348',
         wats: '64W',
@@ -1587,6 +1588,7 @@ exports.light = [
         price: '53.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD202/1 ',
         article: '2200349',
         wats: '64W',
@@ -1599,6 +1601,7 @@ exports.light = [
         price: '53.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD202/2 ',
         article: '2200350',
         wats: '108W',
@@ -1611,6 +1614,7 @@ exports.light = [
         price: '68.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD202/2 ',
         article: '2200351',
         wats: '108W',
@@ -1623,6 +1627,7 @@ exports.light = [
         price: '68.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD202/3 ',
         article: '2200352',
         wats: '196W',
@@ -1635,6 +1640,7 @@ exports.light = [
         price: '115.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD202/3 ',
         article: '2200353',
         wats: '196W',
@@ -1647,6 +1653,7 @@ exports.light = [
         price: '115.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD204/1 ',
         article: '2200354',
         wats: '46W',
@@ -1659,6 +1666,7 @@ exports.light = [
         price: '44.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD204/1 ',
         article: '2200355',
         wats: '46W',
@@ -1671,6 +1679,7 @@ exports.light = [
         price: '44.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD204/1 ',
         article: '2200356',
         wats: '70W',
@@ -1683,7 +1692,8 @@ exports.light = [
         price: '63.00'
     },
     {
-        title: 'SAPRA LD204/1 ',
+        material: 'ART',
+        title: 'SAPRA LD204/1',
         article: '2200357',
         wats: '70W',
         color: 'чёрный',
@@ -1695,6 +1705,7 @@ exports.light = [
         price: '63.00'
     },
     {
+        material: 'ART',
         title: 'SAPRA LD204/2 ',
         article: '2200358',
         wats: '116W',
@@ -1707,7 +1718,8 @@ exports.light = [
         price: '79.00'
     },
     {
-        title: 'SAPRA LD204/2 ',
+        material: 'ART',
+        title: 'SAPRA LD204/2',
         article: '2200359',
         wats: '116W',
         color: 'чёрный',
@@ -1719,7 +1731,8 @@ exports.light = [
         price: '79.00'
     },
     {
-        title: 'SAPRA LD204/3 ',
+        material: 'ART',
+        title: 'SAPRA LD204/3',
         article: '2200360',
         wats: '162W',
         color: 'белый',
@@ -1731,7 +1744,8 @@ exports.light = [
         price: '119.00'
     },
     {
-        title: 'SAPRA LD204/3 ',
+        material: 'ART',
+        title: 'SAPRA LD204/3',
         article: '2200361',
         wats: '162W',
         color: 'чёрный',
@@ -1743,6 +1757,20 @@ exports.light = [
         price: '119.00'
     },
     {
+        material: 'ART',
+        title: 'SAPRA LD304/2',
+        article: ' 2300599',
+        wats: '120W',
+        color: 'хром',
+        diameter: 'Ø60×max.80 см',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 6600 Lm',
+        img: '/img/lamps/lights/2300599.jpg',
+        price: '170.00'
+    },
+    {
+        material: 'STARLIGHT',
         title: 'SAPRA DL361',
         article: '2200128',
         wats: '36W',
@@ -1755,6 +1783,7 @@ exports.light = [
         price: '29.90'
     },
     {
+        material: 'STARLIGHT',
         title: 'SAPRA DL361',
         article: '2200129',
         wats: '36W',
@@ -1765,7 +1794,305 @@ exports.light = [
         lightStream: '2900Lm',
         img: '/img/lamps/lights/2200129.jpg',
         price: '24.90'
-    }
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL721',
+        article: '2200130',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø570×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: '5000Lm',
+        img: '/img/lamps/lights/2200130.jpg',
+        price: '33.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL182',
+        article: '2200131',
+        wats: '18W',
+        color: 'белый',
+        diameter: 'Ø340×70 мм',
+        colorLightK: '4000K',
+        patron: 'есть',
+        lightStream: '1400Lm',
+        img: '/img/lamps/lights/2200131.jpg',
+        price: '6.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL242',
+        article: '2200132',
+        wats: '24W',
+        color: 'белый',
+        diameter: 'Ø400×70 мм',
+        colorLightK: '4000K',
+        patron: 'нет',
+        lightStream: '1900Lm',
+        img: '/img/lamps/lights/2200132.jpg',
+        price: '14.99'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL362',
+        article: '2200133',
+        wats: '36W',
+        color: 'белый',
+        diameter: 'Ø400×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 2900Lm',
+        img: '/img/lamps/lights/2200133.jpg',
+        price: '25.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL362',
+        article: '2200134',
+        wats: '36W',
+        color: 'белый',
+        diameter: 'Ø400×70 мм',
+        colorLightK: '4000K',
+        patron: 'нет',
+        lightStream: '2900Lm',
+        img: '/img/lamps/lights/2200134.jpg',
+        price: '22.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL722',
+        article: '2200135',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200135.jpg',
+        price: '33.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL363',
+        article: '2200136',
+        wats: '36W',
+        color: 'белый',
+        diameter: 'Ø390×60 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 2900Lm',
+        img: '/img/lamps/lights/2200136.jpg',
+        price: '26.50'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL363',
+        article: '2200137',
+        wats: '36W',
+        color: 'белый',
+        diameter: 'Ø390×60 мм',
+        colorLightK: '4000K',
+        patron: 'нет',
+        lightStream: '2900Lm',
+        img: '/img/lamps/lights/2200137.jpg',
+        price: '24.30'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL723',
+        article: '2200138',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×60 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200138.jpg',
+        price: '33.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL724',
+        article: '2200139',
+        wats: '72W',
+        color: 'белый',
+        diameter: '440×440×60 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200139.jpg',
+        price: '48.20'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL725',
+        article: '2200140',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×80 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200140.jpg',
+        price: '38.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL726',
+        article: '2200141',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø480×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200141.jpg',
+        price: '38.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL727',
+        article: '2200142',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø480×60 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200142.jpg',
+        price: '51.02'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL728',
+        article: '2200143',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø490×90 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200143.jpg',
+        price: '54.66'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL489',
+        article: '2200144',
+        wats: '48W',
+        color: 'белый',
+        diameter: 'Ø380×60 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 3800Lm',
+        img: '/img/lamps/lights/2200144.jpg',
+        price: '37.41'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL729',
+        article: '2200145',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200145.jpg',
+        price: '47.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL7212',
+        article: '2200158',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×80 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200158.jpg',
+        price: '39.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL7214',
+        article: '2200159',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø480×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200159.jpg',
+        price: '39.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL7215',
+        article: '2200160',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø480×70 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200160.jpg',
+        price: '39.90'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL12016',
+        article: '2300467',
+        wats: '120W',
+        color: 'белый',
+        diameter: 'Ø550×110 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9600Lm',
+        img: '/img/lamps/lights/2300467.jpg',
+        price: '108.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL7217',
+        article: '2300468',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø480×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2300468.jpg',
+        price: '55.00'
+    },
+    {
+        material: 'STARLIGHT',
+        title: 'SAPRA DL7230',
+        article: '2200161',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø500×80 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200161.jpg',
+        price: '79.00'
+    },
+    //   {
+    //     title: 'SAPRA DL7210',
+    //     article: '2200146',
+    //     wats: '72W',
+    //     color: 'белый',
+    //     diameter: 'Ø450×50 мм',
+    //     colorLightK: '3000-6500K',
+    //     patron: 'есть',
+    //     lightStream: 'max. 5000Lm',
+    //     img: '/img/lamps/lights/2200146.jpg',
+    //     price: '64.00'
+    //   },
 ];
 
 
@@ -2853,6 +3180,7 @@ exports.priceUP = 1.1 * exports.cursUsd; // коэфициент на сколь
 //: add filters
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const addBlockFilter = (body, arrValues, title, unit, key) => {
+    console.log('', arrValues);
     const filterBlockElement = document.createElement('div');
     filterBlockElement.classList.add('filter-block');
     const filterTitleElement = document.createElement('div');
@@ -3031,7 +3359,9 @@ const createButtonStillLamps_1 = __importDefault(__webpack_require__(/*! ../lamp
 const data_start_1 = __webpack_require__(/*! ../../data-start */ "./js/data-start.ts");
 const showElementNotProduct_1 = __importDefault(__webpack_require__(/*! ../lampModules/showElementNotProduct */ "./js/lamps/lampModules/showElementNotProduct.ts"));
 const showImg_1 = __webpack_require__(/*! ../lampModules/showImg */ "./js/lamps/lampModules/showImg.ts");
+//= createLampElement 
 const createLampElement = (currentArrLamps, startNumberElement, finishNumberElement) => {
+    console.log('Добавить >>> ', currentArrLamps);
     const lampsBlock = document.querySelector('#box-for-lamp');
     const path = window.location.pathname;
     if (currentArrLamps.length < 13) {
@@ -3045,6 +3375,7 @@ const createLampElement = (currentArrLamps, startNumberElement, finishNumberElem
     }
     for (let i = startNumberElement; i < finishNumberElement; i++) {
         let obj = currentArrLamps[i];
+        console.log('', obj);
         if (obj) {
             pathLamps(path, lampsBlock, data_start_1.priceUP, obj);
         }
@@ -3058,132 +3389,113 @@ const createLampElement = (currentArrLamps, startNumberElement, finishNumberElem
 exports["default"] = createLampElement;
 //: добавление карточки товара в зависимости от страницы на которой находится клиент 
 function pathLamps(path, body, priceUP, obj) {
-    //* /lamps-panel.html
-    if (path === '/lamps-panel.html') {
-        const element = document.createElement('div');
-        element.classList.add('cart-lamp');
-        element.insertAdjacentHTML('beforeend', `
-            <div class="cart-lamp__body">
-                <div class="cart-lamp__img">
-                    <img src="${obj.img}" alt="lamps">
+    const componentsLamp = {
+        '/lamps-panel.html': (element) => {
+            element.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                        <div class="text-lamp"><span>Мощность</span>: ${obj.wats}W</div>
+                        <div class="text-lamp"><span>Размер</span>: ${obj.diameter}mm</div>
+                        <div class="text-lamp"><span>Врезное отверстие</span>: ${obj.diameterCut}mm</div>
+                        <div class="text-lamp"><span>Цвет свечения</span>: ${obj.colorLightK}K</div>
+                        <div class="text-lamp"><span>Световой поток</span>: ${obj.lightStream}Lm</div>
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
                 </div>
-                <div class="cart-lamp__info">
-                    <div class="cart-lamp__title">${obj.title}</div>
-                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+            `);
+        },
+        '/lamps-trek.html': (element) => {
+            element.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
 
-                    <div class="text-lamp"><span>Мощность</span>: ${obj.wats}W</div>
-                    <div class="text-lamp"><span>Размер</span>: ${obj.diameter}mm</div>
-                    <div class="text-lamp"><span>Врезное отверстие</span>: ${obj.diameterCut}mm</div>
-                    <div class="text-lamp"><span>Цвет свечения</span>: ${obj.colorLightK}K</div>
-                    <div class="text-lamp"><span>Световой поток</span>: ${obj.lightStream}Lm</div>
+                        <div class="text-lamp"><span>Мощность</span>: ${obj.wats}</div>
+                        <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
+                        <div class="text-lamp"><span>Вращение</span>: ${obj.rotation}</div>
+                        <div class="text-lamp"><span>Патрон</span>: ${obj.patron}</div>
+                        <div class="text-lamp"><span>Материал</span>: ${obj.material}</div>
 
-                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
                 </div>
-            </div>
-        `);
-        (0, showImg_1.addEventListenerForElement)(element);
-        body.append(element);
-    }
-    //* /lamps-panel.html
-    if (path === '/lamps-trek.html') {
-        const element = document.createElement('div');
-        element.classList.add('cart-lamp');
-        element.insertAdjacentHTML('beforeend', `
-            <div class="cart-lamp__body">
-                <div class="cart-lamp__img">
-                    <img src="${obj.img}" alt="lamps">
+            `);
+        },
+        '/lamps-lustre.html': (element) => {
+            element.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                        <div class="text-lamp"><span>Цвет</span>: ${obj.color}</div>
+                        <div class="text-lamp"><span>Размер плафона</span>: ${obj.diameter}mm</div>
+                        <div class="text-lamp"><span>Размер основания</span>: ${obj.diameterCut}mm</div>
+                        <div class="text-lamp"><span>Патрон</span>: ${obj.patron}</div>
+                        <div class="text-lamp"><span>Материал</span>: ${obj.material}</div>
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
                 </div>
-                <div class="cart-lamp__info">
-                    <div class="cart-lamp__title">${obj.title}</div>
-                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+            `);
+        },
+        '/lamps-dot.html': (element) => {
+            element.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
 
-                    <div class="text-lamp"><span>Мощность</span>: ${obj.wats}</div>
-                    <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
-                    <div class="text-lamp"><span>Вращение</span>: ${obj.rotation}</div>
-                    <div class="text-lamp"><span>Патрон</span>: ${obj.patron}</div>
-                    <div class="text-lamp"><span>Материал</span>: ${obj.material}</div>
+                        <div class="text-lamp"><span>Цвет</span>: ${obj.color}</div>
+                        <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
+                        <div class="text-lamp"><span>Врезное отверстие</span>: ${obj.diameterCut}</div>
+                        <div class="text-lamp"><span>Цоколь</span>: ${obj.patron}</div>
+                        <div class="text-lamp"><span>Цвет подсветки</span>: ${obj.colorLightK}</div>
 
-                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
                 </div>
-            </div>
-        `);
-        (0, showImg_1.addEventListenerForElement)(element);
-        body.append(element);
-    }
-    //* /lamps-lustre.html
-    if (path === '/lamps-lustre.html') {
-        const element = document.createElement('div');
-        element.classList.add('cart-lamp');
-        element.insertAdjacentHTML('beforeend', `
-            <div class="cart-lamp__body">
-                <div class="cart-lamp__img">
-                    <img src="${obj.img}" alt="lamps">
+            `);
+        },
+        '/lamps-light.html': (element) => {
+            element.insertAdjacentHTML('beforeend', `
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                        <div class="text-lamp"><span>Серия</span>: ${obj.material}</div>
+                        <div class="text-lamp"><span>Мощность</span>: ${obj.wats}</div>
+                        <div class="text-lamp"><span>Световой поток</span>: ${obj.lightStream}</div>
+                        <div class="text-lamp"><span>Цвет свечения</span>: ${obj.colorLightK}</div>
+                        <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
+                        <div class="text-lamp"><span>Пульт</span>: ${obj.patron}</div>
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
                 </div>
-                <div class="cart-lamp__info">
-                    <div class="cart-lamp__title">${obj.title}</div>
-                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
-
-                    <div class="text-lamp"><span>Цвет</span>: ${obj.color}</div>
-                    <div class="text-lamp"><span>Размер плафона</span>: ${obj.diameter}mm</div>
-                    <div class="text-lamp"><span>Размер основания</span>: ${obj.diameterCut}mm</div>
-                    <div class="text-lamp"><span>Патрон</span>: ${obj.patron}</div>
-                    <div class="text-lamp"><span>Материал</span>: ${obj.material}</div>
-
-                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
-                </div>
-                </div>
-        `);
-        (0, showImg_1.addEventListenerForElement)(element);
-        body.append(element);
-    }
-    //* /lamps-dot.html
-    if (path === '/lamps-dot.html') {
-        const element = document.createElement('div');
-        element.classList.add('cart-lamp');
-        element.insertAdjacentHTML('beforeend', `
-            <div class="cart-lamp__body">
-                <div class="cart-lamp__img">
-                    <img src="${obj.img}" alt="lamps">
-                </div>
-                <div class="cart-lamp__info">
-                    <div class="cart-lamp__title">${obj.title}</div>
-                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
-
-                    <div class="text-lamp"><span>Цвет</span>: ${obj.color}</div>
-                    <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
-                    <div class="text-lamp"><span>Врезное отверстие</span>: ${obj.diameterCut}</div>
-                    <div class="text-lamp"><span>Цоколь</span>: ${obj.patron}</div>
-                    <div class="text-lamp"><span>Цвет подсветки</span>: ${obj.colorLightK}</div>
-
-                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
-                </div>
-            </div>
-        `);
-        (0, showImg_1.addEventListenerForElement)(element);
-        body.append(element);
-    }
-    //* /lamps-light.html
-    if (path === '/lamps-light.html') {
-        const element = document.createElement('div');
-        element.classList.add('cart-lamp');
-        element.insertAdjacentHTML('beforeend', `
-            <div class="cart-lamp__body">
-                <div class="cart-lamp__img">
-                    <img src="${obj.img}" alt="lamps">
-                </div>
-                <div class="cart-lamp__info">
-                    <div class="cart-lamp__title">${obj.title}</div>
-                    <div class="cart-lamp__article">Артикул: ${obj.article}</div>
-                    <div class="text-lamp"><span>Мощность</span>: ${obj.wats}</div>
-                    <div class="text-lamp"><span>Световой поток</span>: ${obj.lightStream}</div>
-                    <div class="text-lamp"><span>Цвет свечения</span>: ${obj.colorLightK}</div>
-                    <div class="text-lamp"><span>Размер</span>: ${obj.diameter}</div>
-                    <div class="text-lamp"><span>Пульт</span>: ${obj.patron}</div>
-
-                    <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
-                </div>
-            </div>
-        `);
+            `);
+        }
+    };
+    const element = document.createElement('div');
+    element.classList.add('cart-lamp');
+    const functionComponentsLamp = componentsLamp[path];
+    if (functionComponentsLamp) {
+        functionComponentsLamp(element);
         (0, showImg_1.addEventListenerForElement)(element);
         body.append(element);
     }
@@ -3274,6 +3586,7 @@ const addFilterLamps = (currentArrLamps, typeLamps) => {
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения', '');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Пульт', '');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'wats', 'Мощность', '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Серия', '');
                 break;
             default:
                 break;
@@ -3337,6 +3650,7 @@ const showImg_1 = __importDefault(__webpack_require__(/*! ./showImg */ "./js/lam
 const create = (arrLamps) => {
     try {
         console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        console.log('', arrLamps);
         (0, deleteLamps_1.default)();
         (0, addTotalFindLampOnPage_1.default)(arrLamps.length);
         (0, createLampElement_1.default)(arrLamps, 0, data_start_1.elementsOnPage);
@@ -3404,6 +3718,7 @@ const deleteLamps = () => {
     try {
         const lampsBlock = document.querySelector('#box-for-lamp');
         lampsBlock.innerHTML = '';
+        console.log('delete lamps');
     }
     catch (error) {
         console.log(error);
