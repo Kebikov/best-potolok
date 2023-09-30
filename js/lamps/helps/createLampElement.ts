@@ -11,7 +11,10 @@ type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html
 
 //= createLampElement 
 const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: number, finishNumberElement: number) => {
-    console.log('Добавить >>> ', currentArrLamps);
+    
+    //. Добавить >>> 
+    //console.log('Добавить >>> ', currentArrLamps);
+
     const lampsBlock = document.querySelector('#box-for-lamp') as HTMLDivElement;
     const path: KeyElement = window.location.pathname as KeyElement;
 
@@ -27,7 +30,6 @@ const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: numb
     
     for(let i = startNumberElement; i < finishNumberElement; i++) {
         let obj = currentArrLamps[i];
-        console.log('',obj);
         if(obj) {
             pathLamps(path, lampsBlock, priceUP, obj);
         }else{

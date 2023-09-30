@@ -15,7 +15,8 @@ export type Led = {
 
     rotation?: string,
     patron?: string,
-    material?: string
+    material?: string,
+    'wats-segment'?: string 
 }
 
 export type LedKey = keyof Led;

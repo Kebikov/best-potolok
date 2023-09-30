@@ -1,6 +1,7 @@
 // добавление элементов фильтрации на сайт
 import { panels, Led, LedKey, trek } from "../../../ajax/panels";
 import addBlockFilter from "../helps/addBlockFilter";
+import watsFilter from "../helps/watsFilter";
 
 
 //= const addFilterLamps
@@ -41,7 +42,7 @@ const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: string | undefin
                 // добавление новой сортировки по выбранному полю
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения',  '');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Пульт',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'wats', 'Мощность',  '');
+                watsFilter(blockForFilters, 'Мощность');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Серия',  '');
             break;
                 
@@ -66,7 +67,6 @@ function addNewSortForLamps(body: HTMLDivElement, arrayObjectLamps: Array<Led>, 
 }
 
 
-
 //= function searchFilters
 // поиск в массиве обьектов со светильниками по значению и формирование и сортировка массива строк
 function searchFilters(arrForFilters: Array<Led>, key: LedKey): Array<string>{
@@ -84,10 +84,6 @@ function searchFilters(arrForFilters: Array<Led>, key: LedKey): Array<string>{
             }
 
         }
-        
-
-        
-
     });
 
     const sortArr = arrValue.sort((x,y) => {

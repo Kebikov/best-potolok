@@ -52,8 +52,27 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
             const resalt = currentArrLamps.filter(lamp => {
                 const length = Object.keys(objectFilter).length;
                 let totalMatch = 0;
+                
                 for(let key in objectFilter) {
-                    const isMatch = objectFilter[key as LedKey].includes(lamp[key as LedKey] as string);
+                    let isMatch: boolean = false;
+                    //*-1 проверка, поподает ли значение из поля wats в промежуток 
+                    if(key === 'wats-segment') {
+                        const from: number = +objectFilter[key][0].split('-')[0];
+                        const to: number = +objectFilter[key][0].split('-')[1];
+
+                        const str: string | undefined = lamp.wats;
+                        // wats - значение сколько ват у данного обьекта lamp, получаем с поля lamp.wats
+                        const wats: number | undefined = typeof str !== 'undefined' ? parseInt( str ) : undefined;
+
+                        if(wats !== undefined && from < wats && wats < to) {
+                            isMatch = true;
+                        }else{
+                            isMatch = false;
+                        }
+                    //*-1 end
+                    }else{
+                        isMatch = objectFilter[key as LedKey].includes(lamp[key as LedKey] as string);
+                    }
                     if(isMatch) {
                         totalMatch++;
                     }

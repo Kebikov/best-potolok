@@ -7,6 +7,7 @@ import caunter from "./caunter";
 
 //= addLamps 
 const addLamps = (currentArrLamps: Array<Led>, elementsOnPage: number) => {
+    //console.log('addLamps >>> ', currentArrLamps);
     let start: number = caunter('plus-one') * elementsOnPage;
     let finish: number = start + elementsOnPage;
     createLampElement(currentArrLamps, start, finish);

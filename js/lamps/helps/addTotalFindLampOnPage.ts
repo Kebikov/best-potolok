@@ -5,7 +5,7 @@ import changeTextProduct from "./changeTextProduct";
 //= addTotalFindLampOnPage 
 const addTotalFindLampOnPage = (total: number) => {
     try {
-        console.log('%c addTotalFindLampOnPage >>>', 'color: white; background: green', total);
+        //console.log('%c addTotalFindLampOnPage >>>', 'color: white; background: green', total);
         const productsElement = document.querySelector('#products') as HTMLDivElement;
         if(productsElement && total) {
             const word = changeTextProduct(total);

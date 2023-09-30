@@ -9,12 +9,16 @@ $text: #5b4f3c;
 .wrapper {
     display: flex;
     flex-direction: column;
+
     min-height: 100%;
+
     position: relative;
-    overflow: hidden;
+
+    //overflow: hidden;
 }
 
 .main {
+    overflow: hidden;
     flex: 1 1 auto;
 }
 

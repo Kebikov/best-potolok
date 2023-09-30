@@ -2,6 +2,7 @@ import { Led } from "./panels";
 
 
 export const light: Array<Led> = [
+//-- 'ART' 
     {
         material: 'ART',
         title: 'SAPRA LD202/1 ',
@@ -197,13 +198,7 @@ export const light: Array<Led> = [
         img: '/img/lamps/lights/2300599.jpg',
         price: '170.00'
     },
-
-
-
-
-
-
-
+//-- STARLIGHT 
     {
         material: 'STARLIGHT',
         title: 'SAPRA DL361',
@@ -515,35 +510,566 @@ export const light: Array<Led> = [
         lightStream: 'max. 5000Lm',
         img: '/img/lamps/lights/2200161.jpg',
         price: '79.00'
+    },
+//-- MODERN 
+    {
+        material: 'MODERN',
+        title: 'SAPRA DL7210',
+        article: '2200146',
+        wats: '72W',
+        color: 'белый',
+        diameter: 'Ø450×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200146.jpg',
+        price: '64.00'
       },
-
-
-
-    //   {
-    //     title: 'SAPRA DL7210',
-    //     article: '2200146',
-    //     wats: '72W',
-    //     color: 'белый',
-    //     diameter: 'Ø450×50 мм',
-    //     colorLightK: '3000-6500K',
-    //     patron: 'есть',
-    //     lightStream: 'max. 5000Lm',
-    //     img: '/img/lamps/lights/2200146.jpg',
-    //     price: '64.00'
-    //   },
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
-
-
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL7210',
+        article: '2200147',
+        wats: '72W',
+        color: 'чёрный',
+        diameter: 'Ø450×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200147.jpg',
+        price: '64.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL9610',
+        article: '2200148',
+        wats: '96W',
+        color: 'белый',
+        diameter: 'Ø605×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7680Lm',
+        img: '/img/lamps/lights/2200148.jpg',
+        price: '105.60'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL9610',
+        article: '2200149',
+        wats: '96W',
+        color: 'чёрный',
+        diameter: 'Ø605×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7680Lm',
+        img: '/img/lamps/lights/2200149.jpg',
+        price: '105.60'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL12010',
+        article: '2200150',
+        wats: '120W',
+        color: 'белый',
+        diameter: 'Ø805×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9600Lm',
+        img: '/img/lamps/lights/2200150.jpg',
+        price: '112.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL12010',
+        article: '2200151',
+        wats: '120W',
+        color: 'чёрный',
+        diameter: 'Ø805×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9600Lm',
+        img: '/img/lamps/lights/2200151.jpg',
+        price: '112.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL4811',
+        article: '2200152',
+        wats: '48W',
+        color: 'белый',
+        diameter: '380×380×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 3800Lm',
+        img: '/img/lamps/lights/2200152.jpg',
+        price: '56.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL4811',
+        article: '2200153',
+        wats: '48W',
+        color: 'чёрный',
+        diameter: '380×380×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 3800Lm',
+        img: '/img/lamps/lights/2200153.jpg',
+        price: '56.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL7211',
+        article: '2200154',
+        wats: '72W',
+        color: 'белый',
+        diameter: '500×500×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200154.jpg',
+        price: '74.40'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL7211',
+        article: '2200155',
+        wats: '72W',
+        color: 'чёрный',
+        diameter: '500×500×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5000Lm',
+        img: '/img/lamps/lights/2200155.jpg',
+        price: '74.40'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL9611',
+        article: '2200157',
+        wats: '96W',
+        color: 'белый',
+        diameter: '600×600×50 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7680Lm',
+        img: '/img/lamps/lights/2200157.jpg',
+        price: '100.00'
+      },
+      {
+        material: 'MODERN',
+        title: 'SAPRA DL9618',
+        article: '2300469',
+        wats: '96W',
+        color: 'чёрный',
+        diameter: '500×500×95 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7680Lm',
+        img: '/img/lamps/lights/2300469.jpg',
+        price: '109.00'
+      },
+//--SMART-люстры 
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD101/4',
+        article: '2200162',
+        wats: '88W',
+        color: 'белая',
+        diameter: '370×370×80 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 6160Lm',
+        img: '/img/lamps/lights/2200162.jpg',
+        price: '50.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD101/5',
+        article: '2200241',
+        wats: '110W',
+        color: 'белая',
+        diameter: 'Ø590×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7700Lm',
+        img: '/img/lamps/lights/2200241.jpg',
+        price: '57.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD101/4+4',
+        article: '2200242',
+        wats: '224W',
+        color: 'белая',
+        diameter: '880×880×110 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 15680Lm',
+        img: '/img/lamps/lights/2200242.jpg',
+        price: '103.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD102/4',
+        article: '2200163',
+        wats: '104W',
+        color: 'белая',
+        diameter: '550×550×90 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7280Lm',
+        img: '/img/lamps/lights/2200163.jpg',
+        price: '65.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD102/5',
+        article: '2200164',
+        wats: '140W',
+        color: 'белая',
+        diameter: '570×570×130 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9800Lm',
+        img: '/img/lamps/lights/2200164.jpg',
+        price: '72.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD102/5',
+        article: '2300574',
+        wats: '140W',
+        color: 'чёрная',
+        diameter: '545×545×120 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9800Lm',
+        img: '/img/lamps/lights/2300574.jpg',
+        price: '72.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD102/8',
+        article: '2200165',
+        wats: '224W',
+        color: 'белая',
+        diameter: '600×600×120 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 15680Lm',
+        img: '/img/lamps/lights/2200165.jpg',
+        price: '102.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD102/8',
+        article: '2300575',
+        wats: '224W',
+        color: 'чёрная',
+        diameter: '600×600×120 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 15680Lm',
+        img: '/img/lamps/lights/2300575.jpg',
+        price: '102.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD103/4',
+        article: '2200166',
+        wats: '84W',
+        color: 'белая',
+        diameter: '680×520×100 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5880Lm',
+        img: '/img/lamps/lights/2200166.jpg',
+        price: '34.90'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD103/6',
+        article: '2200243',
+        wats: '140W',
+        color: 'белая',
+        diameter: '965×705×135 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9800Lm',
+        img: '/img/lamps/lights/2200243.jpg',
+        price: '94.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD103/8',
+        article: '2200244',
+        wats: '216W',
+        color: 'белая',
+        diameter: '1245×990×135 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 15120Lm',
+        img: '/img/lamps/lights/2200244.jpg',
+        price: '123.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD104/4',
+        article: '2200167',
+        wats: '72W',
+        color: 'белая',
+        diameter: '600×610×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5040Lm',
+        img: '/img/lamps/lights/2200167.jpg',
+        price: '58.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD104/3+3',
+        article: '2200246',
+        wats: '162W',
+        color: 'белая',
+        diameter: 'Ø640×110 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 11340Lm',
+        img: '/img/lamps/lights/2200246.jpg',
+        price: '88.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD104/6',
+        article: '2200168',
+        wats: '132W',
+        color: 'белая',
+        diameter: '840×600×150 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9240Lm',
+        img: '/img/lamps/lights/2200168.jpg',
+        price: '50.34'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD104/4+4',
+        article: '2200247',
+        wats: '216W',
+        color: 'белая',
+        diameter: '670×670×125 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 15120Lm',
+        img: '/img/lamps/lights/2200247.jpg',
+        price: '109.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD104/8',
+        article: '2200245',
+        wats: '284W',
+        color: 'белая',
+        diameter: '1010×815×140 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 19880Lm',
+        img: '/img/lamps/lights/2200245.jpg',
+        price: '140.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD105/6',
+        article: '2200169',
+        wats: '120W',
+        color: 'белая',
+        diameter: 'Ø470×75 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 8400Lm',
+        img: '/img/lamps/lights/2200169.jpg',
+        price: '61.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD105/8',
+        article: '2200170',
+        wats: '208W',
+        color: 'белая',
+        diameter: 'Ø620×115 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 14560Lm',
+        img: '/img/lamps/lights/2200170.jpg',
+        price: '96.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD106/6',
+        article: '2200171',
+        wats: '120W',
+        color: 'белая',
+        diameter: 'Ø750×150 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 8400Lm',
+        img: '/img/lamps/lights/2200171.jpg',
+        price: '82.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD107/5',
+        article: '2200248',
+        wats: '80W',
+        color: 'белая',
+        diameter: 'Ø640×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5600Lm',
+        img: '/img/lamps/lights/2200248.jpg',
+        price: '65.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD107/9',
+        article: '2200249',
+        wats: '144W',
+        color: 'белая',
+        diameter: 'Ø820×120 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 10080Lm',
+        img: '/img/lamps/lights/2200249.jpg',
+        price: '111.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD107/15',
+        article: '2200250',
+        wats: '240W',
+        color: 'белая',
+        diameter: 'Ø975×115 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 16800Lm',
+        img: '/img/lamps/lights/2200250.jpg',
+        price: '179.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD108/6',
+        article: '2200251',
+        wats: '132W',
+        color: 'белая',
+        diameter: 'Ø710×95 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9240Lm',
+        img: '/img/lamps/lights/2200251.jpg',
+        price: '90.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD109/5',
+        article: '2200252',
+        wats: '230W',
+        color: 'белая',
+        diameter: 'Ø570×100 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 16100Lm',
+        img: '/img/lamps/lights/2200252.jpg',
+        price: '110.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD110/5',
+        article: '2200253',
+        wats: '140W',
+        color: 'белая',
+        diameter: 'Ø660×90 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9800Lm',
+        img: '/img/lamps/lights/2200253.jpg',
+        price: '81.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD111/5',
+        article: '2200254',
+        wats: '80W',
+        color: 'белая',
+        diameter: 'Ø740×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5600Lm',
+        img: '/img/lamps/lights/2200254.jpg',
+        price: '71.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD111/5',
+        article: '2300593',
+        wats: '80W',
+        color: 'чёрная',
+        diameter: 'Ø740×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 5600Lm',
+        img: '/img/lamps/lights/2300593.jpg',
+        price: '71.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD112/5',
+        article: '2200255',
+        wats: '120W',
+        color: 'белая',
+        diameter: 'Ø570×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 8400Lm',
+        img: '/img/lamps/lights/2200255.jpg',
+        price: '64.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD112/5',
+        article: '2300594',
+        wats: '120W',
+        color: 'чёрная',
+        diameter: 'Ø570×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 8400Lm',
+        img: '/img/lamps/lights/2300594.jpg',
+        price: '64.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD113/5',
+        article: '2200256',
+        wats: '140W',
+        color: 'белая',
+        diameter: 'Ø640×85 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 9800Lm',
+        img: '/img/lamps/lights/2200256.jpg',
+        price: '76.00'
+      },
+      {
+        material: 'SMART-люстры',
+        title: 'SAPRA LD114/6',
+        article: '2300597',
+        wats: '104W',
+        color: 'чёрная',
+        diameter: 'Ø745×125 мм',
+        colorLightK: '3000-6500K',
+        patron: 'есть',
+        lightStream: 'max. 7280Lm',
+        img: '/img/lamps/lights/2300597.jpg',
+        price: '111.00'
+    }
 ]

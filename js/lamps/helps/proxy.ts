@@ -19,7 +19,7 @@ export const proxy: Main = new Proxy(mainObjectLamps, {
     set: (target, prop, value) => {
         if(prop === 'lamps' && Array.isArray(value)) {
             deleteLamps();
-            console.log('%c proxy >>>', 'color: white; background: green', value.length);
+            //console.log('%c proxy >>>', 'color: white; background: green', value.length);
             if(value.length < 13) {
                 createButtonStillLamps('delete');
             }

@@ -11,12 +11,15 @@ import showImg from "./showImg";
 //= create
 const create = (arrLamps: Array<Led>) => {
     try {
-        console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
-        console.log('',arrLamps);
+        //. create >>>
+        // console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
+        // console.log('create >>> ',arrLamps);
+
         deleteLamps();
         addTotalFindLampOnPage(arrLamps.length);
         createLampElement(arrLamps, 0, elementsOnPage);
-
+        
+        createButtonStillLamps('delete');
         if(arrLamps.length  > 12) {
             createButtonStillLamps('create');
 
