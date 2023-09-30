@@ -3140,9 +3140,20 @@ input[type=number]:focus {
 }
 .footer__info-text {
   font-family: "Roboto";
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   color: #fff;
+  line-height: 120%;
+}
+@media (max-width: 1910px) {
+  .footer__info-text {
+    font-size: calc(12px + (2) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .footer__info-text {
+    font-size: 12px;
+  }
 }
 .footer__call {
   -webkit-box-flex: 0;
@@ -3158,9 +3169,9 @@ input[type=number]:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 0px 20px 0px 20px;
 }
 @media (max-width: 760px) {
@@ -3186,12 +3197,12 @@ input[type=number]:focus {
 }
 @media (max-width: 1910px) {
   .footer__call-email {
-    font-size: calc(17px + (3) * (100vw - 375px) / 1535);
+    font-size: calc(16px + (4) * (100vw - 375px) / 1535);
   }
 }
 @media (max-width: 375px) {
   .footer__call-email {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media (max-width: 760px) {
@@ -3214,18 +3225,19 @@ input[type=number]:focus {
   font-size: 20px;
   font-weight: 500;
   color: #fff;
+  line-height: 120%;
   padding: 0px 0px 0px 40px;
   text-decoration: none;
-  -webkit-transform: translate(-26%, 0);
-      -ms-transform: translate(-26%, 0);
-          transform: translate(-26%, 0);
   position: relative;
 }
-@media (max-width: 760px) {
+@media (max-width: 1910px) {
   .footer__call-tel {
-    -webkit-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0);
+    font-size: calc(17px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .footer__call-tel {
+    font-size: 17px;
   }
 }
 .footer__call-tel a {
@@ -5659,6 +5671,11 @@ input[type=number]:focus {
 @media (max-width: 400px) {
   .cell-6__img {
     width: 48%;
+  }
+}
+@media (max-width: 350px) {
+  .cell-6__img {
+    width: 52%;
   }
 }
 

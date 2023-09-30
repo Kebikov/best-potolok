@@ -1,6 +1,7 @@
 //: начало - добавление светильников на сайт
 import { panels, Led, trek, lustre } from "../../../ajax/panels";
 import { light } from "../../../ajax/lustre-light";
+import { spot } from "../../../ajax/lustre-spot";
 import { lustreDot } from "../../../ajax/lustre-dot";
 import addFilterLamps from "./addFilterLamps";
 import filterLamps from "./filterLamps";
@@ -38,11 +39,14 @@ const lamps = ():void => {
                 case 'light':
                     currentArrLamps = light;
                     break;
+                case 'spot':
+                    currentArrLamps = spot;
+                    break;
                 default:
                     currentArrLamps = [];
                     break;
             }
-
+            
             create(currentArrLamps);
 
             //* обработчик кнопкок активности фильтра

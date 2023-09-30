@@ -45,6 +45,14 @@ const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: string | undefin
                 watsFilter(blockForFilters, 'Мощность');
                 addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Серия',  '');
             break;
+
+            case 'spot':
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Материал',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'rotation', 'Вращение',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
+                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
+            break;
                 
             default:
                 break;

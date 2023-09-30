@@ -9,9 +9,6 @@ $text: #5b4f3c;
 }
 
 .footer {
-    // .footer__body
-    &__body {
-    }
     &__items {
         display: flex;
         justify-content: space-around;
@@ -76,18 +73,21 @@ $text: #5b4f3c;
     }
     // .footer__info-text
     &__info-text {
-        font-family: "Roboto";
-        font-size: 15px;
-        font-weight: 400;
-        color: #fff;
+        @include text_streach(14, 12, #fff);
+        // font-family: "Roboto";
+        // font-size: 15px;
+        // font-weight: 400;
+        // color: #fff;
     }
     // .footer__call
     &__call {
         flex: 0 1 30%;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+
         padding: 0px 20px 0px 20px;
 
         @media (max-width: 760px){
@@ -98,7 +98,7 @@ $text: #5b4f3c;
     }
     // .footer__call-email
     &__call-email {
-        @include text_streach(20, 17, #fff);
+        @include text_streach(20, 16, #fff);
 
         padding: 0px 0px 0px 40px;
         margin: 0px 0px 10px 0px;
@@ -122,17 +122,13 @@ $text: #5b4f3c;
     // .footer__call-tel
     &__call-tel {
         cursor: pointer;
-        font-family: "Roboto";
-        font-size: 20px;
-        font-weight: 500;
-        color: #fff;
+
+        @include text_streach(20, 17, #fff);
+
         padding: 0px 0px 0px 40px;
         text-decoration: none;
-        transform: translate(-26%, 0);
         position: relative;
-        @media (max-width: 760px){
-            transform: translate( 0, 0);
-        }
+
         & a {
             text-decoration: none;
             color: #fff;

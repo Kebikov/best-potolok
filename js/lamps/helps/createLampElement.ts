@@ -6,7 +6,7 @@ import { priceUP } from "../../data-start";
 import showElementNotProduct from "../lampModules/showElementNotProduct";
 import { addEventListenerForElement } from "../lampModules/showImg";
 
-type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html' | '/lamps-dot.html' | '/lamps-light.html';
+type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html' | '/lamps-dot.html' | '/lamps-light.html' | '/lamps-spot.html';
 
 
 //= createLampElement 
@@ -150,7 +150,27 @@ function pathLamps(path: KeyElement, body: HTMLDivElement, priceUP: number,obj: 
                     </div>
                 </div>
             `);
-        }
+        },
+        '/lamps-spot.html': (element: HTMLDivElement): void => {
+            element.insertAdjacentHTML('beforeend',`
+                <div class="cart-lamp__body">
+                    <div class="cart-lamp__img">
+                        <img src="${obj.img}" alt="lamps">
+                    </div>
+                    <div class="cart-lamp__info">
+                        <div class="cart-lamp__title">${obj.title}</div>
+                        <div class="cart-lamp__article">Артикул: ${obj.article}</div>
+                        <div class="text-lamp"><span>Цвет</span>: ${obj.color}</div>
+                        <div class="text-lamp"><span>Размер</span>: ${obj.diameter}mm</div>
+                        <div class="text-lamp"><span>Патрон</span>: ${obj.patron}</div>
+                        <div class="text-lamp"><span>Вращение</span>: ${obj.rotation}</div>
+                        <div class="text-lamp"><span>Материал</span>: ${obj.material}</div>
+
+                        <div class="cart-lamp__price"><span>${(+obj.price * priceUP).toFixed(2)} BYN</span></div>
+                    </div>
+                </div>
+            `);
+        },
     }
 
     const element = document.createElement('div') as HTMLDivElement;
