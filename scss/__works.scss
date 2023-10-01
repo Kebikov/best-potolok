@@ -3,7 +3,7 @@
 
 
 .works-title {
-    @include text_streach(24, 17, $grey, 500, "Russo");
+    @include text_streach(20, 17, $grey, 500, "Russo");
     text-align: center;
     text-decoration: underline;
     text-transform: uppercase;

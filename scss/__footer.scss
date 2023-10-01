@@ -9,6 +9,7 @@ $text: #5b4f3c;
 }
 
 .footer {
+    overflow: hidden;
     &__items {
         display: flex;
         justify-content: space-around;
@@ -156,8 +157,8 @@ $text: #5b4f3c;
             transform: scale(1) rotateZ(0);
 }
 50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+    -webkit-transform: scale(1.2) rotateZ(180deg);
+            transform: scale(1.2) rotateZ(180deg);
 }
 100% {
     -webkit-transform: scale(1) rotateZ(360deg);
@@ -170,8 +171,8 @@ $text: #5b4f3c;
             transform: scale(1) rotateZ(0);
 }
 50% {
-    -webkit-transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+    -webkit-transform: scale(1.2) rotateZ(180deg);
+            transform: scale(1.2) rotateZ(180deg);
 }
 100% {
     -webkit-transform: scale(1) rotateZ(360deg);

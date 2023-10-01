@@ -34,6 +34,7 @@
     // .cart-lamp__img
     &__img {
         width: 100%;
+        cursor: pointer;
         & img {
             object-fit: cover;
             object-position: center center;
@@ -123,10 +124,12 @@
         display: flex;
         justify-content: center;
     }
-    // .number-lamps__num
+    // .number-lamps__add
     &__add {
         @include text_streach(20, 17, #fff, 400);
         letter-spacing: 1.5px;
+
+        cursor: pointer;
 
         padding: 10px 20px;
 
