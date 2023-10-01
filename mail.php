@@ -31,7 +31,7 @@ try {
     // Настройки вашей почты
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
     $mail->Username   = 'best.potolok.gomel@gmail.com'; // Логин на почте
-    $mail->Password   = 'tnsaazpdytfkzhix'; // Пароль на почте
+    $mail->Password   = 'iatu ndbw douh rfiu'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
 

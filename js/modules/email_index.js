@@ -19,12 +19,16 @@ export default function emailIndexMain () {
                             body: formData
                         })
                         .then(data => {
+                            console.log('status 1 >>> ', data.status);
                             if(data.status === 200) {
                                 bodyDis.style.overflow = 'auto';
                                 animeMeil.style.display = 'none';
                                 praceMondeyButton.textContent = 'заявка отправлена';
                                 praceMondeyTelInput.value = 'Cпасибо за заказ !';
                             }
+                        })
+                        .catch(error => {
+                            console.log('Error Email >>> ', error);
                         });
                     }else {
                         praceMondeyButton.textContent = 'проверьте номер';
