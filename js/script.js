@@ -11,6 +11,7 @@ import iconGo from './modules/icon_observer';
 import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
 import startLamps from './lamps/lampModules/startLamps'
+import time from './baner/time';
 
 import { cursUsd, perimeterPrace, lightPrace, workPrace } from './data-start';
 
@@ -44,4 +45,5 @@ window.addEventListener('DOMContentLoaded', () => {
     animationPraise();
     questions();
     startLamps();
+    time();
 });

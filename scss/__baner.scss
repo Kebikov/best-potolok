@@ -1,0 +1,140 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+.black {
+    margin-top: 20px;
+    overflow: hidden;
+    // .black__body
+    &__body {
+        display: flex;
+        justify-content: space-around;
+        background-color: $color-yelow;
+
+        padding: 10px;
+    }
+    &__line{
+        position: relative;
+        z-index: 5;
+        padding: 10px 0px 0px 0px;
+        width: 100%;
+        background: url('/img/icon/line.jpg');
+    }
+}
+
+.black-left {
+    flex: 1 0 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 50;
+        width: 80%;
+        padding-bottom: 80%;
+
+        background-color: #000;
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
+    // .black-left__up
+    &__up {
+        margin: 20px 0px 0px 0px;
+        @include text_streach (28, 24, $color-yelow, 500);
+    }
+    // .black-left__procent
+    &__procent {
+        margin: 10px 0px 10px 0px;
+        padding: 5px 10px;
+
+        background-color: $color-red;
+        @include text_streach (50, 40, #fff, 500);
+
+        transform: rotate(4deg);
+    }
+    // .black-left__balance
+    &__balance {
+        
+    }
+    // .black-left__balance-title
+    &__balance-title {
+        background-color: $color-yelow-dirty;
+        padding: 3px 10px;
+        @include text_streach (20, 18, #000, 500);
+    }
+    // .black-left__time
+    &__time {
+        display: flex;
+        justify-content: space-around;
+
+        margin: 10px 0px 20px 0px;
+    }
+    &__box {
+        
+    }
+    // .black-left__time-title
+    &__time-title {
+        @include text_streach (16, 14, $color-yelow-dirty, 400);
+    }
+    // .black-left__time-value
+    &__time-value {
+        @include text_streach (30, 27, #000, 600);
+        background-color: $color-yelow-dirty;
+        text-align: center;
+    }
+}
+
+._z2 {
+    position: relative;
+    z-index: 2;
+}
+
+.black-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // .black-right__call-us
+    &__call-us {
+        @include text_streach (25, 23, #000, 500);
+    }
+    // .black-right__black
+    &__black {
+        box-shadow: rgba(0, 0, 0, 0.96) 10px 15px 30px 4px;
+
+        width: 5em;
+        margin: 10px 0px 0px 0px;
+        text-align: center;
+
+        padding: 5px 10px;
+        background-color: #000;
+
+        @include text_streach (50, 40, $color-yelow-dirty, 500, "Russo");
+        text-transform: uppercase;
+
+        transform: rotate(3deg);
+    }
+    // .black-right__week
+    &__week {
+        position: relative;
+        z-index: 3;
+
+        padding: 3px 12px;
+        margin: -7px 0px 0px 0px;
+
+        background: $color-red;
+        @include text_streach (25, 23, #fff, 500);
+    }
+    // .black-right__chance
+    &__chance {
+        @include text_streach (25, 23, #000, 500);
+    }
+}

@@ -4104,6 +4104,65 @@ exports.lustre = [
 
 /***/ }),
 
+/***/ "./js/baner/time.ts":
+/*!**************************!*\
+  !*** ./js/baner/time.ts ***!
+  \**************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const time = () => {
+    try {
+        const elementDay = document.querySelector('#day');
+        const elementHours = document.querySelector('#hours');
+        const elementMinute = document.querySelector('#minute');
+        const elementSeconds = document.querySelector('#seconds');
+        function timeOnDisplay() {
+            if (elementDay && elementHours && elementMinute && elementSeconds) {
+                const date = new Date();
+                const lastWeekDate = new Date();
+                const dayWeek = lastWeekDate.getDay();
+                const differenceDay = 7 - dayWeek;
+                lastWeekDate.setDate(lastWeekDate.getDate() + differenceDay);
+                const year = lastWeekDate.getFullYear();
+                const month = lastWeekDate.getMonth();
+                const day = lastWeekDate.getDate();
+                const dateSanday = new Date(year, month, day, 0);
+                let differenceTime = dateSanday.getTime() - date.getTime();
+                const msSeconds = 1000;
+                const msMinute = msSeconds * 60;
+                const msHours = msMinute * 60;
+                const msDay = msHours * 24;
+                const leftDay = Math.floor(differenceTime / msDay);
+                differenceTime = differenceTime - leftDay * msDay;
+                const leftHours = Math.floor(differenceTime / msHours);
+                differenceTime = differenceTime - leftHours * msHours;
+                const leftMinute = Math.floor(differenceTime / msMinute);
+                differenceTime = differenceTime - leftMinute * msMinute;
+                const leftSeconds = Math.floor(differenceTime / msSeconds);
+                console.log('Hello', leftDay, leftHours, leftMinute, leftSeconds);
+                elementDay.textContent = (leftDay + '').padStart(2, '0');
+                elementHours.textContent = leftHours + '';
+                elementMinute.textContent = leftMinute + '';
+                elementSeconds.textContent = (leftSeconds + '').padStart(2, '0');
+            }
+            timeStart();
+        }
+        function timeStart() {
+            setTimeout(timeOnDisplay, 1000);
+        }
+        timeStart();
+    }
+    catch (error) {
+        console.log('Error in fnc time >>> ', error);
+    }
+};
+exports["default"] = time;
+
+
+/***/ }),
+
 /***/ "./js/data-start.ts":
 /*!**************************!*\
   !*** ./js/data-start.ts ***!
@@ -5312,7 +5371,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_questions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/questions */ "./js/modules/questions.ts");
 /* harmony import */ var _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lamps/lampModules/startLamps */ "./js/lamps/lampModules/startLamps.ts");
 /* harmony import */ var _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _data_start__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./data-start */ "./js/data-start.ts");
+/* harmony import */ var _baner_time__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./baner/time */ "./js/baner/time.ts");
+/* harmony import */ var _data_start__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./data-start */ "./js/data-start.ts");
+
 
 
 
@@ -5333,23 +5394,23 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
     
     (0,_modules_menu_nav__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_13__.cursUsd, 
-        workPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.workPrace,
-        lightPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.lightPrace,
-        perimeterPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.perimeterPrace,
+        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_14__.cursUsd, 
+        workPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.workPrace,
+        lightPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.lightPrace,
+        perimeterPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.perimeterPrace,
     });
     (0,_modules_gallery__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_popup__WEBPACK_IMPORTED_MODULE_2__["default"])();
     (0,_modules_calc_index__WEBPACK_IMPORTED_MODULE_3__["default"])({
-        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_13__.cursUsd,
-        workPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.workPrace,
-        lightPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.lightPrace,
-        perimeterPrace: _data_start__WEBPACK_IMPORTED_MODULE_13__.perimeterPrace,
+        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_14__.cursUsd,
+        workPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.workPrace,
+        lightPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.lightPrace,
+        perimeterPrace: _data_start__WEBPACK_IMPORTED_MODULE_14__.perimeterPrace,
     });
     (0,_modules_calc_m2__WEBPACK_IMPORTED_MODULE_4__["default"])({
-        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_13__.cursUsd, 
-        works: _data_start__WEBPACK_IMPORTED_MODULE_13__.workPrace, 
-        pracePerimetr: _data_start__WEBPACK_IMPORTED_MODULE_13__.perimeterPrace,
+        cursUsd: _data_start__WEBPACK_IMPORTED_MODULE_14__.cursUsd, 
+        works: _data_start__WEBPACK_IMPORTED_MODULE_14__.workPrace, 
+        pracePerimetr: _data_start__WEBPACK_IMPORTED_MODULE_14__.perimeterPrace,
     });
     (0,_modules_ruler_movement__WEBPACK_IMPORTED_MODULE_5__["default"])();
     (0,_modules_phone_input_index__WEBPACK_IMPORTED_MODULE_6__["default"])();
@@ -5359,6 +5420,7 @@ window.addEventListener('DOMContentLoaded', () => {
     (0,_modules_animation_praise__WEBPACK_IMPORTED_MODULE_10__["default"])();
     (0,_modules_questions__WEBPACK_IMPORTED_MODULE_11__["default"])();
     _lamps_lampModules_startLamps__WEBPACK_IMPORTED_MODULE_12___default()();
+    (0,_baner_time__WEBPACK_IMPORTED_MODULE_13__["default"])();
 });
 })();
 
