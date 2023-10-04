@@ -5,30 +5,34 @@ const time = () => {
         const elementHours = document.querySelector('#hours');
         const elementMinute = document.querySelector('#minute');
         const elementSeconds = document.querySelector('#seconds');
+        const elementDateDo = document.querySelector('#dateDo');
 
         function timeOnDisplay() {
-            if(elementDay && elementHours && elementMinute && elementSeconds) {
-                
+            if(elementDay && elementHours && elementMinute && elementSeconds && elementDateDo) {
+
                 const date: Date = new Date();
                 const lastWeekDate: Date = new Date();
-
+        
                 const dayWeek: number = lastWeekDate.getDay();
+
                 const differenceDay: number = 7 - dayWeek;
                 lastWeekDate.setDate(lastWeekDate.getDate() + differenceDay);
-
+        
                 const year = lastWeekDate.getFullYear();
                 const month = lastWeekDate.getMonth();
                 const day = lastWeekDate.getDate();
-
-                const dateSanday = new Date(year, month, day, 0);
-
-                let differenceTime: number = dateSanday.getTime() - date.getTime();
-
+        
+                elementDateDo.textContent = `${(day + '').padStart(2,'0')}/${(month + '').padStart(2,'0')}/${year}`;
+        
                 const msSeconds: number = 1000;
                 const msMinute: number = msSeconds * 60;
                 const msHours: number = msMinute * 60;
                 const msDay: number = msHours * 24;
+
+                const dateSanday = new Date(year, month, day, 0);
                 
+                let differenceTime: number = dateSanday.getTime() - date.getTime();
+
                 const leftDay: number = Math.floor( differenceTime / msDay );
                 differenceTime = differenceTime - leftDay * msDay;
                 const leftHours: number = Math.floor( differenceTime / msHours );
@@ -37,11 +41,9 @@ const time = () => {
                 differenceTime = differenceTime - leftMinute * msMinute;
                 const leftSeconds: number = Math.floor( differenceTime / msSeconds );
 
-                console.log('Hello',  leftDay, leftHours, leftMinute, leftSeconds);
-
                 elementDay.textContent =  (leftDay + '').padStart(2,'0');
-                elementHours.textContent = leftHours + '';
-                elementMinute.textContent = leftMinute + '';
+                elementHours.textContent = (leftHours + '').padStart(2,'0');
+                elementMinute.textContent = (leftMinute + '').padStart(2,'0');
                 elementSeconds.textContent = (leftSeconds + '').padStart(2,'0');
             }
             timeStart();
