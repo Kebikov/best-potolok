@@ -17,8 +17,8 @@ let path = require('path');
 // };
 
 module.exports = {
-    //mode: 'production',
-    mode: 'development',
+    mode: 'production',
+    //mode: 'development',
     entry: './js/script.js', // Файл с зависимостями TypeScript
     output: {
       filename: 'bundle.js',
