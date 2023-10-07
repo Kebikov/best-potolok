@@ -1,11 +1,11 @@
 const time = () => {
     try {
 
-        const elementDay = document.querySelector('#day');
-        const elementHours = document.querySelector('#hours');
-        const elementMinute = document.querySelector('#minute');
-        const elementSeconds = document.querySelector('#seconds');
-        const elementDateDo = document.querySelector('#dateDo');
+        const elementDay = document.querySelector('#day') as HTMLDivElement;
+        const elementHours = document.querySelector('#hours') as HTMLDivElement;
+        const elementMinute = document.querySelector('#minute') as HTMLDivElement;
+        const elementSeconds = document.querySelector('#seconds') as HTMLDivElement;
+        const elementDateDo = document.querySelector('#dateDo') as HTMLDivElement;
 
         function timeOnDisplay() {
             if(elementDay && elementHours && elementMinute && elementSeconds && elementDateDo) {
@@ -15,14 +15,14 @@ const time = () => {
         
                 const dayWeek: number = lastWeekDate.getDay();
 
-                const differenceDay: number = 7 - dayWeek;
+                const differenceDay: number = 8 - dayWeek;
                 lastWeekDate.setDate(lastWeekDate.getDate() + differenceDay);
         
                 const year = lastWeekDate.getFullYear();
                 const month = lastWeekDate.getMonth();
                 const day = lastWeekDate.getDate();
         
-                elementDateDo.textContent = `${(day + '').padStart(2,'0')}/${(month + '').padStart(2,'0')}/${year}`;
+                elementDateDo.textContent = `${(day + '').padStart(2,'0')}/${((month + 1) + '').padStart(2,'0')}/${year}`;
         
                 const msSeconds: number = 1000;
                 const msMinute: number = msSeconds * 60;
