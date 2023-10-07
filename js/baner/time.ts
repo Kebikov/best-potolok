@@ -13,7 +13,10 @@ const time = () => {
                 const date: Date = new Date();
                 const lastWeekDate: Date = new Date();
         
-                const dayWeek: number = lastWeekDate.getDay();
+                let dayWeek: number = lastWeekDate.getDay();
+
+                dayWeek = dayWeek === 0 ? 7 : dayWeek;
+                // если воскресенье, а оно равно 0, меняем на 7
 
                 const differenceDay: number = 8 - dayWeek;
                 lastWeekDate.setDate(lastWeekDate.getDate() + differenceDay);
@@ -22,7 +25,7 @@ const time = () => {
                 const month = lastWeekDate.getMonth();
                 const day = lastWeekDate.getDate();
         
-                elementDateDo.textContent = `${(day + '').padStart(2,'0')}/${((month + 1) + '').padStart(2,'0')}/${year}`;
+                elementDateDo.textContent = `до ${(day + '').padStart(2,'0')}/${((month + 1) + '').padStart(2,'0')}/${year}`;
         
                 const msSeconds: number = 1000;
                 const msMinute: number = msSeconds * 60;
