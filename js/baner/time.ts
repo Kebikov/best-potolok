@@ -1,13 +1,19 @@
 const time = () => {
     try {
 
+        const leaveOnlyTwoSign = (element: HTMLDivElement, value: number): void => {
+            if(element && value) {
+                element.textContent =  (value + '').padStart(2,'0');
+            }
+        }
+
         const elementDay = document.querySelector('#day') as HTMLDivElement;
         const elementHours = document.querySelector('#hours') as HTMLDivElement;
         const elementMinute = document.querySelector('#minute') as HTMLDivElement;
         const elementSeconds = document.querySelector('#seconds') as HTMLDivElement;
         const elementDateDo = document.querySelector('#dateDo') as HTMLDivElement;
 
-        function timeOnDisplay() {
+        function timeOnDisplay(): void {
             if(elementDay && elementHours && elementMinute && elementSeconds && elementDateDo) {
 
                 const date: Date = new Date();
@@ -21,9 +27,9 @@ const time = () => {
                 const differenceDay: number = 8 - dayWeek;
                 lastWeekDate.setDate(lastWeekDate.getDate() + differenceDay);
         
-                const year = lastWeekDate.getFullYear();
-                const month = lastWeekDate.getMonth();
-                const day = lastWeekDate.getDate();
+                const year: number = lastWeekDate.getFullYear();
+                const month: number = lastWeekDate.getMonth();
+                const day: number = lastWeekDate.getDate();
         
                 elementDateDo.textContent = `до ${(day + '').padStart(2,'0')}/${((month + 1) + '').padStart(2,'0')}/${year}`;
         
@@ -36,29 +42,36 @@ const time = () => {
                 
                 let differenceTime: number = dateSanday.getTime() - date.getTime();
 
-                const leftDay: number = Math.floor( differenceTime / msDay );
-                differenceTime = differenceTime - leftDay * msDay;
-                const leftHours: number = Math.floor( differenceTime / msHours );
-                differenceTime = differenceTime - leftHours * msHours;
-                const leftMinute: number = Math.floor( differenceTime / msMinute ); 
-                differenceTime = differenceTime - leftMinute * msMinute;
-                const leftSeconds: number = Math.floor( differenceTime / msSeconds );
+                const calculationBalance = (msInItem: number): number => {
+                    const balance: number = Math.floor( differenceTime / msInItem );
+                    differenceTime = differenceTime - balance * msInItem;
+                    return balance;
+                }
 
-                elementDay.textContent =  (leftDay + '').padStart(2,'0');
-                elementHours.textContent = (leftHours + '').padStart(2,'0');
-                elementMinute.textContent = (leftMinute + '').padStart(2,'0');
-                elementSeconds.textContent = (leftSeconds + '').padStart(2,'0');
+                const howManyDays: number = calculationBalance(msDay);
+                const howManyHours: number = calculationBalance(msHours);
+                const howManyMinutes: number = calculationBalance(msMinute); 
+                const howManySeconds: number = calculationBalance(msSeconds);
+
+                leaveOnlyTwoSign(elementDay, howManyDays);
+                leaveOnlyTwoSign(elementHours, howManyHours);
+                leaveOnlyTwoSign(elementMinute, howManyMinutes);
+                leaveOnlyTwoSign(elementSeconds, howManySeconds);
+
+                timeStart();
             }
-            timeStart();
         }
-
-        function timeStart() {
+        
+        function timeStart(): void {
             setTimeout(timeOnDisplay, 1000);
         }
 
-        timeStart();
+        if(elementDay) {
+            timeStart();
+        }
+        
     } catch (error) {
-        console.log('Error in fnc time >>> ', error);
+        console.error('Error in fnc time >>> ', error);
     }
 }
 
