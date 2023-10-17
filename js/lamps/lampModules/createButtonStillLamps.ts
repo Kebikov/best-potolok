@@ -1,8 +1,11 @@
 //* создание кнопки показать еще 
 
-type StillButton = 'create' | 'delete';
+export enum ComandButtonLamp {
+    Create = 'create',
+    Delete = 'delete'
+}
 
-const createButtonStillLamps = (command: StillButton) => {
+const createButtonStillLamps = (command: ComandButtonLamp) => {
 
     const numberLampsBody = document.querySelector('#body-for-button-still-lamps') as HTMLDivElement;
 

@@ -2,6 +2,7 @@
 import { Led } from "../../../ajax/panels";
 import caunter from "./caunter";
 import createButtonStillLamps from "../lampModules/createButtonStillLamps";
+import { ComandButtonLamp } from "../lampModules/createButtonStillLamps";
 import { priceUP } from "../../data-start";
 import showElementNotProduct from "../lampModules/showElementNotProduct";
 import { addEventListenerForElement } from "../lampModules/showImg";
@@ -11,15 +12,12 @@ type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html
 
 //= createLampElement 
 const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: number, finishNumberElement: number) => {
-    
-    //. Добавить >>> 
-    //console.log('Добавить >>> ', currentArrLamps);
 
     const lampsBlock = document.querySelector('#box-for-lamp') as HTMLDivElement;
     const path: KeyElement = window.location.pathname as KeyElement;
 
     if(currentArrLamps.length < 13) {
-        createButtonStillLamps('delete');
+        createButtonStillLamps(ComandButtonLamp.Delete);
     }
 
     if(currentArrLamps.length === 0) {
@@ -33,7 +31,7 @@ const createLampElement = (currentArrLamps: Array<Led>, startNumberElement: numb
         if(obj) {
             pathLamps(path, lampsBlock, priceUP, obj);
         }else{
-            createButtonStillLamps('delete');
+            createButtonStillLamps(ComandButtonLamp.Delete);
             caunter('zero');
             break;
         }

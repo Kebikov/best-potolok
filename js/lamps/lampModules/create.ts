@@ -4,6 +4,7 @@ import { Led } from "../../../ajax/panels";
 import addLamps from "../helps/addLamps";
 import deleteLamps from "./deleteLamps";
 import createButtonStillLamps from "./createButtonStillLamps";
+import { ComandButtonLamp } from "./createButtonStillLamps";
 import addTotalFindLampOnPage from "../helps/addTotalFindLampOnPage";
 import showImg from "./showImg";
 
@@ -11,23 +12,20 @@ import showImg from "./showImg";
 //= create
 const create = (arrLamps: Array<Led>) => {
     try {
-        //. create >>>
-        // console.log('%c create >>>', 'color: white; background: green', arrLamps.length);
-        // console.log('create >>> ',arrLamps);
 
         deleteLamps();
         addTotalFindLampOnPage(arrLamps.length);
         createLampElement(arrLamps, 0, elementsOnPage);
         
-        createButtonStillLamps('delete');
+        createButtonStillLamps(ComandButtonLamp.Delete);
         if(arrLamps.length  > 12) {
-            createButtonStillLamps('create');
+            createButtonStillLamps(ComandButtonLamp.Create);
 
             const addButton = document.querySelector('#button-add-lamps') as HTMLDListElement;
 
             addButton?.addEventListener('click', listener);
         }else{
-            createButtonStillLamps('delete');
+            createButtonStillLamps(ComandButtonLamp.Delete);
         }
         
         function listener() {

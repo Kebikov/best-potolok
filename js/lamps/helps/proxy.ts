@@ -1,5 +1,6 @@
 import deleteLamps from "../lampModules/deleteLamps";
 import createButtonStillLamps from "../lampModules/createButtonStillLamps";
+import { ComandButtonLamp } from "../lampModules/createButtonStillLamps";
 import { Led } from "../../../ajax/panels";
 import { type } from "os";
 import create from "../lampModules/create";
@@ -21,7 +22,7 @@ export const proxy: Main = new Proxy(mainObjectLamps, {
             deleteLamps();
             //console.log('%c proxy >>>', 'color: white; background: green', value.length);
             if(value.length < 13) {
-                createButtonStillLamps('delete');
+                createButtonStillLamps(ComandButtonLamp.Delete);
             }
             create(value);
             target[prop] = value;
