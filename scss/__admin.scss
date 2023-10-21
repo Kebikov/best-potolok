@@ -1,0 +1,124 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+.login {
+    margin-top: 40px;
+    // .login__body
+    &__body {
+        display: flex;
+        justify-content: center;
+    }
+    // .login__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        width: 500px;
+
+        @media (max-width: 1020px){
+            width: 90vw;
+        }
+    }
+    // .login__lable
+    &__lable {
+        @include text_streach(20, 17, $grey);
+    }
+    // .login__input
+    &__input {
+        @include text_streach(18, 15, $grey);
+
+        border: 2px solid $grey;
+
+        padding: 5px;
+
+        margin: 0px 0px 20px 0px;
+    }
+    // .login__button
+    &__button {
+        @include text_streach(18, 15, #fff);
+
+        background: $grey;
+
+        padding: 8px 10px;
+    }
+}
+
+.options {
+    margin-top: 40px;
+    // .options__body
+    &__body {
+        display: flex;
+        justify-content: center;
+    }
+    // .options__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        width: 500px;
+
+        @media (max-width: 1020px){
+            width: 90vw;
+        }
+    }
+    // .options__lable
+    &__lable {
+        @include text_streach(20, 17, $grey);
+    }
+    // .options__input
+    &__input {
+        @include text_streach(18, 15, $grey);
+
+        border: 2px solid $orange;
+
+        padding: 5px;
+
+        margin: 0px 0px 20px 0px;
+    }
+
+
+    &__lable-checkbox {
+        @include text_streach(20, 17, $grey);
+
+        padding: 0px 0px 0px 40px;
+
+        margin: 0px 0px 20px 0px;
+
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0px;
+            left: -4px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 1px $brown solid;
+            background-color: #fff;
+            box-shadow: 1px 1px 1px 0px rgb(0 0 0 / 50%) inset;
+        }
+    }
+    &__radio {
+        display: none;
+        &:checked + .options__lable-checkbox::after {
+            position: absolute;
+            z-index: 1;
+            content: "";
+            top: -8px;
+            left: -8px;
+            height: 33px;
+            width: 33px;
+            background: url(../img/index/check.png) 0 0 / cover no-repeat;
+        }
+    }
+
+    // .options__button
+    &__button {
+        @include text_streach(18, 15, #fff);
+
+        background: $orange;
+
+        padding: 8px 10px;
+    }
+}

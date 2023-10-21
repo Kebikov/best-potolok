@@ -12,6 +12,8 @@ import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
 import startLamps from './lamps/lampModules/startLamps'
 import time from './baner/time';
+import login from './admin/login';
+import options from './admin/options';
 
 import { cursUsd, perimeterPrace, lightPrace, workPrace } from './data-start';
 
@@ -46,4 +48,6 @@ window.addEventListener('DOMContentLoaded', () => {
     questions();
     startLamps();
     time();
+    login();
+    options();
 });

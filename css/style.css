@@ -6986,6 +6986,218 @@ input[type=number]:focus {
             transform: rotate(1080deg) scale(1.05);
   }
 }
+.login {
+  margin-top: 40px;
+}
+.login__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.login__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+}
+@media (max-width: 1020px) {
+  .login__form {
+    width: 90vw;
+  }
+}
+.login__lable {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #2a2b30;
+  line-height: 120%;
+}
+@media (max-width: 1910px) {
+  .login__lable {
+    font-size: calc(17px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .login__lable {
+    font-size: 17px;
+  }
+}
+.login__input {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2b30;
+  line-height: 120%;
+  border: 2px solid #2a2b30;
+  padding: 5px;
+  margin: 0px 0px 20px 0px;
+}
+@media (max-width: 1910px) {
+  .login__input {
+    font-size: calc(15px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .login__input {
+    font-size: 15px;
+  }
+}
+.login__button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 120%;
+  background: #2a2b30;
+  padding: 8px 10px;
+}
+@media (max-width: 1910px) {
+  .login__button {
+    font-size: calc(15px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .login__button {
+    font-size: 15px;
+  }
+}
+
+.options {
+  margin-top: 40px;
+}
+.options__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.options__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+}
+@media (max-width: 1020px) {
+  .options__form {
+    width: 90vw;
+  }
+}
+.options__lable {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #2a2b30;
+  line-height: 120%;
+}
+@media (max-width: 1910px) {
+  .options__lable {
+    font-size: calc(17px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .options__lable {
+    font-size: 17px;
+  }
+}
+.options__input {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2b30;
+  line-height: 120%;
+  border: 2px solid #fe8d1b;
+  padding: 5px;
+  margin: 0px 0px 20px 0px;
+}
+@media (max-width: 1910px) {
+  .options__input {
+    font-size: calc(15px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .options__input {
+    font-size: 15px;
+  }
+}
+.options__lable-checkbox {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  color: #2a2b30;
+  line-height: 120%;
+  padding: 0px 0px 0px 40px;
+  margin: 0px 0px 20px 0px;
+  position: relative;
+}
+@media (max-width: 1910px) {
+  .options__lable-checkbox {
+    font-size: calc(17px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .options__lable-checkbox {
+    font-size: 17px;
+  }
+}
+.options__lable-checkbox::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: -4px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px #6d4d3a solid;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5) inset;
+}
+.options__radio {
+  display: none;
+}
+.options__radio:checked + .options__lable-checkbox::after {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  top: -8px;
+  left: -8px;
+  height: 33px;
+  width: 33px;
+  background: url(../img/index/check.png) 0 0/cover no-repeat;
+}
+.options__button {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 120%;
+  background: #fe8d1b;
+  padding: 8px 10px;
+}
+@media (max-width: 1910px) {
+  .options__button {
+    font-size: calc(15px + (3) * (100vw - 375px) / 1535);
+  }
+}
+@media (max-width: 375px) {
+  .options__button {
+    font-size: 15px;
+  }
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
