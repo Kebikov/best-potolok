@@ -1,4 +1,6 @@
 import localStorageHelps from "./helps/localStorage.helps";
+import { Link, Respons } from "./helps/interface";
+import processRespons from "./helps/processRespons";
 
 import { ILoginPassword, IResponsServer } from "./helps/interface";
 
@@ -25,20 +27,19 @@ const login = () => {
                 } 
 
                 if(login && password) {
-                    fetch('http://localhost:3000/api/auth/login-admin', {
+                    fetch(Link.LoginAdmin, {
                         method: 'POST',
                         body: JSON.stringify(loginPassword),
                         headers: {'Content-type': 'application/json'}
                     })
                     .then(res => res.json())
-                    .then(res => {
-                        if(res?.error?.message) {
+                    .then((res: Respons | IResponsServer) => {
+                        if('error' in res) {
                             localStorageHelps.deleteDataLogin();
-                            return alert(res.error.message);
+                            return processRespons(res);
                         }
 
-                        const response: IResponsServer = res;
-                        localStorageHelps.saveDataLogin(response);
+                        localStorageHelps.saveDataLogin(res);
                         window.location.href = '/admin-options.html';
                     })
                     .catch(error => console.log('Error in fetch in fnction login >>>', error));

@@ -3,6 +3,12 @@ export interface ILoginPassword {
     password: string
 }
 
+export interface IResManagement {
+    _id: object,
+    isShowBaner: boolean,
+    cursUsd: string
+}
+
 export interface IResponsServer {
     accessToken: string,
     refreshToken: string,
@@ -34,4 +40,11 @@ export type ResObject = {
     [key in ResServer]: {
         message: string;
     }
+}
+
+//= ENUM 
+
+export enum Link {
+    LoginAdmin ='http://localhost:3000/api/auth/login-admin',
+    Management = 'http://localhost:3000/api/admin/management'
 }

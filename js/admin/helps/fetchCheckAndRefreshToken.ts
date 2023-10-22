@@ -3,7 +3,7 @@ import localStorageHelps from './localStorage.helps';
 import processRespons from './processRespons';
 
 
-const checkAndRefreshToken = async (url: string, options: RequestInit) => {
+const fetchCheckAndRefreshToken = async (url: string, options: RequestInit) => {
     try {
 
         const id: string | null = localStorage.getItem('userId');
@@ -19,7 +19,8 @@ const checkAndRefreshToken = async (url: string, options: RequestInit) => {
 
         //* update refresh token 
         if(expiresInNumber && typeof expiresInNumber === 'number' && expiresInNumber <= new Date().getTime()) {
-            console.log('UPDATE_checkAndRefreshToken');
+            console.log('UPDATE_fetchCheckAndRefreshToken');
+            
             const responseServer = await fetch('http://localhost:3000/api/auth/refresh-token-check', 
                 {
                     method: 'PATCH',
@@ -43,7 +44,7 @@ const checkAndRefreshToken = async (url: string, options: RequestInit) => {
 
             return fetch(url, options);
         } else {
-            console.log('WITHOUT_UPDATE_checkAndRefreshToken', options);
+            console.log('WITHOUT_UPDATE_fetchCheckAndRefreshToken', options);
             return fetch(url, options);
         }
 
@@ -53,4 +54,4 @@ const checkAndRefreshToken = async (url: string, options: RequestInit) => {
     }
 }
 
-export default checkAndRefreshToken;
+export default fetchCheckAndRefreshToken;

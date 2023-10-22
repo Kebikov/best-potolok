@@ -1,11 +1,12 @@
-import checkAndRefreshToken from "./helps/checkAndRefreshToken";
+import fetchCheckAndRefreshToken from "./helps/fetchCheckAndRefreshToken";
 import processRespons from "./helps/processRespons";
+import getManagement from "./service/getManagement";
 
-import { IOptions, Respons } from "./helps/interface";
+import { IOptions, Respons, Link, IResManagement } from "./helps/interface";
 
 
 
-const options = () => {
+const options = async () => {
     try {
 
         const access: string | null = localStorage.getItem('access');
@@ -16,25 +17,34 @@ const options = () => {
         if(!access) return window.location.href = '/admin-best.html';
         
         const formOptions: HTMLFormElement | null = document.querySelector('form[name="options"]');
-
+        const inputUsd: HTMLInputElement = formOptions?.usd;
+        const checkbox: HTMLInputElement = formOptions?.ads;
+        
         if(formOptions) {
             formOptions.addEventListener('submit', submitOptions);
         }
 
+        //* получение данных для формы и установка значений 
+        const management: IResManagement | void = await getManagement();
+        if(management) {
+            inputUsd.value = management.cursUsd;
+            checkbox.checked = management.isShowBaner;
+        }
+
+        //* отправка данных с формы 
         async function submitOptions(event: Event) {
             event.preventDefault();
             
-            const curs: string = formOptions?.usd?.value;
+            const curs: string = formOptions?.usd?.value.replace(',', '.');
             const isWorkAds: boolean = formOptions?.ads?.checked;
-
+            console.log('',curs);
             if(curs && isWorkAds !== undefined) {
-
                 const bodyOptions: IOptions = {
                     isShowBaner: isWorkAds,
                     cursUsd: +curs
                 };
 
-                const url: string = 'http://localhost:3000/api/admin/management';
+                const url: string = Link.Management;
                 const options: RequestInit = {
                     method: 'POST',
                     headers: {
@@ -45,18 +55,16 @@ const options = () => {
                     "mode":"cors"
                 }
 
-                checkAndRefreshToken(url, options)
+                fetchCheckAndRefreshToken(url, options)
                 .then(res => res?.json())
                 .then((res: Respons) => processRespons(res))
                 .catch(error => console.log(error));
-    
             }
-
 
         }
 
     }catch (error) {
-        console.log('Error in Function  >>> ', error);
+        console.log('Error in Function options >>> ', error);
     }
 }
 
