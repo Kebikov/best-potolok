@@ -1,5 +1,5 @@
 //= калькулятор index(калькулятор только на главной странице)
-export default function calcIndex ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
+export default function calcIndex ({workPrace, lightPrace, perimeterPrace}) {
     try {
         const calculationIndex = document.querySelector('.calculation-index');
         if(calculationIndex){
@@ -78,6 +78,8 @@ export default function calcIndex ({cursUsd, workPrace, lightPrace, perimeterPra
                 });
 
                 fnPraceM2();
+
+                const cursUsd = +localStorage.cursUsd;
 
                 if(arrSoffit.length === 2 && arrSize.length === 3) {
                     let result = Math.round((arrSize[0] * arrSize[1] * praceM2  + ((arrSize[0] + arrSize[1]) * 2) * perimeterPrace + arrSize[2] * lightPrace) * cursUsd + arrSize[0] * arrSize[1] * workPrace * promotion);

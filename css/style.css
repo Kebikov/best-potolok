@@ -1675,7 +1675,7 @@ input[type=number]:focus {
 }
 .order-call__title {
   font-family: "Russo";
-  font-size: 28px;
+  font-size: 22px;
   text-decoration: underline;
   color: #fff;
   margin: 0px 0px 20px 0px;
@@ -6439,7 +6439,7 @@ input[type=number]:focus {
 }
 
 .black {
-  margin-top: 20px;
+  margin-top: 40px;
   overflow: hidden;
   position: relative;
 }
@@ -7138,7 +7138,7 @@ input[type=number]:focus {
   font-weight: 500;
   color: #2a2b30;
   line-height: 120%;
-  padding: 0px 0px 0px 40px;
+  padding: 0px 0px 0px 30px;
   margin: 0px 0px 20px 0px;
   position: relative;
 }
@@ -7155,7 +7155,7 @@ input[type=number]:focus {
 .options__lable-checkbox::before {
   position: absolute;
   content: "";
-  top: 0px;
+  top: 2px;
   left: -4px;
   height: 20px;
   width: 20px;
@@ -7172,7 +7172,7 @@ input[type=number]:focus {
   position: absolute;
   z-index: 1;
   content: "";
-  top: -8px;
+  top: -6px;
   left: -8px;
   height: 33px;
   width: 33px;

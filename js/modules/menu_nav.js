@@ -1,6 +1,6 @@
 import calculatorHeader from "./calculator_header";
 
-export default function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace}) {
+export default function menuNav ({workPrace, lightPrace, perimeterPrace}) {
     try {
         //=   меню   
     (function menu () {
@@ -45,7 +45,7 @@ export default function menuNav ({cursUsd, workPrace, lightPrace, perimeterPrace
     }());
 
     //= калькулятор fn 
-    calculatorHeader(cursUsd, workPrace, lightPrace, perimeterPrace);
+    calculatorHeader(workPrace, lightPrace, perimeterPrace);
         } catch (error) {
             console.log('',error);
         }

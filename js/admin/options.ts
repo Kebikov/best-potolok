@@ -8,6 +8,7 @@ import { IOptions, Respons, Link, IResManagement } from "./helps/interface";
 
 const options = async () => {
     try {
+        console.log('%c start fnc options ', 'background: blue;color: white;');
 
         const access: string | null = localStorage.getItem('access');
         const path: string = window.location.pathname;
@@ -33,11 +34,12 @@ const options = async () => {
 
         //* отправка данных с формы 
         async function submitOptions(event: Event) {
+            console.log('click');
             event.preventDefault();
             
             const curs: string = formOptions?.usd?.value.replace(',', '.');
             const isWorkAds: boolean = formOptions?.ads?.checked;
-            console.log('',curs);
+            
             if(curs && isWorkAds !== undefined) {
                 const bodyOptions: IOptions = {
                     isShowBaner: isWorkAds,

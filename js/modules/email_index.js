@@ -1,3 +1,5 @@
+import fetchTelegram from "../service/fetch_telegram";
+
 //= отправка на почту на главной странице 
 export default function emailIndexMain () {
     try {
@@ -14,6 +16,7 @@ export default function emailIndexMain () {
                         let formData = new FormData(form);
                         bodyDis.style.overflow = 'hidden';
                         animeMeil.style.display = 'block';
+
                         fetch('mail.php', {
                             method: 'POST',
                             body: formData
@@ -30,6 +33,15 @@ export default function emailIndexMain () {
                         .catch(error => {
                             console.log('Error Email >>> ', error);
                         });
+
+                        const bodyTelegram = {
+                            title: 'Заказ по акции.',
+                            name: 'имя не указано',
+                            tel: formData.get('tel')
+                        }
+                        console.log(bodyTelegram);
+                        fetchTelegram(bodyTelegram);
+
                     }else {
                         praceMondeyButton.textContent = 'проверьте номер';
                         setTimeout(()=>{

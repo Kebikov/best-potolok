@@ -4,9 +4,8 @@ import { ResObject } from "./interface";
 const processRespons = (res: ResObject) => {
     try {
 
+        //. error msg 
         if(res?.error) {
-
-            //. error msg 
             switch(res.error.message) {
                 case 'DATA_IS_NOT_VALID':
                     return alert('Ошибка отправленных данных.');
@@ -15,10 +14,10 @@ const processRespons = (res: ResObject) => {
                 default:
                     return alert('Не известная ощибка.');
             }
+        }
 
-        } else {
-
-            //. server msg 
+        //. server msg 
+        if(res?.server){
             switch(res.server.message) {
                 case 'OBJECT_CREATED':
                     return alert('Данные успешно отправлены.');
@@ -27,9 +26,9 @@ const processRespons = (res: ResObject) => {
                 default:
                     return alert('Ошибка обработки данных на сервере.');
             }
-
         }
 
+        return alert('Error: ответ сервера не обработан');
     }catch (error) {
         console.log('Error in Function processRespons >>> ', error);
     }

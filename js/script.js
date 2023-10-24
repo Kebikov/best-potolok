@@ -14,40 +14,50 @@ import startLamps from './lamps/lampModules/startLamps'
 import time from './baner/time';
 import login from './admin/login';
 import options from './admin/options';
+import getManagement from './admin/service/getManagement';
 
-import { cursUsd, perimeterPrace, lightPrace, workPrace } from './data-start';
+import { perimeterPrace, lightPrace, workPrace } from './data-start';
 
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    (async function start() {
+
+        //* получение данных с сервера и запись в localStorage 
+        const managementObject = await getManagement();
+        const cursUsd = managementObject.cursUsd;
+        const isShowBaner = managementObject.isShowBaner;
+        localStorage.cursUsd = cursUsd;
+        localStorage.isShowBaner = isShowBaner;
     
-    menuNav({
-        cursUsd: cursUsd, 
-        workPrace: workPrace,
-        lightPrace: lightPrace,
-        perimeterPrace: perimeterPrace,
-    });
-    galleryFn();
-    popUpFn();
-    calcIndex({
-        cursUsd: cursUsd,
-        workPrace: workPrace,
-        lightPrace: lightPrace,
-        perimeterPrace: perimeterPrace,
-    });
-    calcM2Fn({
-        cursUsd: cursUsd, 
-        works: workPrace, 
-        pracePerimetr: perimeterPrace,
-    });
-    rulerMovement();
-    phoneInputIndex();
-    emailIndexMain();
-    youtubeVideo();
-    iconGo();
-    animationPraise();
-    questions();
-    startLamps();
-    time();
-    login();
-    options();
+        //* запуск модулей 
+        menuNav({
+            workPrace: workPrace,
+            lightPrace: lightPrace,
+            perimeterPrace: perimeterPrace,
+        });
+        galleryFn();
+        popUpFn();
+        calcIndex({
+            workPrace: workPrace,
+            lightPrace: lightPrace,
+            perimeterPrace: perimeterPrace,
+        });
+        calcM2Fn({
+            works: workPrace, 
+            pracePerimetr: perimeterPrace,
+        });
+        rulerMovement();
+        phoneInputIndex();
+        emailIndexMain();
+        youtubeVideo();
+        iconGo();
+        animationPraise();
+        questions();
+        startLamps();
+        time();
+        login();
+        options();
+    }());
+
 });

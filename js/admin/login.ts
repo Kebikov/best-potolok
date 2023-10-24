@@ -35,7 +35,6 @@ const login = () => {
                     .then(res => res.json())
                     .then((res: Respons | IResponsServer) => {
                         if('error' in res) {
-                            localStorageHelps.deleteDataLogin();
                             return processRespons(res);
                         }
 
