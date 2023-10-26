@@ -27,9 +27,10 @@ const options = async () => {
 
         //* получение данных для формы и установка значений 
         const management: IResManagement | void = await getManagement();
+        console.log(management);
         if(management) {
             inputUsd.value = management.cursUsd;
-            checkbox.checked = management.isShowBaner === 1 ? true : false;
+            checkbox.checked = management.isShowBaner === 'true' ? true : false;
         }
 
         //* отправка данных с формы 
