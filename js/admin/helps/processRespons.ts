@@ -11,8 +11,14 @@ const processRespons = (res: ResObject) => {
                     return alert('Ошибка отправленных данных.');
                 case 'ACCESS_DENIED':
                     return alert('Отказано в доступе.');
+                case 'EMAIL_NOT_FOUND':
+                    return alert('Email не найден.');
+                case 'INVALID_PASSWORD':
+                    return alert('Не правильный пароль.');
+                case 'REFRESH_TOKEN_IS_BED':
+                    return alert('Недействительный REFRESH_TOKEN');
                 default:
-                    return alert('Не известная ощибка.');
+                    return alert(`Не известная ощибка: ${res?.error?.message}`);
             }
         }
 
