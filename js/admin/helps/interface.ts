@@ -5,7 +5,7 @@ export interface ILoginPassword {
 
 export interface IResManagement {
     _id: object,
-    isShowBaner: boolean,
+    isShowBaner: number,
     cursUsd: string
 }
 
@@ -14,7 +14,7 @@ export interface IResponsServer {
     refreshToken: string,
     expiresIn: number,
     userId: string,
-    access: string
+    access?: string
 }
 
 export type Respons = {
@@ -42,9 +42,16 @@ export type ResObject = {
     }
 }
 
+export interface BodyTelegram {
+    title: string;
+    name: string;
+    tel: string;
+}
+
 //= ENUM 
 
 export enum Link {
-    LoginAdmin ='http://localhost:3000/api/auth/login-admin',
-    Management = 'http://localhost:3000/api/admin/management'
+    LoginAdmin ='http://localhost:3306/api/auth/login-admin',
+    Management = 'http://localhost:3306/api/admin/management',
+    Telegram = 'http://localhost:3306/api/management/telegram'
 }

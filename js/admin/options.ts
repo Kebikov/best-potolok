@@ -10,12 +10,12 @@ const options = async () => {
     try {
         console.log('%c start fnc options ', 'background: blue;color: white;');
 
-        const access: string | null = localStorage.getItem('access');
+        const refreshToken: string | null = localStorage.getItem('refreshToken');
         const path: string = window.location.pathname;
 
         if(path !== '/admin-options.html') return;
 
-        if(!access) return window.location.href = '/admin-best.html';
+        if(!refreshToken) return window.location.href = '/admin-best.html';
         
         const formOptions: HTMLFormElement | null = document.querySelector('form[name="options"]');
         const inputUsd: HTMLInputElement = formOptions?.usd;
@@ -29,12 +29,11 @@ const options = async () => {
         const management: IResManagement | void = await getManagement();
         if(management) {
             inputUsd.value = management.cursUsd;
-            checkbox.checked = management.isShowBaner;
+            checkbox.checked = management.isShowBaner === 1 ? true : false;
         }
 
         //* отправка данных с формы 
         async function submitOptions(event: Event) {
-            console.log('click');
             event.preventDefault();
             
             const curs: string = formOptions?.usd?.value.replace(',', '.');

@@ -9,6 +9,7 @@ const fetchCheckAndRefreshToken = async (url: string, options: RequestInit) => {
         console.log('%c start fnc fetchCheckAndRefreshToken ', 'background: blue;color: white;');
         const id: string | null = localStorage.getItem('userId');
         const refreshToken: string | null = localStorage.getItem('refreshToken');
+        const accessToken: string | null = localStorage.getItem('accessToken');
 
         let expiresIn: string | null = localStorage.getItem('expiresIn');
         let expiresInNumber: number | null = expiresIn ? +expiresIn : null;

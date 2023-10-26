@@ -3,14 +3,16 @@ import { IResponsServer } from "../helps/interface";
 class LocalStorageHelps {
 
     saveDataLogin(response: IResponsServer): void {
-        localStorage.setItem('refreshToken', response.refreshToken);
-        localStorage.setItem('accessToken', response.accessToken);
-        localStorage.setItem('userId', response.userId);
+        if(response?.refreshToken) localStorage.setItem('refreshToken', response.refreshToken);
+        if(response?.accessToken) localStorage.setItem('accessToken', response.accessToken);
+        if(response?.userId) localStorage.setItem('userId', response.userId);
 
-        const expiryTime: number = new Date().getTime() + response.expiresIn * 1000;
-        localStorage.setItem('expiresIn', expiryTime + '');
-
-        localStorage.setItem('access', response.access);
+        if(response?.expiresIn) {
+            const expiryTime: number = new Date().getTime() + response.expiresIn * 1000;
+            localStorage.setItem('expiresIn', expiryTime + '');
+        }
+        
+        if(response?.access) localStorage.setItem('access', response.access);
     }
 
     deleteDataLogin():void {

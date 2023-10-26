@@ -3,6 +3,8 @@ import fetchTelegram from "../service/fetch_telegram";
 //= отправка на почту на главной странице 
 export default function emailIndexMain () {
     try {
+        console.log('%c start fnc emailIndexMain ', 'background: blue;color: white;');
+
         const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
         if(praceMondeyTelInput) {
             (function emailIndex () {
@@ -11,8 +13,10 @@ export default function emailIndexMain () {
                 const animeMeil = document.querySelector('.anime-meil');
                 const bodyDis = document.body;
                 praceMondeyButton.addEventListener('click', (e) => {
+                    console.log('click');
                     e.preventDefault;
                     if(praceMondeyTelInput.value.length === 17 && /^\+375\(?\d?\d?\)?\d?\d?\d?-?\d?\d?-?\d?\d?$/.test(praceMondeyTelInput.value)) {
+                        console.log('send');
                         let formData = new FormData(form);
                         bodyDis.style.overflow = 'hidden';
                         animeMeil.style.display = 'block';
@@ -35,7 +39,7 @@ export default function emailIndexMain () {
                         });
 
                         const bodyTelegram = {
-                            title: 'Заказ по акции.',
+                            title: 'ЗАКАЗ ПО АКЦИИ',
                             name: 'имя не указано',
                             tel: formData.get('tel')
                         }

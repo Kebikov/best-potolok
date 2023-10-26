@@ -1,7 +1,9 @@
-const fetchTelegram = (bodyTelegram) => {
+import { BodyTelegram, Link } from "../admin/helps/interface";
+
+const fetchTelegram = (bodyTelegram: BodyTelegram) => {
     try {
 
-        fetch('http://localhost:3000/api/management/telegram', {
+        fetch(Link.Telegram, {
             method: 'POST',
             body: JSON.stringify(bodyTelegram),
             headers: { 'Content-Type': 'application/json' }
