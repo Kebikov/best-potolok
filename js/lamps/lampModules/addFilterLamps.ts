@@ -2,56 +2,57 @@
 import { panels, Led, LedKey, trek } from "../../../ajax/panels";
 import addBlockFilter from "../helps/addBlockFilter";
 import watsFilter from "../helps/watsFilter";
+import { TypeLamps } from "./startLamps";
+
 
 
 //= const addFilterLamps
-const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: string | undefined) => {
+const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: TypeLamps) => {
     try {
-            // блок в который будут добавлены фильтры 
-        const blockForFilters = document.querySelector('#block-for-filters') as HTMLDivElement;
+        
 
         switch(typeLamps) {
             case 'panels':
-                    // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения',  'K');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'wats', 'Мощность',  'W');
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(currentArrLamps, 'colorLightK', 'Цвет свечения',  'K');
+                addNewSortForLamps(currentArrLamps, 'wats', 'Мощность',  'W');
             break;
 
             case 'trek':
-                    // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
+                // добавление новой сортировки по выбранному полю
+                addNewSortForLamps(currentArrLamps, 'color', 'Цвет',  '');
+                addNewSortForLamps(currentArrLamps, 'patron', 'Патрон',  '');
             break;
 
                 
             case 'lustre':
                 // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Материал',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
+                addNewSortForLamps(currentArrLamps, 'material', 'Материал',  '');
+                addNewSortForLamps(currentArrLamps, 'patron', 'Патрон',  '');
+                addNewSortForLamps(currentArrLamps, 'color', 'Цвет',  '');
             break;
 
             case 'dot':
                 // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Цоколь',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Подсветка Led',  '');
+                addNewSortForLamps(currentArrLamps, 'patron', 'Цоколь',  '');
+                addNewSortForLamps(currentArrLamps, 'color', 'Цвет',  '');
+                addNewSortForLamps(currentArrLamps, 'colorLightK', 'Подсветка Led',  '');
             break;
 
             case 'light':
                 // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'colorLightK', 'Цвет свечения',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Пульт',  '');
-                watsFilter(blockForFilters, 'Мощность');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Серия',  '');
+                addNewSortForLamps(currentArrLamps, 'colorLightK', 'Цвет свечения',  '');
+                addNewSortForLamps(currentArrLamps, 'patron', 'Пульт',  '');
+                watsFilter('Мощность');
+                addNewSortForLamps(currentArrLamps, 'material', 'Серия',  '');
             break;
 
             case 'spot':
                 // добавление новой сортировки по выбранному полю
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'material', 'Материал',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'rotation', 'Вращение',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'patron', 'Патрон',  '');
-                addNewSortForLamps(blockForFilters, currentArrLamps, 'color', 'Цвет',  '');
+                addNewSortForLamps(currentArrLamps, 'material', 'Материал',  '');
+                addNewSortForLamps(currentArrLamps, 'rotation', 'Вращение',  '');
+                addNewSortForLamps(currentArrLamps, 'patron', 'Патрон',  '');
+                addNewSortForLamps(currentArrLamps, 'color', 'Цвет',  '');
             break;
                 
             default:
@@ -64,14 +65,14 @@ const addFilterLamps = (currentArrLamps: Array<Led>, typeLamps: string | undefin
 }
 
 // добавление новой сортировки по выбранному полю
-// body - куда вставим фильтры
 // arrayObjectLamps - массив с обьектами светильников для сортировки
 // keySort - ключ по которому будет сортировка
 // title - заголовок для блока с фильтрами
 // unit - единицы измирения, например 80 W
-function addNewSortForLamps(body: HTMLDivElement, arrayObjectLamps: Array<Led>, keySort: LedKey, title: string, unit: string) {
+function addNewSortForLamps(arrayObjectLamps: Array<Led>, keySort: LedKey, title: string, unit: string) {
+
     const arrValues = searchFilters(arrayObjectLamps, keySort);
-    addBlockFilter(body , arrValues, title, unit, keySort);
+    addBlockFilter(arrValues, title, unit, keySort);
 }
 
 

@@ -53,12 +53,14 @@ export interface BodyTelegram {
 // export enum Link {
 //     LoginAdmin ='http://localhost:3306/api/auth/login-admin',
 //     Management = 'http://localhost:3306/api/admin/management',
-//     Telegram = 'http://localhost:3306/api/management/telegram'
+//     Telegram = 'http://localhost:3306/api/management/telegram',
+//     RefreshToken = 'http://localhost:3306/api/auth/refresh-token-check'
 // }
 
 export enum Link {
     LoginAdmin ='https://server.best-potolok.by/api/auth/login-admin',
     Management = 'https://server.best-potolok.by/api/admin/management',
-    Telegram = 'https://server.best-potolok.by/api/management/telegram'
+    Telegram = 'https://server.best-potolok.by/api/management/telegram',
+    RefreshToken = 'http://server.best-potolok.by/api/auth/refresh-token-check'
 }
 

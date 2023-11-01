@@ -1,15 +1,14 @@
 //: проверка точена и обновление при необходимости, использовать для доступа к api требуюшем авторизации
-import { IBodyRefresh, IResponsServer, Respons } from './interface';
+import { IBodyRefresh, IResponsServer, Respons, Link } from './interface';
 import localStorageHelps from './localStorage.helps';
 import processRespons from './processRespons';
 
 
-const fetchCheckAndRefreshToken = async (url: string, options: RequestInit) => {
+const fetchCheckAndRefreshToken = async (url: Link, options: RequestInit) => {
     try {
         console.log('%c start fnc fetchCheckAndRefreshToken ', 'background: blue;color: white;');
         const id: string | null = localStorage.getItem('userId');
         const refreshToken: string | null = localStorage.getItem('refreshToken');
-        const accessToken: string | null = localStorage.getItem('accessToken');
 
         let expiresIn: string | null = localStorage.getItem('expiresIn');
         let expiresInNumber: number | null = expiresIn ? +expiresIn : null;
@@ -23,7 +22,7 @@ const fetchCheckAndRefreshToken = async (url: string, options: RequestInit) => {
         if(expiresInNumber && typeof expiresInNumber === 'number' && expiresInNumber <= new Date().getTime()) {
             console.log('%c UPDATE_TOKEN ', 'background: white;color: black;');
             
-            await fetch('http://localhost:3000/api/auth/refresh-token-check', 
+            await fetch(Link.RefreshToken, 
                 {
                     method: 'PATCH',
                     body: JSON.stringify(bodyRefresh),

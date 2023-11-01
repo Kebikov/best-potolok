@@ -8,6 +8,15 @@ import filterLamps from "./filterLamps";
 import create from "./create";
 import toggleActivityFitter from "./toggleActivityFitter";
 
+const lampsStringArray = ['panels', 'trek', 'lustre', 'dot', 'light', 'spot'] as const;
+
+export type TypeLamps = typeof lampsStringArray[number];
+type ObjectLamps = Record<TypeLamps, Array<Led>>;
+
+const isTypeLamps = (str: string): str is TypeLamps => {
+    return lampsStringArray.includes(str as TypeLamps);
+}
+
 
 //= lamps 
 const lamps = ():void => {
@@ -20,39 +29,30 @@ const lamps = ():void => {
             const typeLamps: string | undefined = lampsBlock.dataset.lamp;
             // значение приходящее из [ data-lamp=" тут получаемое значение " ]
 
-            let currentArrLamps: Array<Led> = [];
-
-            // установка текушего массива для страницы
-            switch(typeLamps) {
-                case 'panels':
-                    currentArrLamps = panels;
-                    break;
-                case 'trek':
-                    currentArrLamps = trek;
-                    break;
-                case 'lustre':
-                    currentArrLamps = lustre;
-                    break;
-                case 'dot':
-                    currentArrLamps = lustreDot;
-                    break;
-                case 'light':
-                    currentArrLamps = light;
-                    break;
-                case 'spot':
-                    currentArrLamps = spot;
-                    break;
-                default:
-                    currentArrLamps = [];
-                    break;
+            const allLamps: ObjectLamps = {
+                panels: panels,
+                trek: trek,
+                lustre: lustre,
+                dot: lustreDot,
+                light: light,
+                spot: spot
             }
-            
+
+            let currentArrLamps: Array<Led> = [];
+            // установка текушего массива для страницы
+
+            //* проверка ключа на соответствие type TypeLamps
+            if(typeLamps && isTypeLamps(typeLamps)) {
+                currentArrLamps = allLamps[typeLamps];
+
+                addFilterLamps(currentArrLamps, typeLamps);
+                // добавляем элементы фильтрации
+            }
+
             create(currentArrLamps);
 
             //* обработчик кнопкок активности фильтра
             toggleActivityFitter();
-            //* добавляем элементы фильтрации
-            addFilterLamps(currentArrLamps, typeLamps);
             //* метод фильтрации
             filterLamps(currentArrLamps);
         }

@@ -1,6 +1,10 @@
 //: add filters
 
-const addBlockFilter = (body: HTMLDivElement , arrValues: Array<string>, title: string, unit: string, key: string) => {
+const addBlockFilter = (arrValues: Array<string>, title: string, unit: string, key: string) => {
+
+    //* блок в который будут добавлены фильтры 
+    const blockForFilters = document.querySelector('#block-for-filters') as HTMLDivElement;
+
     const filterBlockElement: HTMLDivElement = document.createElement('div');
     filterBlockElement.classList.add('filter-block');
 
@@ -19,7 +23,7 @@ const addBlockFilter = (body: HTMLDivElement , arrValues: Array<string>, title: 
         `);
     }
 
-    body.prepend(filterBlockElement);
+    if(blockForFilters) blockForFilters.prepend(filterBlockElement);
 }
 
 export default addBlockFilter;

@@ -1,5 +1,8 @@
-const watsFilter = (body: HTMLDivElement, title: string, key: string = 'wats-segment') => {
+const watsFilter = (title: string, key: string = 'wats-segment') => {
     try {
+        //* блок в который будут добавлены фильтры 
+    const blockForFilters = document.querySelector('#block-for-filters') as HTMLDivElement;
+
         const filterBlockElement: HTMLDivElement = document.createElement('div');
         filterBlockElement.classList.add('filter-block');
     
@@ -10,9 +13,9 @@ const watsFilter = (body: HTMLDivElement, title: string, key: string = 'wats-seg
         filterBlockElement.append(filterTitleElement);
 
 
-        type ObjWats = {
-            [ key in 'title' | 'id' ]: string
-        }
+        type PropertyWats = 'title' | 'id';
+
+        type ObjWats = Record<PropertyWats, string>;
 
         type ObjWatsFilter = Array<ObjWats>;
 
@@ -52,7 +55,8 @@ const watsFilter = (body: HTMLDivElement, title: string, key: string = 'wats-seg
             `);
         }
 
-        body.prepend(filterBlockElement);
+        if(blockForFilters) blockForFilters.prepend(filterBlockElement);
+
     }catch (error) {
         console.log('Error in Function watsFilter >>> ', error);
     }

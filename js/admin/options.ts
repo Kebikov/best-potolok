@@ -46,7 +46,7 @@ const options = async () => {
                     cursUsd: +curs
                 };
 
-                const url: string = Link.Management;
+                const url: Link = Link.Management;
                 const options: RequestInit = {
                     method: 'POST',
                     headers: {

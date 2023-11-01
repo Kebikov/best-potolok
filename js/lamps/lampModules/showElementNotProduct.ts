@@ -1,7 +1,7 @@
 
 type Comand = 'show' | 'hidden';
 
-const showElementNotProduct = (comand: Comand) => {
+const showElementNotProduct = (comand: Comand): void => {
     try {
         const notProductBlock = document.querySelector('#not-product-block') as HTMLDivElement;
 
