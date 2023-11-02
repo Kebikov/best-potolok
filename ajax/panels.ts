@@ -1,4 +1,3 @@
-import { type } from "os"
 
 export type Led = {
     title: string,
@@ -20,6 +19,29 @@ export type Led = {
 }
 
 export type LedKey = keyof Led;
+
+export function isLedKey(key: any): key is LedKey {
+    if(typeof key === 'string') {
+        return [
+            'title', 
+            'article', 
+            'img', 
+            'price', 
+            'wats', 
+            'color', 
+            'diameter', 
+            'diameterCut', 
+            'colorLightK', 
+            'lightStream', 
+            'rotation',
+            'patron',
+            'material',
+            'wats-segment'
+        ].includes(key);
+    } else {
+        return false;
+    }
+}
 
 export const panels: Array<Led> = [
     {

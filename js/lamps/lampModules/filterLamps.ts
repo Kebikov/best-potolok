@@ -1,7 +1,6 @@
 //: фильтрация светильников на сайте
 import { proxy } from '../helps/proxy';
-import { type } from "os";
-import { Led, LedKey } from "../../../ajax/panels";
+import { Led, LedKey, isLedKey } from "../../../ajax/panels";
 import create from './create';
 import { priceUP } from '../../data-start';
 
@@ -30,6 +29,7 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
             //* получение всех уникальных ключей
             checkboxAll.forEach(item => {
                 const name = item.name as LedKey;
+                console.log(name);
                 const isMatchKey = arrKey.includes(name);
                 if(item.checked && !isMatchKey) {
                     arrKey.push(name);
@@ -43,8 +43,8 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
             });
             //* заполнение ключей значениями
             checkboxAll.forEach(item => {
-                if(item.checked) {
-                    const name = item.name as LedKey;
+                if(item.checked && isLedKey(item.name)) {
+                    const name = item.name;
                     objectFilter[name].push(item.value);
                 }
             });
@@ -54,41 +54,47 @@ const filterLamps = (currentArrLamps: Array<Led>) => {
                 let totalMatch = 0;
                 
                 for(let key in objectFilter) {
-                    let isMatch: boolean = false;
-                    //*-1 проверка, поподает ли значение из поля wats в промежуток 
-                    if(key === 'wats-segment') {
-                        const from: number = +objectFilter[key][0].split('-')[0];
-                        const to: number = +objectFilter[key][0].split('-')[1];
+                    if(isLedKey(key)) {
+                        let isMatch: boolean = false;
+                        //*-1 проверка, поподает ли значение из поля wats в промежуток 
+                        if(key === 'wats-segment') {
+                            const from: number = +objectFilter[key][0].split('-')[0];
+                            const to: number = +objectFilter[key][0].split('-')[1];
 
-                        const str: string | undefined = lamp.wats;
-                        // wats - значение сколько ват у данного обьекта lamp, получаем с поля lamp.wats
-                        const wats: number | undefined = typeof str !== 'undefined' ? parseInt( str ) : undefined;
+                            const str: string | undefined = lamp.wats;
+                            // wats - значение сколько ват у данного обьекта lamp, получаем с поля lamp.wats
+                            const wats: number | undefined = typeof str !== 'undefined' ? parseInt( str ) : undefined;
 
-                        if(wats !== undefined && from < wats && wats < to) {
-                            isMatch = true;
-                        }else{
-                            isMatch = false;
+                            if(wats !== undefined && from < wats && wats < to) {
+                                isMatch = true;
+                            }else{
+                                isMatch = false;
+                            }
+                            //*-1 end
+                        } else {
+                            isMatch = objectFilter[key].includes(lamp[key] as string);
                         }
-                    //*-1 end
-                    }else{
-                        isMatch = objectFilter[key as LedKey].includes(lamp[key as LedKey] as string);
-                    }
-                    if(isMatch) {
-                        totalMatch++;
+                        if(isMatch) {
+                            totalMatch++;
+                        }
                     }
                 }
+
                 if(totalMatch === length) {
                     return lamp;
                 }
+
             });
+
             //* фильтрация по цене
             const form = document.querySelector('#form-filter') as HTMLFormElement;
             const from: number = +form.from.value;
             const until: number = +form.until.value === 0 ? Infinity : +form.until.value;
             // from / until числа от и до 
+            
             //* resaltPrice - массив с отфильтрованными обьектами по цене и по checkbox
             const resaltPrice = resalt.filter(lamp => {
-                if(from <= +lamp.price * priceUP  && +lamp.price * priceUP <= until) {
+                if(lamp.price && from <= +lamp.price * priceUP  && +lamp.price * priceUP <= until) {
                     return lamp;
                 }
             });
