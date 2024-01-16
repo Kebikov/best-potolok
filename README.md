@@ -21,10 +21,9 @@
 
 ---
 ## 📸 Screenshot:
-<div style="display: flex" align="center" >
-  <img src="https://github.com/Kebikov/kebikov-github/blob/main/assets/Home-Gum/img/1.jpg" alt="Описание изображения" width="300" >
-  <img src="https://github.com/Kebikov/kebikov-github/blob/main/assets/Home-Gum/img/2.jpg" alt="Описание изображения" width="300" >
-</div>
+<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/1.jpg" alt="Описание изображения" >
+<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/2.jpg" alt="Описание изображения" >
+<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/3.jpg" alt="Описание изображения" >
 
 ---
 ## 📌 Status:
