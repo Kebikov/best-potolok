@@ -21,21 +21,26 @@
 
 ---
 ## 📸 Screenshot:
-<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/1.jpg" alt="Описание изображения" >
-<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/2.jpg" alt="Описание изображения" >
-<img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/3.jpg" alt="Описание изображения" >
+<div align="center" >
+  <img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/1.jpg" alt="Описание изображения" width="700" >
+  <img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/2.jpg" alt="Описание изображения" width="700" >
+  <img src="https://github.com/Kebikov/kebikov/blob/main/assets/potoloki/img/3.jpg" alt="Описание изображения" width="700" >
+</div>
 
 ---
 ## 📌 Status:
-Временно остановлена разработка, завершено в минимально необходимом обьеме для использования.
+Сайт передан заказчику, работает под доменым именем [best-potolok.by](https://best-potolok.by/)
 
 ---
 ## 🛠 Used stack:
-![react native](https://img.shields.io/badge/react%20native-%235ED3F3?style=for-the-badge&logo=react&logoColor=%23fff)
-![expo](https://img.shields.io/badge/Expo-%232b292b?style=for-the-badge&logo=expo&logoColor=%23fff)
-![sqlite](https://img.shields.io/badge/sqlite-%230986C8?style=for-the-badge&logo=sqlite&logoColor=%23fff)
-![redux](https://img.shields.io/badge/redux-%23864BC8?style=for-the-badge&logo=redux&logoColor=%23fff)
-
+![html](https://img.shields.io/badge/html-%23E5522C?style=for-the-badge&logo=html5&logoColor=%23fff)
+![css](https://img.shields.io/badge/css3-%232D53E5?style=for-the-badge&logo=css3&logoColor=%23fff)
+![sass](https://img.shields.io/badge/sass-%23CD689B?style=for-the-badge&logo=sass&logoColor=%23fff)
+![bootstrap](https://img.shields.io/badge/bootstrap-%237C19F9?style=for-the-badge&logo=bootstrap&logoColor=%23fff)
+![javascript](https://img.shields.io/badge/javascript-%23F7E025?style=for-the-badge&logo=javascript&logoColor=%23fff)
+![typescript](https://img.shields.io/badge/typescript-%23087ECE?style=for-the-badge&logo=typescript&logoColor=%23fff)
+![mysql](https://img.shields.io/badge/mysql-%23E38A08?style=for-the-badge&logo=mysql&logoColor=%23fff)
+![node.js](https://img.shields.io/badge/node.js-%238FC708?style=for-the-badge&logo=node.js&logoColor=%23fff)
 ---
 ## 📞 Connect with me:
 [![instagram](https://img.shields.io/badge/instagram-%23e621d6?style=for-the-badge&logo=instagram&logoColor=%23fff)](https://www.instagram.com/kebikov/)
