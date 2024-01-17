@@ -1,11 +1,10 @@
-$brown: #6d4d3a;
-$orange: #fe8d1b;
-$text: #5b4f3c;
-$grey: #2a2b30;
+@import './variables.scss';
+@import './mixin.scss';
+
+
 $questions-color: #A55809;
 
 ._padding40 {
-    //margin: 0px 0px 40px 0px;
     padding: 0px 0px 20px 0px;
 }
 
@@ -23,19 +22,14 @@ $questions-color: #A55809;
     }
     // .questions__title
     &__title {
-        font-family: "Roboto";
-        font-size: 20px;
-        font-weight: 500;
-        color: #fff;
+        @include text_streach(16, 14, #fff);
+
         padding: 20px 20px 20px 20px;
+
         position: relative;
+
         cursor: pointer;
-        @media (max-width: 1910px){
-            font-size: calc(16px + 4 * (100vw - 375px) / 1535);
-        }
-        @media (max-width: 375px){
-            font-size: 16px;
-        }
+
         & span {
             display: block;
             padding: 0px 40px 0px 0px;
@@ -75,15 +69,10 @@ $questions-color: #A55809;
     &__text {
         opacity: 0;
         transition:all 0.3s ease;
-        font-family: "Roboto";
-        font-size: 17px;
-        font-weight: 400;
-        color: $grey;
+
+        @include text_streach(16, 14, $grey, 400);
+
         padding: 0px 20px 20px 20px;
-        line-height: 120%;
-        @media (max-width: 768px){
-            font-size: 16px;
-        }
     }
 }
 

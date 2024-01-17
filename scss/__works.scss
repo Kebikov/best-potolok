@@ -1,20 +1,12 @@
-$brown: #6d4d3a;
-$orange: #fe8d1b;
-$text: #5b4f3c;
-$grey: #2a2b30;
+@import './variables.scss';
+@import './mixin.scss';
+
 
 .works-title {
-    font-family: "Russo";
-    font-size: 24px;
-    color: $grey;
+    @include text_streach(20, 17, $grey, 500, "Russo");
     text-align: center;
     text-decoration: underline;
     text-transform: uppercase;
     margin: 20px 0px 0px 0px;
-    @media (max-width: 1910px){
-        font-size: calc(18px + 6 * (100vw - 375px) / 1535);
-    }
-    @media (max-width: 375px){
-        font-size: 18px;
-    }
+
 }

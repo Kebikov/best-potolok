@@ -1,7 +1,7 @@
-$brown : #6d4d3a;
-$orange: #fe8d1b;
-$text: #5b4f3c;
-$line: #FFC181;
+@import './variables.scss';
+@import './mixin.scss';
+
+
 
 .title-youtube-new {
     display: flex;
@@ -642,7 +642,7 @@ $line: #FFC181;
     &__header {
         display: flex;
         background: url(../img/index/bg.png);
-        padding: 0px 60px 0px 60px;
+        padding: 0px 20px 0px 20px;
         @media (max-width: 1020px){
             padding: 0px 10px 0px 10px;
         }
@@ -672,8 +672,8 @@ $line: #FFC181;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
         border-radius: 50%;
         background: linear-gradient(312deg, rgba(227,47,47,1) 8%, rgba(247,162,13,1) 48%, rgba(227,66,45,1) 88%); 
         margin: 10px 0px 10px 0px;
@@ -709,20 +709,12 @@ $line: #FFC181;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-family: "Roboto";
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 130%;
-        color:#fff;
+
+        @include text_streach(24, 20, #fff, 500);
+
         @media (max-width: 1020px){
             flex: 0 1 80%;
             margin:0px 0px 0px 20px;
-        }
-        @media (max-width: 1910px){
-            font-size: calc(20px + 10 * (100vw - 375px) / 1535);
-        }
-        @media (max-width: 375px){
-            font-size: 20px;
         }
     }
 }
@@ -1103,7 +1095,7 @@ $line: #FFC181;
     // .order-call__title
     &__title {
         font-family: "Russo";
-        font-size: 28px;
+        font-size: 22px;
         text-decoration: underline;
         color: #fff;
         margin: 0px 0px 20px 0px;

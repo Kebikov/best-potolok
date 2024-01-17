@@ -1,4 +1,7 @@
 RewriteEngine On
-RewriteCond %{REQUEST_URI} ! \.html$
-RewriteCond %{REQUEST_URI} ! /$
-RewriteRule ^(.*)$ $1.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

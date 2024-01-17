@@ -8,7 +8,7 @@
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fe8d1b">
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#6d4d3a">
         <link rel="icon" type="image/png" href="img/header/favicon.png">
-        <link rel="stylesheet" href="css/style.css?v=4.1">
+        <link rel="stylesheet" href="css/style.css?v=4.41">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>О нашей компании BEST-POTOLOK</title>
         <!-- Yandex.Metrika counter -->
@@ -31,77 +31,80 @@
     </head>
     <body>
         <div class="wrapper body-for-menu unselect">
-            <!--= header -->
-            <heder class="header">
-                <!--: верхняя линия шапки -->
-                <div class="top-line">
-                    <div class="container">
-                        <div class="top-line__body">
-                            <div class="top-line__city _top-line-text">Гомель</div>
-                            <div class="top-line__box">
-                                <div class="top-line__time-work _top-line-text">Работаем с 8:00 до 22:00</div>
-                                <div class="top-line__calc _top-line-text">калькулятор стоимости</div>
+        <!--= header -->
+        <heder class="header">
+            <!--: верхняя линия шапки -->
+            <div class="top-line">
+                <div class="container">
+                    <div class="top-line__body">
+                        <div class="top-line__city _top-line-text">Гомель</div>
+                        <div class="top-line__box">
+                            <div class="top-line__time-work _top-line-text">Работаем с 8:00 до 22:00</div>
+                            <div class="top-line__calc _top-line-text">калькулятор стоимости</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--: блок с логотипом -->
+            <div class="top-heder">
+                <div class="container">
+                    <div class="top-heder__body">
+                        <div class="top-heder__logo">
+                            <img src="./img/header/logo.jpg" alt="потолки">
+                        </div>
+                        <div class="top-heder__text">Натяжные потолки<br>от производителя в Гомеле</div>
+                        <div class="top-heder__info">
+                            <a class="top-heder__tel" href="tel:+3752952222821">
+                                <span>+ 375 (29) 522-22-82</span>
+                            </a>
+                            <div class="top-heder__buttons">
+                                <div class="top-heder__call-tel call-text" data-popup="open" data-name-button="ЗАКАЗАТЬ ЗВОНОК">ЗАКАЗАТЬ ЗВОНОК</div>
+                                <div class="top-heder__call-calc call-text">КАЛЬКУЛЯТОР</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--: блок с логотипом -->
-                <div class="top-heder">
-                    <div class="container">
-                        <div class="top-heder__body">
-                            <div class="top-heder__logo">
-                                <img src="./img/header/logo.jpg" alt="потолки">
-                            </div>
-                            <div class="top-heder__text">Натяжные потолки<br>от производителя в Гомеле</div>
-                            <div class="top-heder__info">
-                                <a class="top-heder__tel" href="tel:+3752952222821">
-                                    <span>+ 375 (29) 522-22-82</span>
-                                </a>
-                                <div class="top-heder__buttons">
-                                    <div class="top-heder__call-tel call-text" data-popup="open" data-name-button="ЗАКАЗАТЬ ЗВОНОК">ЗАКАЗАТЬ ЗВОНОК</div>
-                                    <div class="top-heder__call-calc call-text">КАЛЬКУЛЯТОР</div>
-                                </div>
+            </div>
+        </heder>
+        <!--: навигацыя-меню -->
+        <nav class="menu">
+            <div class="menu__body container">
+                <!-- бургер меню -->
+                <div class="burger">
+                    <div class="burger__body">
+                        <div class="burger__button">
+                            <div class="burger__square">
+                                <span class="burger__span"></span>
                             </div>
                         </div>
+                        <div class="burger__text">меню</div>
                     </div>
                 </div>
-                <!--: навигацыя-меню -->
-                <nav class="menu">
-                    <div class="menu__body container">
-                        <!-- бургер меню -->
-                        <div class="burger">
-                            <div class="burger__body">
-                                <div class="burger__button">
-                                    <div class="burger__square">
-                                        <span class="burger__span"></span>
-                                    </div>
-                                </div>
-                                <div class="burger__text">меню</div>
-                            </div>
-                        </div>
-                        <ul class="menu__list">
-                            <li class="menu__line icon-procent">
-                                <a href="index.html" class="menu__link">главная</a>
-                            </li>
-                            <li class="menu__line icon-prace">
-                                <a href="prace.html" class="menu__link">цены</a>
-                            </li>
-                            <li class="menu__line icon-questions">
-                                <a href="questions.html" class="menu__link">ответы на вопросы</a>
-                            </li>
-                            <li class="menu__line icon-work">
-                                <a href="works.html" class="menu__link">наши работы</a>
-                            </li>
-                            <li class="menu__line icon-compani">
-                                <a href="company.html" class="menu__link">о компании</a>
-                            </li>
-                            <li class="menu__line icon-cntacts">
-                                <a href="contacts.html" class="menu__link">контакты</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </heder>
+               <ul class="menu__list">
+                    <a href="index.html" class="menu__line icon-procent">
+                        <div class="menu__link">главная</div>
+                    </a>
+                    <a href="prace.html" class="menu__line icon-prace">
+                        <div class="menu__link">цены</div>
+                    </a>
+                    <a href="lamps.html" class="menu__line icon-lamps">
+                        <div class="menu__link">светильники</div>
+                    </a>
+                    <a href="questions.html" class="menu__line icon-questions">
+                        <div class="menu__link">ответы на вопросы</div>
+                    </a>
+                    <a href="works.html" class="menu__line icon-work">
+                        <div class="menu__link">примеры работ</div>
+                    </a>
+                    <a href="company.html" class="menu__line icon-compani">
+                        <div class="menu__link">о компании</div>
+                    </a>
+                    <a href="contacts.html" class="menu__line icon-cntacts">
+                        <div class="menu__link">контакты</div>
+                    </a>
+                </ul>
+            </div>
+        </nav>
             <!--= main -->
             <main class="main">
                 <!--* pop-up calculator -->
@@ -190,7 +193,7 @@
                 <!--: company-taitle -->
                 <div class="company-taitle container">О компании</div>
                 <!--: company-text -->
-                <div class="company-text container">Если у вас появилась необходимость установить натяжные потолки, то вы обратились по адресу. Наши опытные замерщики и высококвалифицированные монтажники реализует любую вашу задумку и каждый обратившийся к нам получит свой потолок мечты. В нашей компании замерщики всегда приятные в общении, а монтажники опрятные и аккуратные. После нашего монтажа у вас всегда будет чисто и убрано. Присоединяйся к остальным счастливчикам и закажи свой потолок мечты у Best-Potolok.</div>
+                <div class="company-text container">Если у вас появилась необходимость установить натяжные потолки, то вы обратились по адресу. Наши опытные замерщики и высококвалифицированные монтажники реализуют любую вашу задумку и каждый обратившийся к нам получит свой потолок мечты.<br/><br/>В нашей компании замерщики всегда приятные в общении, а монтажники опрятные и аккуратные. После нашего монтажа у вас всегда будет чисто и убрано.<br/><br/>Присоединяйся к остальным счастливчикам и закажи свой потолок мечты у Best-Potolok.</div>
                 <!--: youtube -->
                 <div style="margin-top: 20px;"></div>
                 <div class="company-youtube container">
@@ -237,6 +240,30 @@
                                 <picture>
                                     <source srcset="https://i.ytimg.com/vi_webp/8lMD-0S3ok0/maxresdefault.webp" type="image/webp">
                                     <img class="video__media" src="https://i.ytimg.com/vi/8lMD-0S3ok0/maxresdefault.jpg" alt="1. Пилот, разборы, ответы и лайвы">
+                                </picture>
+                            </a>
+                            <button class="video__button" aria-label="Запустить видео">
+                                <svg width="68" height="48" viewBox="0 0 68 48"><path class="video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                            </button>
+                        </div>
+                        <!-- video #5 -->
+                        <div class="video">
+                            <a class="video__link" href="https://www.youtube.com/watch?v=wHr0F-lwOi4&t=7s">
+                                <picture>
+                                    <source srcset="https://i.ytimg.com/vi_webp/wHr0F-lwOi4/maxresdefault.webp" type="image/webp">
+                                    <img class="video__media" src="https://i.ytimg.com/vi/wHr0F-lwOi4/maxresdefault.jpg" alt="1. Пилот, разборы, ответы и лайвы">
+                                </picture>
+                            </a>
+                            <button class="video__button" aria-label="Запустить видео">
+                                <svg width="68" height="48" viewBox="0 0 68 48"><path class="video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                            </button>
+                        </div>
+                        <!-- video #6 -->
+                        <div class="video">
+                            <a class="video__link" href="https://www.youtube.com/watch?v=tGK-oo2Hv20">
+                                <picture>
+                                    <source srcset="https://i.ytimg.com/vi_webp/tGK-oo2Hv20/maxresdefault.webp" type="image/webp">
+                                    <img class="video__media" src="https://i.ytimg.com/vi/tGK-oo2Hv20/maxresdefault.jpg" alt="1. Пилот, разборы, ответы и лайвы">
                                 </picture>
                             </a>
                             <button class="video__button" aria-label="Запустить видео">
@@ -356,6 +383,6 @@
                 </div>
             </footer>
         </div>
-        <script src="dist/bundle.js?v=4.2"></script>
+        <script src="dist/bundle.js?v=4.93"></script>
     </body>
 </html>

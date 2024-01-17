@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true
+    }
+}
+
+
+// {
+//     "compilerOptions": {
+//       "target": "ES6", // Выберите версию JavaScript, соответствующую вашим потребностям
+//       "module": "CommonJS", // Используйте "CommonJS" для совместимости с Webpack
+//       "outDir": "./dist", // Директория для компилированных файлов
+//       "rootDir": "./js", // Директория с исходными файлами TypeScript
+//       "strict": true, // Строгие настройки TypeScript
+//       "esModuleInterop": true, // Использовать ES модули с интероперабельностью
+//       "skipLibCheck": true, // Пропустить проверку библиотек
+//       "forceConsistentCasingInFileNames": true, // Соблюдение регистра в именах файлов
+//       "sourceMap": true, // Генерировать source maps для отладки
+//       "declaration": true, // Генерировать .d.ts файлы
+//       "baseUrl": "./", // Базовый путь для импортов
+//       "paths": {
+//         "youtube": ["./js/modules/youtube.d.ts", "./js/modules/menu_nav.d.ts"] // Путь к вашему youtube.d.ts
+//       }
+//     },
+//     "include": [
+//       "js/**/*.ts" // Глобальный путь к файлам TypeScript для компиляции
+// , "js/script.js"    ], 
+//     "exclude": [
+//       "node_modules" // Исключить node_modules из компиляции
+//     ]
+//   }

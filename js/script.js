@@ -10,37 +10,54 @@ import youtubeVideo from './modules/youtube';
 import iconGo from './modules/icon_observer';
 import animationPraise from './modules/animation_praise';
 import questions from './modules/questions';
+import startLamps from './lamps/lampModules/startLamps'
+import time from './baner/time';
+import login from './admin/login';
+import options from './admin/options';
+import getManagement from './admin/service/getManagement';
+
+import { perimeterPrace, lightPrace, workPrace } from './data-start';
+
 
 window.addEventListener('DOMContentLoaded', () => {
-    let cursUsd = 3.2; //курс доллара
-    let perimeterPrace = 1; //цена в usd за метр периметра
-    let lightPrace = 1; //цена в usd за одну световую точку
-    let workPrace = 15; //цена в byn за метр кв. работы
 
-    menuNav({
-        cursUsd: cursUsd, 
-        workPrace: workPrace,
-        lightPrace: lightPrace,
-        perimeterPrace: perimeterPrace,
-    });
-    galleryFn();
-    popUpFn();
-    calcIndex({
-        cursUsd: cursUsd,
-        workPrace: workPrace,
-        lightPrace: lightPrace,
-        perimeterPrace: perimeterPrace,
-    });
-    calcM2Fn({
-        cursUsd: cursUsd, 
-        works: workPrace, 
-        pracePerimetr: perimeterPrace,
-    });
-    rulerMovement();
-    phoneInputIndex();
-    emailIndexMain();
-    youtubeVideo();
-    iconGo();
-    animationPraise();
-    questions();
+    (async function start() {
+
+        //* получение данных с сервера и запись в localStorage 
+        const managementObject = await getManagement();
+        const cursUsd = managementObject.cursUsd;
+        const isShowBaner = managementObject.isShowBaner;
+        localStorage.cursUsd = cursUsd;
+        localStorage.isShowBaner = isShowBaner;
+    
+        //* запуск модулей 
+        menuNav({
+            workPrace: workPrace,
+            lightPrace: lightPrace,
+            perimeterPrace: perimeterPrace,
+        });
+        galleryFn();
+        popUpFn();
+        calcIndex({
+            workPrace: workPrace,
+            lightPrace: lightPrace,
+            perimeterPrace: perimeterPrace,
+        });
+        calcM2Fn({
+            works: workPrace, 
+            pracePerimetr: perimeterPrace,
+        });
+        rulerMovement();
+        phoneInputIndex();
+        emailIndexMain();
+        youtubeVideo();
+        iconGo();
+        animationPraise();
+        questions();
+        startLamps();
+        time();
+        login();
+        options();
+    }());
+
 });

@@ -1,4 +1,8 @@
-@import "__null", "__index", "__font", "__header", "__footer","__prace","__works","__gallery","__contacts","__company","__popup-calculator","__questions";
+@import "__null", "__index", "__font", "__header", "__footer","__prace",
+"__works","__gallery","__contacts","__company","__popup-calculator",
+"__questions", "__lamps.scss", "__lamps-panel", 
+"__filter", "__lightbox", "__baner", "__admin";
+
 
 $brown : #6d4d3a;
 $orange: #fe8d1b;
@@ -8,13 +12,21 @@ $text: #5b4f3c;
 .wrapper {
     display: flex;
     flex-direction: column;
+
     min-height: 100%;
+
     position: relative;
-    overflow: hidden;
+
+    //overflow: hidden;
 }
 
 .main {
+    overflow: hidden;
     flex: 1 1 auto;
+}
+
+.relative {
+    position: relative;
 }
 
 .unselect {

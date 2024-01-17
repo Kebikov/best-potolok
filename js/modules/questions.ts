@@ -1,7 +1,14 @@
+import { type } from "os";
+
 export default function questions () {
     try {
-        (function questionsBox () {
-            const arrQuestions = [
+        const boxQuestions = document.querySelector('.box-questions') as HTMLDivElement;
+        if(boxQuestions) {
+            type Questions = {
+                [key: string]: string
+            }
+
+            const arrQuestions: Array<Questions> = [
                 {question:'Как заказать натяжной потолок?',answer:'Оставить заявку на сайте или позвонить по номеру +375 (29) 522-22-82.'},
                 {question:'Что необходимо для расчета стоимости монтажа натяжного потолка?',answer:'Необходимо знать площадь помещения,  его длину и ширину (хотя бы примерно), а так же количество светильников.'},
                 {question:'Как осуществляется расчет за выполненную работу по монтажу натяжного потолка?',answer:'Расчет осуществляется после монтажа натяжного потолка и полной приемки заказчиком.'},
@@ -24,7 +31,6 @@ export default function questions () {
 
             //* fn вставки кода с вопросами
             function insertQuestionHtml () {
-                console.log('3',);
                 arrQuestions.forEach(item => {
                     boxQuestions.insertAdjacentHTML('beforeend',`
                     <div class="questions">
@@ -37,60 +43,62 @@ export default function questions () {
                     </div>
                     `);
                 });
-                const last = boxQuestions.lastElementChild;
-                const lostTitle = last.querySelector('.questions__title');
+                const last = boxQuestions.lastElementChild as HTMLDivElement;
+                const lostTitle = last.querySelector('.questions__title') as HTMLDivElement;
                 lostTitle.classList.add('_after-not');
             }
 
-            const boxQuestions = document.querySelector('.box-questions');
             insertQuestionHtml();
             const questionsTitleAll = boxQuestions.querySelectorAll('.questions__title');
 
             function allClose () {
                 const bodyAll = document.querySelectorAll('.questions__body');
                 bodyAll.forEach(item => {
-                    const info = item.querySelector('.questions__info');
-                    const text = item.querySelector('.questions__text');
-                    const title = item.querySelector('.questions__title');
+                    const info = item.querySelector('.questions__info') as HTMLDivElement;
+                    const text = item.querySelector('.questions__text') as HTMLDivElement;
+                    const title = item.querySelector('.questions__title') as HTMLDivElement;
 
                     info.style.height = '0px';
-                    text.style.opacity = 0;
+                    text.style.opacity = '0%';
                     item.classList.remove('_questions-white');
                     title.classList.remove('_questions-text');
                 });
             }
-    
-            questionsTitleAll.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    allClose();
-                    const parent = e.target.closest('.questions__body');
-                    const title = parent.querySelector('.questions__title');
-                    const info = parent.querySelector('.questions__info');
-                    const text = parent.querySelector('.questions__text');
-                    function close () {
-                        info.style.height = '0px';
-                        text.style.opacity = 0; 
-                    }
 
-                    if(getComputedStyle(info).height === '0px') {
-                        let hi = text.offsetHeight;
-                        info.style.height = hi + 'px';
-                        setTimeout(() => {
-                            text.style.opacity = 1;
-                        }, 100);
-                        parent.classList.add('_questions-white');
-                        title.classList.add('_questions-text');
-                        
-                    }else {
-                        close();
-                        parent.classList.remove('_questions-white');
-                        title.classList.remove('_questions-text');
+            questionsTitleAll.forEach(item => {
+                item.addEventListener('click', (event) => {
+                    console.log(event.target);
+                    if(event.target instanceof  HTMLDivElement || event.target instanceof  HTMLSpanElement) {
+                        allClose();
+                        const parent = event.target.closest('.questions__body') as HTMLDivElement;
+                        const title = parent.querySelector('.questions__title') as HTMLDivElement;
+                        const info = parent.querySelector('.questions__info') as HTMLDivElement;
+                        const text = parent.querySelector('.questions__text')as HTMLDivElement;
+
+                        function close() {
+                            info.style.height = '0px';
+                            text.style.opacity = '0%'; 
+                        }
+
+                        if(getComputedStyle(info).height === '0px') {
+                            let hi = text.offsetHeight;
+                            info.style.height = hi + 'px';
+                            setTimeout(() => {
+                                text.style.opacity = '100%';
+                            }, 100);
+                            parent.classList.add('_questions-white');
+                            title.classList.add('_questions-text');
+                            
+                        }else {
+                            close();
+                            parent.classList.remove('_questions-white');
+                            title.classList.remove('_questions-text');
+                        }
                     }
                 });
             });
-            
-        }());
-        } catch (error) {
-            console.log('',error);
         }
+    } catch (error) {
+        console.log('',error);
+    }
 }

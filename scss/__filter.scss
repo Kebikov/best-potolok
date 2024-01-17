@@ -1,0 +1,190 @@
+@import './variables.scss';
+@import './mixin.scss';
+
+
+//= .filter-lamps-code-ts
+.filter-lamps-code-ts {
+    overflow: hidden;
+}
+
+//= .filter-lamps
+.filter-lamps {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: -100%;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    max-height: 100svh;
+
+    background-color: #f5f5f5;
+
+    transition:all 0.4s ease;
+
+    border-right: 2px solid $grey;
+
+    &.active-filter {
+        left: 0%;
+    }
+    // .filter-lamps__body
+    &__body {
+        position: relative;
+        
+        overflow: auto;
+
+        padding: 20px;
+
+    }
+    &__close {
+        position: absolute;
+        top: -1px;
+        right: 0px;
+        width: 35px;
+        height: 35px;
+        z-index: 1000;
+
+        background-color: $grey;
+    }
+    &__close-boby {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            width: 27px;
+            height: 27px;
+
+            object-fit: cover;
+        }
+    }
+    &__button {
+        margin: 40px 0px 0px 0px;
+        & span {
+            background-color: $brown;
+
+            @include text_streach(17, 15, #fff, 400);
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+        }
+    }
+    //.filter-lamps__caunter
+    &__caunter {
+
+        background-color: $grey;
+        padding: 10px 0px 10px 0px;
+        margin: 10px 0px 0px 0px;
+
+        display: flex;
+        justify-content: center;
+        & span {
+            @include text_streach(15, 13, #fff, 400);
+        }
+    }
+}
+
+//= .filter-price
+.filter-price {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    // .filter-price__title
+    &__title {
+        @include text_streach(15, 13, $grey, 400, "Russo");
+
+        margin: 0px 0px 10px 0px;
+    }
+    // .filter-price__block-input
+    &__block-input {
+        display: flex;
+
+        padding: 0px 0px 10px 0px;
+
+    }
+    // .filter-price__from
+    &__input {
+        display: inline;
+        width: 100%;
+        height: 30px;
+
+        padding: 5px 10px;
+
+        @include text_streach(15, 13, $grey, 400);
+
+        background: #fff;
+
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+}
+
+//= .line-left
+.line-left {
+    border-right: 1px solid #ccc;
+}
+
+//= .filter-color
+.filter-block {
+    margin: 10px 0px 0px 0px;
+}
+
+//= .filter-title
+.filter-title {
+    @include text_streach(16, 14, $grey, 400, "Russo");
+
+    margin: 10px 0px 10px 0px;
+}
+
+//= .filter-checkbox
+.filter-checkbox {
+    margin: 5px 0px 0px 0px;
+    //.filter-checkbox__lable
+    &__lable {
+        @include text_streach(16, 14, $grey, 400);
+        text-transform: lowercase;
+        padding: 0px 0px 0px 20px;
+
+        cursor: pointer;
+
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $grey;
+            border-radius: 4px;
+        }
+    }
+    //.filter-checkbox__input
+    &__input {
+        display: none;
+        &:checked + .filter-checkbox__lable::after {
+            content: '';
+
+            position: absolute;
+            top: -9px;
+            left: -4px;
+            width: 27px;
+            height: 27px;
+            background: url('/img/icon/check.png') 0 0 / cover no-repeat;
+        }
+    }
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+
