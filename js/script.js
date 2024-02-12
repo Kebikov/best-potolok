@@ -15,6 +15,7 @@ import time from './baner/time';
 import login from './admin/login';
 import options from './admin/options';
 import getManagement from './admin/service/getManagement';
+import lazyLoading from './modules/lazyLoading';
 
 import { perimeterPrace, lightPrace, workPrace } from './data-start';
 
@@ -58,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
         time();
         login();
         options();
+        lazyLoading();
     }());
 
 });

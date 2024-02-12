@@ -44,7 +44,7 @@
     }
     //.lamps-cell__title
     &__title {
-        position: absolute;
+        position: absolute; 
         bottom: 55px;
         left: 10px;
         @include text_streach(24, 20, #000, 500, "Russo");
@@ -60,7 +60,7 @@
 
         & a {
             @include text_streach(18, 16, #fff, 500);
-            background-color: $orange;
+            background-color: #B75901;
 
             padding: 7px 10px;
         }

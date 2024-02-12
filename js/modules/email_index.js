@@ -3,7 +3,7 @@ import fetchTelegram from "../service/fetch_telegram";
 //= отправка на почту на главной странице 
 export default function emailIndexMain () {
     try {
-        console.log('%c start fnc emailIndexMain ', 'background: blue;color: white;');
+        // console.log('%c start fnc emailIndexMain ', 'background: blue;color: white;');
 
         const praceMondeyTelInput = document.querySelector('.prace-mondey__tel-input');
         if(praceMondeyTelInput) {

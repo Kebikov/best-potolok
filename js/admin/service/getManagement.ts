@@ -12,7 +12,7 @@ import processRespons from "../helps/processRespons";
 
 const getManagement = async () =>  {
     try {
-        console.log('%c start fnc getManagement ', 'background: blue;color: white;');
+        // console.log('%c start fnc getManagement ', 'background: blue;color: white;');
         const url: string = Link.Management;
 
         const resManagement: void | IResManagement = await fetch(url)

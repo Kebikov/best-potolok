@@ -8,7 +8,7 @@ import { IOptions, Respons, Link, IResManagement } from "./helps/interface";
 
 const options = async () => {
     try {
-        console.log('%c start fnc options ', 'background: blue;color: white;');
+        // console.log('%c start fnc options ', 'background: blue;color: white;');
 
         const refreshToken: string | null = localStorage.getItem('refreshToken');
         const path: string = window.location.pathname;

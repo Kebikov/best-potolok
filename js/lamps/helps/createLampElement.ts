@@ -7,7 +7,7 @@ import { priceUP } from "../../data-start";
 import showElementNotProduct from "../lampModules/showElementNotProduct";
 import { addEventListenerForElement } from "../lampModules/showImg";
 
-type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html' | '/lamps-dot.html' | '/lamps-light.html' | '/lamps-spot.html';
+type KeyElement = '/lamps-panel.html' | '/lamps-trek.html' | '/lamps-lustre.html' | '/lamps-dot.html' | '/lamps-light.html' | '/lamps-spot.html' | '/lamps-panel' | '/lamps-trek' | '/lamps-lustre' | '/lamps-dot' | '/lamps-light' | '/lamps-spot';
 
 
 //= createLampElement 
@@ -48,6 +48,10 @@ function pathLamps(path: KeyElement, body: HTMLDivElement, priceUP: number,obj: 
         [prop in KeyElement]?: (element: HTMLDivElement) => void
     }
 
+    if(path.split('.')[1] !== 'html') {
+        path += '.html';
+    }
+    console.log('',path);
     const componentsLamp: CreateElement = {
         '/lamps-panel.html': (element: HTMLDivElement): void => {
             element.insertAdjacentHTML('beforeend',`

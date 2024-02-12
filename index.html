@@ -26,23 +26,6 @@
         <link rel="stylesheet" href="css/style.css?v=4.41">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- /favicon -->
-        <!--= Yandex.Metrika counter -->
-            <script type="text/javascript" >
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-            ym(91960103, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-            });
-            </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/91960103" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
     </head>
     <body>
         <div class="wrapper unselect">
@@ -96,27 +79,41 @@
                         </div>
                     </div>
                     <ul class="menu__list">
-                        <a href="/" class="menu__line icon-procent">
-                            <div class="menu__link">главная</div>
-                        </a>
-                        <a href="prace.html" class="menu__line icon-prace">
-                            <div class="menu__link">цены</div>
-                        </a>
-                        <a href="lamps.html" class="menu__line icon-lamps">
-                            <div class="menu__link">светильники</div>
-                        </a>
-                        <a href="questions.html" class="menu__line icon-questions">
-                            <div class="menu__link">ответы на вопросы</div>
-                        </a>
-                        <a href="works.html" class="menu__line icon-work">
-                            <div class="menu__link">примеры работ</div>
-                        </a>
-                        <a href="company.html" class="menu__line icon-compani">
-                            <div class="menu__link">о компании</div>
-                        </a>
-                        <a href="contacts.html" class="menu__line icon-cntacts">
-                            <div class="menu__link">контакты</div>
-                        </a>
+                        <li class="li-menu">
+                            <a href="/" class="menu__line icon-procent">
+                                <div class="menu__link">главная</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="prace.html" class="menu__line icon-prace">
+                                <div class="menu__link">цены</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="lamps.html" class="menu__line icon-lamps">
+                                <div class="menu__link">светильники</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="questions.html" class="menu__line icon-questions">
+                                <div class="menu__link">ответы на вопросы</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="works.html" class="menu__line icon-work">
+                                <div class="menu__link">примеры работ</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="company.html" class="menu__line icon-compani">
+                                <div class="menu__link">о компании</div>
+                            </a>
+                        </li>
+                        <li class="li-menu">
+                            <a href="contacts.html" class="menu__line icon-cntacts">
+                                <div class="menu__link">контакты</div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -146,8 +143,8 @@
                         <div class="popup-calc__pic">
                             <div class="popup-calc__pic-title">Калькулятор<br>стоимости</div>
                             <picture>
-                                <source srcset="img/popup/1.webp" type="image/webp">
-                                <img src="img/popup/1.jpg" alt="my_alt">
+                                <source data-srcset="img/popup/1.webp" type="image/webp">
+                                <img class="lazy-img" data-src="img/popup/1.jpg" alt="my_alt">
                             </picture>
                         </div>
                         <div class="popup-calc__info">
@@ -228,21 +225,21 @@
                     <div class="monday__fon">
                         <div class="monday__body container">
                             <div class="monday__text text-monday">
-                                <div class="text-monday__title"><h1>НАТЯЖНЫЕ ПОТОЛКИ В ГОМЕЛЕ
+                                <div class="text-monday__title"><span>НАТЯЖНЫЕ ПОТОЛКИ В ГОМЕЛЕ
                                     <img src="img/arrow-keys/level.png" alt="ленейка" class="ruler">
-                                </h1>
+                                </span>
                                 </div>
-                                <div class="text-monday__text">Натяжные потолки в Гомеле - это просто, быстро и доступно, если вы обратились в нашу компанию. Универсальный способ отделки интерьера дома, офиса или кафе давно завоевал популярность среди всех слоев населения. Мы работаем с потолками любой сложности, приезжаем бесплатно на замер, а потом быстро и качественно проводим установку конструкции.</div>
+                                <div class="text-monday__text"><h1 style="display: inline;" >Натяжные потолки в Гомеле</h1> - это просто, быстро и доступно, если вы обратились в нашу компанию. Универсальный способ отделки интерьера дома, офиса или кафе давно завоевал популярность среди всех слоев населения. Мы работаем с потолками любой сложности, приезжаем бесплатно на замер, а потом быстро и качественно проводим установку конструкции.</div>
                             </div>
                             <div class="monday__prace prace-mondey">
                                 <img class="monday__gerl" src="./img/index/gerl-2.png" alt="девушка">
                                 <div class="prace-mondey__title">ПО <span>ПОНЕДЕЛЬНИКАМ</span> У НАС<br>НАТЯЖНЫЕ ПОТОЛКИ</div>
                                 <div class="prace-mondey__all-for">ВСЕГО ОТ <span>22 РУБ./М<sup>2</sup></span></div>
-                                <div class="prace-mondey__input-block">
+                                <form class="prace-mondey__input-block">
                                     <label class="prace-mondey__text-m2" for="sizem2">Площадь Вашего потолка =</label>
-                                    <input class="prace-mondey__input" name="sizem2" type="number" value="10">
+                                    <input class="prace-mondey__input" name="sizem2" id="sizem2" type="number" value="10">
                                     <div class="prace-mondey__m2">м<sup>2</sup></div>
-                                </div>
+                                </form>
                                 <div class="prace-mondey__today">
                                     <div class="prace-mondey__today-text">Ваша цена сегодня: </div>
                                     <div class="prace-mondey__byn">150<span> РУБ.</span></div>
@@ -262,7 +259,6 @@
                 <div class="black container" >
                     <div class="black__line"></div>
                     <div class="black__body">
-                        <!-- black-left --> 
                         <div class="black-left">
                             <div class="black-left__box-line">
                                 <div class="black-left__after-4"></div>
@@ -294,7 +290,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- black-right -->
                         <div class="black-right">
                             <div class="black-right__call-us">звоните сейчас, узнайте вашу скидку сегодня</div>
                             <div class="black-right__black">чёрная</div>
@@ -346,8 +341,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/2.webp" type="image/webp">
-                                    <img src="img/potolki-new/2.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/2.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/2.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -355,8 +350,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/5.webp" type="image/webp">
-                                    <img src="img/potolki-new/5.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/5.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/5.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -364,8 +359,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/3.webp" type="image/webp">
-                                    <img src="img/potolki-new/3.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/3.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/3.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -373,8 +368,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/6.webp" type="image/webp">
-                                    <img src="img/potolki-new/6.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/6.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/6.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -382,8 +377,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/1.webp" type="image/webp">
-                                    <img src="img/potolki-new/1.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/1.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/1.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -391,8 +386,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/8.webp" type="image/webp">
-                                    <img src="img/potolki-new/8.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/8.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/8.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -400,8 +395,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/4.webp" type="image/webp">
-                                    <img src="img/potolki-new/4.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/4.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/4.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -409,8 +404,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/potolki-new/7.webp" type="image/webp">
-                                    <img src="img/potolki-new/7.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/potolki-new/7.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/potolki-new/7.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -418,8 +413,8 @@
                         <div class="pic-item">
                             <div class="pic-item__body">
                                 <picture>
-                                    <source srcset="img/foto-potolkov/9.webp" type="image/webp">
-                                    <img src="img/foto-potolkov/9.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/foto-potolkov/9.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/foto-potolkov/9.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -435,7 +430,8 @@
                         <div class="lamps-cell__body">
                             
                             <div class="lamps-cell__cell cell-1 _flex-end">
-                                <img class="lamps-cell__img cell-1__img" src="/img/lamps/5q.jpg" alt="lamps">
+                        
+                                <img class="lamps-cell__img cell-1__img" src="/img/lamps/5q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">трековые светильники</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-trek.html" >смотреть</a>
@@ -443,7 +439,7 @@
                             </div>
                             
                             <div class="lamps-cell__cell cell-2 _flex-end">
-                                <img class="lamps-cell__img cell-2__img" src="/img/lamps/6q.jpg" alt="lamps">
+                                <img class="lamps-cell__img cell-2__img" src="/img/lamps/6q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">споты</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-spot.html" >смотреть</a>
@@ -451,7 +447,7 @@
                             </div>
                             
                             <div class="lamps-cell__cell cell-3 _flex-end">
-                                <img class="lamps-cell__img cell-3__img" src="/img/lamps/1q.jpg" alt="lamps">
+                                <img class="lamps-cell__img cell-3__img" src="/img/lamps/1q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">подвесные светильники</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-lustre.html" >смотреть</a>
@@ -459,7 +455,7 @@
                             </div>
                             
                             <div class="lamps-cell__cell cell-4 _flex-end">
-                                <img class="lamps-cell__img cell-4__img" src="/img/lamps/4q.jpg" alt="lamps">
+                                <img class="lamps-cell__img cell-4__img" src="/img/lamps/4q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">точечные светильники</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-dot.html" >смотреть</a>
@@ -467,7 +463,7 @@
                             </div>
                             
                             <div class="lamps-cell__cell cell-5 _flex-end">
-                                <img class="lamps-cell__img cell-5__img" src="/img/lamps/3q.jpg" alt="lamps">
+                                <img class="lamps-cell__img cell-5__img" src="/img/lamps/3q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">светодиодные панели</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-panel.html" >смотреть</a>
@@ -475,7 +471,7 @@
                             </div>
                             
                             <div class="lamps-cell__cell cell-6 _flex-end">
-                                <img class="lamps-cell__img cell-6__img" src="/img/lamps/2q.jpg" alt="lamps">
+                                <img class="lamps-cell__img cell-6__img" src="/img/lamps/2q.jpg" alt="lamps" loading="lazy" >
                                 <div class="lamps-cell__title">светодиодные светильники</div>
                                 <div class="lamps-cell__button">
                                     <a href="lamps-light.html" >смотреть</a>
@@ -617,8 +613,8 @@
                         <div class="example__one-box">
                             <div class="example__hi orbita">
                                 <picture>
-                                    <source srcset="img/example-potolkov/3.webp" type="image/webp">
-                                    <img src="img/example-potolkov/3.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/example-potolkov/3.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/example-potolkov/3.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -644,8 +640,8 @@
                         <div class="example__one-box">
                             <div class="example__hi orbita">
                                 <picture>
-                                    <source srcset="img/foto-potolkov/10.webp" type="image/webp">
-                                    <img src="img/foto-potolkov/10.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/foto-potolkov/10.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/foto-potolkov/10.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -672,8 +668,8 @@
                         <div class="example__one-box">
                             <div class="example__hi orbita">
                                 <picture>
-                                    <source srcset="img/example-potolkov/4.webp" type="image/webp">
-                                    <img src="img/example-potolkov/4.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/example-potolkov/4.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/example-potolkov/4.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -704,8 +700,8 @@
                         <div class="example__one-box">
                             <div class="example__hi orbita">
                                 <picture>
-                                    <source srcset="img/example-potolkov/5.webp" type="image/webp">
-                                    <img src="img/example-potolkov/5.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/example-potolkov/5.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/example-potolkov/5.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -734,8 +730,8 @@
                         <div class="example__one-box">
                             <div class="example__hi orbita">
                                 <picture>
-                                    <source srcset="img/foto-potolkov/9.webp" type="image/webp">
-                                    <img src="img/foto-potolkov/9.jpg" alt="натяжные потолки в гомеле">
+                                    <source data-srcset="img/foto-potolkov/9.webp" type="image/webp">
+                                    <img class="lazy-img" data-src="img/foto-potolkov/9.jpg" alt="натяжные потолки в гомеле">
                                 </picture>
                             </div>
                         </div>
@@ -792,6 +788,25 @@
                 </div>
             </footer>
         </div>
-        <script src="dist/bundle.js?v=4.93"></script>
+        <script src="dist/bundle.js?v=4.96"></script>
+        <!--= Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            setTimeout(() => {
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            
+                ym(91960103, "init", {
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            }, 3000);
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/91960103" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
     </body>
 </html>
