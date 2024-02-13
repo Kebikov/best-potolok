@@ -16,6 +16,7 @@ import login from './admin/login';
 import options from './admin/options';
 import getManagement from './admin/service/getManagement';
 import lazyLoading from './modules/lazyLoading';
+import preLoader from './preLoader';
 
 import { perimeterPrace, lightPrace, workPrace } from './data-start';
 
@@ -60,6 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
         login();
         options();
         lazyLoading();
+        preLoader();
     }());
 
 });
